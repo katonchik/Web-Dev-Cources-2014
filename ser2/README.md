@@ -1,4 +1,4 @@
-js-practice
+js-courses
 ===========
 
-js,study,exercises 
+
