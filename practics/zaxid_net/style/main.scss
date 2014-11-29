@@ -1,0 +1,67 @@
+$layout_news-list-width : 270px;
+
+body { margin: 0; padding: 0;}
+p { margin: 0;}
+
+.layout.highlight-skeleton {
+  .layout_news-list  { background: #3498db; }
+
+  .layout_main       { background: #f1c40f;}
+  .layout_main  .content-wrapper { background: #2ecc71; }
+}
+
+.layout {
+  .layout_news-list {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    overflow: hidden;
+    width: $layout_news-list-width;
+
+    background: #535353;
+  }
+  .layout_news-list:hover {
+    overflow: auto;
+  }
+
+  .layout_main {
+    margin-left: $layout_news-list-width;
+
+
+    .content-wrapper {
+      width: 870px;
+    }
+  }
+}
+
+.chapter-title {}
+
+.news-summary {
+  $time-width: 20px;
+  $time-margin: 5px;
+
+  font : 15px/17px "PT Sans",sans-serif;
+  color: #fff;
+  margin: 5px 30px;
+
+  time {
+    text-align: right;
+    margin: 0 $time-margin;
+    width: $time-width;
+
+    float: left;
+    color: #A59A7E;
+    font: 12px "PT Sans Narrow",sans-serif;
+  }
+
+  h3 {
+    // Try to fix hover scroll effect
+    width: 270px - (30 * 2) - ($time-width + $time-margin * 2);
+    font-weight: normal;
+    margin-left: 10 + $time-width + $time-margin * 2;
+  }
+
+  a { color: inherit; text-decoration: inherit;}
+}
