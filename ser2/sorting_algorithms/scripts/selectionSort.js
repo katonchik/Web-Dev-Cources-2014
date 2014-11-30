@@ -6,7 +6,6 @@
 function selectionSort(arr) {
     var arr = arr.slice(),
         len = arr.length,
-        temp,
         min,
         i = 0;
 
@@ -18,7 +17,7 @@ function selectionSort(arr) {
         for (j; j < len; j+=1) {
             if (arr[j] < arr[min]) min = j;
         }
-        swap(arr, i, min, temp);
+        swap(arr, i, min);
     }
 
     console.timeEnd('SelectionSort time');

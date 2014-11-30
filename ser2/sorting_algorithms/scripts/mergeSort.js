@@ -1,12 +1,11 @@
 /**
- * merge sort
- * @param arr
+ * Return new sorted array.
+ * @param arr {Array}
+ * @return {Array}
  */
 function mergeSort(arr) {
     var arr = arr.slice(),
         result;
-
-    console.time('MergeSort time');
 
     function mergeSortFunc(arr) {
         if (arr.length < 2) return arr;
@@ -17,10 +16,6 @@ function mergeSort(arr) {
 
         return merge(mergeSortFunc(left), mergeSortFunc(right));
     }
-
-    result = mergeSortFunc(arr);
-    console.timeEnd('MergeSort time');
-    console.log('MergeSort output: ' + result);
 
     /**
      * merges two arrays
@@ -37,6 +32,11 @@ function mergeSort(arr) {
         result = result.concat(leftPart).concat(rightPart);
         return result;
     }
+
+    console.time('MergeSort time');
+    result = mergeSortFunc(arr);
+    console.timeEnd('MergeSort time');
+    console.log('MergeSort output: ' + result);
 }
 
 

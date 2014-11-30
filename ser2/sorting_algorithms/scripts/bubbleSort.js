@@ -6,7 +6,6 @@
 function bubbleSort(arr) {
     var arr = arr.slice(),
         len = arr.length,
-        temp,
         i = 0;
 
     console.time('BubbleSort time');
@@ -15,8 +14,8 @@ function bubbleSort(arr) {
         var swapped = false;
         for (i; i < len; i+=1) {
             if (arr[i] > arr[i + 1]) {
-                swap(arr, i, i+1, temp);
-                swapped = true;
+                swap(arr, i, i+1);
+                swapped = true; // TODO: {Ser2} Fix it  (bubble sort do not work);
             }
         }
     } while (swapped == true);
