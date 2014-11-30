@@ -1,6 +1,6 @@
 $layout_news-list-width : 270px;
 
-body { margin: 0; padding: 0;}
+body { margin: 0; padding: 0; background: #E6E6E6;}
 p { margin: 0;}
 
 .layout.highlight-skeleton {
@@ -42,7 +42,6 @@ p { margin: 0;}
   $time-width: 20px;
   $time-margin: 5px;
 
-  font : 15px/17px "PT Sans",sans-serif;
   color: #fff;
   margin: 5px 30px;
 
@@ -57,11 +56,17 @@ p { margin: 0;}
   }
 
   h3 {
-    // Try to fix hover scroll effect
+    font : 15px/17px "PT Sans",sans-serif;
+
+    // Try to fix hover scroll effect.
     width: 270px - (30 * 2) - ($time-width + $time-margin * 2);
+
     font-weight: normal;
     margin-left: 10 + $time-width + $time-margin * 2;
   }
 
   a { color: inherit; text-decoration: inherit;}
 }
+
+
+.row {overflow: hidden;}
