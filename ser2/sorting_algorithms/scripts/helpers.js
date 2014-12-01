@@ -4,12 +4,11 @@
  * @returns {Array}
  */
 function generateRandomArray(arrayLength) {
-    var randomArr = [],
-      i = 0;
+    var randomArr = [];
 
     arrayLength = arrayLength || 15;
 
-    for (i ; i < arrayLength; i += 1) {
+    for (i = 0 ; i < arrayLength; i += 1) {
         randomArr.push(Math.floor(Math.random()*100));
     }
 
@@ -24,10 +23,11 @@ function generateRandomArray(arrayLength) {
  * @return {Array}
  */
 function swap(inputArray, firstElementIndex, secondElementIndex) {
+    var temp;
     firstElementIndex = parseInt(firstElementIndex);
     secondElementIndex = parseInt (secondElementIndex);
 
-    var temp = inputArray[firstElementIndex];
+    temp = inputArray[firstElementIndex];
     inputArray[firstElementIndex] = inputArray[secondElementIndex];
     inputArray[secondElementIndex] = temp;
 
