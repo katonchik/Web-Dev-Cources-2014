@@ -2,88 +2,21 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>dribbble</title>
-    <link rel="stylesheet" href="style/style.css">
+    <title></title>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <header>
         <div class="wrap">
             <a class="logo" href="#"><img src="https://d13yacurqjgara.cloudfront.net/assets/logo-small.png?4"></a>
 
-            <ul class="mainNav dropDown">
-                <li>
-                    <a class="active" href="https://dribbble.com/shots">Shots</a>
-
-                    <ul>
-                        <li><a href="#">Popular</a></li>
-                        <li><a href="#">Recent</a></li>
-                        <li><a href="#">Teams</a></li>
-                        <li><a href="#">Debuts</a></li>
-                        <li><a href="#">Playoffs</a></li>
-                        <li><a href="#">Animated GIFs</a></li>
-                    </ul>
-                </li>
-
-                <li>
-                    <a href="https://dribbble.com/designers">Designers</a>
-
-                    <ul>
-                        <li><a href="#">All</a></li>
-                        <li><a href="#">For Hire</a></li>
-                        <li><a href="#">Top Skills & Locations</a></li>
-                        <li><a href="#">Skills</a></li>
-                        <li><a href="#">Cities</a></li>
-                        <li><a href="#">Countries</a></li>
-                        <li><a href="#">Prospects</a></li>
-                    </ul>
-                </li>
-
-                <li>
-                    <a href="https://dribbble.com/teams">Teams</a>
-
-                    <ul>
-                        <li><a href="#">All</a></li>
-                        <li><a href="#">Now Hiring</a></li>
-                        <li><a href="#">Get Your Team On Dribbble</a></li>
-                    </ul>
-                </li>
-
-                <li>
-                    <a href="#">Meetups</a>
-
-                    <ul>
-                        <li><a href="#">Upcoming Meetups</a></li>
-                        <li><a href="#">Host a Meetup</a></li>
-                    </ul>
-                </li>
-
-                <li>
-                    <a href="https://dribbble.com/jobs">Jobs</a>
-
-                    <ul>
-                        <li><a href="#">All</a></li>
-                        <li><a href="#">Remote / Anywhere</a></li>
-                        <li><a href="#">@ Teams</a></li>
-                        <li><a href="#">Post a Job</a></li>
-                    </ul>
-                </li>
-
-                <li>
-                    <a href="https://dribbble.com/highlights"></a>
-
-                    <ul>
-                        <li><a href="#">Highlights</a></li>
-                        <li><a href="#">Projects</a></li>
-                        <li><a href="#">Buckets</a></li>
-                        <li><a href="#">Colors</a></li>
-                        <li><a href="#">Tags</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Shop</a></li>
-                        <li><a href="#">Meetups</a></li>
-                    </ul>
-                </li>
-            </ul>
+            <nav class="mainNav">
+                <a class="active" href="https://dribbble.com/shots">Shots</a>
+                <a href="https://dribbble.com/designers">Designers</a>
+                <a href="https://dribbble.com/teams">Teams</a>
+                <a href="#">Meetups</a>
+                <a href="https://dribbble.com/jobs">Jobs</a>
+            </nav>
 
             <input class="search" type="search" placeholder="Search">
 
@@ -92,6 +25,7 @@
                 <a href="https://dribbble.com/session/new">Sign in</a>
             </div>
         </div>
+
     </header>
 
     <main>
@@ -105,65 +39,279 @@
             <button>Sign up</button>
         </div>
 
-        <ul class="filters dropDown wrap">
-            <li>
-                <a href="#">Popular</a>
+        <nav class="filters wrap">
+           <a href="#">Popular</a>
+           <a href="#">Shots</a>
+           <a href="#">Now</a>
+        </nav>
 
-                <ul>
-                    <li><a href="#">Recent</a></li>
-                    <li><a href="#">Most Viewed</a></li>
-                    <li><a href="#">Most Commented</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Shots</a>
-
-                <ul>
-                    <li><a href="#">Team Shots</a></li>
-                    <li><a href="#">Debuts</a></li>
-                    <li><a href="#">Playoffs</a></li>
-                    <li><a href="#">Rebounds</a></li>
-                    <li><a href="#">Animated GIFs</a></li>
-                    <li><a href="#">Shots with Attachments</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Now</a>
-
-                <ul>
-                    <li><a href="#">This Past Week</a></li>
-                    <li><a href="#">This Past Month</a></li>
-                    <li><a href="#">This Past Year</a></li>
-                    <li><a href="#">All Time</a></li>
-                </ul>
-            </li>
-        </ul>
-
-        <section class="wrap">
-            <div class="item">
+        <div class="wrap">
+            <div class="dribble-pack">
                 <div class="dribble">
-                    <div class="portfolio-item">
-                        <img src="http://placekitten.com/g/200/150">
-                        <div class="content">
-                            <strong>It's s nice kitten!</strong>
-                            <p>Soft kitty, Warm kitty,<br/>
-                                Little ball of fur.<br/>
-                                Happy kitty, Sleepy kitty,<br/>
-                                Purr Purr Purr</p>
-                            <time>October 30, 2014</time>
-                        </div>
+                    <a href="#">
+                        <img src="https://d13yacurqjgara.cloudfront.net/users/11867/screenshots/1830064/1111_teaser.jpg">
+                    </a>
+                    <a href="#" class="dribble-content">
+                        <strong>Landscape Studies</strong>
+                        <span class="comment">
+                            A bunch of landscape studies for a scrapped client project. http://bit.ly/1zJJ1SF
+                        </span>
+                        <time>December 01, 2014</time>
+                    </a>
+
+                    <div class="tools">
+                        <a class="views" href="#">1,754</a>
+                        <a class="comments" href="#">14</a>
+                        <a class="favorite" href="#">205</a>
                     </div>
-                    <span class="extras"></span>
+                </div>
+            </div>
+
+            <div class="dribble-pack">
+                <div class="dribble">
+                    <a href="#">
+                        <img src="https://d13yacurqjgara.cloudfront.net/users/31752/screenshots/1829767/rivendell_teaser.jpg">
+                    </a>
+                    <a href="#" class="dribble-content">
+                        <strong>Rivendell</strong>
+                        <span class="comment">
+                            Lets all go to Rivendell.
+                        </span>
+                        <time>December 01, 2014</time>
+                    </a>
+
+                    <div class="tools">
+                        <a class="views" href="#">876</a>
+                        <a class="comments" href="#">12</a>
+                        <a class="favorite" href="#">143</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dribble-pack">
+                <div class="dribble">
+                    <a href="#">
+                        <img src="https://d13yacurqjgara.cloudfront.net/users/24711/screenshots/1829779/sketchy-pattern-elements_2x_teaser.png">
+                    </a>
+                    <a href="#" class="dribble-content">
+                        <strong>Sketchy Pattern Elements</strong>
+                        <span class="comment">
+                            Hand drawn and vectorized wallpaper / pattern elements
+                        </span>
+                        <time>December 01, 2014</time>
+                    </a>
+
+                    <div class="tools">
+                        <a class="views" href="#">692</a>
+                        <a class="comments" href="#">5</a>
+                        <a class="favorite" href="#">692</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dribble-pack">
+                <div class="dribble omega">
+                    <a href="#">
+                        <img src="https://d13yacurqjgara.cloudfront.net/users/49729/screenshots/1829934/heaven_nature_teaser.jpg">
+                    </a>
+                    <a href="#" class="dribble-content">
+                        <strong>
+                            Heaven & Nature Sings
+                        </strong>
+                        <span class="comment">
+                            Wrapped up a new illustration for my friends at Gracewaymedia.com. Thanks to @kyletwebster
+                            photoshop brushes helping get the job done.
+                        </span>
+                        <time>December 01, 2014</time>
+                    </a>
+
+                    <div class="tools">
+                        <a class="views" href="#">336</a>
+                        <a class="comments" href="#">8</a>
+                        <a class="favorite" href="#">46</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dribble-pack">
+                <div class="dribble">
+                    <a href="#">
+                        <img src="https://d13yacurqjgara.cloudfront.net/users/561513/screenshots/1829904/uncdtitled-1-01_teaser.png">
+                    </a>
+                    <a href="#" class="dribble-content">
+                        <strong>
+                            Santa’s Sleigh In The ...
+                        </strong>
+                        <span class="comment">
+                            These are part of a project I created with Fandango. Please visit the link to see the whole
+                            project! http://www.fandango.com/movie-news/infographic-santas-s...
+                        </span>
+                        <time>December 01, 2014</time>
+                    </a>
+
+                    <div class="tools">
+                        <a class="views" href="#">456</a>
+                        <a class="comments" href="#">2</a>
+                        <a class="favorite" href="#">89</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dribble-pack">
+                <div class="dribble">
+                    <a href="#">
+                        <img src="https://d13yacurqjgara.cloudfront.net/users/196832/screenshots/1830587/dribble_corp_icons_teaser.png">
+                    </a>
+                    <a href="#" class="dribble-content">
+                        <strong>
+                            Icons for new corporat...
+                        </strong>
+                        <span class="comment">
+                            Hello, guys! Happy to share a small part of our corporate website redesign — a set of icons
+                            for the main page! More shots are coming soon) Have a nice day!
+                        </span>
+                        <time>about 6 hours ago</time>
+                    </a>
+
+                    <div class="tools">
+                        <a class="views" href="#">51</a>
+                        <a class="comments" href="#">2</a>
+                        <a class="favorite" href="#">755</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dribble-pack">
+                <div class="dribble">
+                    <a href="#">
+                        <img src="http://d13yacurqjgara.cloudfront.net/users/24812/screenshots/1830843/shop-drb_teaser.jpg">
+                    </a>
+                    <a href="#" class="dribble-content">
+                        <strong>Title</strong>
+                        <span class="comment">bla bla bla</span>
+                        <time>November 10, 2014</time>
+                    </a>
+
                     <div class="tools">
                         <a class="views" href="#">7351</a>
                         <a class="comments" href="#">68</a>
                         <a class="favorite" href="#">755</a>
                     </div>
                 </div>
-
-                <h2></h2>
             </div>
-        </section>
+
+            <div class="dribble-pack">
+                <div class="dribble omega">
+                    <a href="#">
+                        <img src="https://d13yacurqjgara.cloudfront.net/users/62115/screenshots/1830329/molot_teaser.jpg">
+                    </a>
+                    <a href="#" class="dribble-content">
+                        <strong>
+                            The hammer of justice
+                        </strong>
+                        <span class="comment">
+                            Hummer icon for a ios game
+                        </span>
+                        <time>about 10 hours ago</time>
+                    </a>
+
+                    <div class="tools">
+                        <a class="views" href="#">311</a>
+                        <a class="comments" href="#">7</a>
+                        <a class="favorite" href="#">47</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dribble-pack">
+                <div class="dribble">
+                    <a href="#">
+                        <img src="https://d13yacurqjgara.cloudfront.net/users/13754/screenshots/1830586/book_teaser.png">
+                    </a>
+                    <a href="#" class="dribble-content">
+                        <strong>Book</strong>
+                        <time>about 6 hours ago</time>
+                    </a>
+
+                    <div class="tools">
+                        <a class="views" href="#">155</a>
+                        <a class="comments" href="#">4</a>
+                        <a class="favorite" href="#">39</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dribble-pack">
+                <div class="dribble">
+                    <a href="#">
+                        <img src="https://d13yacurqjgara.cloudfront.net/users/43342/screenshots/1830952/6_teaser.jpg">
+                    </a>
+                    <a href="#" class="dribble-content">
+                        <strong>
+                            L-I-V-I-N-G Logomark [2]
+                        </strong>
+                        <span class="comment">
+                            Another day, another rejection lol Back to the drawing board! 'Again'  Follow STUDIOJQ:
+                            Behance | Twitter | Pinterest
+                        </span>
+                        <time>about 2 hours ago</time>
+                    </a>
+
+                    <div class="tools">
+                        <a class="views" href="#">127</a>
+                        <a class="comments" href="#">2</a>
+                        <a class="favorite" href="#">37</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dribble-pack">
+                <div class="dribble">
+                    <a href="#">
+                        <img src="https://d13yacurqjgara.cloudfront.net/users/86597/screenshots/1830765/ns01_teaser.jpg">
+                    </a>
+                    <a href="#" class="dribble-content">
+                        <strong>
+                            Nanosi
+                        </strong>
+                        <span class="comment">
+                            Illustrations for the project Nanosi All pictures on behance -
+                            https://www.behance.net/gallery/21345383/-Nanosi
+                        </span>
+                        <time>about 4 hours ago</time>
+                    </a>
+
+                    <div class="tools">
+                        <a class="views" href="#">98</a>
+                        <a class="comments" href="#">3</a>
+                        <a class="favorite" href="#">34</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dribble-pack">
+                <div class="dribble omega">
+                    <a href="#">
+                        <img src="https://d13yacurqjgara.cloudfront.net/users/92173/screenshots/1830387/christmas-cookie_teaser.jpg">
+                    </a>
+                    <a href="#" class="dribble-content">
+                        <strong>
+                            Christmas Toy
+                        </strong>
+                        <span class="comment">
+                            Don't forget to check 2x view.  What do you think?
+                        </span>
+                        <time>about 9 hours ago</time>
+                    </a>
+
+                    <div class="tools">
+                        <a class="views" href="#">140</a>
+                        <a class="comments" href="#">3</a>
+                        <a class="favorite" href="#">32</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <aside class="wrap">
             <div class="col">
@@ -175,6 +323,7 @@
 
                 <div>
                     <img src="https://d13yacurqjgara.cloudfront.net/assets/dribbble-tee-green-a198cc3c03e9c6f13d0c451974069fd6.png">
+
                     <p>Threads and goods for designers like you. Grab a tee or three at our official
                         <a class="shop" href="http://shop.dribbble.com/">Equipment Shop</a>.
                     </p>
@@ -189,9 +338,23 @@
                 </h3>
 
                 <div>
-                    <a href="https://dribbble.com/jobs/7509"><strong class="company">Spiceworks</strong> is hiring a <span class="position">UI / UX Designer</span></a>
-                    <a href="https://dribbble.com/jobs/7381"><strong class="company"> Postmark & Beanstalk</strong> is hiring a <span  class="position">Senior Front-end Designer</span></a>
-                    <a href="https://dribbble.com/jobs/7507"><strong class="company">Idean</strong> is hiring a <span  class="position">Lead Interaction Designer</span></a>
+                    <a href="https://dribbble.com/jobs/7509">
+                        <strong class="company">Spiceworks</strong>
+                        is hiring a
+                        <span class="position">UI / UX Designer</span>
+                    </a>
+
+                    <a href="https://dribbble.com/jobs/7381">
+                        <strong class="company"> Postmark & Beanstalk</strong>
+                        is hiring a
+                        <span  class="position">Senior Front-end Designer</span>
+                    </a>
+
+                    <a href="https://dribbble.com/jobs/7507">
+                        <strong class="company">Idean</strong>
+                        is hiring a
+                        <span  class="position">Lead Interaction Designer</span>
+                    </a>
                 </div>
             </div>
 
@@ -204,7 +367,9 @@
 
                 <div>
                     <img src="https://connect.decknetwork.net/i/pixate.png">
-                    <p>Design native prototypes with complex interactions and animations.
+
+                    <p>
+                        Design native prototypes with complex interactions and animations.
                         <a class="shop" href="http://shop.dribbble.com/">No code required</a>.
                     </p>
                 </div>
@@ -212,73 +377,76 @@
         </aside>
     </main>
 
-    <footer class="wrap">
-        <div class="col">
-            <div class="logoFooter"></div>
-            <p class="motto">
-                Show and tell for designers
+    <footer>
+        <div class="wrap">
+            <div class="col">
+                <div class="logoFooter"></div>
+                <p class="motto">
+                    Show and tell for designers
+                </p>
+                <p>
+                    What are you working on? Dribbble is a community of designers sharing screenshots of their work,
+                    process, and projects.
+                </p>
+            </div>
+
+            <div class="col">
+                <h3>Company</h3>
+                <a href="https://dribbble.com/about">About</a>
+                <a href="http://help.dribbble.com/">Help</a>
+                <a href="https://dribbble.com/contact">Contact</a>
+                <a href="https://dribbble.com/terms">Terms</a>
+                <a href="https://dribbble.com/privacy">Privacy</a>
+                <a href="http://shop.dribbble.com/">Shop</a>
+            </div>
+
+            <div class="col">
+                <h3>Community</h3>
+                <a href="http://blog.dribbble.com/">Blog</a>
+                <a href="https://dribbble.com/meetups">Meetups</a>
+                <a href="https://confirmsubscription.com/h/y/D6A3AA96A2E03744">Newsletter</a>
+                <a href="https://dribbble.com/testimonials">Testimonials</a>
+                <a href="https://dribbble.com/handbook">Handbook</a>
+                <a href="https://dribbble.com/branding">Brand Guidelines</a>
+            </div>
+
+            <div class="col last">
+                <h3>Connect</h3>
+                <a href="https://dribbble.com/designers">Find Designers</a>
+                <a href="https://dribbble.com/jobs">Jobs for Designers</a>
+                <a href="https://dribbble.com/pro">Go Pro</a>
+                <a href="https://dribbble.com/teams/info">Teams</a>
+                <a href="https://dribbble.com/advertise">Advertise</a>
+                <a href="http://developer.dribbble.com/">API</a>
+            </div>
+
+            <p class="copyright">
+                Copyright © 2009–2014 Dribbble LLC. All screenshots © their respective owners. Shipped from Salem, Mass.
+                USA.
             </p>
-            <p>
-                What are you working on? Dribbble is a community of designers sharing screenshots of their work,
-                process, and projects.
+
+            <p class="pixelCounter">
+                <strong>273,512,580,871</strong>pixels dribbbled
+            </p>
+
+            <p class="follow">
+                <a href="http://twitter.com/dribbble">
+                    <img src="https://d13yacurqjgara.cloudfront.net/assets/icon-team-twitter-225d7c7bbf69a2e84d91f484d78c689f.png"/>
+                </a>
+
+                <a href="http://facebook.com/dribbble">
+                    <img src="https://d13yacurqjgara.cloudfront.net/assets/icon-team-facebook-a9ed2573a6c0130360de20ba1e0fedf8.png"/>
+                </a>
+
+                <a href="http://instagram.com/dribbble">
+                    <img src="https://d13yacurqjgara.cloudfront.net/assets/icon-team-instagram-77614abc74782b09aa717d8d1762b87e.png"/>
+                </a>
+
+                <a href="http://blog.dribbble.com">
+                    <img src="https://d13yacurqjgara.cloudfront.net/assets/icon-team-tumblr-bee52e5eed7c8fbfca812283c7420dcd.png"/>
+                </a>
             </p>
         </div>
-
-        <div class="col">
-            <h3>Company</h3>
-            <a href="https://dribbble.com/about">About</a>
-            <a href="http://help.dribbble.com/">Help</a>
-            <a href="https://dribbble.com/contact">Contact</a>
-            <a href="https://dribbble.com/terms">Terms</a>
-            <a href="https://dribbble.com/privacy">Privacy</a>
-            <a href="http://shop.dribbble.com/">Shop</a>
-        </div>
-
-        <div class="col">
-            <h3>Community</h3>
-            <a href="http://blog.dribbble.com/">Blog</a>
-            <a href="https://dribbble.com/meetups">Meetups</a>
-            <a href="https://confirmsubscription.com/h/y/D6A3AA96A2E03744">Newsletter</a>
-            <a href="https://dribbble.com/testimonials">Testimonials</a>
-            <a href="https://dribbble.com/handbook">Handbook</a>
-            <a href="https://dribbble.com/branding">Brand Guidelines</a>
-        </div>
-
-        <div class="col last">
-            <h3>Connect</h3>
-            <a href="https://dribbble.com/designers">Find Designers</a>
-            <a href="https://dribbble.com/jobs">Jobs for Designers</a>
-            <a href="https://dribbble.com/pro">Go Pro</a>
-            <a href="https://dribbble.com/teams/info">Teams</a>
-            <a href="https://dribbble.com/advertise">Advertise</a>
-            <a href="http://developer.dribbble.com/">API</a>
-        </div>
-
-        <p class="copyright">
-            Copyright © 2009–2014 Dribbble LLC. All screenshots © their respective owners. Shipped from Salem, Mass. USA.
-        </p>
-
-        <p class="pixelCounter">
-            <strong>273,512,580,871</strong>pixels dribbbled
-        </p>
-
-        <p class="follow">
-            <a href="http://twitter.com/dribbble">
-                <img src="https://d13yacurqjgara.cloudfront.net/assets/icon-team-twitter-225d7c7bbf69a2e84d91f484d78c689f.png"/>
-            </a>
-            <a href="http://facebook.com/dribbble">
-                <img src="https://d13yacurqjgara.cloudfront.net/assets/icon-team-facebook-a9ed2573a6c0130360de20ba1e0fedf8.png"/>
-            </a>
-            <a href="http://meetup.com/dribbble">
-                <img src="https://d13yacurqjgara.cloudfront.net/assets/icon-team-meetup-fea7f3327a4d741d27ff9454cbebe44f.png"/>
-            </a>
-            <a href="http://instagram.com/dribbble">
-                <img src="https://d13yacurqjgara.cloudfront.net/assets/icon-team-instagram-77614abc74782b09aa717d8d1762b87e.png"/>
-            </a>
-            <a href="http://blog.dribbble.com">
-                <img src="https://d13yacurqjgara.cloudfront.net/assets/icon-team-tumblr-bee52e5eed7c8fbfca812283c7420dcd.png"/>
-            </a>
-        </p>
     </footer>
 </body>
 </html>
