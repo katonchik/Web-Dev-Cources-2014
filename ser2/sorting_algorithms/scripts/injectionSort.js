@@ -1,26 +1,24 @@
 /**
- * injection sort
- * @param arr
- * @returns {*}
+ * Sorts input array using injection algorithm. Returns sorted array.
+ * @param arr {Array}
+ * @returns {Array}
  */
 function injectionSort(arr) {
-    var arr = arr.slice(),
-        len = arr.length,
-        sortedItem,
-        i = 0;
+    var newArr = arr.slice(), // create copy of input array
+        sortedItem;
 
-    console.time('InjectionSort time');
+    console.time('InjectionSort time');  // start timer
 
-    for (i; i < len;i+=1) {
-        sortedItem = arr[i];
-        var j = i - 1;
-        for (j; j >= 0 && arr[j] > sortedItem; j-=1) {
-            arr[j+1] = arr[j];
+    for (var i = 0 ; i < newArr.length ; i += 1) {
+        sortedItem = newArr[i];
+        for (var j = i - 1 ; j >= 0 && newArr[j] > sortedItem ; j -= 1) {
+            newArr[j+1] = newArr[j];
         }
-        arr[j+1] = sortedItem;
+        newArr[j+1] = sortedItem;
     }
 
-    console.timeEnd('InjectionSort time');
-    console.log('InjectionSort output: ' + arr);
-    return arr;
+    console.timeEnd('InjectionSort time');  // end timer
+    console.log('InjectionSort output: ' + newArr);  // show result
+    return newArr;
 }
+

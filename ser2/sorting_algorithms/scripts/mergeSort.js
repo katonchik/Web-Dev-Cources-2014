@@ -1,10 +1,10 @@
 /**
- * Return new sorted array.
+ * Sorts input array using merge algorithm. Returns sorted array.
  * @param arr {Array}
  * @return {Array}
  */
 function mergeSort(arr) {
-    var arr = arr.slice(),
+    var newArr = arr.slice(),  // create copy of input array
         result;
 
     function mergeSortFunc(arr) {
@@ -18,9 +18,9 @@ function mergeSort(arr) {
     }
 
     /**
-     * merges two arrays
-     * @param leftPart
-     * @param rightPart
+     * Merges Two Arrays
+     * @param leftPart {Array}
+     * @param rightPart {Array}
      * @returns {Array}
      */
     function merge(leftPart, rightPart) {
@@ -33,10 +33,10 @@ function mergeSort(arr) {
         return result;
     }
 
-    console.time('MergeSort time');
-    result = mergeSortFunc(arr);
-    console.timeEnd('MergeSort time');
-    console.log('MergeSort output: ' + result);
+    console.time('MergeSort time');  // start timer
+    result = mergeSortFunc(newArr);
+    console.timeEnd('MergeSort time');  // end timer
+    console.log('MergeSort output: ' + result);  // show result
 }
 
 

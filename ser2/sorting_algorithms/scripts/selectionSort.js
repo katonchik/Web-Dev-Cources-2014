@@ -1,27 +1,24 @@
 /**
- * selection sort
- * @param arr
- * @returns {*}
+ * Sorts input array using selection algorithm. Returns sorted array.
+ * @param arr {Array}
+ * @returns {Array}
  */
 function selectionSort(arr) {
-    var arr = arr.slice(),
-        len = arr.length,
-        min,
-        i = 0;
+    var newArr = arr.slice(),  // create copy of input array
+        min;
 
-    console.time('SelectionSort time');
+    console.time('SelectionSort time');  // start timer
 
-    for (i; i < len - 1; i+=1) {
+    for (var i = 0 ; i < newArr.length-1 ; i += 1) {
         min = i;
-        var j = i + 1;
-        for (j; j < len; j+=1) {
-            if (arr[j] < arr[min]) min = j;
+        for (var j = i + 1 ; j < newArr.length ; j += 1) {
+            if (newArr[j] < newArr[min]) min = j;
         }
-        swap(arr, i, min);
+        swap(newArr, i, min);
     }
 
-    console.timeEnd('SelectionSort time');
-    console.log('SelectionSort output: ' + arr);
-    return arr;
+    console.timeEnd('SelectionSort time');  // end timer
+    console.log('SelectionSort output: ' + newArr);  // show result
+    return newArr;
 }
 
