@@ -95,39 +95,39 @@ BinarySearchTree.prototype = {
             //figure out how many children
             childCount = (current.left !== null ? 1 : 0) +
             (current.right !== null ? 1 : 0);
-            //special case: the value is at the root
+            //special case: the value is at the node
             if (current === this._root) {
                 switch (childCount) {
-                    case 0: //no children, just erase the root
+                    case 0: //no children, just erase the node
                         this._root = null;
                         break;
-                    case 1: //one child, use one as the root
+                    case 1: //one child, use one as the node
                         this._root = (current.right === null ?
                             current.left : current.right);
                         break;
                     case 2: //two children
-                        //new root will be the old root's left child
+                        //new node will be the old node's left child
                         replacement = this._root.left;
-                        //find the right-most leaf node to be the real new root
+                        //find the right-most leaf node to be the real new node
                         while (replacement.right !== null) {
                             replacementParent = replacement;
                             replacement = replacement.right;
                         }
                         //it's not the first node on the left
                         if (replacementParent !== null) {
-                            //remove the new root from it's previous position
+                            //remove the new node from it's previous position
                             replacementParent.right = replacement.left;
-                            //give the new root all of the old root's children
+                            //give the new node all of the old node's children
                             replacement.right = this._root.right;
                             replacement.left = this._root.left;
                         } else {
                             replacement.right = this._root.right; //just assign the children
                         }
-                        //officially assign new root
+                        //officially assign new node
                         this._root = replacement;
                     //no default
                 }
-                //non-root values
+                //non-node values
             } else {
                 switch (childCount) {
                     case 0: //no children, just remove it from the parent
@@ -189,7 +189,7 @@ BinarySearchTree.prototype = {
             }
         }
 
-        //start with the root
+        //start with the node
         inOrder(this._root);
     },
 
