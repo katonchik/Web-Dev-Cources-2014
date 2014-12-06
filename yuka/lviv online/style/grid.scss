@@ -33,7 +33,7 @@ $gap: 1%;
 .grid_1, .grid_2, .grid_3,
 .grid_4, .grid_5, .grid_6,
 .grid_7, .grid_8, .grid_9,
-.grid_10, .grid_11, .grid_12 { display:inline; float: left; position: relative; margin-left: $gap; margin-right: $gap; }
+.grid_10, .grid_11, .grid_12 { display: inline; float: left; position: relative; margin-left: $gap; margin-right: $gap; }
 
 /* Grid >> Children (Alpha ~ First, Omega ~ Last)
 ----------------------------------------------------------------------------------------------------*/
@@ -45,15 +45,15 @@ $gap: 1%;
 ----------------------------------------------------------------------------------------------------*/
 
 
-.container_12 .grid_1  { width: $grid_1; }
-.container_12 .grid_2  { width: $grid_2; }
-.container_12 .grid_3  { width: $grid_3; }
-.container_12 .grid_4  { width: $grid_4; }
-.container_12 .grid_5  { width: $grid_5; }
-.container_12 .grid_6  { width: $grid_6; }
-.container_12 .grid_7  { width: $grid_7; }
-.container_12 .grid_8  { width: $grid_8; }
-.container_12 .grid_9  { width: $grid_9; }
+.container_12 .grid_1 { width: $grid_1; }
+.container_12 .grid_2 { width: $grid_2; }
+.container_12 .grid_3 { width: $grid_3; }
+.container_12 .grid_4 { width: $grid_4; }
+.container_12 .grid_5 { width: $grid_5; }
+.container_12 .grid_6 { width: $grid_6; }
+.container_12 .grid_7 { width: $grid_7; }
+.container_12 .grid_8 { width: $grid_8; }
+.container_12 .grid_9 { width: $grid_9; }
 .container_12 .grid_10 { width: $grid_10; }
 .container_12 .grid_11 { width: $grid_11; }
 .container_12 .grid_12 { width: $grid_12; }

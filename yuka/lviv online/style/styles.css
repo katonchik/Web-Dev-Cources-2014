@@ -1,283 +1,206 @@
 * {
   margin: 0;
   padding: 0; }
-
-a {
-  text-decoration: none;
-  color: #575757; }
-
-h1 {
-  font-weight: normal; }
-
-body {
-  background: #f7f4ef;
-  font: 12px arial;
-  color: #6b6966; }
-
-.wrap {
-  margin: 0 auto;
-  width: 980px; }
-
-/* Header */
-header {
-  position: fixed;
-  width: 100%;
-  background: #333333;
-  z-index: 5; }
-
-/* main menu */
-.logo img {
-  width: 160px;
-  padding: 10px 0;
-  vertical-align: middle; }
-
-.search {
-  height: 18px;
-  width: 18px;
-  margin: 15px 30px;
-  float: right;
-  border-right: none !important; }
-
-.main-menu {
-  height: 51px; }
-
-.main-menu a {
-  border-top: 5px solid #333333;
-  border-right: 1px solid #525252;
-  color: #ffffff;
-  font-weight: bold;
-  padding: 13px 15px 18px;
-  text-transform: uppercase;
-  transition: border-top-color 0.3s ease 0s;
-  margin: 0; }
-
-.main-menu a:hover {
-  background: #222; }
-
-.main-menu a:first-child {
-  padding-left: 0; }
-
-.main-menu a:last-child:hover,
-.main-menu a:first-child:hover {
-  background: none; }
-
-/* sub menu */
-.sub-menu {
-  background: #f2f2f2;
-  border-bottom: 1px solid #e2e1dc; }
-
-.sub-menu a {
-  color: #348fd8; }
-
-/* Main part */
-main {
-  margin-top: 50px; }
-
-.see-more {
-  text-decoration: underline;
-  font-size: 12px;
-  padding-top: 4px;
-  float: right; }
-
-.block {
-  border-top: 5px solid #ffffff;
-  margin-bottom: 10px; }
-
-.block h1 {
-  font-size: 18px;
-  display: inline-block;
-  padding-bottom: 10px; }
-
-.block h2 {
-  font-weight: 700;
-  font-size: 14px;
-  color: #575757; }
-
-.block article img {
-  width: 100%; }
-
-.photo,
-.info:hover {
-  border-top-color: #8f2c7a; }
-
-.photo h1 {
-  color: #8f2c7a; }
-
-.today,
-.restaurants,
-.resto:hover,
-.studie:hover {
-  border-top-color: #f27410; }
-
-.today h1,
-.restaurants h1 {
-  color: #f27410; }
-
-.today img,
-.restaurants img {
-  width: 60px !important;
-  height: 60px;
-  float: left; }
-
-.today h2,
-.today p,
-.restaurants p,
-.restaurants h2 {
-  margin-left: 70px; }
-
-.today article,
-.articles article,
-.apartments article,
-.restaurants article {
-  border-bottom: 1px dotted #b4b4b4;
-  padding: 10px 0; }
-
-article:last-child {
-  border-bottom: none; }
-
-.articles,
-.locations:hover {
-  border-top-color: #b41903; }
-
-.articles h1 {
-  color: #b41903; }
-
-.video,
-.recommend,
-.excursions,
-.events:hover,
-.tourism:hover,
-.more:hover {
-  border-top-color: #348fd8; }
-
-.video h1,
-.recommend h1,
-.excursions h1 {
-  color: #348fd8;
-  display: block; }
-
-.apartments,
-.dwelling:hover {
-  border-top-color: #0a7c1d; }
-
-.apartments h1 {
-  color: #0a7c1d; }
-
-.apartments img {
-  height: 75px;
-  width: 100px !important;
-  float: left;
-  margin-right: 10px; }
-
-.advertisement {
-  border-top-color: #333; }
-
-.advertisement h1 {
-  color: #333; }
-
-/* Footer */
-footer {
-  background: #333333;
-  width: 100%;
-  overflow: hidden; }
-
-footer h3 {
-  border-bottom: 2px solid #ffffff;
-  font-size: 14px;
-  font-weight: normal;
-  color: #ffffff;
-  padding: 10px 0 5px 5px;
-  width: 305px; }
-
-footer a {
-  color: #ffffff; }
-
-footer ul {
-  color: #ffffff;
-  margin: 10px 0 0 15px; }
-
-footer .grid_4 {
-  margin-top: 10px; }
-
-/* links for following */
-.vk {
-  background-position: 100% 43%; }
-
-.lg {
-  background-position: 100% 57%; }
-
-.rss {
-  background-position: 100% 0; }
-
-.twitter {
-  background-position: 100% 14.5%; }
-
-.facebook {
-  background-position: 100% 29%; }
-
-.pinterest {
-  background-position: 100% 85.5%; }
-
-.instagram {
-  background-position: 100% 100%; }
-
-.google-plus {
-  background-position: 100% 72%; }
-
-.follow {
-  width: 30px;
-  height: 30px;
-  display: inline-block;
-  margin: 25px 0 5px 5px;
-  background-size: 100%;
-  background-image: url("http://lviv-online.com/ua/wp-content/themes/eventsguide_lviv/images/social_icons.png"); }
-
-/* all logos */
-.lviv {
-  background-position: 0 100%;
-  width: 11%; }
-
-.lutsk {
-  background-position: 57% 100%;
-  width: 12.5%; }
-
-.ternopil {
-  background-position: 38% 100%;
-  width: 15.5%; }
-
-.uzhgorod {
-  background-position: 77% 100%;
-  width: 16%; }
-
-.frankivsk {
-  background-position: 16% 100%;
-  width: 16.5%; }
-
-.chernivtsi {
-  background-position: 100% 100%;
-  width: 17%; }
-
-.all-logos {
-  border-top: 2px solid #6b6966;
-  border-bottom: 2px solid #6b6966;
-  padding: 20px 0;
-  margin-top: 10px; }
-
-.all-logos a {
-  height: 20px;
-  display: inline-block;
-  margin-right: 19px;
-  background-repeat: no-repeat;
-  background-image: url("http://lviv-online.com/ua/wp-content/themes/eventsguide_lviv/images/all_logos_footer_980.png"); }
-
-.all-logos a:last-child {
-  margin-right: 0; }
-
-/* copyright */
-.copyright {
-  border-bottom: 2px solid #6b6966;
-  padding: 5px 0;
-  font-size: 11px;
-  margin-bottom: 10px; }
+  * body {
+    background: #f7f4ef;
+    font: 12px arial;
+    color: #6b6966;
+    /* Header */
+    /* Main part */
+    /* Footer */ }
+    * body a, * body footer ul {
+      text-decoration: none;
+      color: #575757; }
+    * body h1 {
+      font-weight: normal; }
+    * body .wrap {
+      margin: 0 auto;
+      width: 980px; }
+    * body header {
+      position: fixed;
+      width: 100%;
+      background: #333333;
+      z-index: 5; }
+      * body header .main-menu {
+        height: 51px; }
+        * body header .main-menu a, * body header .main-menu footer ul, * body footer header .main-menu ul {
+          border-top: 5px solid #333333;
+          border-right: 1px solid #525252;
+          color: #ffffff;
+          font-weight: bold;
+          padding: 13px 15px 18px;
+          text-transform: uppercase;
+          transition: border-top-color 0.3s ease 0s;
+          margin: 0; }
+          * body header .main-menu a:hover, * body header .main-menu footer ul:hover, * body footer header .main-menu ul:hover {
+            background: #222; }
+          * body header .main-menu a:first-child, * body header .main-menu footer ul:first-child, * body footer header .main-menu ul:first-child {
+            padding-left: 0; }
+            * body header .main-menu a:first-child:hover, * body header .main-menu footer ul:first-child:hover, * body footer header .main-menu ul:first-child:hover {
+              background: none; }
+          * body header .main-menu a:last-child:hover, * body header .main-menu footer ul:last-child:hover, * body footer header .main-menu ul:last-child:hover {
+            background: none; }
+        * body header .main-menu .logo img {
+          width: 160px;
+          padding: 10px 0;
+          vertical-align: middle; }
+        * body header .main-menu .search {
+          height: 18px;
+          width: 18px;
+          margin: 15px 30px;
+          float: right;
+          border-right: none !important; }
+        * body header .main-menu .info:hover {
+          border-top-color: #8f2c7a; }
+        * body header .main-menu .resto:hover, * body header .main-menu .studie:hover {
+          border-top-color: #f27410; }
+        * body header .main-menu .events:hover, * body header .main-menu .more:hover, * body header .main-menu .tourism:hover {
+          border-top-color: #348fd8; }
+        * body header .main-menu .dwelling:hover {
+          border-top-color: #0a7c1d; }
+        * body header .main-menu .locations:hover {
+          border-top-color: #b41903; }
+    * body main {
+      margin-top: 50px; }
+      * body main .block {
+        border-top: 5px solid #ffffff;
+        margin-bottom: 10px; }
+        * body main .block h1 {
+          font-size: 18px;
+          display: inline-block;
+          padding-bottom: 10px; }
+        * body main .block h2 {
+          font-weight: 700;
+          font-size: 14px;
+          color: #575757; }
+        * body main .block article img {
+          width: 100%; }
+      * body main .photo {
+        border-top-color: #8f2c7a; }
+        * body main .photo h1 {
+          color: #8f2c7a; }
+      * body main .today, * body main .restaurants {
+        border-top-color: #f27410; }
+        * body main .today p, * body main .restaurants p, * body main .today h2, * body main .restaurants h2 {
+          margin-left: 70px; }
+        * body main .today h1, * body main .restaurants h1 {
+          color: #f27410; }
+        * body main .today img, * body main .restaurants img {
+          width: 60px !important;
+          height: 60px;
+          float: left; }
+        * body main .today article, * body main .restaurants article {
+          border-bottom: 1px dotted #b4b4b4;
+          padding: 10px 0; }
+      * body main .video, * body main .recommend, * body main .excursions {
+        border-top-color: #348fd8; }
+        * body main .video h1, * body main .recommend h1, * body main .excursions h1 {
+          color: #348fd8;
+          display: block; }
+      * body main .articles {
+        border-top-color: #b41903; }
+        * body main .articles h1 {
+          color: #b41903; }
+        * body main .articles article {
+          border-bottom: 1px dotted #b4b4b4;
+          padding: 10px 0; }
+      * body main .see-more {
+        text-decoration: underline;
+        font-size: 12px;
+        padding-top: 4px;
+        float: right; }
+      * body main .apartments {
+        border-top-color: #0a7c1d; }
+        * body main .apartments h1 {
+          color: #0a7c1d; }
+        * body main .apartments img {
+          height: 75px;
+          width: 100px !important;
+          float: left;
+          margin-right: 10px; }
+        * body main .apartments article {
+          border-bottom: 1px dotted #b4b4b4;
+          padding: 10px 0; }
+      * body main .advertisement {
+        border-top-color: #333; }
+        * body main .advertisement h1 {
+          color: #333; }
+      * body main article:last-child {
+        border-bottom: none; }
+    * body footer {
+      background: #333333;
+      width: 100%;
+      overflow: hidden; }
+      * body footer a, * body footer ul {
+        color: #ffffff; }
+      * body footer h3 {
+        border-bottom: 2px solid #ffffff;
+        font-size: 14px;
+        font-weight: normal;
+        color: #ffffff;
+        padding: 10px 0 5px 5px;
+        width: 305px; }
+      * body footer ul {
+        margin: 10px 0 0 15px; }
+      * body footer .grid_4 {
+        margin-top: 10px; }
+    * body .follow {
+      width: 30px;
+      height: 30px;
+      display: inline-block;
+      margin: 25px 0 5px 5px;
+      background-size: 100%;
+      background-image: url("http://lviv-online.com/ua/wp-content/themes/eventsguide_lviv/images/social_icons.png"); }
+    * body .vk {
+      background-position: 100% 43%; }
+    * body .lg {
+      background-position: 100% 57%; }
+    * body .rss {
+      background-position: 100% 0; }
+    * body .twitter {
+      background-position: 100% 14.5%; }
+    * body .facebook {
+      background-position: 100% 29%; }
+    * body .pinterest {
+      background-position: 100% 85.5%; }
+    * body .instagram {
+      background-position: 100% 100%; }
+    * body .google-plus {
+      background-position: 100% 72%; }
+    * body .all-logos {
+      border-top: 2px solid #6b6966;
+      border-bottom: 2px solid #6b6966;
+      padding: 20px 0;
+      margin-top: 10px; }
+      * body .all-logos a, * body .all-logos footer ul, * body footer .all-logos ul {
+        height: 18px;
+        display: inline-block;
+        margin-right: 19px;
+        background: url("http://lviv-online.com/ua/wp-content/themes/eventsguide_lviv/images/all_logos_footer_980.png"); }
+        * body .all-logos a:last-child, * body .all-logos footer ul:last-child, * body footer .all-logos ul:last-child {
+          margin-right: 0; }
+      * body .all-logos .lviv {
+        background-position: 0 100%;
+        width: 11%; }
+      * body .all-logos .lutsk {
+        background-position: 57% 100%;
+        width: 12.5%; }
+      * body .all-logos .ternopil {
+        background-position: 38% 100%;
+        width: 15.5%; }
+      * body .all-logos .uzhgorod {
+        background-position: 77% 100%;
+        width: 16%; }
+      * body .all-logos .frankivsk {
+        background-position: 16% 100%;
+        width: 16.5%; }
+      * body .all-logos .chernivtsi {
+        background-position: 100% 100%;
+        width: 17%; }
+    * body .copyright {
+      border-bottom: 2px solid #6b6966;
+      padding: 5px 0;
+      font-size: 11px;
+      margin-bottom: 10px; }
 
 /*# sourceMappingURL=styles.css.map */
