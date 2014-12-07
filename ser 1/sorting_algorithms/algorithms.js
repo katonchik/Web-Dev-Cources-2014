@@ -1,74 +1,13 @@
-/**
- * Generate random array
- * @param length {Number} length of result array
- * @returns {Array}
- */
-function generateRandomArr (length) {
-	length = parseInt(length) || 40;
 
-	var randomArr = [];
-
-	for (var i = 0; i < length; i++) {
-		randomArr.push(Math.round(Math.random() * length))
-	}
-	return randomArr
-
-}
-
-
-// Random array of numbers
-var items = generateRandomArr(4000);
-console.log("Generated");
-var len = items.length;
-
-
-/**
- *
- * @param items
- * @param firstIndex
- * @param secondIndex
- */
-function swap(items, firstIndex, secondIndex){
-	var temp = items[firstIndex];
-	items[firstIndex] = items[secondIndex];
-	items[secondIndex] = temp;
-}
-
-/**
- * Bubble Sort
- * @param array {Array}
- */
-function bubbleSort(array){
-	console.time('bubbleSort');
-	var continueSorting = true;
-
-	while(continueSorting){
-		continueSorting = false;
-
-		for(var i = 0; i < len; i++){
-			if(array[i] > array[i+1]){
-				var temp = array[i];
-				array[i] = array[i+1];
-				array[i+1] = temp;
-				continueSorting = true;
-			}
-		}
-	}
-
-	console.log('Bubble Sort: ' + array);
-	console.timeEnd('bubbleSort');
-}
-
-bubbleSort(items);
 
 // Selection Sort
 function selectionSort(array){
 	console.time('selectionSort');
-	for (var i = 0; i < len; i++){
+	for (var i = 0; i < arr.length; i++){
 		// set minimum to this position
 		var min = i;
 		// check the rest of the array to see if anything is smaller
-		for (var j = i + 1; j < len; j++){
+		for (var j = i + 1; j < arr.length; j++){
 			if (array[j] < array[min]){
 				min = j;
 			}
@@ -81,13 +20,13 @@ function selectionSort(array){
 	console.log('Selection Sort: ' + array);
 	console.timeEnd('selectionSort');
 }
-selectionSort(items);
+selectionSort(arr);
 
 // Insertion Sort
 function insertionSort (array){
 	console.time('insertionSort');
 	// for every value in the array
-	for(var i = 0; i < len; i++){
+	for(var i = 0; i < arr.length; i++){
 		// look back at the elements before it
 		var current = array[i];
 		var comparisonIndex = i;
@@ -103,7 +42,7 @@ function insertionSort (array){
 	console.log('Insertion Sort: ' + array);
 	console.timeEnd('insertionSort');
 }
-insertionSort(items);
+insertionSort(arr);
 
 // Merge Sort
 function mergeSort(array){
@@ -131,7 +70,7 @@ function mergeSort(array){
 	}
 	return merge(mergeSort(left), mergeSort(right));
 }
-console.log('Merge Sort: ' + mergeSort(items));
+console.log('Merge Sort: ' + mergeSort(arr));
 console.timeEnd('mergeSort');
 
 // Quick Sort
@@ -159,5 +98,5 @@ function quickSort(array, customSort){
 	}
 	return quickSort(left).concat(pivot, quickSort(right));
 }
-console.log('Quick Sort: ' + quickSort(items));
+console.log('Quick Sort: ' + quickSort(arr));
 console.timeEnd('quickSort');
