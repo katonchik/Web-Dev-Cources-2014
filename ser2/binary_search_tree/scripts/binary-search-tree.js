@@ -8,7 +8,7 @@
 function BinarySearchTree() {
     'use strict';
     var _self = this,
-	rootNode = null,  // tree root, by default is null
+		rootNode = null,  // tree root, by default is null
         rootRemovalCases = [],  // array of functions to delete root
         nodeRemovalCases = []; // array of functions to delete node
 
@@ -83,7 +83,7 @@ function BinarySearchTree() {
      * Traverses Tree with in-order traversal type.
      */
      _self.traversalInOrder = function() {
-	visitInOrder(rootNode);
+		visitInOrder(rootNode);
      };
 
     /**
