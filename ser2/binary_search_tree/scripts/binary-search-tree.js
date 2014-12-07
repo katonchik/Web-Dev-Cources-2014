@@ -82,9 +82,9 @@ function BinarySearchTree() {
      * Public method TravelsalInOrder.
      * Traverses Tree with in-order traversal type.
      */
-	_self.traversalInOrder = function() {
-		visitInOrder(rootNode);
-	};
+     _self.traversalInOrder = function() {
+	visitInOrder(rootNode);
+     };
 
     /**
      * Public method TravelsalPreOrder.
