@@ -59,7 +59,7 @@ function BinarySearchTree() {
     };
 
     /**
-     * Public method Remove.
+     * Public method Find.
      * Finds Node by it's key.
      * @param key {Number} Key of node that is being searched
      */
