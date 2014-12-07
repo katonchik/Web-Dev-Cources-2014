@@ -83,7 +83,7 @@ function BinarySearchTree() {
      * Traverses Tree with in-order traversal type.
      */
      _self.traversalInOrder = function() {
-	    visitInOrder(rootNode);
+		visitInOrder(rootNode);
      };
 
     /**
@@ -309,7 +309,7 @@ function BinarySearchTree() {
      * @param node {Object}
      */
     function visitInOrder(node) {
-        if (!node) return;
+		if (!node) return;
 
 	    visitInOrder(node.leftChild);
 	    visit(node);
@@ -321,7 +321,7 @@ function BinarySearchTree() {
      * @param node {Object}
      */
     function visitPreOrder(node) {
-        if (!node) return;
+		if (!node) return;
 
         visit(node);
         visitPreOrder(node.leftChild);
