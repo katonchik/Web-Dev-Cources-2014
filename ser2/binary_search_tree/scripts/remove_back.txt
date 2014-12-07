@@ -1,0 +1,90 @@
+if (found) {
+            //figure out how many children
+            childCount = (itemToRemove.leftChild != null ? 1 : 0) + (itemToRemove.rightChild != null ? 1 : 0);
+
+            if (itemToRemove == rootNode) {
+//                switch(childCount){
+//                    //no children, just erase the root
+//                    case 0:
+//                        rootNode = null;
+//                        break;
+//                    //one child, use one as the root
+//                    case 1:
+//                        rootNode = (itemToRemove.rightChild == null ? itemToRemove.leftChild : itemToRemove.rightChild);
+//                        rootNode.value = 'new Root';
+//                        break;
+//                    //two children, little work to do
+//                    case 2:
+//                        //new root will be the old root's left child...maybe
+//                        successor = rootNode.rightChild;
+//                        //find the right-most leaf node to be the real new root
+//                        while (successor.leftChild != null){
+//                            successorParent = successor;
+//                            successor = successor.leftChild;
+//                        }
+//                        //it's not the first node on the left
+//                        if (successorParent != null){
+//                            //remove the new root from it's previous position
+//                            successorParent.leftChild = successor.rightChild;
+//                            //give the new root all of the old root's children
+//                            successor.leftChild = rootNode.leftChild;
+//                            successor.rightChild = rootNode.rightChild;
+//                        } else {
+//                            //just assign the children
+//                            successor.leftChild = rootNode.leftChild;
+//                        }
+//                        //officially assign new root
+//                        rootNode = successor;
+//                        rootNode.value = 'new Root';
+//                }
+            } else {
+//                switch (childCount){
+//                    //no children, just remove it from the parent
+//                    case 0:
+//                        //if the itemToRemove value is less than its parent's, null out the left pointer
+//                        if (itemToRemove.key < parent.key){
+//                            parent.leftChild = null;
+//                        //if the itemToRemove value is greater than its parent's, null out the right pointer
+//                        } else {
+//                            parent.rightChild = null;
+//                        }
+//                        break;
+//                        //one child, just reassign to parent
+//                    case 1:
+//                            //if the itemToRemove value is less than its parent's, reset the left pointer
+//                        if (itemToRemove.key < parent.key){
+//                            parent.leftChild = (itemToRemove.leftChild == null ? itemToRemove.rightChild : itemToRemove.leftChild);
+//                        //if the itemToRemove value is greater than its parent's, reset the right pointer
+//                        } else {
+//                            parent.rightChild = (itemToRemove.leftChild == null ? itemToRemove.rightChild : itemToRemove.leftChild);
+//                        }
+//                        break;
+//                        //two children, a bit more complicated
+//                    case 2:
+//                        //reset pointers for new traversal
+//                        successor = itemToRemove.leftChild;
+//                        successorParent = itemToRemove;
+//                        //find the right-most node
+//                        while(successor.leftChild != null){
+//                            successorParent = successor;
+//                            successor = successor.leftChild;
+//                        }
+//
+//						successor.rightChild = itemToRemove.rightChild;
+//						if(itemToRemove.key != successorParent.key) {
+//							successorParent.rightChild = successor.leftChild;
+//							//assign children to the successor
+//							successor.leftChild = itemToRemove.leftChild;
+//						}
+//						//place the successor in the right spot
+//						if (itemToRemove.key < parent.key){
+//							parent.leftChild = successor;
+//						} else {
+//							parent.rightChild = successor;
+//						}
+//
+//						break;
+//                    //no default
+//                }
+            }
+        }

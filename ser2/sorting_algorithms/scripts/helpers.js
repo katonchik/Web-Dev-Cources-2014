@@ -24,8 +24,8 @@ function generateRandomArray(arrayLength) {
  */
 function swap(inputArray, firstElementIndex, secondElementIndex) {
     var temp;
-    firstElementIndex = parseInt(firstElementIndex);
-    secondElementIndex = parseInt (secondElementIndex);
+    firstElementIndex = parseInt(firstElementIndex, 10);
+    secondElementIndex = parseInt (secondElementIndex, 10);
 
     temp = inputArray[firstElementIndex];
     inputArray[firstElementIndex] = inputArray[secondElementIndex];
