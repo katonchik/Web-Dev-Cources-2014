@@ -3,7 +3,7 @@ function BinarySearchTree() {
 }
 BinarySearchTree.prototype = {
     add: function (value){
-        //create a new item object, place data in
+        // new item object, place data in
         var node = {
             value: value,
             left: null,
