@@ -83,7 +83,7 @@ function BinarySearchTree() {
      * Traverses Tree with in-order traversal type.
      */
      _self.traversalInOrder = function() {
-	visitInOrder(rootNode);
+	    visitInOrder(rootNode);
      };
 
     /**
@@ -268,7 +268,7 @@ function BinarySearchTree() {
      * @returns {Object} New created node.
      */
     function addNode(node, key, val) {
-        /* if entered key is less than current node key we go left,
+        /*  if entered key is less than current node key we go left,
          *  if current node has no left child we add new node to be it's left child,
          *  else we go further left
          */
@@ -278,7 +278,7 @@ function BinarySearchTree() {
             } else {
                 addNode(node.leftChild, key, val);
             }
-        /* if entered key is greater than current node key we go right,
+        /*  if entered key is greater than current node key we go right,
          *  if current node has no right child we add new node to be it's right child,
          *  else we go further right
          */
@@ -308,12 +308,12 @@ function BinarySearchTree() {
      * Traverses tree in-order way.
      * @param node {Object}
      */
-	function visitInOrder(node) {
-	  if (!node) return;
+    function visitInOrder(node) {
+        if (!node) return;
 
-	  visitInOrder(node.leftChild);
-	  visit(node);
-	  visitInOrder(node.rightChild);
+	    visitInOrder(node.leftChild);
+	    visit(node);
+	    visitInOrder(node.rightChild);
 	}
 
     /**
