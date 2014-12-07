@@ -28,6 +28,12 @@ function make_set(arr){
     });
 
 }
+/**
+ *
+ * @param array
+ * @param number
+ * @returns {boolean}
+ */
 
 function is_num_in_array (array,number){
 

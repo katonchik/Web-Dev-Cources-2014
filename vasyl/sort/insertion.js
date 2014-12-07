@@ -7,7 +7,7 @@
 var numbers = generaterator_random_number(10);
 //Insertion sorting
 console.log("insertion sort out", numbers);
-function inseretion(numbers) {
+function inseretion_sort(numbers) {
     for (var i = 1; i < numbers.length; i++) {
         var copyNumber = numbers[i];
         var j = i;
@@ -22,4 +22,4 @@ return numbers;
 
 }
 
-console.log("insertion sort out", numbers);
+console.log("insertion sort out", inseretion_sort(numbers));

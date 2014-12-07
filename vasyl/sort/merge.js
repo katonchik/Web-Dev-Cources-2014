@@ -4,9 +4,9 @@
 var numbers = generaterator_random_number(10);
 
 
-console.log("merge sort inn", numbers);
+console.log("merge_soting sort inn", numbers);
 //Merge sorting
-function merge(numbers) {
+function merge_soting(numbers) {
     var step = 2;
     var count = 0;
     var b = [];
@@ -64,5 +64,5 @@ function merge(numbers) {
     } while (step <= Math.round(numbers.length + 2));
     return numbers;
 }
-numbers=merge(numbers);
-console.log("merge sort out", numbers);
+
+console.log("merge_soting sort out", merge_soting(numbers));

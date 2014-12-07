@@ -14,6 +14,7 @@ function bubble_sort(numbers) {
     return numbers;
 }
 var array=generaterator_random_number(10);
+
 console.log("Buble sorting inn", array);
 
 console.log("Buble sorting out",bubble_sort(array) );

@@ -1,14 +1,12 @@
-/**
- * Created by ad on 11.11.14.
- */
-//Random generator
 
 
-var array = generaterator_random_number(7);
-var min;
+
+var array = generaterator_random_number(10);
+
 //Selection sorting
 console.log("selection sort in", array);
 function selection(array) {
+    var min;
     for (var i = 0; i < array.length; i++) {
         min = i;
         for (var j = i; j < array.length; j++) {
@@ -20,5 +18,5 @@ function selection(array) {
     }
     return array;
 }
-selection(array);
-console.log("selection sort out", array);
+
+console.log("selection sort out", selection(array));

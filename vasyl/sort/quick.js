@@ -48,5 +48,5 @@ function quick_sorting(numbers) {
     } while (sortedElement !== numbers.length + 1);
     return numbers;
 }
-numbers = quick_sorting(numbers);
-console.log("quick sort inn", numbers);
+
+console.log("quick sort out", quick_sorting(numbers));

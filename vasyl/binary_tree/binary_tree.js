@@ -3,16 +3,22 @@ Binary_Tree = function (set) {
     var left = 0;
     var right = 1;
     var count = 0;
-    var arr_set = set;
+    var arr_set = set; // Array of values of tree
     var t_root =[];
 
-    
-    
+
+    /**
+     * create binary tree
+     */
     this.create=function(){
         t_root=inseretion();
         this.t_root=t_root;
     };
-
+    /**
+     *
+     * @param number - value that you want to find
+     * @returns {Branch}
+     */
     this.search = function (number) {
         var that=t_root;
         if(is_num_in_array(arr_set,number)){
@@ -35,8 +41,13 @@ Binary_Tree = function (set) {
             return null;
         }
     };
-    
-    
+
+    /**
+     * function find min or max value
+     * @param par if value of param =1 that you find min element of tree else max
+     * @param that(Branch)
+     * @returns {Branch}
+     */
     find_min_max=function(par,that){
         if(par==1)
             var parametr=left;
@@ -48,6 +59,11 @@ Binary_Tree = function (set) {
             that=  that.baranch_root[parametr];}
         return that;
     }
+    /**
+     *
+     * @param that(Branch)
+     * @returns {Branch}
+     */
     function find_succesor(that){
         var succesor =find_min_max(1,that.baranch_root[right]);
         return succesor;
@@ -75,15 +91,21 @@ Binary_Tree = function (set) {
 
 
     };
-    
-    
 
+
+    /**
+     * add new branches
+     * @param array(Array) -Array of values which you want to add
+     */
     this.add = function (array) {
         arr_set = make_set(arr_set.concat(array));
         inseretion();
     };
-    
-    
+
+    /**
+     * inseret branches in tree
+     * @returns {Branch}
+     */
     function inseretion() {
         var root;
         var that;
@@ -122,8 +144,13 @@ Binary_Tree = function (set) {
         }
         return root;
     }
-    
 
+    /**
+     *
+     * @param number -value of this branch
+     * @param child - number of child
+     * @constructor
+     */
     function Branch(number,child) {
         var this_ = this;
         this_.child=child;
@@ -131,7 +158,10 @@ Binary_Tree = function (set) {
         this_.number = number;
     }
 
-    
+    /**
+     * show sorted  Array of values of tree
+     * and show tree root
+     */
     this.out = function () {
         console.log(arr_set.sort(function (a, b) {
             return a - b
