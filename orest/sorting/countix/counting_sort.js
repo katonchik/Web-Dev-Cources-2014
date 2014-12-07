@@ -1,4 +1,4 @@
-/Counting sorting
+//Counting sorting
 
 function sortArray(inArr) {
     var outArr = inArr;
