@@ -10,11 +10,11 @@
  * @class Node
  * @constructor
  */
-function Node(key, value, leftChild, rightChild){
-	return {
-		key: key || null,
-		value: value || null,
-		leftChild: leftChild || null,
-		rightChild: rightChild || null
-	}
+function Node(key, value, leftChild, rightChild) {
+    return {
+        key: key || null,
+        value: value || null,
+        leftChild: leftChild || null,
+        rightChild: rightChild || null
+    }
 }

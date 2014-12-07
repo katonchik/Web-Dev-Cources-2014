@@ -8,7 +8,7 @@
 function BinarySearchTree() {
     'use strict';
     var _self = this,
-		rootNode = null,  // tree root, by default is null
+        rootNode = null,  // tree root, by default is null
         rootRemovalCases = [],  // array of functions to delete root
         nodeRemovalCases = []; // array of functions to delete node
 
@@ -18,7 +18,7 @@ function BinarySearchTree() {
      * @param key {Number} New nodes key. Max = 100. Key is unique and can't be repeated.
      * @param value {String} New nodes value.
      */
-    _self.add = function(key, value){
+    _self.add = function (key, value) {
         var keyInt = Math.ceil(parseInt(key, 10));
 
         // if entered key isn't typeof Number or bigger than 100 - return false
@@ -38,7 +38,7 @@ function BinarySearchTree() {
      * Removes node from tree.
      * @param key {Number} Key of node that needs to be removed.
      */
-    _self.remove = function(key) {
+    _self.remove = function (key) {
         var foundResults = findNode(key), // values returned by private function findNode
             itemToRemove = foundResults.foundItem, // node to be removed
             parent = foundResults.parentOfFoundItem, // parent of node to be removed
@@ -63,7 +63,7 @@ function BinarySearchTree() {
      * Finds Node by it's key.
      * @param key {Number} Key of node that is being searched
      */
-    _self.find = function(key) {
+    _self.find = function (key) {
         var foundResults = findNode(key), // values returned by private function findNode
             searchedItem = foundResults.foundItem, // searched node
             parent = foundResults.parentOfFoundItem, // parent of searched node
@@ -82,9 +82,9 @@ function BinarySearchTree() {
      * Public method TravelsalInOrder.
      * Traverses Tree with in-order traversal type.
      */
-	_self.traversalInOrder = function() {
+    _self.traversalInOrder = function () {
         visitInOrder(rootNode);
-	};
+    };
 
     /**
      * Public method TravelsalPreOrder.
@@ -98,7 +98,7 @@ function BinarySearchTree() {
      * Removes root in case root has no children.
      * @param itemToRemove {Object}
      */
-    rootRemovalCases[0] = function(itemToRemove) {
+    rootRemovalCases[0] = function (itemToRemove) {
         rootNode = null;
     };
 
@@ -106,7 +106,7 @@ function BinarySearchTree() {
      * Removes root in case it has one child.
      * @param itemToRemove {Object}
      */
-    rootRemovalCases[1] = function(itemToRemove) {
+    rootRemovalCases[1] = function (itemToRemove) {
         rootNode = (itemToRemove.rightChild == null ? itemToRemove.leftChild : itemToRemove.rightChild);
         rootNode.value = 'new Root';
     };
@@ -116,19 +116,19 @@ function BinarySearchTree() {
      * To keep tree balanced we need to switch nodes places.
      * @param itemToRemove {Object}
      */
-    rootRemovalCases[2] = function(itemToRemove) {
+    rootRemovalCases[2] = function (itemToRemove) {
         var successor, successorParent; // node that will became new root and its parent
 
         // go right to find root successor
         successor = rootNode.rightChild;
         // search for most left node of roots right child
-        while (successor.leftChild != null){
+        while (successor.leftChild != null) {
             successorParent = successor;
             successor = successor.leftChild;
         }
 
         // if successor parent is not the old root
-        if (successorParent != null){
+        if (successorParent != null) {
             // remove successor from its position,
             // place successors right child on successors place
             successorParent.leftChild = successor.rightChild;
@@ -149,11 +149,11 @@ function BinarySearchTree() {
      * @param itemToRemove {Object}
      * @param parent {Object}
      */
-    nodeRemovalCases[0] = function(itemToRemove, parent) {
+    nodeRemovalCases[0] = function (itemToRemove, parent) {
         // if key of item to remove is less than its parent's - remove its parent's left child
-        if (itemToRemove.key < parent.key){
+        if (itemToRemove.key < parent.key) {
             parent.leftChild = null;
-        // if key of item to remove is greater than its parent's - remove its parent's left child
+            // if key of item to remove is greater than its parent's - remove its parent's left child
         } else {
             parent.rightChild = null;
         }
@@ -164,11 +164,11 @@ function BinarySearchTree() {
      * @param itemToRemove {Object}
      * @param parent {Object}
      */
-    nodeRemovalCases[1] = function(itemToRemove, parent) {
+    nodeRemovalCases[1] = function (itemToRemove, parent) {
         // if key of item to remove is less than its parent's - remove its parent's left child
-        if (itemToRemove.key < parent.key){
+        if (itemToRemove.key < parent.key) {
             parent.leftChild = (itemToRemove.leftChild == null ? itemToRemove.rightChild : itemToRemove.leftChild);
-        // if key of item to remove is greater than its parent's - remove its parent's left child
+            // if key of item to remove is greater than its parent's - remove its parent's left child
         } else {
             parent.rightChild = (itemToRemove.leftChild == null ? itemToRemove.rightChild : itemToRemove.leftChild);
         }
@@ -180,26 +180,26 @@ function BinarySearchTree() {
      * @param itemToRemove {Object}
      * @param parent {Object}
      */
-    nodeRemovalCases[2] = function(itemToRemove, parent) {
+    nodeRemovalCases[2] = function (itemToRemove, parent) {
         var successor, successorParent; // node that will replace deleted node, and its parent
 
         successor = itemToRemove.leftChild;
         successorParent = itemToRemove;
 
         // search for most left of node to be removed right child
-        while(successor.leftChild != null){
+        while (successor.leftChild != null) {
             successorParent = successor;
             successor = successor.leftChild;
         }
 
         // assign children to the node that will replace deleted one
         successor.rightChild = itemToRemove.rightChild;
-        if(itemToRemove.key != successorParent.key) {
+        if (itemToRemove.key != successorParent.key) {
             successorParent.rightChild = successor.leftChild;
             successor.leftChild = itemToRemove.leftChild;
         }
         // place successor into correct place
-        if (itemToRemove.key < parent.key){
+        if (itemToRemove.key < parent.key) {
             parent.leftChild = successor;
         } else {
             parent.rightChild = successor;
@@ -235,17 +235,17 @@ function BinarySearchTree() {
             parent = document;
         }
 
-        while(!found){
+        while (!found) {
             // stop searching if there's no searched node
             if (!itemToFind) {
                 break;
             }
             // if entered key is less than current node we go left
-            if (key < itemToFind.key){
+            if (key < itemToFind.key) {
                 parent = itemToFind;
                 itemToFind = itemToFind.leftChild;
-            // if entered key is greater than current node we go right
-            } else if (key > itemToFind.key){
+                // if entered key is greater than current node we go right
+            } else if (key > itemToFind.key) {
                 parent = itemToFind;
                 itemToFind = itemToFind.rightChild;
             } else {
@@ -278,17 +278,17 @@ function BinarySearchTree() {
             } else {
                 addNode(node.leftChild, key, val);
             }
-        /* if entered key is greater than current node key we go right,
-         *  if current node has no right child we add new node to be it's right child,
-         *  else we go further right
-         */
+            /* if entered key is greater than current node key we go right,
+             *  if current node has no right child we add new node to be it's right child,
+             *  else we go further right
+             */
         } else if (key > node.key) {
             if (!node.rightChild) {
                 node.rightChild = new Node(key, val, null, null);
             } else {
                 addNode(node.rightChild, key, val);
             }
-        // if entered key already exists in tree - return. No duplicates are allowed.
+            // if entered key already exists in tree - return. No duplicates are allowed.
         } else {
             return;
         }
@@ -300,21 +300,21 @@ function BinarySearchTree() {
      * Prints node's key and value
      * @param node {Object}
      */
-	function visit(node) {
-		console.log('Key: ' + node.key + ", Value: " + node.value);
-	}
+    function visit(node) {
+        console.log('Key: ' + node.key + ", Value: " + node.value);
+    }
 
     /**
      * Traverses tree in-order way.
      * @param node {Object}
      */
-	function visitInOrder(node) {
-	  if (!node) return;
+    function visitInOrder(node) {
+        if (!node) return;
 
-	  visitInOrder(node.leftChild);
-	  visit(node);
-	  visitInOrder(node.rightChild);
-	}
+        visitInOrder(node.leftChild);
+        visit(node);
+        visitInOrder(node.rightChild);
+    }
 
     /**
      * Traverses tree pre-order way.
