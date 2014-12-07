@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Array Sorter</title>
+    <script src="main.js"></script>
+    <script src="array_sorter.js"></script>
+    <script src="bubble_sorter.js"></script>
+    <script src="selection_sorter.js"></script>
+</head>
+<body onload="generateRandomArray(15)">
+    <form>
+        <input id="unsorted_array" name="input_array" type="text" style="width: 500px"/>
+        <select id="algorithm" name="algorithm" >
+            <option name="bubble">Bubble</option>
+            <option name="selection">Selection</option>
+            <option name="insertion">Insertion</option>
+            <option name="merge">Merge</option>
+            <option name="quick">Quick</option>
+            <option name="randomized_quick">Randomized Quick</option>
+            <option name="counting">Counting</option>
+            <option name="radix">Radix</option>
+        </select>
+        <button type="button" id="submit_button" onclick="doSort(); return false;" />Sort</button>
+        <div id="output" style="margin: 50px; font-weight: bold; padding: 20px;"></div>
+
+    </form>
+</body>
+</html>
