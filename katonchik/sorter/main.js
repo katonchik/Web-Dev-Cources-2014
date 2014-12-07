@@ -36,6 +36,3 @@ function doSort() {
     document.getElementById('output').innerHTML="Sorted by the '" + algorithmName + "' method: " + sortedArrayStr;
 
 }
-
-
-

@@ -33,3 +33,4 @@ function SelectionSorter () {
 }
 
 SelectionSorter.prototype = new ArraySorter();
+

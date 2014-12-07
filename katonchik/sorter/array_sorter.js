@@ -29,7 +29,3 @@ ArraySorter = function () {
         return this.sortedArray.join(",");
     }
 }
-
-
-
-

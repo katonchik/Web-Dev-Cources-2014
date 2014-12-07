@@ -24,3 +24,4 @@ function BubbleSorter () {
 }
 
 BubbleSorter.prototype = new ArraySorter();
+
