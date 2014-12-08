@@ -1,0 +1,16 @@
+.canvas{
+    position: relative;
+}
+
+.cell{
+    border: 1px solid black;
+    position: absolute;
+}
+
+.dead{
+    background-color: lightgoldenrodyellow;
+}
+
+.alive{
+    background-color: black;
+}
