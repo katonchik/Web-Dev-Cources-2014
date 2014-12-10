@@ -1,28 +1,22 @@
 //Selection sorting
 
-var arr = window.prompt('Введіть будь-яку кількість чисел через пробіл').split(' ').map(Number);
-
-function sort(someArr) {
+function sortArray(inArr) {
     var min,
-        minNew;
+        minNew,
+        outArr = inArr;
 
-
-
-    // arr [2, 3, 4, 1]
-    for (var i = 0; i < someArr.length - 1; i++) {
+    for (var i = 0; i < outArr.length - 1; i++) {
         min = i;
-        for (var x = i + 1; x < someArr.length; x++) {
-            if (someArr[x] < someArr[min]) {
+        for (var x = i + 1; x < outArr.length; x++) {
+            if (outArr[x] < outArr[min]) {
                 min = x;
             }
         }
         if (min!=i) {
-            minNew = someArr[min];
-            someArr[min] = someArr[i];
-            someArr[i] = minNew;
+            minNew = outArr[min];
+            outArr[min] = outArr[i];
+            outArr[i] = minNew;
         }
     }
-    console.log(someArr);
+    console.log("Your sorted output array is: " + outArr);
 }
-
-sort(arr);
