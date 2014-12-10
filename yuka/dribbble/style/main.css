@@ -1,0 +1,303 @@
+@charset "UTF-8";
+body {
+  font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+  /* Header: navigation, search panel */
+  /* Main part: header, secondary navigation, section with dribbles, aside */
+  /* filter menu*/
+  /* aside */
+  /* Footer */ }
+  body a {
+    text-decoration: none; }
+  body .wrap {
+    max-width: 970px;
+    margin: 0 auto; }
+  body header {
+    background-color: #333333;
+    height: 50px;
+    width: 100%;
+    line-height: 50px; }
+    body header a {
+      color: #999;
+      font-size: 13px;
+      padding: 0 17px 0 0; }
+    body header a.active, body header a:hover {
+      color: #fff; }
+    body header .logo {
+      position: relative;
+      top: 3px; }
+    body header .search {
+      background: #fff 7px 50% url("img/icon-search.png") no-repeat;
+      margin: 10px 0;
+      float: right;
+      border-radius: 5px;
+      font: 12px Helvetica, ΓÇïArial, ΓÇïsans-serif;
+      width: 190px;
+      color: #777;
+      border: 1px solid #333333;
+      padding: 5px 5px 5px 25px; }
+    body header .main-nav {
+      display: inline-block; }
+    body header .authorization {
+      float: right;
+      margin-right: 14px; }
+  body .banner {
+    background-color: #e7e7e7;
+    border-radius: 0 0 6px 6px;
+    text-align: center;
+    padding: 20px;
+    width: 930px; }
+    body .banner h1 {
+      margin: 0;
+      padding: 0;
+      font-size: 16px;
+      color: #777;
+      line-height: 1.3;
+      display: inline-block;
+      font-weight: normal; }
+    body .banner h1 strong {
+      color: #333; }
+    body .banner .learn-more, body .banner .sign-up {
+      color: #ffffff;
+      border: none;
+      background-color: #acacac;
+      border-radius: 4px;
+      font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
+      margin: 0 0 0 5px;
+      padding: 3px 9px; }
+    body .banner .learn-more:hover, body .banner .sign-up:hover {
+      background: rgba(0, 0, 0, 0.4); }
+    body .banner .sign-up {
+      background-color: #ed6a9c; }
+    body .banner .sign-up:hover {
+      background-color: #de3b7e; }
+  body .filters {
+    display: block;
+    height: 38px;
+    padding: 10px 0 0 0;
+    border-bottom: 1px solid #e4e4e4; }
+  body .filters a {
+    color: #444;
+    font-size: 14px;
+    display: inline-block;
+    padding: 8px 23px 18px 0;
+    margin-right: 10px;
+    background: url("img/icon-dd-arrow.png") 100% 15px no-repeat; }
+  body .dribbles {
+    overflow: hidden;
+    padding-top: 30px;
+    -webkit-column-gap: 30px;
+    -moz-column-gap: 30px;
+    column-gap: 30px;
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    column-count: 4;
+    /* information about views, comments, etc */
+    /* user information */ }
+    body .dribbles time {
+      bottom: 10px;
+      color: #999;
+      display: block;
+      font-size: 12px;
+      font-style: normal;
+      left: 20px;
+      line-height: 1;
+      margin: 0 0 3px;
+      position: absolute; }
+    body .dribbles .comment {
+      font-size: 11px;
+      color: #777;
+      display: block;
+      line-height: 1.4;
+      margin: 0 0 10px;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+    body .dribbles .dribble {
+      position: relative;
+      border-radius: 3px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+      background: white;
+      padding: 10px; }
+    body .dribbles .dribble img {
+      display: block;
+      height: auto; }
+    body .dribbles .dribble-pack {
+      display: inline-block;
+      margin-bottom: 30px; }
+    body .dribbles .dribble-title {
+      color: #444;
+      display: block;
+      line-height: 1.2;
+      margin: 0 0 4px; }
+    body .dribbles .dribble-content {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 78%;
+      height: 64%;
+      background: white;
+      opacity: 0;
+      transition: opacity 0.3s;
+      padding: 20px; }
+    body .dribbles .dribble-content:hover {
+      opacity: 0.95; }
+    body .dribbles .tools {
+      margin: 10px 0 0;
+      display: block;
+      overflow: hidden; }
+    body .dribbles .tools a {
+      font-size: 11px;
+      color: #777;
+      margin: 0 5px;
+      float: right; }
+    body .dribbles .tools i {
+      color: #999; }
+    body .dribbles .views {
+      background: url("img/icon-views-sm.png") 0 50% no-repeat;
+      padding-left: 18px; }
+    body .dribbles .comments {
+      background: url("img/icon-comments.png") 0 -4.5% no-repeat;
+      padding-left: 15px; }
+    body .dribbles .favorite {
+      background: url("img/icon-hearts.png?2") 0 -6.5% no-repeat;
+      padding-left: 15px; }
+    body .dribbles .attribution {
+      display: inline-block;
+      padding-left: 10px;
+      margin-top: 10px; }
+      body .dribbles .attribution a {
+        color: #4083a9;
+        font-weight: 500;
+        font-size: 12px; }
+      body .dribbles .attribution a:hover {
+        color: #205f82; }
+      body .dribbles .attribution img {
+        border-radius: 50%;
+        margin: 0 4px 0 0;
+        max-height: 16px;
+        width: 16px;
+        vertical-align: text-bottom; }
+      body .dribbles .attribution:hover .badge {
+        opacity: 1; }
+      body .dribbles .attribution .badge {
+        font-size: 9px !important;
+        text-transform: uppercase;
+        font-weight: bold;
+        line-height: 16px;
+        margin-left: 1px;
+        opacity: 0;
+        transition: opacity 0.2s ease 0s;
+        vertical-align: top;
+        color: #ffffff !important;
+        background-color: #ccc;
+        border-radius: 3px;
+        padding: 1px 3px; }
+      body .dribbles .attribution .pro:hover {
+        background: #f83; }
+      body .dribbles .attribution .team:hover {
+        background: #00b6e3; }
+  body aside {
+    border-top: 2px solid #ddd; }
+    body aside .additional-info-block {
+      color: #999;
+      font-size: 0.9em;
+      display: inline-block;
+      width: 31.2715%;
+      vertical-align: top;
+      margin: 20px 26px 20px 0; }
+      body aside .additional-info-block:last-child {
+        margin-right: 0; }
+      body aside .additional-info-block a {
+        color: #999; }
+      body aside .additional-info-block a:hover {
+        color: #4083a9; }
+      body aside .additional-info-block h3 {
+        color: #999;
+        font-size: 14px;
+        font-weight: normal; }
+      body aside .additional-info-block img {
+        float: left;
+        margin: 0 5px 0 0;
+        width: 100px; }
+      body aside .additional-info-block .shop {
+        color: #4083a9;
+        font-weight: bold; }
+      body aside .additional-info-block .shop:hover {
+        color: #205f82; }
+      body aside .additional-info-block .meta, body aside .additional-info-block .company {
+        color: #444; }
+      body aside .additional-info-block .position {
+        color: #777; }
+    body aside .job div a {
+      padding: 7px 0;
+      display: inline-block; }
+  body footer {
+    padding-top: 30px;
+    border-top: 1px solid #e5e5e5;
+    background-color: #ffffff;
+    overflow: hidden;
+    /* links for following */ }
+    body footer p {
+      color: #999;
+      font-size: 12px;
+      line-height: 1.6; }
+    body footer a {
+      color: #999;
+      font-size: 12px;
+      line-height: 1.8;
+      display: block; }
+    body footer a:hover {
+      color: #777; }
+    body footer h3 {
+      color: #777;
+      font-size: 12px;
+      margin: 0 0 4px; }
+    body footer .link-list-block {
+      float: left;
+      width: 210px;
+      margin: 0 30px 20px 0;
+      padding: 0 5px; }
+    body footer .link-list-block:last-child {
+      margin-right: 0; }
+    body footer .motto {
+      color: #999;
+      font-size: 14px;
+      line-height: 1.6; }
+    body footer .copyright {
+      clear: left;
+      float: left; }
+    body footer .logo-footer {
+      background: url("img/logo-footer.png") no-repeat;
+      width: 80px;
+      height: 20px;
+      background-size: cover; }
+    body footer .pixel-counter {
+      background: url("img/ball.png") no-repeat;
+      font-size: 13px;
+      padding-left: 54px;
+      float: right;
+      display: inline-block; }
+    body footer .pixel-counter strong {
+      color: #333;
+      display: block;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 1.2;
+      padding-top: 4px; }
+    body footer .follow {
+      float: left;
+      clear: left; }
+      body footer .follow a {
+        display: inline;
+        margin: 0 5px 0 0; }
+      body footer .follow img {
+        width: 24px;
+        border-radius: 50%;
+        opacity: 0.37; }
+      body footer .follow img:hover {
+        opacity: 0.72; }
+
+/*# sourceMappingURL=main.css.map */
