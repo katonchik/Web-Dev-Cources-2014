@@ -1,10 +1,7 @@
-//Countix sorting
+/Counting sorting
 
-var arr = [5, 1, 4, 2, 3, 5]
-
-
-function sort(someArr) {
-
+function sortArray(inArr) {
+    var outArr = inArr;
     var storage = [someArr[0]],
         pos;
 
@@ -25,5 +22,4 @@ function sort(someArr) {
     
 }
 
-sort(arr);
 console.log("YES, It doesn't work yet :(")
