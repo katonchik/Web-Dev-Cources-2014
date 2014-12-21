@@ -1,20 +1,20 @@
 someArray = [];
 function BinarySearchTree() {
     this.rootNode = {};
-    this.traverse = function (process){
-        function inOrder(node){
-            if (node){
-                if (node.left !== null){
-                    inOrder(node.left);
-                }            
-                process.call(this, node);
-                if (node.right !== null){
-                    inOrder(node.right);
-                }
-            }        
-        }
-        inOrder(this.rootNode);    
-    }
+    // this.traverse = function (process){
+    //     function inOrder(node){
+    //         if (node){
+    //             if (node.left !== null){
+    //                 inOrder(node.left);
+    //             }            
+    //             process.call(this, node);
+    //             if (node.right !== null){
+    //                 inOrder(node.right);
+    //             }
+    //         }        
+    //     }
+    //     inOrder(this.rootNode);    
+    // }
     this.findNode = function(value){
         var found = false,
         current = this.rootNode;
@@ -61,14 +61,14 @@ BinarySearchTree.prototype.add = function(value){
     }
     console.log("node " + value + " is added");
 }
-BinarySearchTree.prototype.toArray = function(value){
-    var result = [];
-    this.traverse(function(node){
-        result.push(node.value);
-    });
+// BinarySearchTree.prototype.toArray = function(value){
+//     var result = [];
+//     this.traverse(function(node){
+//         result.push(node.value);
+//     });
 
-    return result;
-}
+//     return result;
+// }
 BinarySearchTree.prototype.find = function(value){
     var foundResult = this.findNode(value),
         foundItem = foundResult.found;
@@ -196,7 +196,7 @@ BinarySearchTree.prototype.remove = function(value){
 
 
 var tree = new BinarySearchTree();
-treeArray = tree.toArray();
+// treeArray = tree.toArray();
 tree.add(5);
 tree.add(30);
 tree.add(16);
