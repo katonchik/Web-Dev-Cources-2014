@@ -1,3 +1,7 @@
+@import 'layout';
+@import 'dribble';
+@import 'badge';
+
 @mixin column-gap($gap) {
   -webkit-column-gap: $gap;
   -moz-column-gap: $gap;
@@ -10,17 +14,11 @@
   column-count: $count;
 }
 
-
-
 body {
-                                  font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif; margin: 0; padding: 0;
-                                  background-color: #f0f0f0;
   a                             { text-decoration: none; }
-  .wrap                         { max-width: 970px; margin: 0 auto; }
 
   /* Header: navigation, search panel */
   header {
-                                  background-color: #333333; height: 50px; width: 100%; line-height: 50px;
     a                           { color: #999; font-size: 13px; padding: 0 17px 0 0; }
     a.active                    { color: #fff; }
     a:hover                     { @extend .active; }
@@ -64,7 +62,9 @@ body {
     .dribble                    { position: relative; border-radius: 3px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
                                   background: white; padding: 10px; }
     .dribble img                { display: block; height: auto; }
+
     .dribble-pack               { display: inline-block; margin-bottom: 30px; }
+
     .dribble-title              { color: #444; display: block; line-height: 1.2; margin: 0 0 4px; }
     .dribble-content            { display: block; position: absolute; top: 0; left: 0; width: 78%; height: 64%;
                                   background: white; opacity: 0; transition: opacity 0.3s; padding: 20px; }
@@ -81,7 +81,6 @@ body {
 
     /* user information */
     .attribution {
-                                  display: inline-block; padding-left: 10px; margin-top: 10px;
       a                         { color: #4083a9; font-weight: 500; font-size: 12px; }
       a:hover                   { color: #205f82; }
       img                       { border-radius: 50%; margin: 0 4px 0 0; max-height: 16px; width: 16px;
@@ -99,7 +98,6 @@ body {
 
   /* aside */
   aside {
-                                  border-top: 2px solid #ddd;
     .additional-info-block      {
                                   color: #999; font-size: 0.9em; display: inline-block; width: 31.2715%;
                                   vertical-align: top; margin: 20px 26px 20px 0;
@@ -124,8 +122,6 @@ body {
 
   /* Footer */
   footer {
-                                  padding-top: 30px; border-top: 1px solid #e5e5e5; background-color: #ffffff;
-                                  overflow: hidden;
     p                           { color: #999; font-size: 12px; line-height: 1.6; }
     a                           { color: #999; font-size: 12px; line-height: 1.8; display: block; }
     a:hover                     { color: #777; }

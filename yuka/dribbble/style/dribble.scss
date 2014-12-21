@@ -1,0 +1,32 @@
+.b-dribble {
+  display: inline-block; margin-bottom: 30px;
+
+  &__content {
+    display: block; position: absolute; top: 0; left: 0; width: 78%; height: 64%;
+    background: white; opacity: 0; transition: opacity 0.3s; padding: 20px;
+  }
+
+  &__content:hover {
+    opacity: 0.95;
+  }
+
+  &__title {
+    color: #444; display: block; line-height: 1.2; margin: 0 0 4px;
+  }
+
+  &__attribution {
+    display: inline-block; padding-left: 10px; margin-top: 10px;
+  }
+
+  &__user-avatar {
+    border-radius: 50%; margin: 0 4px 0 0; max-height: 16px; width: 16px;
+    vertical-align: text-bottom;
+  }
+
+  &__link {
+    color: #4083a9; font-weight: 500; font-size: 12px;
+  }
+  &__link:hover {
+    color: #205f82;
+  }
+}

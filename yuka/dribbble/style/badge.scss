@@ -1,0 +1,16 @@
+.b-badge {
+  font-size: 9px !important; text-transform: uppercase; font-weight: bold;
+  line-height: 16px; margin-left: 1px; opacity: 1; transition: opacity 0.2s ease 0s;
+  vertical-align: top;
+  color: #ffffff !important;
+  background-color: #ccc;
+  border-radius: 3px; padding: 1px 3px;
+
+  &--role_team:hover {
+    background: #f83;
+  }
+
+  &--role_pro:hover {
+    background: #00b6e3;
+  }
+}

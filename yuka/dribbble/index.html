@@ -5,9 +5,9 @@
     <title>Dribbble</title>
     <link rel="stylesheet" href="style/main.css">
 </head>
-<body>
-    <header>
-        <div class="wrap">
+<body class="b-layout">
+    <header class="b-layout__header">
+        <div class="b-layout__wrap">
             <a class="logo" href="#">
                 <img src="style/img/logo-small.png?4">
             </a>
@@ -31,7 +31,7 @@
     </header>
 
     <main>
-        <div class="banner wrap">
+        <div class="banner b-layout__wrap">
             <h1>
                 <strong>What are you working on?</strong>
                 Dribbble is show and tell for designers.
@@ -41,20 +41,20 @@
             <button class="sign-up">Sign up</button>
         </div>
 
-        <nav class="filters wrap">
+        <nav class="filters b-layout__wrap">
            <a href="#">Popular</a>
            <a href="#">Shots</a>
            <a href="#">Now</a>
         </nav>
 
-        <div class="wrap dribbles">
-            <div class="dribble-pack">
+        <div class="b-layout__wrap dribbles">
+            <div class="b-dribble">
                 <div class="dribble">
                     <a href="#">
                         <img src="style/img/1111_teaser.jpg">
                     </a>
-                    <a href="#" class="dribble-content">
-                        <strong class="dribble-title">Landscape Studies</strong>
+                    <a href="#" class="b-dribble__content">
+                        <strong class="b-dribble__title">Landscape Studies</strong>
                         <span class="comment">
                             A bunch of landscape studies for a scrapped client project. http://bit.ly/1zJJ1SF
                         </span>
@@ -68,12 +68,14 @@
                     </div>
                 </div>
 
-                <div class="attribution">
-                    <a class="user" href="#">
-                        <img class="photo" src="style/img/ef0cba4009655c2e216733c14c1f296e.png?1408648992">
+                <div class="b-dribble__attribution">
+                    <a class="b-dribble__link" href="#">
+                        <img class="b-dribble__user-avatar" src="style/img/ef0cba4009655c2e216733c14c1f296e.png?1408648992">
                         Tubik Studio
                     </a>
-                    <a class="badge team" href="#">Team</a>
+                    <a class="b-dribble__link" href="#">
+                        <span class="b-badge b-badge--role_team">Team</span>
+                    </a>
                 </div>
             </div>
 
@@ -411,7 +413,8 @@
 
 
     </main>
-    <aside class="wrap">
+    <aside class="b-layout__wrap b-layout__wrap--role_aside">
+
         <div class="additional-info-block">
             <h3>
                 <a href="http://shop.dribbble.com/">
@@ -474,8 +477,8 @@
         </div>
     </aside>
 
-    <footer>
-        <div class="wrap">
+    <footer class="b-layout__footer">
+        <div class="b-layout__wrap">
             <div class="link-list-block">
                 <div class="logo-footer"></div>
                 <p class="motto">

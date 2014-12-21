@@ -1,0 +1,32 @@
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,400italic&subset=latin,cyrillic-ext,cyrillic,latin-ext);
+.GOL {
+  width: 425px;
+  margin: auto;
+  overflow: hidden;
+  background: rgba(141, 200, 90, 0.18);
+  padding: 20px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+  .GOL__switcher {
+    font-family: 'PT Sans', sans-serif;
+    text-transform: uppercase;
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px; }
+  .GOL__cell {
+    float: left;
+    height: 15px;
+    width: 15px;
+    background: #158ccf;
+    opacity: 0.6;
+    margin: 1px; }
+    .GOL__cell--live {
+      background: #c8574e;
+      opacity: 1; }
+
+/*# sourceMappingURL=GOL.css.map */
