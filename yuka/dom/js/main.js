@@ -9,16 +9,11 @@ window.onload = function () {
 
     var section = document.getElementById("sortVisualization");
 
-    var div = newArray.map(render).forEach(function(arrayData) {
+    newArray.map(render).forEach(function(arrayData) {
         section.appendChild(arrayData);
-
     });
 
-    var height = function (array) {
-
-    }
-
-    document.getElementById("startSorting").addEventListener("click", function () {
+    document.getElementById("startSorting").addEventListener("click", function() {
         sortInsertion(newArray);
         var anotherArray = newArray.map(render);
 
@@ -27,6 +22,6 @@ window.onload = function () {
         anotherArray.forEach(function(node) {
             section.appendChild(node);
         })
-    })
+    });
 };
 
