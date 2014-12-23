@@ -45,91 +45,95 @@ $gap: 1%;
 ----------------------------------------------------------------------------------------------------*/
 
 
-.container_12 .grid_1 { width: $grid_1; }
-.container_12 .grid_2 { width: $grid_2; }
-.container_12 .grid_3 { width: $grid_3; }
-.container_12 .grid_4 { width: $grid_4; }
-.container_12 .grid_5 { width: $grid_5; }
-.container_12 .grid_6 { width: $grid_6; }
-.container_12 .grid_7 { width: $grid_7; }
-.container_12 .grid_8 { width: $grid_8; }
-.container_12 .grid_9 { width: $grid_9; }
-.container_12 .grid_10 { width: $grid_10; }
-.container_12 .grid_11 { width: $grid_11; }
-.container_12 .grid_12 { width: $grid_12; }
-
+.container_12 {
+  .grid_1 { width: $grid_1; }
+  .grid_2 { width: $grid_2; }
+  .grid_3 { width: $grid_3; }
+  .grid_4 { width: $grid_4; }
+  .grid_5 { width: $grid_5; }
+  .grid_6 { width: $grid_6; }
+  .grid_7 { width: $grid_7; }
+  .grid_8 { width: $grid_8; }
+  .grid_9 { width: $grid_9; }
+  .grid_10 { width: $grid_10; }
+  .grid_11 { width: $grid_11; }
+  .grid_12 { width: $grid_12; }
+}
 
 
 /* Prefix Extra Space >> 12 Columns
 ----------------------------------------------------------------------------------------------------*/
 
 
-.container_12 .prefix_1  { padding-left: $grid_1 + 2 * $gap; }
-.container_12 .prefix_2  { padding-left: $grid_2 + 2 * $gap; }
-.container_12 .prefix_3  { padding-left: $grid_3 + 2 * $gap; }
-.container_12 .prefix_4  { padding-left: $grid_4 + 2 * $gap; }
-.container_12 .prefix_5  { padding-left: $grid_5 + 2 * $gap; }
-.container_12 .prefix_6  { padding-left: $grid_6 + 2 * $gap; }
-.container_12 .prefix_7  { padding-left: $grid_7 + 2 * $gap; }
-.container_12 .prefix_8  { padding-left: $grid_8 + 2 * $gap; }
-.container_12 .prefix_9  { padding-left: $grid_9 + 2 * $gap; }
-.container_12 .prefix_10 { padding-left: $grid_10 + 2 * $gap; }
-.container_12 .prefix_11 { padding-left: $grid_11 + 2 * $gap; }
-
-
+.container_12 {
+  .prefix_1  { padding-left: $grid_1 + 2 * $gap; }
+  .prefix_2  { padding-left: $grid_2 + 2 * $gap; }
+  .prefix_3  { padding-left: $grid_3 + 2 * $gap; }
+  .prefix_4  { padding-left: $grid_4 + 2 * $gap; }
+  .prefix_5  { padding-left: $grid_5 + 2 * $gap; }
+  .prefix_6  { padding-left: $grid_6 + 2 * $gap; }
+  .prefix_7  { padding-left: $grid_7 + 2 * $gap; }
+  .prefix_8  { padding-left: $grid_8 + 2 * $gap; }
+  .prefix_9  { padding-left: $grid_9 + 2 * $gap; }
+  .prefix_10 { padding-left: $grid_10 + 2 * $gap; }
+  .prefix_11 { padding-left: $grid_11 + 2 * $gap; }
+}
 
 /* Suffix Extra Space >> 12 Columns
 ----------------------------------------------------------------------------------------------------*/
 
 
-.container_12 .suffix_1  { padding-right: $grid_1 + 2 * $gap; }
-.container_12 .suffix_2  { padding-right: $grid_2 + 2 * $gap; }
-.container_12 .suffix_3  { padding-right: $grid_3 + 2 * $gap; }
-.container_12 .suffix_4  { padding-right: $grid_4 + 2 * $gap; }
-.container_12 .suffix_5  { padding-right: $grid_5 + 2 * $gap; }
-.container_12 .suffix_6  { padding-right: $grid_6 + 2 * $gap; }
-.container_12 .suffix_7  { padding-right: $grid_7 + 2 * $gap; }
-.container_12 .suffix_8  { padding-right: $grid_8 + 2 * $gap; }
-.container_12 .suffix_9  { padding-right: $grid_9 + 2 * $gap; }
-.container_12 .suffix_10 { padding-right: $grid_10 + 2 * $gap; }
-.container_12 .suffix_11 { padding-right: $grid_11 + 2 * $gap; }
-
+.container_12 {
+  .suffix_1  { padding-right: $grid_1 + 2 * $gap; }
+  .suffix_2  { padding-right: $grid_2 + 2 * $gap; }
+  .suffix_3  { padding-right: $grid_3 + 2 * $gap; }
+  .suffix_4  { padding-right: $grid_4 + 2 * $gap; }
+  .suffix_5  { padding-right: $grid_5 + 2 * $gap; }
+  .suffix_6  { padding-right: $grid_6 + 2 * $gap; }
+  .suffix_7  { padding-right: $grid_7 + 2 * $gap; }
+  .suffix_8  { padding-right: $grid_8 + 2 * $gap; }
+  .suffix_9  { padding-right: $grid_9 + 2 * $gap; }
+  .suffix_10 { padding-right: $grid_10 + 2 * $gap; }
+  .suffix_11 { padding-right: $grid_11 + 2 * $gap; }
+}
 
 
 /* Push Space >> 12 Columns
 ----------------------------------------------------------------------------------------------------*/
 
 
-.container_12 .push_1  { left: $grid_1 + 2 * $gap; }
-.container_12 .push_2  { left: $grid_2 + 2 * $gap; }
-.container_12 .push_3  { left: $grid_3 + 2 * $gap; }
-.container_12 .push_4  { left: $grid_4 + 2 * $gap; }
-.container_12 .push_5  { left: $grid_5 + 2 * $gap; }
-.container_12 .push_6  { left: $grid_6 + 2 * $gap; }
-.container_12 .push_7  { left: $grid_7 + 2 * $gap; }
-.container_12 .push_8  { left: $grid_8 + 2 * $gap; }
-.container_12 .push_9  { left: $grid_9 + 2 * $gap; }
-.container_12 .push_10 { left: $grid_10 + 2 * $gap; }
-.container_12 .push_11 { left: $grid_11 + 2 * $gap; }
-
+.container_12 {
+  .push_1  { left: $grid_1 + 2 * $gap; }
+  .push_2  { left: $grid_2 + 2 * $gap; }
+  .push_3  { left: $grid_3 + 2 * $gap; }
+  .push_4  { left: $grid_4 + 2 * $gap; }
+  .push_5  { left: $grid_5 + 2 * $gap; }
+  .push_6  { left: $grid_6 + 2 * $gap; }
+  .push_7  { left: $grid_7 + 2 * $gap; }
+  .push_8  { left: $grid_8 + 2 * $gap; }
+  .push_9  { left: $grid_9 + 2 * $gap; }
+  .push_10 { left: $grid_10 + 2 * $gap; }
+  .push_11 { left: $grid_11 + 2 * $gap; }
+}
 
 
 /* Pull Space >> 12 Columns
 ----------------------------------------------------------------------------------------------------*/
 
 
-.container_12 .pull_1  { left: -$grid_1 + 2 * $gap; }
-.container_12 .pull_2  { left: -$grid_2 + 2 * $gap; }
-.container_12 .pull_3  { left: -$grid_3 + 2 * $gap; }
-.container_12 .pull_4  { left: -$grid_4 + 2 * $gap; }
-.container_12 .pull_5  { left: -$grid_5 + 2 * $gap; }
-.container_12 .pull_6  { left: -$grid_6 + 2 * $gap; }
-.container_12 .pull_7  { left: -$grid_7 + 2 * $gap; }
-.container_12 .pull_8  { left: -$grid_8 + 2 * $gap; }
-.container_12 .pull_9  { left: -$grid_9 + 2 * $gap; }
-.container_12 .pull_10 { left: -$grid_10 + 2 * $gap; }
-.container_12 .pull_11 { left: -$grid_11 + 2 * $gap; }
-
+.container_12 {
+  .pull_1  { left: -$grid_1 + 2 * $gap; }
+  .pull_2  { left: -$grid_2 + 2 * $gap; }
+  .pull_3  { left: -$grid_3 + 2 * $gap; }
+  .pull_4  { left: -$grid_4 + 2 * $gap; }
+  .pull_5  { left: -$grid_5 + 2 * $gap; }
+  .pull_6  { left: -$grid_6 + 2 * $gap; }
+  .pull_7  { left: -$grid_7 + 2 * $gap; }
+  .pull_8  { left: -$grid_8 + 2 * $gap; }
+  .pull_9  { left: -$grid_9 + 2 * $gap; }
+  .pull_10 { left: -$grid_10 + 2 * $gap; }
+  .pull_11 { left: -$grid_11 + 2 * $gap; }
+}
 
 
 

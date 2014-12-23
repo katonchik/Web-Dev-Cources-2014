@@ -1,0 +1,212 @@
+body {
+    color: #444;
+    font-family: Georgia, serif;
+    margin: 0;
+    padding: 0;
+    background: #F0F0F0;
+}
+
+.show-skeleton header{background: #0063A6;}
+.show-skeleton .main-navigation{background: #0090D2;}
+.show-skeleton main .wrapper {background: #FFF;}
+.show-skeleton main .element-list {background: #f8f8f8}
+.show-skeleton .sub-footer{background: #F0F0F0;}
+
+a {
+    color: #008fd1;
+    text-decoration: none;
+}
+
+a:hover{color: #0063A6;}
+
+p {
+    font-size: 1.18em;
+    line-height: 1.55;
+}
+
+.wrapper {
+    margin: 0 auto;
+    width: 1020px;
+}
+
+button {
+    margin: 20px 5px 5px;
+    padding: 4px 15px;
+    background: #0090D2;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid #4080AE;
+    font: 16px Georgia, serif;
+}
+
+button:hover{
+    background: #0073d2;
+}
+
+
+
+/*......HEADER......*/
+header {
+    padding: 0;
+    height: 200px;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+nav {
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.logo {
+    height: 124px;
+    padding-top: 30px;
+    margin: 0;
+    width: 505px;
+    cursor: pointer;
+}
+
+header .logo h1 {
+    background: url(../img/logo.png) no-repeat;
+    display: block;
+    height: 96px;
+    color: #FFFFFF;
+    text-indent: -13em;
+    margin: 0;
+}
+
+header .logo h2{
+    color: #FFF;
+    font: italic normal 16px 'Quicksand','Helvetica Neue',Arial,sans-serif;
+    margin: 0;
+    left: 195px;
+    line-height: 1;
+    position: relative;
+    text-transform: none;
+    top: -25px;
+}
+
+.about-navigation {
+    position: relative;
+    float: right;
+    top: 10px;
+    font-family: Georgia, serif;
+}
+
+nav a{color: #FFFFFF;}
+
+nav a:hover{
+    text-decoration: underline;
+    color: #FFFFFF;
+}
+
+.main-navigation {
+    font-family: 'Helvetica Neue',Arial,sans-serif;
+    letter-spacing: 1px;
+    padding: 14px 0;
+    width: 100%;
+}
+
+.main-navigation a {padding: 0px 5px 0px 29px;}
+
+.search{
+    display: inline-block;
+    border-radius: 3px;
+    background-color: #EEE;
+    padding: 2px;
+    position: relative;
+    left: 260px;
+    margin: -8px 20px -8px 0;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.search input{
+    background: none repeat scroll 0% 0% transparent;
+    border: medium none;
+    width: 191px;
+}
+
+.search button{
+    margin: 0px;
+    font: 14px "MS Shell Dlg";
+    padding: 4px 6px;
+    letter-spacing: normal;
+}
+
+
+
+/*......MAIN......*/
+main .wrapper {
+    margin: 0 auto;
+    padding: 24px 0 0 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+main h1,
+main h2,
+main h3,
+main h4,
+main h5{
+    font-family: 'Quicksand','Helvetica Neue',Arial,sans-serif;
+    font-weight: bold;
+    display: block;
+}
+
+section{
+    overflow: hidden;
+}
+
+.posts{
+    padding: 0 18px 0 20px;
+    width: 66%;
+    border-right: 4px solid #F0F0F0;
+    margin-right: 18px;
+    float: left;
+}
+
+.posts h5{
+    float: left;
+
+}
+
+.entry{
+    margin-left: 160px;
+}
+
+.post-info h1{
+    font: bold 2em "Quicksand","Helvetica Neue",Arial,sans-serif;
+    margin: 0;
+    letter-spacing: -2px;
+}
+
+.additional-column{
+    width: 25%;
+    padding-right: 24px;
+    float: left;
+}
+
+.additional-column h3{
+    text-transform: uppercase;
+    line-height: 1.2;
+    color: #888;
+    padding: 10px 0;
+    margin: 0 0 5px;
+}
+
+.additional-column p{
+    font-size: 0.9em;
+    padding: 8px 0;
+    margin: 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.additional-column p:last-child{ border-bottom: none;}
+
+.element-column a{
+    display: block;
+    font-size: 1.18em;
+    margin: 10px 0;
+    line-height: 1.6em;
+}

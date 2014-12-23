@@ -1,0 +1,25 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+main {
+    text-align: center;
+}
+
+#sortVisualization {
+    padding: 10px 0;
+}
+
+#sortVisualization div {
+    display: inline-block;
+    width: 30px;
+    border: 1px solid darkgrey;
+    margin: 5px;
+    text-align: center;
+}
+
+.sortControl {
+    margin: 10px;
+}

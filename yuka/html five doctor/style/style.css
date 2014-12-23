@@ -8,8 +8,8 @@ body {
   body a {
     color: #008fd1;
     text-decoration: none; }
-    body a:hover {
-      text-decoration: underline; }
+  body a:hover {
+    text-decoration: underline; }
   body h1 {
     font-size: 32px;
     letter-spacing: -2px;
@@ -17,6 +17,7 @@ body {
   body img {
     cursor: pointer; }
   body button {
+    box-shadow: 0 1px 0 rgba(111, 111, 111, 0.1) inset, 0 0 2px rgba(255, 255, 255, 0.3) inset, 0 1px 2px rgba(0, 0, 0, 0.29);
     background: #0090d2;
     border: 1px solid #4080ae;
     border-radius: 3px;
@@ -25,55 +26,49 @@ body {
     line-height: 1.5;
     padding: 4px 7px;
     font: 16px Georgia, serif;
-    margin: 4px 0 1.5em;
-    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset, 0 0 2px rgba(255, 255, 255, 0.3) inset, 0 1px 2px rgba(0, 0, 0, 0.29); }
-    body button:hover {
-      background: #0063a5; }
+    margin: 4px 0 1.5em; }
+  body button:hover {
+    background: #0063a5; }
   body .wrap {
     margin: auto;
     width: 1020px; }
   body .title {
     font-family: 'Quicksand', 'Helvetica Neue', Arial, sans-serif;
     font-weight: bold; }
-    body .title:hover {
-      color: #2E76CF;
-      text-decoration: none; }
+  body .title:hover {
+    color: #2E76CF;
+    text-decoration: none; }
 
-/* Header */
 header {
   background: #0063a5;
   height: 200px; }
   header #logo {
-    background: url(http://html5doctor.com/wp-content/themes/html5doctor2/images/logo.png) no-repeat;
+    background: url(img/logo.png) no-repeat;
     clear: both;
     cursor: pointer;
     height: 96px;
     padding: 0;
     text-align: right;
-    width: 490px; }
-    header #logo h2 {
-      color: white;
-      font-size: 16px;
-      font-style: italic;
-      font-weight: normal;
-      position: relative;
-      bottom: -70px; }
+    width: 460px; }
+  header #logo h2 {
+    color: white;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: normal;
+    position: relative;
+    bottom: -70px; }
   header .useful-links {
     float: right;
     list-style: none;
     margin: 5px 0; }
-    header .useful-links #dropDown {
-      border-right: none;
-      padding: 0 14px 0 0;
-      background: url(http://html5doctor.com/wp-content/themes/html5doctor2/images/expanded-header.jpg) no-repeat scroll right 50%; }
     header .useful-links a {
       display: block;
       font: 14px Georgia, ΓÇïserif;
       color: #fff;
       background: #0063a5;
       padding: 0 5px; }
-      header .useful-links a:hover {
-        background: #0063a5; }
+    header .useful-links a:hover {
+      background: #0063a5; }
     header .useful-links li {
       float: left;
       margin-right: 5px;
@@ -83,24 +78,28 @@ header {
         background: #0063a5; }
       header .useful-links li:hover ul {
         left: -45px; }
-        header .useful-links li:hover ul a {
-          text-decoration: none; }
-        header .useful-links li:hover ul li a:hover {
-          background: #0063a5;
-          text-decoration: underline; }
+      header .useful-links li:hover ul a {
+        text-decoration: none; }
+      header .useful-links li:hover ul li a:hover {
+        background: #0063a5;
+        text-decoration: underline; }
     header .useful-links ul {
       background: #fff;
       background: rgba(255, 255, 255, 0);
       list-style: none;
       position: absolute;
       left: -9999px; }
-      header .useful-links ul a {
-        white-space: nowrap; }
-      header .useful-links ul li {
-        padding-top: 1px;
-        float: none; }
+    header .useful-links ul a {
+      white-space: nowrap; }
+    header .useful-links ul li {
+      padding-top: 1px;
+      float: none; }
     header .useful-links > li > a {
       border-right: 1px solid #fff; }
+    header .useful-links .dropDown {
+      border-right: none;
+      padding: 0 14px 0 0;
+      background: url(img/expanded-header.jpg) no-repeat scroll right 50%; }
   header .search {
     background-color: #eee;
     border: 1px solid rgba(0, 0, 0, 0.3);
@@ -108,57 +107,39 @@ header {
     float: right;
     margin: -6px 20px 0 0;
     padding: 2px; }
-    header .search input {
-      background: transparent;
-      border: none;
-      width: 210px; }
-    header .search button {
-      font: 13px "MS Shell Dlg";
-      margin: 0;
-      padding: 4px; }
+  header .search input {
+    background: transparent;
+    border: none;
+    width: 210px; }
+  header .search button {
+    font: 13px "MS Shell Dlg";
+    margin: 0;
+    padding: 4px; }
   header .main-nav {
     background: #008fd1;
     padding: 12px 0;
     position: relative;
     bottom: -24px; }
-    header .main-nav a {
-      color: white;
-      font: 14px 'Helvetica Neue', Arial, sans-serif;
-      letter-spacing: 1px;
-      padding: 5px 20px; }
+  header .main-nav a {
+    color: white;
+    font: 14px 'Helvetica Neue', Arial, sans-serif;
+    letter-spacing: 1px;
+    padding: 5px 20px; }
 
 /* Main part */
 main {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); }
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  background: white;
+  overflow: hidden; }
   main a:hover {
     color: #0063a5;
     text-decoration: none; }
-  main, main section {
+  main section {
     background: white;
     overflow: hidden; }
   main .entry {
     float: right;
     padding: 10px; }
-  main .opener .post, main .more-posts {
-    border-right: 4px solid #efefef; }
-  main .opener .post {
-    float: left;
-    width: 685px;
-    margin: 15px; }
-    main .opener .post:before {
-      border: medium none;
-      color: #888;
-      content: "Featured Article";
-      font: bold 12px/16px "Helvetica Neue", Arial, sans-serif;
-      letter-spacing: 1px;
-      margin: 30px 10px 5px;
-      padding: 0;
-      position: absolute; }
-    main .opener .post p {
-      color: #444;
-      font-size: 1.18em;
-      line-height: 1.55;
-      width: 500px; }
   main .post h1 {
     font-size: 36px;
     margin: 0; }
@@ -166,29 +147,49 @@ main {
     color: #888;
     font-size: 14px;
     font-style: italic; }
+  main .more-posts, main .opener .post {
+    border-right: 4px solid #efefef; }
+  main .opener .post {
+    float: left;
+    width: 655px;
+    margin: 15px; }
+  main .opener .post p {
+    color: #444;
+    font-size: 1.18em;
+    line-height: 1.55;
+    width: 500px; }
+  main .opener .post:before {
+    border: medium none;
+    color: #888;
+    content: "Featured Article";
+    font: bold 12px/16px "Helvetica Neue", Arial, sans-serif;
+    letter-spacing: 1px;
+    margin: 30px 10px 5px;
+    padding: 0;
+    position: absolute; }
   main .secondary {
     float: left;
     font-size: 14px;
     margin: 13px 0 40px 0;
     padding-right: 20px;
     width: 270px; }
-    main .secondary h3 {
-      color: #888;
-      font-size: 1.25em;
-      line-height: 1.2;
-      padding: 10px 0;
-      text-transform: uppercase; }
-    main .secondary p {
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 8px; }
-      main .secondary p:last-child {
-        border-bottom: none; }
+  main .secondary p {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 8px; }
+  main .secondary h3 {
+    color: #888;
+    font-size: 1.25em;
+    line-height: 1.2;
+    padding: 10px 0;
+    text-transform: uppercase; }
+  main .secondary p:last-child {
+    border-bottom: none; }
   main .index-set {
     float: left;
     width: 91px;
     margin-right: 22px; }
-    main .index-set:last-child {
-      margin-right: 0; }
+  main .index-set:last-child {
+    margin-right: 0; }
   main .element-index {
     background-color: #f7f7f7;
     border-bottom: 4px solid #efefef;
@@ -206,40 +207,40 @@ main {
       font: 13px sans-serif;
       line-height: 20px;
       list-style: none outside none; }
-      main .element-index ul li {
-        margin: 10px 0 10px -40px; }
-        main .element-index ul li a:hover {
-          color: #ffffff;
-          background: #008fd1;
-          border-radius: 15px;
-          padding: 5px; }
-  main .more-posts {
+    main .element-index ul li {
+      margin: 10px 0 10px -40px; }
+    main .element-index ul li a:hover {
+      color: #ffffff;
+      background: #008fd1;
+      border-radius: 15px;
+      padding: 5px; }
+  main .more-posts, main .opener .post {
     float: left;
     margin: 20px 20px 20px 0;
     padding: 0 20px; }
-    main .more-posts p {
+    main .more-posts p, main .opener .post p {
       border-top: 2px solid #efefef;
       border-bottom: 2px solid #efefef;
       font-size: 14px;
       line-height: 1.55;
       padding: 4px 0 1.5em; }
-    main .more-posts h1 {
+    main .more-posts h1, main .opener .post h1 {
       border-bottom: 4px solid #efefef;
       font-size: 32px;
       margin: 0 0 20px;
       padding-bottom: 10px; }
-    main .more-posts h2 {
+    main .more-posts h2, main .opener .post h2 {
       font-size: 20px;
       letter-spacing: -1px;
       margin: 0;
       padding: 0; }
-    main .more-posts .col {
+    main .more-posts button, main .opener .post button {
+      width: 655px; }
+    main .more-posts .col, main .opener .post .col {
       float: left;
       width: 310px; }
-      main .more-posts .col:first-of-type {
-        margin-right: 35px; }
-    main .more-posts button {
-      width: 655px; }
+    main .more-posts .col:first-of-type, main .opener .post .col:first-of-type {
+      margin-right: 35px; }
   main .ads {
     background-color: #efefef;
     padding: 20px; }
@@ -285,6 +286,6 @@ footer {
     float: right;
     cursor: default; }
   footer #copyright {
-    background: url("http://html5doctor.com/wp-content/themes/html5doctor2/images/footerlogo.jpg") no-repeat scroll 20px 0 #f0f0f0; }
+    background: url("img/footerlogo.jpg") no-repeat scroll 20px 0 #f0f0f0; }
 
 /*# sourceMappingURL=style.css.map */

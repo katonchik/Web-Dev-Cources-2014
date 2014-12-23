@@ -1,0 +1,43 @@
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,400italic&subset=latin,cyrillic-ext,cyrillic,latin-ext);
+
+$cellSize : 15px;
+$cellMargin : 1px;
+
+.GOL {
+  width: 25 * ($cellSize + 2 * $cellMargin);
+  margin: auto;
+  overflow: hidden;
+  background: rgba(141, 200, 90, 0.18);
+  padding: 20px;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+
+  &__switcher {
+    font-family: 'PT Sans', sans-serif;
+    text-transform: uppercase;
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  &__cell {
+    float: left;
+    height:$cellSize;
+    width: $cellSize;
+    background: #158ccf;
+    opacity: 0.6;
+    margin: 1px;
+
+    &--live {
+      background: #c8574e;
+      opacity: 1;
+    }
+  }
+}
