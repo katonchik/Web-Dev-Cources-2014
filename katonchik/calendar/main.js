@@ -1,0 +1,1 @@
+var myCalendar = new Calendar(document.getElementById("calendar"));
