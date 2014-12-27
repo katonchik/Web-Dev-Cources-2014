@@ -1,0 +1,23 @@
+li {
+  font-family: 'PT Sans', sans-serif;
+  position: relative; }
+
+.avatar {
+  width: 40px;
+  border-radius: 100%;
+  position: relative;
+  bottom: -23px;
+  margin: 10px; }
+
+aside {
+  float: left;
+  width: 300px; }
+
+section {
+  margin-left: 330px; }
+
+.remove-user {
+  position: absolute;
+  top: 48px;
+  right: 0;
+  cursor: pointer; }
