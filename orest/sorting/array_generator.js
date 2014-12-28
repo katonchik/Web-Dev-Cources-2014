@@ -5,7 +5,7 @@ window.onload = function() {
     function createNewArray() {
         var answer = confirm('Do you want to create a random array?');
         if (answer == true) {
-            for (var y = 0, n = 100; y < 40; y++) {
+            for (var y = 0, n = 30; y < 40; y++) {
                 inArr.push(Math.round(Math.random() * n))
             }
         } 

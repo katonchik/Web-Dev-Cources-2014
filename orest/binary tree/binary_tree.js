@@ -1,7 +1,7 @@
 // Binary Tree
 var someArray = [5, 2, 8, 6, 1, 7, 3, 9, 4, 10];
 
-// Creating an Object using a function
+// Creating an Object
 function BinaryTree() {
     this.tree = {}
 }
@@ -34,8 +34,6 @@ BinaryTree.prototype.add = function (value) {
     } else {
         this.tree = newNode;
     }
-
-
 };
 
 
