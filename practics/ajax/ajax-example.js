@@ -2,7 +2,7 @@ var fs = require('fs')
 var dummyjson = require('dummy-json');
 var Handlebars = require("handlebars");
 var jstoxml = require("jstoxml");
-var express = require();
+var express = require("express");
 
 var dataTemplate = fs.readFileSync('./practics/ajax/database.hbs', {encoding: 'utf8'});
 var htmlTemplate = Handlebars.compile(fs.readFileSync('./practics/ajax/html-template.hbs', {encoding: 'utf8'}));
