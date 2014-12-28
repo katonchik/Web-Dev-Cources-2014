@@ -34,7 +34,7 @@ app.get('/users.xml', function (req, res) {
 
   var resultData = {users: data.slice(from, to).map(function (user) {
     return {user : user};
-  })}
+  })};
 
   var result = '<?xml version="1.0" encoding="UTF-8"?>\n';
   result += jstoxml.toXML(resultData);

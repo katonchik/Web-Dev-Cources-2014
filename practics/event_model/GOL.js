@@ -1,4 +1,7 @@
 var GOL = function (container) {
+
+
+
   var that = this;
   this.size = {
     w : 25, //width
