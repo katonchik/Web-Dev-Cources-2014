@@ -4,16 +4,22 @@ var Handlebars = require("handlebars");
 var jstoxml = require("jstoxml");
 var express = require("express");
 
-var dataTemplate = fs.readFileSync('./practics/ajax/database.hbs', {encoding: 'utf8'});
-var htmlTemplate = Handlebars.compile(fs.readFileSync('./practics/ajax/html-template.hbs', {encoding: 'utf8'}));
+var dataTemplate = fs.readFileSync(__dirname + '/database.hbs', {encoding: 'utf8'});
+var htmlTemplate = Handlebars.compile(fs.readFileSync(__dirname + '/html-template.hbs', {encoding: 'utf8'}));
 
 var data = JSON.parse(dummyjson.parse(dataTemplate));
 var app = express();
 
-app.get('/', function (req, res) {
-  res.send('Hello World!')
-});
 
+app.use('/public', express.static(__dirname + '/public'));
+
+app.get('/', function (req, res) {
+  fs.readFile(__dirname + "/public/index.html", {encoding: 'utf8'}, function (err, file) {
+    res.set('Content-Type', 'text/html');
+    res.send(file);
+
+  });
+});
 
 app.get('/users.json', function (req, res) {
   var from = parseInt(req.query.from, 10) || 0;
