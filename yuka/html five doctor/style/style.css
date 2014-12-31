@@ -1,4 +1,75 @@
 @charset "UTF-8";
+.button {
+  background: #0090d2;
+  border: 1px solid #4080ae;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  line-height: 1.5;
+  padding: 4px 7px;
+  font: 16px Georgia, serif;
+  margin: 4px 0 1.5em; }
+  .button:hover {
+    background: #0063a5; }
+
+.search {
+  background-color: #eee;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  float: right;
+  margin: -6px 20px 0 0;
+  padding: 2px; }
+  .search__input {
+    background: transparent;
+    border: none;
+    width: 210px; }
+  .search__button {
+    font: 13px "MS Shell Dlg";
+    margin: 0;
+    padding: 4px; }
+
+.useful-links {
+  float: right;
+  list-style: none;
+  margin: 5px 0; }
+  .useful-links .useful-links__link {
+    display: block;
+    font: 14px Georgia, ΓÇïserif;
+    color: #fff;
+    background: #0063a5;
+    padding: 0 5px; }
+  .useful-links li {
+    float: left;
+    margin-right: 5px;
+    padding: 5px 0;
+    position: relative; }
+    .useful-links li:hover a {
+      background: #0063a5; }
+    .useful-links li:hover ul {
+      left: -45px; }
+    .useful-links li:hover ul a {
+      text-decoration: none; }
+    .useful-links li:hover ul li a:hover {
+      background: #0063a5;
+      text-decoration: underline; }
+  .useful-links ul {
+    background: #fff;
+    background: rgba(255, 255, 255, 0);
+    list-style: none;
+    position: absolute;
+    left: -9999px; }
+  .useful-links ul a {
+    white-space: nowrap; }
+  .useful-links ul li {
+    padding-top: 1px;
+    float: none; }
+  .useful-links > li > a {
+    border-right: 1px solid #fff; }
+  .useful-links .useful-links__dropdown {
+    border-right: none;
+    padding: 0 14px 0 0;
+    background: url(img/expanded-header.jpg) no-repeat scroll right 50%; }
+
 body {
   background: #f0f0f0;
   color: #444444;
@@ -16,19 +87,6 @@ body {
     font-style: normal; }
   body img {
     cursor: pointer; }
-  body button {
-    box-shadow: 0 1px 0 rgba(111, 111, 111, 0.1) inset, 0 0 2px rgba(255, 255, 255, 0.3) inset, 0 1px 2px rgba(0, 0, 0, 0.29);
-    background: #0090d2;
-    border: 1px solid #4080ae;
-    border-radius: 3px;
-    color: white;
-    cursor: pointer;
-    line-height: 1.5;
-    padding: 4px 7px;
-    font: 16px Georgia, serif;
-    margin: 4px 0 1.5em; }
-  body button:hover {
-    background: #0063a5; }
   body .wrap {
     margin: auto;
     width: 1020px; }
@@ -57,64 +115,6 @@ header {
     font-weight: normal;
     position: relative;
     bottom: -70px; }
-  header .useful-links {
-    float: right;
-    list-style: none;
-    margin: 5px 0; }
-    header .useful-links a {
-      display: block;
-      font: 14px Georgia, ΓÇïserif;
-      color: #fff;
-      background: #0063a5;
-      padding: 0 5px; }
-    header .useful-links a:hover {
-      background: #0063a5; }
-    header .useful-links li {
-      float: left;
-      margin-right: 5px;
-      padding: 5px 0;
-      position: relative; }
-      header .useful-links li:hover a {
-        background: #0063a5; }
-      header .useful-links li:hover ul {
-        left: -45px; }
-      header .useful-links li:hover ul a {
-        text-decoration: none; }
-      header .useful-links li:hover ul li a:hover {
-        background: #0063a5;
-        text-decoration: underline; }
-    header .useful-links ul {
-      background: #fff;
-      background: rgba(255, 255, 255, 0);
-      list-style: none;
-      position: absolute;
-      left: -9999px; }
-    header .useful-links ul a {
-      white-space: nowrap; }
-    header .useful-links ul li {
-      padding-top: 1px;
-      float: none; }
-    header .useful-links > li > a {
-      border-right: 1px solid #fff; }
-    header .useful-links .dropDown {
-      border-right: none;
-      padding: 0 14px 0 0;
-      background: url(img/expanded-header.jpg) no-repeat scroll right 50%; }
-  header .search {
-    background-color: #eee;
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    border-radius: 3px;
-    float: right;
-    margin: -6px 20px 0 0;
-    padding: 2px; }
-  header .search input {
-    background: transparent;
-    border: none;
-    width: 210px; }
-  header .search button {
-    font: 13px "MS Shell Dlg";
-    margin: 0;
-    padding: 4px; }
   header .main-nav {
     background: #008fd1;
     padding: 12px 0;

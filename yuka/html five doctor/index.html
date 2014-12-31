@@ -10,16 +10,25 @@
 <header>
     <div class="wrap">
         <ul class="useful-links">
-            <li><a href="#">About</a></li>
-            <li><a href="#">RSS</a></li>
-            <li><a href="#">Comments RSS</a></li>
-            <li>
-                <a class="dropDown" href="#">Doctor Network</a>
+            <li class="useful-links__item">
+                <a class="useful-links__link" href="#">About</a>
+            </li>
 
-                <ul>
-                    <li><a href="#">HTML5 Gallery</a></li>
-                    <li><a href="#">Docteur HTML5</a></li>
-                    <li><a href="#">HTML5 Doctor on Github</a></li>
+            <li class="useful-links__item">
+                <a class="useful-links__link" href="#">RSS</a>
+            </li>
+
+            <li class="useful-links__item">
+                <a class="useful-links__link" href="#">Comments RSS</a>
+            </li>
+
+            <li class="useful-links__item">
+                <a class="useful-links__link useful-links__dropdown" href="#">Doctor Network</a>
+
+                <ul class="useful-links__dropdown__list">
+                    <li class="useful-links__item"><a class="useful-links__link" href="#">HTML5 Gallery</a></li>
+                    <li class="useful-links__item"><a class="useful-links__link" href="#">Docteur HTML5</a></li>
+                    <li class="useful-links__item"><a class="useful-links__link" href="#">HTML5 Doctor on Github</a></li>
                 </ul>
             </li>
         </ul>
@@ -35,8 +44,8 @@
             <a href="#">Resources</a>
 
             <form class="search">
-                <input type="text" name="search">
-                <button>Search</button>
+                <input type="text" name="search" class="search__input">
+                <button class="button search__button">Search</button>
             </form>
         </nav>
     </div>
@@ -356,7 +365,7 @@
             </div>
 
             <form>
-                <button>Find more articles in the complete HTML5 Doctor archive</button>
+                <button class="button">Find more articles in the complete HTML5 Doctor archive</button>
             </form>
         </section>
 
@@ -387,7 +396,7 @@
                 Divya Manian.
             </p>
             <form>
-                <button>Buy it now</button>
+                <button class="button">Buy it now</button>
             </form>
         </div>
 
@@ -398,7 +407,7 @@
                 community we want to see it continue. We’re hosting a copy and plan to help keep it up-to-date.
             </p>
             <form>
-                <button>Read Dive into HTML5</button>
+                <button class="button">Read Dive into HTML5</button>
             </form>
         </div>
     </section>
