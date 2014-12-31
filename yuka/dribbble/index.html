@@ -6,25 +6,25 @@
     <link rel="stylesheet" href="style/main.css">
 </head>
 <body>
-    <header>
+    <header class="header">
         <div class="wrap">
             <a class="logo" href="#">
                 <img src="style/img/logo-small.png?4">
             </a>
 
             <nav class="main-nav">
-                <a class="active" href="https://dribbble.com/shots">Shots</a>
-                <a href="https://dribbble.com/designers">Designers</a>
-                <a href="https://dribbble.com/teams">Teams</a>
-                <a href="#">Meetups</a>
-                <a href="https://dribbble.com/jobs">Jobs</a>
+                <a class="main-nav__link main-nav__link--active" href="https://dribbble.com/shots">Shots</a>
+                <a class="main-nav__link" href="https://dribbble.com/designers">Designers</a>
+                <a class="main-nav__link" href="https://dribbble.com/teams">Teams</a>
+                <a class="main-nav__link" href="#">Meetups</a>
+                <a class="main-nav__link" href="https://dribbble.com/jobs">Jobs</a>
             </nav>
 
-            <input class="search" type="search" placeholder="Search">
+            <input class="search-field" type="search" placeholder="Search">
 
             <div class="authorization">
-                <a href="https://dribbble.com/signup">Sign up</a>
-                <a href="https://dribbble.com/session/new">Sign in</a>
+                <a class="authorization__link" href="https://dribbble.com/signup">Sign up</a>
+                <a class="authorization__link" href="https://dribbble.com/session/new">Sign in</a>
             </div>
         </div>
 
@@ -32,119 +32,119 @@
 
     <main>
         <div class="banner wrap">
-            <h1>
-                <strong>What are you working on?</strong>
+            <h1 class="banner__title">
+                <strong class="banner__title--strong">What are you working on?</strong>
                 Dribbble is show and tell for designers.
             </h1>
 
-            <button class="learn-more">Learn more</button>
-            <button class="sign-up">Sign up</button>
+            <button class="banner__button banner__button--learn-more">Learn more</button>
+            <button class="banner__button banner__button--sign-up">Sign up</button>
         </div>
 
         <nav class="filters wrap">
-           <a href="#">Popular</a>
-           <a href="#">Shots</a>
-           <a href="#">Now</a>
+           <a class="filters__dropdown" href="#">Popular</a>
+           <a class="filters__dropdown" href="#">Shots</a>
+           <a class="filters__dropdown" href="#">Now</a>
         </nav>
 
         <div class="wrap dribbles">
             <div class="dribble-pack">
                 <div class="dribble">
                     <a href="#">
-                        <img src="style/img/1111_teaser.jpg">
+                        <img class="dribble__img" src="style/img/1111_teaser.jpg">
                     </a>
-                    <a href="#" class="dribble-content">
-                        <strong class="dribble-title">Landscape Studies</strong>
-                        <span class="comment">
+                    <a href="#" class="dribble__content">
+                        <strong class="dribble__title">Landscape Studies</strong>
+                        <span class="dribble__comment">
                             A bunch of landscape studies for a scrapped client project. http://bit.ly/1zJJ1SF
                         </span>
                         <time>December 01, 2014</time>
                     </a>
 
                     <div class="tools">
-                        <a class="favorite" href="#">205</a>
-                        <a class="comments" href="#">14</a>
-                        <a class="views" href="#">1,754</a>
+                        <a class="tools__favorite" href="#">205</a>
+                        <a class="tools__comments" href="#">14</a>
+                        <a class="tools__views" href="#">1,754</a>
                     </div>
                 </div>
 
                 <div class="attribution">
                     <a class="user" href="#">
-                        <img class="photo" src="style/img/ef0cba4009655c2e216733c14c1f296e.png?1408648992">
+                        <img class="user__avatar" src="style/img/ef0cba4009655c2e216733c14c1f296e.png?1408648992">
                         Tubik Studio
                     </a>
-                    <a class="badge team" href="#">Team</a>
+                    <a class="user__badge user__badge--team" href="#">Team</a>
                 </div>
             </div>
 
             <div class="dribble-pack">
                 <div class="dribble">
                     <a href="#">
-                        <img src="style/img/rivendell_teaser.jpg">
+                        <img class="dribble__img" src="style/img/rivendell_teaser.jpg">
                     </a>
-                    <a href="#" class="dribble-content">
-                        <strong class="dribble-title">Rivendell</strong>
-                        <span class="comment">
+                    <a href="#" class="dribble__content">
+                        <strong class="dribble__title">Rivendell</strong>
+                        <span class="dribble__comment">
                             Lets all go to Rivendell.
                         </span>
                         <time>December 01, 2014</time>
                     </a>
 
                     <div class="tools">
-                        <a class="favorite" href="#">143</a>
-                        <a class="comments" href="#">12</a>
-                        <a class="views" href="#">876</a>
+                        <a class="tools__favorite" href="#">143</a>
+                        <a class="tools__comments" href="#">12</a>
+                        <a class="tools__views" href="#">876</a>
                     </div>
                 </div>
 
                 <div class="attribution">
                     <a class="user" href="#">
-                        <img class="photo" src="style/img/Cub_2.JPG?1401729235">
+                        <img class="user__avatar" src="style/img/Cub_2.JPG?1401729235">
                         Cub Studio
                     </a>
-                    <a class="badge team" href="#">Team</a>
+                    <a class="user__badge user__badge--team" href="#">Team</a>
                 </div>
             </div>
 
             <div class="dribble-pack">
                 <div class="dribble">
                     <a href="#">
-                        <img src="style/img/sketchy-pattern-elements_2x_teaser.png">
+                        <img class="dribble__img" src="style/img/sketchy-pattern-elements_2x_teaser.png">
                     </a>
-                    <a href="#" class="dribble-content">
-                        <strong class="dribble-title">Sketchy Pattern Elements</strong>
-                        <span class="comment">
+                    <a href="#" class="dribble__content">
+                        <strong class="dribble__title">Sketchy Pattern Elements</strong>
+                        <span class="dribble__comment">
                             Hand drawn and vectorized wallpaper / pattern elements
                         </span>
                         <time>December 01, 2014</time>
                     </a>
 
                     <div class="tools">
-                        <a class="favorite" href="#">692</a>
-                        <a class="comments" href="#">5</a>
-                        <a class="views" href="#">692</a>
+                        <a class="tools__favorite" href="#">692</a>
+                        <a class="tools__comments" href="#">5</a>
+                        <a class="tools__views" href="#">692</a>
                     </div>
                 </div>
 
                 <div class="attribution">
                     <a class="user" href="#">
-                        <img class="photo" src="style/img/MNA_Logo_DribbbleSquare.jpg?1399132574">
+                        <img class="user__avatar" src="style/img/MNA_Logo_DribbbleSquare.jpg?1399132574">
                         Motion Authors
                     </a>
-                    <a class="badge team" href="#">Team</a>
+                    <a class="user__badge user__badge--team" href="#">Team</a>
                 </div>
             </div>
 
             <div class="dribble-pack">
                 <div class="dribble">
                     <a href="#">
-                        <img src="style/img/heaven_nature_teaser.jpg">
+                        <img class="dribble__img" src="style/img/heaven_nature_teaser.jpg">
                     </a>
-                    <a href="#" class="dribble-content">
-                        <strong class="dribble-title">
+                    <a href="#" class="dribble__content">
+                        <strong class="dribble__title">
                             Heaven & Nature Sings
                         </strong>
-                        <span class="comment">
+                        <span class="dribble__comment">
                             Wrapped up a new illustration for my friends at Gracewaymedia.com. Thanks to @kyletwebster
                             photoshop brushes helping get the job done.
                         </span>
@@ -152,31 +152,31 @@
                     </a>
 
                     <div class="tools">
-                        <a class="favorite" href="#">46</a>
-                        <a class="comments" href="#">8</a>
-                        <a class="views" href="#">336</a>
+                        <a class="tools__favorite" href="#">46</a>
+                        <a class="tools__comments" href="#">8</a>
+                        <a class="tools__views" href="#">336</a>
                     </div>
                 </div>
 
                 <div class="attribution">
                     <a class="user" href="#">
-                        <img class="photo" src="style/img/logo.png?1380758372">
+                        <img class="user__avatar" src="style/img/logo.png?1380758372">
                         Nguyen Le
                     </a>
-                    <a class="badge pro" href="#">Pro</a>
+                    <a class="user__badge user__badge--pro" href="#">Pro</a>
                 </div>
             </div>
 
             <div class="dribble-pack">
                 <div class="dribble">
                     <a href="#">
-                        <img src="style/img/uncdtitled-1-01_teaser.png">
+                        <img class="dribble__img" src="style/img/uncdtitled-1-01_teaser.png">
                     </a>
-                    <a href="#" class="dribble-content">
-                        <strong class="dribble-title">
+                    <a href="#" class="dribble__content">
+                        <strong class="dribble__title">
                             Santa’s Sleigh In The ...
                         </strong>
-                        <span class="comment">
+                        <span class="dribble__comment">
                             These are part of a project I created with Fandango. Please visit the link to see the whole
                             project! http://www.fandango.com/movie-news/infographic-santas-s...
                         </span>
@@ -184,31 +184,31 @@
                     </a>
 
                     <div class="tools">
-                        <a class="favorite" href="#">89</a>
-                        <a class="comments" href="#">2</a>
-                        <a class="views" href="#">456</a>
+                        <a class="tools__favorite" href="#">89</a>
+                        <a class="tools__comments" href="#">2</a>
+                        <a class="tools__views" href="#">456</a>
                     </div>
                 </div>
 
                 <div class="attribution">
                     <a class="user" href="#">
-                        <img class="photo" src="style/img/twitter_avatar_NSW.jpg?1363700031">
+                        <img class="user__avatar" src="style/img/twitter_avatar_NSW.jpg?1363700031">
                         Matt Stevens
                     </a>
-                    <a class="badge pro" href="#">Pro</a>
+                    <a class="user__badge user__badge--pro" href="#">Pro</a>
                 </div>
             </div>
 
             <div class="dribble-pack">
                 <div class="dribble">
                     <a href="#">
-                        <img src="style/img/dribble_corp_icons_teaser.png">
+                        <img class="dribble__img" src="style/img/dribble_corp_icons_teaser.png">
                     </a>
-                    <a href="#" class="dribble-content">
-                        <strong class="dribble-title">
+                    <a href="#" class="dribble__content">
+                        <strong class="dribble__title">
                             Icons for new corporat...
                         </strong>
-                        <span class="comment">
+                        <span class="dribble__comment">
                             Hello, guys! Happy to share a small part of our corporate website redesign — a set of icons
                             for the main page! More shots are coming soon) Have a nice day!
                         </span>
@@ -216,98 +216,98 @@
                     </a>
 
                     <div class="tools">
-                        <a class="favorite" href="#">755</a>
-                        <a class="comments" href="#">2</a>
-                        <a class="views" href="#">51</a>
+                        <a class="tools__favorite" href="#">755</a>
+                        <a class="tools__comments" href="#">2</a>
+                        <a class="tools__views" href="#">51</a>
                     </div>
                 </div>
 
                 <div class="attribution">
                     <a class="user" href="#">
-                        <img class="photo" src="style/img/lady.jpeg?1411404045">
+                        <img class="user__avatar" src="style/img/lady.jpeg?1411404045">
                         Linn Fritz
                     </a>
-                    <a class="badge pro" href="#">Pro</a>
+                    <a class="user__badge user__badge--pro" href="#">Pro</a>
                 </div>
             </div>
 
             <div class="dribble-pack">
                 <div class="dribble">
                     <a href="#">
-                        <img src="style/img/shop-drb_teaser.jpg">
+                        <img class="dribble__img" src="style/img/shop-drb_teaser.jpg">
                     </a>
-                    <a href="#" class="dribble-content">
-                        <strong class="dribble-title">Shopping!</strong>
+                    <a href="#" class="dribble__content">
+                        <strong class="dribble__title">Shopping!</strong>
                         <time>November 10, 2014</time>
                     </a>
 
                     <div class="tools">
-                        <a class="favorite" href="#">755</a>
-                        <a class="comments" href="#">68</a>
-                        <a class="views" href="#">7351</a>
+                        <a class="tools__favorite" href="#">755</a>
+                        <a class="tools__comments" href="#">68</a>
+                        <a class="tools__views" href="#">7351</a>
                     </div>
                 </div>
 
                 <div class="attribution">
                     <a class="user" href="#">
-                        <img class="photo" src="style/img/rally_logo.png?1398641637">
+                        <img class="user__avatar" src="style/img/rally_logo.png?1398641637">
                         Rally Interactive
                     </a>
-                    <a class="badge team" href="#">Team</a>
+                    <a class="user__badge user__badge--team" href="#">Team</a>
                 </div>
             </div>
 
             <div class="dribble-pack">
                 <div class="dribble">
                     <a href="#">
-                        <img src="style/img/molot_teaser.jpg">
+                        <img class="dribble__img" src="style/img/molot_teaser.jpg">
                     </a>
-                    <a href="#" class="dribble-content">
-                        <strong class="dribble-title">
+                    <a href="#" class="dribble__content">
+                        <strong class="dribble__title">
                             The hammer of justice
                         </strong>
-                        <span class="comment">
+                        <span class="dribble__comment">
                             Hummer icon for a ios game
                         </span>
                         <time>about 10 hours ago</time>
                     </a>
 
                     <div class="tools">
-                        <a class="favorite" href="#">47</a>
-                        <a class="comments" href="#">7</a>
-                        <a class="views" href="#">311</a>
+                        <a class="tools__favorite" href="#">47</a>
+                        <a class="tools__comments" href="#">7</a>
+                        <a class="tools__views" href="#">311</a>
                     </div>
                 </div>
 
                 <div class="attribution">
                     <a class="user" href="#">
-                        <img class="photo" src="style/img/f94135a98c1958ed78df76d664300d82.png?1413907069">
+                        <img class="user__avatar" src="style/img/f94135a98c1958ed78df76d664300d82.png?1413907069">
                         Marvel
                     </a>
-                    <a class="badge team" href="#">Team</a>
+                    <a class="user__badge user__badge--team" href="#">Team</a>
                 </div>
             </div>
 
             <div class="dribble-pack">
                 <div class="dribble">
                     <a href="#">
-                        <img src="style/img/book_teaser.png">
+                        <img class="dribble__img" src="style/img/book_teaser.png">
                     </a>
-                    <a href="#" class="dribble-content">
-                        <strong class="dribble-title">Book</strong>
+                    <a href="#" class="dribble__content">
+                        <strong class="dribble__title">Book</strong>
                         <time>about 6 hours ago</time>
                     </a>
 
                     <div class="tools">
-                        <a class="favorite" href="#">39</a>
-                        <a class="comments" href="#">4</a>
-                        <a class="views" href="#">155</a>
+                        <a class="tools__favorite" href="#">39</a>
+                        <a class="tools__comments" href="#">4</a>
+                        <a class="tools__views" href="#">155</a>
                     </div>
                 </div>
 
                 <div class="attribution">
                     <a class="user" href="#">
-                        <img class="photo" src="style/img/profile_196868163_75sq_1392596321.jpg?1394804335">
+                        <img class="user__avatar" src="style/img/profile_196868163_75sq_1392596321.jpg?1394804335">
                         Burnt Toast Creative
                     </a>
                 </div>
@@ -316,13 +316,13 @@
             <div class="dribble-pack">
                 <div class="dribble">
                     <a href="#">
-                        <img src="style/img/6_teaser.jpg">
+                        <img class="dribble__img" src="style/img/6_teaser.jpg">
                     </a>
-                    <a href="#" class="dribble-content">
-                        <strong class="dribble-title">
+                    <a href="#" class="dribble__content">
+                        <strong class="dribble__title">
                             L-I-V-I-N-G Logomark [2]
                         </strong>
-                        <span class="comment">
+                        <span class="dribble__comment">
                             Another day, another rejection lol Back to the drawing board! 'Again'  Follow STUDIOJQ:
                             Behance | Twitter | Pinterest
                         </span>
@@ -330,31 +330,31 @@
                     </a>
 
                     <div class="tools">
-                        <a class="favorite" href="#">37</a>
-                        <a class="comments" href="#">2</a>
-                        <a class="views" href="#">127</a>
+                        <a class="tools__favorite" href="#">37</a>
+                        <a class="tools__comments" href="#">2</a>
+                        <a class="tools__views" href="#">127</a>
                     </div>
                 </div>
 
                 <div class="attribution">
                     <a class="user" href="#">
-                        <img class="photo" src="style/img/NEW_TWIT_AVAT.png?1366712872">
+                        <img class="user__avatar" src="style/img/NEW_TWIT_AVAT.png?1366712872">
                         Oliver Sin
                     </a>
-                    <a class="badge pro" href="#">Pro</a>
+                    <a class="user__badge user__badge--pro" href="#">Pro</a>
                 </div>
             </div>
 
             <div class="dribble-pack">
                 <div class="dribble">
                     <a href="#">
-                        <img src="style/img/ns01_teaser.jpg">
+                        <img class="dribble__img" src="style/img/ns01_teaser.jpg">
                     </a>
-                    <a href="#" class="dribble-content">
-                        <strong class="dribble-title">
+                    <a href="#" class="dribble__content">
+                        <strong class="dribble__title">
                             Nanosi
                         </strong>
-                        <span class="comment">
+                        <span class="dribble__comment">
                             Illustrations for the project Nanosi All pictures on behance -
                             https://www.behance.net/gallery/21345383/-Nanosi
                         </span>
@@ -362,93 +362,94 @@
                     </a>
 
                     <div class="tools">
-                        <a class="favorite" href="#">34</a>
-                        <a class="comments" href="#">3</a>
-                        <a class="views" href="#">98</a>
+                        <a class="tools__favorite" href="#">34</a>
+                        <a class="tools__comments" href="#">3</a>
+                        <a class="tools__views" href="#">98</a>
                     </div>
                 </div>
 
                 <div class="attribution">
                     <a class="user" href="#">
-                        <img class="photo" src="style/img/Cub_2.JPG?1401729235">
+                        <img class="user__avatar" src="style/img/Cub_2.JPG?1401729235">
                         Cub Studio
                     </a>
-                    <a class="badge team" href="#">Team</a>
+                    <a class="user__badge user__badge--team" href="#">Team</a>
                 </div>
             </div>
 
             <div class="dribble-pack">
                 <div class="dribble">
                     <a href="#">
-                        <img src="style/img/christmas-cookie_teaser.jpg">
+                        <img class="dribble__img" src="style/img/christmas-cookie_teaser.jpg">
                     </a>
-                    <a href="#" class="dribble-content">
-                        <strong class="dribble-title">
+                    <a href="#" class="dribble__content">
+                        <strong class="dribble__title">
                             Christmas Toy
                         </strong>
-                        <span class="comment">
+                        <span class="dribble__comment">
                             Don't forget to check 2x view.  What do you think?
                         </span>
                         <time>about 9 hours ago</time>
                     </a>
 
                     <div class="tools">
-                        <a class="favorite" href="#">32</a>
-                        <a class="comments" href="#">3</a>
-                        <a class="views" href="#">140</a>
+                        <a class="tools__favorite" href="#">32</a>
+                        <a class="tools__comments" href="#">3</a>
+                        <a class="tools__views" href="#">140</a>
                     </div>
                 </div>
 
                 <div class="attribution">
                     <a class="user" href="#">
-                        <img class="photo" src="style/img/tumblr_m0zfgpo25P1qdvls7o1_12802.jpg?1402951144">
+                        <img class="user__avatar" src="style/img/tumblr_m0zfgpo25P1qdvls7o1_12802.jpg?1402951144">
                         Ryan Brinkerhoff
                     </a>
-                    <a class="badge pro" href="#">Pro</a>
+                    <a class="user__badge user__badge--pro" href="#">Pro</a>
                 </div>
             </div>
         </div>
 
 
     </main>
-    <aside class="wrap">
-        <div class="additional-info-block">
-            <h3>
+
+    <aside class="wrap additional-info">
+        <div class="additional-info__block">
+            <h3 class="additional-info__block__title">
                 <a href="http://shop.dribbble.com/">
                     <span class="meta">Equipment</span> Shop
                 </a>
             </h3>
 
             <div>
-                <img src="style/img/dribbble-tee-green.png">
+                <img class="additional-info__block__img" src="style/img/dribbble-tee-green.png">
 
                 <p>Threads and goods for designers like you. Grab a tee or three at our official
-                    <a class="shop" href="http://shop.dribbble.com/">Equipment Shop</a>.
+                    <a class="additional-info__block--link" href="http://shop.dribbble.com/">Equipment Shop</a>.
                 </p>
             </div>
         </div>
 
-        <div class="additional-info-block job">
-            <h3>
+        <div class="additional-info__block">
+            <h3 class="additional-info__block__title">
                 <a href="https://dribbble.com/jobs">
                     <span class="meta">Jobs</span> for Designers
                 </a>
             </h3>
 
             <div>
-                <a href="https://dribbble.com/jobs/7509">
+                <a class="job" href="https://dribbble.com/jobs/7509">
                     <strong class="company">Spiceworks</strong>
                     is hiring a
                     <span class="position">UI / UX Designer</span>
                 </a>
 
-                <a href="https://dribbble.com/jobs/7381">
+                <a class="job" href="https://dribbble.com/jobs/7381">
                     <strong class="company"> Postmark & Beanstalk</strong>
                     is hiring a
                     <span  class="position">Senior Front-end Designer</span>
                 </a>
 
-                <a href="https://dribbble.com/jobs/7507">
+                <a class="job" href="https://dribbble.com/jobs/7507">
                     <strong class="company">Idean</strong>
                     is hiring a
                     <span  class="position">Lead Interaction Designer</span>
@@ -456,65 +457,67 @@
             </div>
         </div>
 
-        <div class="additional-info-block">
-            <h3>
+        <div class="additional-info__block">
+            <h3 class="additional-info__block__title">
                 <a href="http://decknetwork.net/">
                     <span class="meta">Ads</span> via The Deck
                 </a>
             </h3>
 
             <div>
-                <img src="https://connect.decknetwork.net/i/pixate.png">
+                <img class="additional-info__block__img" src="https://connect.decknetwork.net/i/pixate.png">
 
                 <p>
                     Design native prototypes with complex interactions and animations.
-                    <a class="shop" href="http://shop.dribbble.com/">No code required</a>.
+                    <a class="additional-info__block--link" href="http://shop.dribbble.com/">No code required</a>.
                 </p>
             </div>
         </div>
     </aside>
 
-    <footer>
+    <footer class="footer">
         <div class="wrap">
-            <div class="link-list-block">
-                <div class="logo-footer"></div>
-                <p class="motto">
-                    Show and tell for designers
-                </p>
-                <p>
-                    What are you working on? Dribbble is a community of designers sharing screenshots of their work,
-                    process, and projects.
-                </p>
-            </div>
+            <div class="link-list">
+                <div>
+                    <div class="logo--footer"></div>
+                    <p class="motto">
+                        Show and tell for designers
+                    </p>
+                    <p>
+                        What are you working on? Dribbble is a community of designers sharing screenshots of their work,
+                        process, and projects.
+                    </p>
+                </div>
 
-            <div class="link-list-block">
-                <h3>Company</h3>
-                <a href="https://dribbble.com/about">About</a>
-                <a href="http://help.dribbble.com/">Help</a>
-                <a href="https://dribbble.com/contact">Contact</a>
-                <a href="https://dribbble.com/terms">Terms</a>
-                <a href="https://dribbble.com/privacy">Privacy</a>
-                <a href="http://shop.dribbble.com/">Shop</a>
-            </div>
+                <div>
+                    <h3 class="link-list__header">Company</h3>
+                    <a class="link-list__link" href="https://dribbble.com/about">About</a>
+                    <a class="link-list__link" href="http://help.dribbble.com/">Help</a>
+                    <a class="link-list__link" href="https://dribbble.com/contact">Contact</a>
+                    <a class="link-list__link" href="https://dribbble.com/terms">Terms</a>
+                    <a class="link-list__link" href="https://dribbble.com/privacy">Privacy</a>
+                    <a class="link-list__link" href="http://shop.dribbble.com/">Shop</a>
+                </div>
 
-            <div class="link-list-block">
-                <h3>Community</h3>
-                <a href="http://blog.dribbble.com/">Blog</a>
-                <a href="https://dribbble.com/meetups">Meetups</a>
-                <a href="https://confirmsubscription.com/h/y/D6A3AA96A2E03744">Newsletter</a>
-                <a href="https://dribbble.com/testimonials">Testimonials</a>
-                <a href="https://dribbble.com/handbook">Handbook</a>
-                <a href="https://dribbble.com/branding">Brand Guidelines</a>
-            </div>
+                <div>
+                    <h3 class="link-list__header">Community</h3>
+                    <a class="link-list__link" href="http://blog.dribbble.com/">Blog</a>
+                    <a class="link-list__link" href="https://dribbble.com/meetups">Meetups</a>
+                    <a class="link-list__link" href="https://confirmsubscription.com/h/y/D6A3AA96A2E03744">Newsletter</a>
+                    <a class="link-list__link" href="https://dribbble.com/testimonials">Testimonials</a>
+                    <a class="link-list__link" href="https://dribbble.com/handbook">Handbook</a>
+                    <a class="link-list__link" href="https://dribbble.com/branding">Brand Guidelines</a>
+                </div>
 
-            <div class="link-list-block">
-                <h3>Connect</h3>
-                <a href="https://dribbble.com/designers">Find Designers</a>
-                <a href="https://dribbble.com/jobs">Jobs for Designers</a>
-                <a href="https://dribbble.com/pro">Go Pro</a>
-                <a href="https://dribbble.com/teams/info">Teams</a>
-                <a href="https://dribbble.com/advertise">Advertise</a>
-                <a href="http://developer.dribbble.com/">API</a>
+                <div>
+                    <h3 class="link-list__header">Connect</h3>
+                    <a class="link-list__link" href="https://dribbble.com/designers">Find Designers</a>
+                    <a class="link-list__link" href="https://dribbble.com/jobs">Jobs for Designers</a>
+                    <a class="link-list__link" href="https://dribbble.com/pro">Go Pro</a>
+                    <a class="link-list__link" href="https://dribbble.com/teams/info">Teams</a>
+                    <a class="link-list__link" href="https://dribbble.com/advertise">Advertise</a>
+                    <a class="link-list__link" href="http://developer.dribbble.com/">API</a>
+                </div>
             </div>
 
             <p class="copyright">
@@ -523,24 +526,24 @@
             </p>
 
             <p class="pixel-counter">
-                <strong>273,512,580,871</strong>pixels dribbbled
+                <strong class="pixel-counter--strong">273,512,580,871</strong>pixels dribbbled
             </p>
 
             <p class="follow">
-                <a href="http://twitter.com/dribbble">
-                    <img src="style/img/icon-team-twitter.png"/>
+                <a class="follow__link" href="http://twitter.com/dribbble">
+                    <img class="follow__icon" src="style/img/icon-team-twitter.png"/>
                 </a>
 
-                <a href="http://facebook.com/dribbble">
-                    <img src="style/img/icon-team-facebook.png"/>
+                <a class="follow__link" href="http://facebook.com/dribbble">
+                    <img class="follow__icon" src="style/img/icon-team-facebook.png"/>
                 </a>
 
-                <a href="http://instagram.com/dribbble">
-                    <img src="style/img/icon-team-instagram.png"/>
+                <a class="follow__link" href="http://instagram.com/dribbble">
+                    <img class="follow__icon" src="style/img/icon-team-instagram.png"/>
                 </a>
 
-                <a href="http://blog.dribbble.com">
-                    <img src="style/img/icon-team-tumblr.png"/>
+                <a class="follow__link" href="http://blog.dribbble.com">
+                    <img class="follow__icon" src="style/img/icon-team-tumblr.png"/>
                 </a>
             </p>
         </div>
