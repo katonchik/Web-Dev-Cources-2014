@@ -1,0 +1,18 @@
+.main-menu         { height: 51px;
+  .main-menu__link {
+                     border-top: 5px solid #333333; border-right: 1px solid #525252; color: #ffffff;
+                     font-weight: bold; padding: 13px 15px 18px; text-transform: uppercase;
+                     transition: border-top-color 0.3s ease 0s; margin: 0;
+    &:hover        { background: #222; }
+  }
+}
+
+.search            { height: 18px; width: 18px; margin: 15px 30px; float: right; }
+.info:hover        { border-top-color: #8f2c7a; }
+.more:hover        { @extend .events:hover; }
+.resto:hover       { border-top-color: #f27410; }
+.studie:hover      { @extend .resto:hover; }
+.events:hover      { border-top-color: #348fd8; }
+.tourism:hover     { @extend .events:hover; }
+.dwelling:hover    { border-top-color: #0a7c1d; }
+.locations:hover   { border-top-color: #b41903; }

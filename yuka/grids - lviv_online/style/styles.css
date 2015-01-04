@@ -1,0 +1,208 @@
+.block {
+  border-top: 5px solid #ffffff;
+  margin-bottom: 10px; }
+  .block__h1 {
+    font-size: 18px;
+    display: inline-block;
+    padding-bottom: 10px; }
+  .block__h2 {
+    font-weight: 700;
+    font-size: 14px;
+    color: #575757; }
+  .block__img {
+    width: 100%; }
+    .block__img--poster {
+      width: 60px;
+      height: 60px;
+      float: left; }
+    .block__img--interior {
+      height: 75px;
+      width: 100px;
+      float: left;
+      margin-right: 10px; }
+  .block--color-red {
+    color: #b41903; }
+  .block--color-blue {
+    color: #348fd8;
+    display: block; }
+  .block--color-black {
+    color: #333; }
+  .block--color-green {
+    color: #0a7c1d; }
+  .block--color-orange {
+    color: #f27410; }
+  .block--color-violet {
+    color: #8f2c7a; }
+  .block--border-red {
+    border-top-color: #b41903; }
+  .block--border-blue {
+    border-top-color: #348fd8; }
+  .block--border-black {
+    border-top-color: #333; }
+  .block--border-green {
+    border-top-color: #0a7c1d; }
+  .block--border-orange {
+    border-top-color: #f27410; }
+  .block--border-violet {
+    border-top-color: #8f2c7a; }
+  .block--article-surround {
+    border-bottom: 1px dotted #b4b4b4;
+    padding: 10px 0; }
+  .block--content-margin-left {
+    margin-left: 70px; }
+
+.see-more {
+  text-decoration: underline;
+  font-size: 12px;
+  padding-top: 4px;
+  float: right; }
+
+.all-logos {
+  border-top: 2px solid #6b6966;
+  border-bottom: 2px solid #6b6966;
+  padding: 20px 0;
+  margin-top: 10px; }
+  .all-logos .all-logos__link {
+    background: url("img/all_logos_footer_980.png");
+    height: 18px;
+    display: inline-block;
+    margin-right: 18px; }
+    .all-logos .all-logos__link:last-child {
+      margin-right: 0; }
+  .all-logos .lviv {
+    background-position: 0 100%;
+    width: 11%; }
+  .all-logos .lutsk {
+    background-position: 57% 100%;
+    width: 12.5%; }
+  .all-logos .ternopil {
+    background-position: 38% 100%;
+    width: 15.5%; }
+  .all-logos .uzhgorod {
+    background-position: 77% 100%;
+    width: 16%; }
+  .all-logos .frankivsk {
+    background-position: 16% 100%;
+    width: 16.5%; }
+  .all-logos .chernivtsi {
+    background-position: 100% 100%;
+    width: 17%; }
+
+.logo__img {
+  width: 160px;
+  padding: 10px 0;
+  vertical-align: middle; }
+
+.follow {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  margin: 25px 0 5px 5px;
+  background-size: 100%;
+  background-image: url("img/social_icons.png"); }
+  .follow__vk {
+    background-position: 100% 43%; }
+  .follow__lg {
+    background-position: 100% 57%; }
+  .follow__rss {
+    background-position: 100% 0; }
+  .follow__twitter {
+    background-position: 100% 14.5%; }
+  .follow__facebook {
+    background-position: 100% 29%; }
+  .follow__pinterest {
+    background-position: 100% 85.5%; }
+  .follow__instagram {
+    background-position: 100% 100%; }
+  .follow__google-plus {
+    background-position: 100% 72%; }
+
+.copyright {
+  border-bottom: 2px solid #6b6966;
+  padding: 5px 0;
+  font-size: 11px;
+  margin-bottom: 10px; }
+
+.main-menu {
+  height: 51px; }
+  .main-menu .main-menu__link {
+    border-top: 5px solid #333333;
+    border-right: 1px solid #525252;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 13px 15px 18px;
+    text-transform: uppercase;
+    transition: border-top-color 0.3s ease 0s;
+    margin: 0; }
+    .main-menu .main-menu__link:hover {
+      background: #222; }
+
+.search {
+  height: 18px;
+  width: 18px;
+  margin: 15px 30px;
+  float: right; }
+
+.info:hover {
+  border-top-color: #8f2c7a; }
+
+.resto:hover, .studie:hover {
+  border-top-color: #f27410; }
+
+.events:hover, .more:hover, .tourism:hover {
+  border-top-color: #348fd8; }
+
+.dwelling:hover {
+  border-top-color: #0a7c1d; }
+
+.locations:hover {
+  border-top-color: #b41903; }
+
+.link-block {
+  margin-top: 10px; }
+  .link-block__list {
+    margin: 10px 0 0 15px; }
+  .link-block__header {
+    border-bottom: 2px solid #ffffff;
+    font-size: 14px;
+    font-weight: normal;
+    padding: 10px 0 5px 5px;
+    width: 305px; }
+  .link-block--color {
+    color: #ffffff; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  background: #f7f4ef;
+  font: 12px arial;
+  color: #6b6966; }
+  body a {
+    text-decoration: none;
+    color: #575757; }
+  body h1 {
+    font-weight: normal; }
+
+.wrap {
+  margin: 0 auto;
+  width: 980px;
+  clear: both; }
+
+.main {
+  margin-top: 65px; }
+
+.header {
+  position: fixed;
+  width: 100%;
+  background: #333333;
+  z-index: 5;
+  top: 0; }
+
+.footer {
+  background: #333333;
+  width: 100%;
+  overflow: hidden; }
+
+/*# sourceMappingURL=styles.css.map */
