@@ -1,0 +1,20 @@
+.header        {
+                 margin: 0 0 40px 0;
+  &__title     { font-size: 19px; margin: 0; padding: 0; letter-spacing: -0.02em; }
+}
+
+.site-menu     { display: none; }
+.mobile-menu   { float: right; vertical-align: baseline; width: 29px; cursor: pointer; }
+
+@media         ( min-width: 769px ) {
+  .header      {
+                 margin-bottom: 64px; padding-top: 5px;
+    &__title   { display: inline-block; margin: 0 20px; }
+  }
+  .site-menu   {
+                 display: block; width: 66.6667%; float: right; font-weight: bold;
+    &__link    { margin: 0 20px; }
+  }
+  .mobile-menu { display: none; }
+}
+
