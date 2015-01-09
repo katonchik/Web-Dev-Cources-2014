@@ -8,8 +8,8 @@ main {
 .title {
   color: #680fc7; }
 
-.sort-visualization {
-  padding: 10px 0; }
+.sort-control {
+  margin: 10px; }
 
 .array-element {
   display: inline-block;
@@ -19,8 +19,10 @@ main {
   text-align: center;
   background: #d9a5ff;
   border-radius: 10px 0; }
+  .array-element--sorted {
+    background: #698dff; }
 
-.sort-control {
-  margin: 10px; }
+.sort-visualization {
+  padding: 10px 0; }
 
 /*# sourceMappingURL=style.css.map */

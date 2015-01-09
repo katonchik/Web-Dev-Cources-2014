@@ -1,51 +1,59 @@
-window.onload = function () {
+window.onload = function() {
     /**
      * @param data
      * @returns {HTMLElement}
      */
-    function render (data) {
+    function render(data) {
         var div = document.createElement("div");
         div.className = 'array-element';
         div.style.height = data + "px";
         return div;
     }
 
-    /**
-     * @param data {Array}
-     * @return Array {Array}
-     */
-    function sortInsertion(data) {
-        for (var i = 0; i < data.length; i++) {
-            var smallest = data[i];
-
-
-            var j = i - 1;
-            while (j >= 0 && data[j] > smallest) {
-                data[j + 1] = data[j];
-                j--;
-            }
-            data[j + 1] = smallest;
-        }
-        return data;
-    }
-
-    var newArray = generateRandomArray(25);
+    var sortArray = generateRandomArray(25);
 
     var section = document.getElementsByClassName("sort-visualization")[0];
 
-    newArray.map(render).forEach(function(arrayData) {
+    sortArray.map(render).forEach(function(arrayData) {
         section.appendChild(arrayData);
     });
 
-    document.getElementsByClassName("start-sorting")[0].addEventListener("click", function() {
-        sortInsertion(newArray);
-        var sortedArray = newArray.map(render);
-
+    /**
+     * Redraws array after one step of sort
+     * @param data
+     */
+    function drawEverything(data) {
+        var sortedArray = data.map(render);
         section.innerHTML = "";
-
-        sortedArray.forEach(function(node) {
+        sortedArray.forEach(function(node, j) {
+            if (j < i) {
+                node.classList.add('array-element--sorted')
+            }
             section.appendChild(node);
         });
+    }
+
+    var sortingInterval = null;
+
+    document.getElementsByClassName("start-sorting")[0].addEventListener("click", function() {
+        if (sortingInterval) {
+            return;
+        }
+        sortingInterval = setInterval(function() {
+            var stepArray = sortInsertion(sortArray);
+            if (stepArray) {
+                drawEverything(stepArray);
+            } else {
+                drawEverything(sortArray);
+                clearInterval(sortingInterval);
+                sortingInterval = null;
+            }
+        }, 200);
+    });
+
+    document.getElementsByClassName("refresh")[0].addEventListener("click", function() {
+        sortArray = generateRandomArray(25);
+        resetSortInsertion();
+        drawEverything(sortArray);
     });
 };
-

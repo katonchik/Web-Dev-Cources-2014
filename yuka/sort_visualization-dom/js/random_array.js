@@ -1,11 +1,11 @@
-var array = [];
-
 /**
  * @param n {Number} count of elements
  * @param q {Number} diapason
  * @returns {Array}
  */
 function generateRandomArray(n, q) {
+    var array = [];
+
     n = n || 25;
     q = q || 100;
 
