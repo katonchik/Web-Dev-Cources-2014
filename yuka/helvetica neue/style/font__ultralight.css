@@ -1,8 +1,8 @@
 @charset "UTF-8";
 @font-face {
   font-family: 'Conv_HelveticaNeue';
-  src: url("../font/HelveticaNeue-UltraLight.eot");
-  src: local("Γÿ║"), url("../font/HelveticaNeue-UltraLight.woff") format("woff"), url("../font/HelveticaNeue-UltraLight.ttf") format("truetype"), url("../font/HelveticaNeue-UltraLight.svg") format("svg");
+  src: url("../font/eot/HelveticaNeue-UltraLight.eot");
+  src: local("Γÿ║"), url("../font/woff/HelveticaNeue-UltraLight.woff") format("woff"), url("../font/ttf/HelveticaNeue-UltraLight.ttf") format("truetype"), url("../font/svg/HelveticaNeue-UltraLight.svg") format("svg");
   font-weight: normal;
   font-style: normal; }
 
