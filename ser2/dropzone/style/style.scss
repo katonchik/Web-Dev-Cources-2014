@@ -1,0 +1,67 @@
+$basic-color: #3c3c3c;
+$secondary-color: #1ABC9C;
+$tertiary-color: #16A085;
+
+$db-size: 300px;
+
+body {
+    padding:0;
+    margin:0;
+    font:18px 'Oswald', sans-serif;
+    line-height:1.2;
+}
+
+.dropbox {
+    position:relative;
+    width: 400px;
+    height: $db-size;
+    margin: 20px auto;
+    border: 2px solid $tertiary-color;
+    border-radius:10px;
+    background-color: lighten($secondary-color, 50%);
+    text-align: center;
+    color: darken($tertiary-color, 15%);
+
+    .label {
+        display: inline-block;
+        margin-top: $db-size / 2 - 25;
+        font-size: 25px;
+    }
+}
+
+.progress-container {
+    position: absolute;
+    bottom: 20px;
+    left: 15px;
+    right: 15px;
+    text-align: left;
+
+    .label {
+        font-size: 16px;
+        margin: 0 0 6px;
+        text-transform: capitalize;
+    }
+
+    .progressbar-wrapper {
+        height: 6px;
+        background-color: lighten($tertiary-color, 40%);
+
+        .progressbar {
+            width:0%;
+            height:inherit;
+            transition: all .1s linear;
+            background-color: darken($tertiary-color, 15%);
+        }
+    }
+}
+
+.uploaded-list {
+    display: table;
+    margin: auto;
+    text-align: center;
+
+    .label {
+        display: block;
+        margin: 0 0 10px;
+    }
+}
