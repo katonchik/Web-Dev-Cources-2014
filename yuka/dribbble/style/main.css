@@ -88,7 +88,8 @@
     line-height: 1.4;
     margin: 0 0 10px;
     overflow: hidden;
-    text-overflow: ellipsis; }
+    text-overflow: ellipsis;
+    height: 90px; }
   .dribbles .dribble {
     position: relative;
     border-radius: 3px;
