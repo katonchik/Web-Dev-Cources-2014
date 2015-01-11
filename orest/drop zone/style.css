@@ -1,0 +1,55 @@
+body, h1, h2{
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica, sans-serif;
+}
+
+h1, h2 {
+    text-align: center;
+    padding: 20px 0;
+    color: #9873dc;
+}
+
+
+.dropZone {
+    width: 300px;
+    height: 150px;
+    line-height: 150px;
+    margin: 20px auto 70px;
+    border: 2px dashed #bbb;
+    padding: 10px;
+    color: #bbb;
+    background-color: #f2f2f2;
+    text-align: center;
+    -webkit-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+
+.dropZone:hover, .dropZoneHovered {
+    width: 450px;
+    height: 250px;
+    line-height: 250px;
+    border-color: #505050;
+    color: #505050;
+    background-color: #d8c1f7;
+    font-size: 25px;
+    cursor: cell;
+}
+
+.filesCollection {
+    background-color: #96eac9;
+    min-height: 150px;
+
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+.uploads {
+    height: 50px;
+    border: 3px dashed #505050;
+    border-radius: 10px;
+    width: 80%;
+    margin: 10px auto;
+}
