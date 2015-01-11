@@ -25,8 +25,8 @@
 
         for (var i = 0; i < data.length; i++) {
             anchor = document.createElement('a');
-            anchor.href = data[x].file;
-            anchor.innerHTML = data[x].name + '<br/>';
+            anchor.href = data[i].file;
+            anchor.innerHTML = data[i].name + '<br/>';
 
             uploads.appendChild(anchor);
         }
