@@ -1,12 +1,8 @@
 [
-  {{#repeat 800}}
-      {
-          "index"     : {{index}},
-          "firstName" : "{{firstName}}",
-          "lastName"  : "{{lastName}}",
-          "email"     : "{{email}}",
-          "work"      : "{{company}}",
-          "age"       : {{number 20 50}}
-      }
-  {{/repeat}}
+{{#repeater 1000}}
+  {
+    "name"     : "{{faker 'name.findName'}}",
+    "avatar"   : "{{faker 'internet.avatar'}}"
+  }
+{{/repeater}}
 ]

@@ -1,0 +1,32 @@
+.banner {
+  background-color: #e7e7e7;
+  border-radius: 0 0 6px 6px;
+  text-align: center;
+  padding: 20px;
+  width: 930px; }
+  .banner h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    color: #777;
+    line-height: 1.3;
+    display: inline-block;
+    font-weight: normal; }
+  .banner h1 strong {
+    color: #333; }
+  .banner .learn-more, .banner .sign-up {
+    color: #ffffff;
+    border: none;
+    background-color: #acacac;
+    border-radius: 4px;
+    font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0 0 0 5px;
+    padding: 3px 9px; }
+  .banner .learn-more:hover, .banner .sign-up:hover {
+    background: rgba(0, 0, 0, 0.4); }
+  .banner .sign-up {
+    background-color: #ed6a9c; }
+  .banner .sign-up:hover {
+    background-color: #de3b7e; }
+
+/*# sourceMappingURL=banner.css.map */
