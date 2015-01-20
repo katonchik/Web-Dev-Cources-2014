@@ -1,6 +1,3 @@
-/**
- * Created by yuka on 09.01.15.
- */
 var model;
 var drawInterval;
 

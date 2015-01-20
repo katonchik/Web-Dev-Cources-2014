@@ -29,6 +29,11 @@ window.onload = function() {
             if (j < i) {
                 node.classList.add('array-element--sorted')
             }
+            if (j === i) {
+                node.classList.add('current')
+            } else {
+                node.classList.remove('current')
+            }
             section.appendChild(node);
         });
     }
@@ -48,7 +53,7 @@ window.onload = function() {
                 clearInterval(sortingInterval);
                 sortingInterval = null;
             }
-        }, 200);
+        }, 400);
     });
 
     document.getElementsByClassName("refresh")[0].addEventListener("click", function() {

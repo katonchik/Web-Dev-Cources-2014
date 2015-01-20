@@ -20,9 +20,14 @@ main {
   background: #d9a5ff;
   border-radius: 10px 0; }
   .array-element--sorted {
-    background: #698dff; }
+    background: #698dff;
+    position: relative;
+    bottom: -20px; }
 
 .sort-visualization {
   padding: 10px 0; }
+
+.current {
+  background: orange; }
 
 /*# sourceMappingURL=style.css.map */
