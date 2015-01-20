@@ -1,0 +1,222 @@
+@import "variables";
+
+@keyframes target {
+     0% { background: url("apple.png") no-repeat; }
+    90% { background: url("apple-cut.png") no-repeat; }
+   100% { background: url("apple-cut-rotate.png") no-repeat; }
+}
+
+@keyframes tail-move  {
+    0% { left: 0; }
+    5% { left: $step-length; }
+   10% { left: $step-length; }
+   15% { left: $step-length*2; }
+   20% { left: $step-length*2;}
+   25% { left: $step-length*3; }
+   30% { left: $step-length*3;}
+   35% { left: $step-length*4; }
+   40% { left: $step-length*4;}
+   45% { left: $step-length*5; }
+   50% { left: $step-length*5;}
+   55% { left: $step-length*6; }
+   60% { left: $step-length*6;}
+   65% { left: $step-length*7; }
+   70% { left: $step-length*7;}
+   75% { left: $step-length*8; }
+   80% { left: $step-length*8;}
+   85% { left: $step-length*9; }
+   90% { left: $step-length*9;}
+   95% { left: $step-length*10; }
+  100% { left: $step-length*10;} }
+
+@keyframes two-move   {
+    0% { left: 0; top: 0; }
+    5% { left: $step-length; top: $height-2-8; }
+   10% { left: $step-length; top: 0; }
+   15% { left: $step-length*2; top: $height-2-8; }
+   20% { left: $step-length*2; top: 0; }
+   25% { left: $step-length*3; top: $height-2-8; }
+   30% { left: $step-length*3; top: 0; }
+   35% { left: $step-length*4; top: $height-2-8; }
+   40% { left: $step-length*4; top: 0; }
+   45% { left: $step-length*5; top: $height-2-8; }
+   50% { left: $step-length*5; top: 0; }
+   55% { left: $step-length*6; top: $height-2-8; }
+   60% { left: $step-length*6; top: 0; }
+   65% { left: $step-length*7; top: $height-2-8; }
+   70% { left: $step-length*7; top: 0; }
+   75% { left: $step-length*8; top: $height-2-8; }
+   80% { left: $step-length*8; top: 0; }
+   85% { left: $step-length*9; top: $height-2-8; }
+   90% { left: $step-length*9; top: 0; }
+   95% { left: $step-length*10; top: $height-2-8; }
+  100% { left: $step-length*10; top: $height-2-8; }
+}
+
+@keyframes three-move {
+    0% { left: 0; top: 0; }
+    5% { left: $width-3; top: $height-3-7; }
+   10% {left: $step-length; top: 0; }
+   15% { left: $step-length+$width-3; top: $height-3-7; }
+   20% { left: $step-length*2; top: 0; }
+   25% { left: $step-length*2+$width-3; top: $height-3-7; }
+   30% { left: $step-length*3; top: 0; }
+   35% { left: $step-length*3+$width-3; top: $height-3-7; }
+   40% { left: $step-length*4; top: 0; }
+   45% { left: $step-length*4+$width-3; top: $height-3-7; }
+   50% { left: $step-length*5; top: 0; }
+   55% { left: $step-length*5+$width-3; top: $height-3-7; }
+   60% { left: $step-length*6; top: 0; }
+   65% { left: $step-length*6+$width-3; top: $height-3-7; }
+   70% { left: $step-length*7; top: 0; }
+   75% { left: $step-length*7+$width-3; top: $height-3-7; }
+   80% { left: $step-length*8; top: 0; }
+   85% { left: $step-length*8+$width-3; top: $height-3-7; }
+   90% { left: $step-length*9; top: 0; }
+   95% { left: $step-length*9+$width-3; top: $height-3-7; }
+  100% { left: $step-length*9+$width-3; top: $height-3-7; }
+}
+
+@keyframes four-move  {
+    0% { left: 0; top: 0; }
+    5% { left: $width-4; top: $height-4-6; }
+   10% {left: $step-length; top: 0; }
+   15% { left: $step-length+$width-4; top: $height-4-6; }
+   20% { left: $step-length*2; top: 0; }
+   25% { left: $step-length*2+$width-4; top: $height-4-6; }
+   30% { left: $step-length*3; top: 0; }
+   35% { left: $step-length*3+$width-4; top: $height-4-6; }
+   40% { left: $step-length*4; top: 0; }
+   45% { left: $step-length*4+$width-4; top: $height-4-6; }
+   50% { left: $step-length*5; top: 0; }
+   55% { left: $step-length*5+$width-4; top: $height-4-6; }
+   60% { left: $step-length*6; top: 0; }
+   65% { left: $step-length*6+$width-4; top: $height-4-6; }
+   70% { left: $step-length*7; top: 0; }
+   75% { left: $step-length*7+$width-4; top: $height-4-6; }
+   80% { left: $step-length*8; top: 0; }
+   85% { left: $step-length*8+$width-4; top: $height-4-6; }
+   90% { left: $step-length*9; top: 0; }
+   95% { left: $step-length*9+$width-4; top: $height-4-6; }
+  100% { left: $step-length*9+$width-4; top: $height-4-6; }
+}
+
+@keyframes five-move  {
+    0% { left: 0; top: 0; }
+    5% { left: $width-5; top: $height-5; }
+   10% {left: $step-length; top: 0; }
+   15% { left: $step-length+$width-5; top: $height-5; }
+   20% { left: $step-length*2; top: 0; }
+   25% { left: $step-length*2+$width-5; top: $height-5; }
+   30% { left: $step-length*3; top: 0; }
+   35% { left: $step-length*3+$width-5; top: $height-5; }
+   40% { left: $step-length*4; top: 0; }
+   45% { left: $step-length*4+$width-5; top: $height-5; }
+   50% { left: $step-length*5; top: 0; }
+   55% { left: $step-length*5+$width-5; top: $height-5; }
+   60% { left: $step-length*6; top: 0; }
+   65% { left: $step-length*6+$width-5; top: $height-5; }
+   70% { left: $step-length*7; top: 0; }
+   75% { left: $step-length*7+$width-5; top: $height-5; }
+   80% { left: $step-length*8; top: 0; }
+   85% { left: $step-length*8+$width-5; top: $height-5; }
+   90% { left: $step-length*9; top: 0; }
+   95% { left: $step-length*9+19px; top: -50px; }
+  100% { left: $step-length*9+19px; top: -50px; }
+}
+
+@keyframes six-move   {
+    0% { left: 0; top: 0; }
+    5% { left: $width-6; top: $height-4-6; }
+   10% {left: $step-length; top: 0; }
+   15% { left: $step-length+$width-6; top: $height-4-6; }
+   20% { left: $step-length*2; top: 0; }
+   25% { left: $step-length*2+$width-6; top: $height-4-6; }
+   30% { left: $step-length*3; top: 0; }
+   35% { left: $step-length*3+$width-6; top: $height-4-6; }
+   40% { left: $step-length*4; top: 0; }
+   45% { left: $step-length*4+$width-6; top: $height-4-6; }
+   50% { left: $step-length*5; top: 0; }
+   55% { left: $step-length*5+$width-6; top: $height-4-6; }
+   60% { left: $step-length*6; top: 0; }
+   65% { left: $step-length*6+$width-6; top: $height-4-6; }
+   70% { left: $step-length*7; top: 0; }
+   75% { left: $step-length*7+$width-6; top: $height-4-6; }
+   80% { left: $step-length*8; top: 0; }
+   85% { left: $step-length*8+$width-6; top: $height-4-6; }
+   90% { left: $step-length*9; top: 0; }
+   95% { left: $step-length*9+13px; top: -63px; }
+  100% { left: $step-length*9+13px; top: -63px; }
+}
+
+@keyframes seven-move {
+    0% { left: 0; top: 0; }
+    5% { left: $width-7; top: $height-3-7; }
+   10% {left: $step-length; top: 0; }
+   15% { left: $step-length+$width-7; top: $height-3-7; }
+   20% { left: $step-length*2; top: 0; }
+   25% { left: $step-length*2+$width-7; top: $height-3-7; }
+   30% { left: $step-length*3; top: 0; }
+   35% { left: $step-length*3+$width-7; top: $height-3-7; }
+   40% { left: $step-length*4; top: 0; }
+   45% { left: $step-length*4+$width-7; top: $height-3-7; }
+   50% { left: $step-length*5; top: 0; }
+   55% { left: $step-length*5+$width-7; top: $height-3-7; }
+   60% { left: $step-length*6; top: 0; }
+   65% { left: $step-length*6+$width-7; top: $height-3-7; }
+   70% { left: $step-length*7; top: 0; }
+   75% { left: $step-length*7+$width-7; top: $height-3-7; }
+   80% { left: $step-length*8; top: 0; }
+   85% { left: $step-length*8+$width-7; top: $height-3-7; }
+   90% { left: $step-length*9; top: 0; }
+   95% { left: $step-length*9+12px; top: -67px; }
+  100% { left: $step-length*9+12px; top: -67px; }
+}
+
+@keyframes eight-move {
+    0% { left: 0; top: 0; }
+    5% { left: 0; top: $height-2-8; }
+   10% {left: $step-length; top: 0; }
+   15% { left: $step-length; top: $height-2-8; }
+   20% { left: $step-length*2; top: 0; }
+   25% { left: $step-length*2; top: $height-2-8; }
+   30% { left: $step-length*3; top: 0; }
+   35% { left: $step-length*3; top: $height-2-8; }
+   40% { left: $step-length*4; top: 0; }
+   45% { left: $step-length*4; top: $height-2-8; }
+   50% { left: $step-length*5; top: 0; }
+   55% { left: $step-length*5; top: $height-2-8; }
+   60% { left: $step-length*6; top: 0; }
+   65% { left: $step-length*6; top: $height-2-8; }
+   70% { left: $step-length*7; top: 0; }
+   75% { left: $step-length*7; top: $height-2-8; }
+   80% { left: $step-length*8; top: 0; }
+   85% { left: $step-length*8; top: $height-2-8; }
+   90% { left: $step-length*9; top: 0; }
+   95% { left: $step-length*9+11px; top: -65px; }
+  100% { left: $step-length*9+11px; top: -65px; }
+}
+
+@keyframes head-move  {
+    0% { left: 0; top: 0; }
+    5% { left: 0; }
+   10% {left: $step-length; top: 0; }
+   15% { left: $step-length; top: 0; }
+   20% { left: $step-length*2; top: 0; }
+   25% { left: $step-length*2; top: 0; }
+   30% { left: $step-length*3; top: 0; }
+   35% { left: $step-length*3; top: 0; }
+   40% { left: $step-length*4; top: 0; }
+   45% { left: $step-length*4; top: 0; }
+   50% { left: $step-length*5; top: 0; }
+   55% { left: $step-length*5; top: 0; }
+   60% { left: $step-length*6; top: 0; }
+   65% { left: $step-length*6; top: 0; }
+   70% { left: $step-length*7; top: 0; }
+   75% { left: $step-length*7; top: 0; }
+   80% { left: $step-length*8; top: 0; }
+   85% { left: $step-length*8; top: 0; }
+   90% { left: $step-length*9; top: 0; }
+   95% { left: $step-length*9+9px; top: -56px; }
+  100% { left: $step-length*9+9px; top: -56px; }
+}

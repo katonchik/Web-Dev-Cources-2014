@@ -1,0 +1,14 @@
+.box {
+                    width: 60px; height: 60px; margin: 10px; border: 1px solid black;  font-family: sans-serif;
+  &__text         { margin: 10px 5px; text-align: center; }
+  &--ease         { background: #ffd666; transition: all 4s ease 0s; }
+  &--bezier       { background: #527882; transition: all 4s cubic-bezier(1, -0.53, 0.405, 1.425) 0s; }
+  &--linear       { background: #f59439; transition: all 4s linear 0s; }
+  &--ease-in      { background: #fa4a3a; transition: all 4s ease-in 0s; }
+  &--ease-out     { background: #47542c; transition: all 4s ease-out 0s; }
+  &--ease-in-out  { background: #98c7d1; transition: all 4s ease-in-out 0s; }
+
+}
+
+.container { width: 500px; margin: 50px auto; box-shadow: 5px 5px 5px #aaa; border: 1px solid black; }
+.container:hover .box { border-radius: 30px; margin-left: 430px; transform: rotate(720deg); }
