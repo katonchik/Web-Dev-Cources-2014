@@ -28,6 +28,7 @@ main {
   padding: 10px 0; }
 
 .current {
-  background: orange; }
+  background: orange;
+  border-color: red; }
 
 /*# sourceMappingURL=style.css.map */
