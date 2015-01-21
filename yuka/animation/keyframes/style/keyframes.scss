@@ -1,11 +1,5 @@
 @import "variables";
 
-@keyframes target {
-     0% { background: url("apple.png") no-repeat; }
-    90% { background: url("apple-cut.png") no-repeat; }
-   100% { background: url("apple-cut-rotate.png") no-repeat; }
-}
-
 @keyframes tail-move  {
     0% { left: 0; }
     5% { left: $step-length; }
@@ -27,7 +21,8 @@
    85% { left: $step-length*9; }
    90% { left: $step-length*9;}
    95% { left: $step-length*10; }
-  100% { left: $step-length*10;} }
+  100% { left: $step-length*10;}
+}
 
 @keyframes two-move   {
     0% { left: 0; top: 0; }
