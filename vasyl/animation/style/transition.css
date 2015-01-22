@@ -1,0 +1,13 @@
+.animation {
+  height: 100px;
+  width: 100px;
+  background: blue;
+  position: relative;
+  transition: width 2s, linear 2s,background 2s; }
+  .animation:hover {
+    width: 80px;
+    transform: rotate(70deg);
+    transform: scale(0.8);
+    background: #e6e6e6; }
+
+/*# sourceMappingURL=transition.css.map */
