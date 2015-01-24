@@ -1,0 +1,18 @@
+
+
+
+.menu {
+  a {    text-decoration: none;    margin-left: 15px;    width: 30px;    height: 30px;    display: inline-block; position: relative }
+  &.__main {
+    min-width: 165px;
+    &--user_name { position:absolute;font: 13px/27px Arial,sans-serif;color: #000000;   min-width: 60px;  }
+    &--apps {         background: url("https://ssl.gstatic.com/gb/images/v1_376447c3.png") no-repeat 0 -735px;  }
+    &--unread_not{  margin-left: -1px;   display: block; width: 30px; height: 30px;  background: url("https://ssl.gstatic.com/gb/images/v1_376447c3.png") no-repeat -69px -69px;}
+    &--google_share{  background: url("https://ssl.gstatic.com/gb/images/v1_376447c3.png") no-repeat -69px -666px;  }
+    &--account{        background: url(https://lh5.googleusercontent.com/-kcKiVZUdyts/AAAAAAAAAAI/AAAAAAAAAAA/8QCT2bV9_B0/s32-c/photo.jpg) no-repeat;
+      background-size: 32px 32px;      border-radius: 50%;    margin: -1px 0 -1px 15px;    height: 32px;    width: 32px;    }
+    &--unread_container{ background: #6c6c6c; border-radius:50%;width: 20px;     height: 20px;  margin: 5px 0 5px 15px; }
+  }
+}
+
+

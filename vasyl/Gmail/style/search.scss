@@ -1,0 +1,26 @@
+
+.search {
+  width: 50%;
+  min-width: 260px;
+  position: relative;
+  &.__input {
+    width:90%;
+    min-width: 230px;
+    height: 27px;
+    border: 1px solid #4284f3;
+  }
+}
+
+.button {
+  position: absolute; min-width:30px; height: 31px;  border:1px solid #4284f3 ;  background: #4284f3;
+  border-radius: 0 3px 3px 0;padding: 0;
+  &--img {
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    background: url("https://ssl.gstatic.com/gb/images/v1_376447c3.png") no-repeat -69px -1623px;
+
+  }
+}
+
+
