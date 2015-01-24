@@ -1,0 +1,44 @@
+@import url(img-upload.css);
+body {
+  padding: 0;
+  margin: 0;
+  font: 18px 'Oswald', sans-serif;
+  line-height: 1.2; }
+  body * {
+    box-sizing: border-box; }
+
+.example {
+  padding: 30px; }
+  .example .title {
+    font-size: 24px;
+    margin: 0 0 14px;
+    text-transform: uppercase; }
+
+.dropbox {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  padding: 10px;
+  margin: 20px;
+  border: 3px dashed #0a463a;
+  border-radius: 5%;
+  background-color: #aef4e6;
+  text-align: center;
+  color: #0d5d4d;
+  transition: all .3s ease-in-out; }
+  .dropbox:hover {
+    background-color: white;
+    border-color: black;
+    box-shadow: 0px 0px 20px 0px #0e6252 inset; }
+  .dropbox.inline {
+    display: inline-block;
+    vertical-align: middle; }
+  .dropbox.rectangle {
+    width: 250px; }
+    .dropbox.rectangle.big {
+      width: 500px; }
+  .dropbox.big {
+    height: 300px;
+    width: 300px; }
+
+/*# sourceMappingURL=style.css.map */
