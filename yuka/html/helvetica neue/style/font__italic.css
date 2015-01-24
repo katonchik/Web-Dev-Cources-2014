@@ -1,0 +1,9 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'Conv_HelveticaNeue';
+  src: url("../font/eot/HelveticaNeue-Italic.eot");
+  src: local("Γÿ║"), url("../font/woff/HelveticaNeue-Italic.woff") format("woff"), url("../font/ttf/HelveticaNeue-Italic.ttf") format("truetype"), url("../font/svg/HelveticaNeue-Italic.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/*# sourceMappingURL=font__italic.css.map */

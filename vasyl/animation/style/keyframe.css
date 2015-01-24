@@ -1,0 +1,49 @@
+.animation {
+    height: 100px;
+    width: 100px;
+    background: blue;
+    position: relative;
+}
+
+@-webkit-keyframes myAnimation {
+    0% {
+        transform: rotate(270deg);
+        background: red;
+        left: 0px;
+        top: 0px;
+    }
+    25% {
+        transform: skew(30deg, 20deg);
+        transform: scale(2, 2);
+        background: yellow;
+        left: 200px;
+        top: 200px;
+    }
+    50% {
+        background: blue;
+        left: 0px;
+        top: 200px;
+    }
+    75% {
+        transform: rotate(270deg);
+        background: green;
+        left: 200px;
+        top: 0px;
+    }
+    100% {
+        transform: scale(2, 2);
+        background: red;
+        left: 0px;
+        top: 0px;
+    }
+}
+
+/*@keyframes myAnimation{
+  0%   {background:red; left:0px; top:0px;}
+  25%  {background:yellow; left:200px; top:0px;}
+  50%  {background:blue; left:200px; top:200px;}
+  75%  {transform:rotate(40deg);background:green; left:0px; top:200px;}
+  100% {background:red; left:0px; top:0px;}
+}*/
+
+/*# sourceMappingURL=keyframe.css.map */

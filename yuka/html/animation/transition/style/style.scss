@@ -1,0 +1,16 @@
+.box {
+                   width: 60px; height: 60px; margin: 10px; border: 1px solid black;  font-family: sans-serif;
+  &__text        { margin: 10px 5px; text-align: center; }
+  &--ease        { background: crimson; transition: all 4s ease 0s; }
+  &--bezier      { background: deeppink; transition: all 4s cubic-bezier(1, -0.53, 0.405, 1.425) 0s; }
+  &--linear      { background: #8e44ad; transition: all 4s linear 0s; }
+  &--ease-in     { background: #f1c40f; transition: all 4s ease-in 0s; }
+  &--ease-out    { background: #3498db; transition: all 4s ease-out 0s; }
+  &--ease-in-out { background: #2ecc71; transition: all 4s ease-in-out 0s; }
+
+}
+
+.container       {
+                   width: 500px; margin: 50px auto; box-shadow: 5px 5px 5px #aaa; border: 1px solid black;
+  &:hover .box   { border-radius: 30px; margin-left: 430px; transform: rotate(720deg); }
+}

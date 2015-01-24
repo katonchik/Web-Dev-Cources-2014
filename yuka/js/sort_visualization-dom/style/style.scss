@@ -1,0 +1,14 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+*                   { font-family: 'Open Sans', sans-serif; }
+main                { text-align: center; }
+
+.title              { color: #680fc7; }
+.sort-control       { margin: 10px; }
+.array-element      { display: inline-block; width: 30px; border: 1px solid #680fc7; margin: 5px; text-align: center;
+                      background: #d9a5ff; border-radius: 10px 0;
+    &--sorted       { background: #698dff; position: relative; bottom: -20px; }
+}
+.sort-visualization { padding: 10px 0; }
+
+.current            { background: orange; border-color: red; }
