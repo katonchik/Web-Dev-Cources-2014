@@ -21,5 +21,10 @@
     "express": "^4.10.6",
     "handlebars": "^2.0.0",
     "jstoxml": "^0.2.2"
+  },
+  "devDependencies": {
+    "gulp-concat-css": "^1.2.0",
+    "gulp-minify": "0.0.5",
+    "gulp-minify-css": "^0.4.2"
   }
 }
