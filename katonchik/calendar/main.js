@@ -1,1 +1,1 @@
-var myCalendar = new Calendar(document.getElementById("calendar"));
+var myCalendar = new Calendar(document.getElementById("calendar"), 'uk-ua');
