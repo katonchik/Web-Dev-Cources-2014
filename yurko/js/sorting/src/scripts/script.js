@@ -1,13 +1,12 @@
+//TODO: make sort functions immutable. (Use array clone)
 var arraysize=20;
 
-var sortedArray=new Array();
+var sortedArray=[];
 var randomArray=generatearray();
-
-
 
 // Random array generating
 function generatearray(){
-    var rArray=new Array();
+    var rArray=[];
 
     for(var i=0;i<arraysize;i++){
         rArray[i]=Math.floor(Math.random()*arraysize);
@@ -18,7 +17,7 @@ function generatearray(){
 // Bubblesorting
 function bubblesort(x){
     var newArray=x;
-    for(var i=0; i<newArray.length-1;i++)
+    for(var i=0; i<newArray.length-1;i++){
         for (var j=0; j<newArray.length-i-1;j++){
             if (newArray[j]>newArray[j+1]){
                 var tmp=newArray[j];
@@ -26,12 +25,13 @@ function bubblesort(x){
                 newArray[j+1]=tmp;
             }
         }
+    }
     return newArray;
 }
 
 // Selection sort
 function selectsort(x){
-    var newArray=x;
+    var newArray = x;
 
     for(var i=0; i<newArray.length-1;i++) {
         var min = i;
@@ -40,7 +40,7 @@ function selectsort(x){
                 min = j;
             }
         }
-// Можна перевірку не робити, а просто міняти?
+
         if (min != i) {
             var tmp = newArray[i];
             newArray[i] = newArray[min];
@@ -52,32 +52,40 @@ function selectsort(x){
 // Quick sort function
 function quicksort(x) {
     var newArray=x;
-    var left = new Array();
-    var right = new Array();
+    var left = [];
+    var right = [];
     var pivot = newArray[0];
-    if (newArray.length == 0) return [];
-    for (var i = 1; i < newArray.length; i++){
-        if (newArray[i] < pivot) left[left.length] = newArray[i];
-        else right[right.length] = newArray[i];
+
+    if (newArray.length === 0) {
+        return [];
+    }
+
+    for (var i = 1; i < newArray.length; i++) {
+        if (newArray[i] < pivot) {
+            left[left.length] = newArray[i];
+        } else {
+            right[right.length] = newArray[i];
+        }
     }
     return quicksort(left).concat(pivot,quicksort(right));
 }
 
 
 // Insert sort function
-function insertsort(x) {
-    var newArray=x;
+function insertsort(unsortedArray) {
+    var orderedArray = unsortedArray;
+    var buffer, i , j;
 
-    for(var i=0; i<newArray.length-1;i++) {
-        var tmp=newArray[i];
+    for ( i=0; i < orderedArray.length-1; i++) {
+        buffer = orderedArray[i];
 
-        for (var j=i-1; j>=0&&newArray[j]>tmp;j--){
-            newArray[j+1]=newArray[j];
+        for (j = i-1; j >= 0 && orderedArray[j] > buffer; j--){
+            orderedArray[j+1] = orderedArray[j];
         }
 
-        newArray[j+1]=tmp;
+        orderedArray[j+1] = buffer;
     }
-    return newArray;
+    return orderedArray;
 }
 
 // Merge sort function
@@ -85,9 +93,9 @@ function mergesort(x) {
 
     var newArray = x;
     var middleArray = parseInt(newArray.length/2);
-    var right = new Array();
-    var left = new Array();
-    var mergedArray = new Array();
+    var right = [];
+    var left = [];
+    var mergedArray = [];
 
     if (newArray.length<2){
         return newArray;

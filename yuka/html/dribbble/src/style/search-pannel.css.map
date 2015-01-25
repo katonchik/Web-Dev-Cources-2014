@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";AAAA,OAA4B;EAAE,UAAU,EAAE,iDAAiD;EAAE,MAAM,EAAE,MAAM;EAAE,KAAK,EAAE,KAAK;EAAE,aAAa,EAAE,GAAG;EAAE,IAAI,EAAE,uCAAuC;EAC1L,KAAK,EAAE,KAAK;EAAE,KAAK,EAAE,IAAI;EAAE,MAAM,EAAE,iBAAiB;EAAE,OAAO,EAAE,gBAAgB",
+"sources": ["search-pannel.scss"],
+"names": [],
+"file": "search-pannel.css"
+}

@@ -1,45 +1,38 @@
-/**
- * Defining an array to sort: ask the user for the array or generate one
- * @return {Array}
- */
-var array = [];
+define([], function (){
+    /**
+     * Defining an array to sort: ask the user for the array or generate one
+     * @return {Array}
+     */
 
-(function defineArray() {
-    var answer = prompt('Have an array to sort?');
+    function generateRandomArray(arrayLength, numberRange) {
+        var array = [];
 
-    if (!answer) {
-        var n = prompt('What number of elements you want?');
-        generateRandomArray(n);
-    }else{
-        array = answer.split(' ').map(parseFloat);
-    }
-
-    function generateRandomArray(n, q) {
-        n = n || 25;
-        q = q || 100;
-
-        for (var i = 0; i < n; i++) {
-            array.push(Math.floor(Math.random() * q));
+        arrayLength = arrayLength || 25;
+        numberRange = numberRange || 100;
+        var i;
+        for (i = 0; i < arrayLength; i++) {
+            array.push(Math.floor(Math.random() * numberRange));
         }
         return array;
     }
 
-    return array;
-})();
+    /**
+     * Swapping two meanings
+     * @param inputArray
+     * @param firstElementIndex
+     * @param secondElementIndex
+     * @return inputArray
+     */
+    function swap(inputArray, firstElementIndex, secondElementIndex) {
+        var temp = inputArray[firstElementIndex];
+        inputArray[firstElementIndex] = inputArray[secondElementIndex];
+        inputArray[secondElementIndex] = temp;
 
-console.log("Input array: " + array);
+        return inputArray;
+    }
 
-/**
- * Swapping two meanings
- * @param inputArray
- * @param firstElementIndex
- * @param secondElementIndex
- * @return inputArray
- */
-function swap(inputArray, firstElementIndex, secondElementIndex) {
-    var temp = inputArray[firstElementIndex];
-    inputArray[firstElementIndex] = inputArray[secondElementIndex];
-    inputArray[secondElementIndex] = temp;
-
-    return inputArray;
-}
+    return {
+        generateRandomArray: generateRandomArray,
+        swap: swap
+    }
+});

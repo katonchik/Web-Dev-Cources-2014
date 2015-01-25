@@ -1,0 +1,15 @@
+/* links for following */
+.follow {
+  float: left;
+  clear: left; }
+  .follow a {
+    display: inline;
+    margin: 0 5px 0 0; }
+  .follow img {
+    width: 24px;
+    border-radius: 50%;
+    opacity: 0.37; }
+  .follow img:hover {
+    opacity: 0.72; }
+
+/*# sourceMappingURL=follow.css.map */

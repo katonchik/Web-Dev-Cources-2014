@@ -1,0 +1,30 @@
+{{#each dribbles}}
+    <div class="dribble-pack">
+        <div class="dribble">
+            <a href="#">
+                <img class="dribble__img" src="{{img}}">
+            </a>
+            <a href="#" class="dribble__content">
+                <strong class="dribble__title">{{title}}</strong>
+                        <span class="dribble__comment">
+                            {{comment}}
+                        </span>
+                <time>{{date}}</time>
+            </a>
+
+            <div class="tools">
+                <a class="tools__favorite" href="#">{{formatNumber social.favorite}}</a>
+                <a class="tools__comments" href="#">{{formatNumber social.comments}}</a>
+                <a class="tools__views" href="#">{{formatNumber social.views}}</a>
+            </div>
+        </div>
+
+        <div class="attribution">
+            <a class="user" href="#">
+                <img class="user__avatar" src="style/img/ef0cba4009655c2e216733c14c1f296e.png?1408648992">
+                Tubik Studio
+            </a>
+            <a class="user__badge user__badge--team" href="#">Team</a>
+        </div>
+    </div>
+{{/each}}

@@ -1,0 +1,16 @@
+/* filter menu*/
+.filters {
+  display: block;
+  height: 38px;
+  padding: 10px 0 0 0;
+  border-bottom: 1px solid #e4e4e4; }
+
+.filters a {
+  color: #444;
+  font-size: 14px;
+  display: inline-block;
+  padding: 8px 23px 18px 0;
+  margin-right: 10px;
+  background: url("img/icon-dd-arrow.png") 100% 15px no-repeat; }
+
+/*# sourceMappingURL=filters.css.map */
