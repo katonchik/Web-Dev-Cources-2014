@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Search Users</title>
+    <script type="text/javascript" src="js/httpCall.js"></script>
+    <script type="text/javascript" src="js/handlebars.js"></script>
+</head>
+<body>
+<div class="playerSearch">
+    <form id="searhPlayers">
+        <input type="text" 	id="searchName" class="playerSearch__name" />
+        <input type="image" id="searchBttn" class="playerSearch__bttn" src="images/search.png" alt="Search player" />
+    </form>
+</div>
+
+<div class="searchResults" id="searchResults"></div>
+<script id="searchResultsTemplate" type="text/x-handlebars-template">
+    {{#playersFound}}
+    <div class="searchResults__item">
+        <div class="searchResults__avatar">
+            <a href="{{social_page}}" target="_blank"><img src="{{avatar}}" alt="{{name}}" /></a>
+        </div>
+        <div class="searchResults_itemDetails">
+            <a href="edit_player.php?id={{id}}">
+                <div class="searchResults__playerName">{{name}}</div>
+                <div class="searchResults__status">{{participation_status}}, {{paid_status}}</div>
+            </a>
+        </div>
+    </div>
+    {{/playersFound}}
+</script>
+
+<script type="text/javascript" src="js/user_search.js"></script>
+</body>
+</html>
