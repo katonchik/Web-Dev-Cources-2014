@@ -10,7 +10,7 @@ n - кількість незроблених завдань.
 7) Табличка з користувачами. (Сортування по колонках)
 
 8) Програмка обліку домашніх робіт.
-9) UI Kit https://www.behance.net/gallery/21169935/55-Elements-FREE-UI-KIT-Clean-white-DOWNLOAD
+9) Handlebars
 10) Модульні системи. CommonJS, AMD.
 
 TODO: інструкція по запуску ноджс прикладу.
@@ -23,7 +23,7 @@ TODO: інструкція по запуску ноджс прикладу.
 5) Media Query
 6) Sass
 7) BEM
-8) Handlebars
+8) UI Kit https://www.behance.net/gallery/21169935/55-Elements-FREE-UI-KIT-Clean-white-DOWNLOAD
 9) SVG
 10) Animation
 11) Gulp
