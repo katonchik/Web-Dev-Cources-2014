@@ -19,6 +19,7 @@
   "dependencies": {
     "dummy-json": "0.0.2",
     "express": "^4.10.6",
+    "faker": "^2.1.2",
     "handlebars": "^2.0.0",
     "jstoxml": "^0.2.2"
   },

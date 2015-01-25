@@ -1,13 +1,40 @@
-var fs = require('fs')
+var fs = require('fs');
 var dummyjson = require('dummy-json');
 var Handlebars = require("handlebars");
 var jstoxml = require("jstoxml");
 var express = require("express");
 
+var faker = require("faker");
+
+Handlebars.registerHelper('faker', function (options) {
+  var fakerMethod = faker;
+  var i;
+  var path = options.split(".");
+  for (i=0; i < path.length ;i += 1) {
+    fakerMethod= fakerMethod[path[i]];
+  }
+
+  return fakerMethod();
+});
+
+Handlebars.registerHelper('repeater', function (argums, scope) {
+  var iterationCount = parseInt(argums, 10);
+  var result=[];
+  var i;
+
+  for (i=0; i <= iterationCount ;i+=1) {
+    result.push(scope.fn());
+  };
+
+  return result.join(",");
+});
+
+
 var dataTemplate = fs.readFileSync(__dirname + '/database.hbs', {encoding: 'utf8'});
 var htmlTemplate = Handlebars.compile(fs.readFileSync(__dirname + '/html-template.hbs', {encoding: 'utf8'}));
 
-var data = JSON.parse(dummyjson.parse(dataTemplate));
+var data = JSON.parse(Handlebars.compile(dataTemplate)());
+
 var app = express();
 
 
@@ -17,7 +44,6 @@ app.get('/', function (req, res) {
   fs.readFile(__dirname + "/public/index.html", {encoding: 'utf8'}, function (err, file) {
     res.set('Content-Type', 'text/html');
     res.send(file);
-
   });
 });
 

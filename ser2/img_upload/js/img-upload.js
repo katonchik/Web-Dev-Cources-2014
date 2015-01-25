@@ -22,16 +22,12 @@ var Dropzone = function(htmlEl, userConfig) {
         elTarget.addEventListener('dragover', dragOver, false);
         elTarget.addEventListener('drop', uploadThumb, false);
         inputFile.addEventListener('change', uploadThumb, false);
-    }
+    };
     self.init();
 
     function initTargetEl() {
         elTarget =  htmlEl;
-
-        if (!elTarget) {
-            return;
-        }
-
+        if (!elTarget) { return; }
         elTarget.classList.add('img-upload-target');
 
         return elTarget;
@@ -101,14 +97,9 @@ var Dropzone = function(htmlEl, userConfig) {
     }
 
     function createInputFile() {
-        inputFile = document.body.querySelector('input[type=file]');
-
-        if (!inputFile) {
-            inputFile = document.createElement('input');
-            inputFile.setAttribute('type', 'file');
-            document.body.appendChild(inputFile);
-        }
-
+        inputFile = document.createElement('input');
+        inputFile.setAttribute('type', 'file');
+        document.body.appendChild(inputFile);
         inputFile.classList.add('hidden-file-loader');
 
         return inputFile;

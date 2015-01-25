@@ -1,0 +1,8 @@
+/* links for following */
+.follow               {
+                        float: left; clear: left;
+  .follow__link       { display: inline; margin: 0 5px 0 0; }
+  .follow__icon       { width: 24px; border-radius: 50%; opacity: 0.37; }
+  .follow__icon:hover { opacity: 0.72; }
+
+}

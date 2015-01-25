@@ -2,7 +2,11 @@ function renderUsers(container, data) {
   var html =  data.users.map(function (el) {
 
     var template = `
-      <li>${el.index} ${el.firstName} ${el.lastName}</li>
+      <li>
+        <img class="avatar" src="${el.avatar}"/>
+        ${el.name}
+        <i class="fa fa-times"></i>
+      </li>
     `;
     return template;
   });
