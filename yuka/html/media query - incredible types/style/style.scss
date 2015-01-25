@@ -1,0 +1,10 @@
+@import "header";
+@import "masonry";
+@import "showcase";
+@import "latest-posts";
+@import "additional-info";
+
+a       { text-decoration: none; color: #222; }
+a:hover { text-decoration: underline; }
+
+body    { color: #222; font: 14px/22px "AktivGroteskW01-Regular",sans-serif; margin-top: 48px; }

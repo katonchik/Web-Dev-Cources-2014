@@ -1,0 +1,16 @@
+@import "mixin";
+
+.additional-info   {
+                     font-size: 9px; color: #888; line-height: 15px; margin-bottom: 25px;
+  &__link          { color: #888; font-weight: bold; }
+  &__title         { margin: 0; padding: 0; font-weight: bold; }
+  &__block         { margin-bottom: 12px; }
+}
+
+@media             ( min-width: 769px ) {
+  .additional-info { line-height: 12px; width: 66.6667%; float: right; @include column-count(4);
+                     @include column-gap(40px);
+    &__title       { margin-bottom: 10px; }
+    &--margin      { margin: 0 20px; }
+  }
+}

@@ -1,0 +1,23 @@
+@import "mixin";
+
+.latest-posts       { font-size: 9px; margin-bottom: 70px;
+  &__post           { display: block; line-height: 28px; }
+  &__title          { padding: 0; margin: 0; line-height: 32px; }
+  &--borders        {
+                      border-top: 1px solid rgba(0, 0, 0, 0.075);
+    &:last-child    { border-bottom: 1px solid rgba(0, 0, 0, 0.075); }
+  }
+  &--mobile-hide    { display: none; }
+}
+
+@media              ( min-width: 769px ) {
+   .latest-posts    { width: 66.6667%; float: right;
+     &__post        { line-height: 22px; }
+     &__title       { display: block; margin: 0 20px; }
+     &--borders     { border: none;
+       &:last-child { border: none; }
+     }
+     &--columns     { @include column-count(4); @include column-gap(40px); margin: 0 20px; }
+     &--mobile-hide { display: block; }
+   }
+}

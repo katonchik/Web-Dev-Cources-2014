@@ -1,0 +1,729 @@
+@keyframes tail-move {
+  0% {
+    left: 0; }
+  4% {
+    left: 47px; }
+  8% {
+    left: 47px; }
+  12% {
+    left: 94px; }
+  16% {
+    left: 94px; }
+  20% {
+    left: 141px; }
+  24% {
+    left: 141px; }
+  28% {
+    left: 188px; }
+  32% {
+    left: 188px; }
+  36% {
+    left: 235px; }
+  40% {
+    left: 235px; }
+  44% {
+    left: 282px; }
+  48% {
+    left: 282px; }
+  52% {
+    left: 329px; }
+  56% {
+    left: 329px; }
+  60% {
+    left: 376px; }
+  64% {
+    left: 376px; }
+  68% {
+    left: 423px; }
+  72% {
+    left: 423px; }
+  76% {
+    left: 470px; }
+  80% {
+    left: 470px; }
+  84% {
+    left: 470px; }
+  88% {
+    left: 470px; }
+  92% {
+    left: 470px; }
+  96% {
+    left: 470px; }
+  100% {
+    left: 470px; } }
+@keyframes two-move {
+  0% {
+    left: 0;
+    top: 0; }
+  4% {
+    left: 47px;
+    top: -3px; }
+  8% {
+    left: 47px;
+    top: 0; }
+  12% {
+    left: 94px;
+    top: -3px; }
+  16% {
+    left: 94px;
+    top: 0; }
+  20% {
+    left: 141px;
+    top: -3px; }
+  24% {
+    left: 141px;
+    top: 0; }
+  28% {
+    left: 188px;
+    top: -3px; }
+  32% {
+    left: 188px;
+    top: 0; }
+  36% {
+    left: 235px;
+    top: -3px; }
+  40% {
+    left: 235px;
+    top: 0; }
+  44% {
+    left: 282px;
+    top: -3px; }
+  48% {
+    left: 282px;
+    top: 0; }
+  52% {
+    left: 329px;
+    top: -3px; }
+  56% {
+    left: 329px;
+    top: 0; }
+  60% {
+    left: 376px;
+    top: -3px; }
+  64% {
+    left: 376px;
+    top: 0; }
+  68% {
+    left: 423px;
+    top: -3px; }
+  72% {
+    left: 423px;
+    top: 0; }
+  76% {
+    left: 470px;
+    top: -3px; }
+  80% {
+    left: 470px;
+    top: -3px; }
+  84% {
+    left: 470px;
+    top: -3px; }
+  88% {
+    left: 470px;
+    top: -3px; }
+  92% {
+    left: 470px;
+    top: -3px; }
+  96% {
+    left: 470px;
+    top: -3px; }
+  100% {
+    left: 470px;
+    top: -3px; } }
+@keyframes three-move {
+  0% {
+    left: 0;
+    top: 0; }
+  4% {
+    left: 41px;
+    top: -17px; }
+  8% {
+    left: 47px;
+    top: 0; }
+  12% {
+    left: 88px;
+    top: -17px; }
+  16% {
+    left: 94px;
+    top: 0; }
+  20% {
+    left: 135px;
+    top: -17px; }
+  24% {
+    left: 141px;
+    top: 0; }
+  28% {
+    left: 182px;
+    top: -17px; }
+  32% {
+    left: 188px;
+    top: 0; }
+  36% {
+    left: 229px;
+    top: -17px; }
+  40% {
+    left: 235px;
+    top: 0; }
+  44% {
+    left: 276px;
+    top: -17px; }
+  48% {
+    left: 282px;
+    top: 0; }
+  52% {
+    left: 323px;
+    top: -17px; }
+  56% {
+    left: 329px;
+    top: 0; }
+  60% {
+    left: 370px;
+    top: -17px; }
+  64% {
+    left: 376px;
+    top: 0; }
+  68% {
+    left: 417px;
+    top: -17px; }
+  72% {
+    left: 423px;
+    top: 0; }
+  76% {
+    left: 464px;
+    top: -17px; }
+  80% {
+    left: 464px;
+    top: -17px; }
+  84% {
+    left: 464px;
+    top: -17px; }
+  88% {
+    left: 463px;
+    top: -17px; }
+  92% {
+    left: 463px;
+    top: -17px; }
+  96% {
+    left: 464px;
+    top: -17px; }
+  100% {
+    left: 464px;
+    top: -17px; } }
+@keyframes four-move {
+  0% {
+    left: 0;
+    top: 0; }
+  4% {
+    left: 27px;
+    top: -35px; }
+  8% {
+    left: 47px;
+    top: 0; }
+  12% {
+    left: 74px;
+    top: -35px; }
+  16% {
+    left: 94px;
+    top: 0; }
+  20% {
+    left: 121px;
+    top: -35px; }
+  24% {
+    left: 141px;
+    top: 0; }
+  28% {
+    left: 168px;
+    top: -35px; }
+  32% {
+    left: 188px;
+    top: 0; }
+  36% {
+    left: 215px;
+    top: -35px; }
+  40% {
+    left: 235px;
+    top: 0; }
+  44% {
+    left: 262px;
+    top: -35px; }
+  48% {
+    left: 282px;
+    top: 0; }
+  52% {
+    left: 309px;
+    top: -35px; }
+  56% {
+    left: 329px;
+    top: 0; }
+  60% {
+    left: 356px;
+    top: -35px; }
+  64% {
+    left: 376px;
+    top: 0; }
+  68% {
+    left: 403px;
+    top: -35px; }
+  72% {
+    left: 423px;
+    top: 0; }
+  76% {
+    left: 450px;
+    top: -35px; }
+  80% {
+    left: 450px;
+    top: -35px; }
+  84% {
+    left: 450px;
+    top: -35px; }
+  88% {
+    left: 450px;
+    top: -33px; }
+  92% {
+    left: 450px;
+    top: -33px; }
+  96% {
+    left: 450px;
+    top: -35px; }
+  100% {
+    left: 450px;
+    top: -35px; } }
+@keyframes five-move {
+  0% {
+    left: 0;
+    top: 0; }
+  4% {
+    left: 23px;
+    top: -45px; }
+  8% {
+    left: 47px;
+    top: 0; }
+  12% {
+    left: 70px;
+    top: -45px; }
+  16% {
+    left: 94px;
+    top: 0; }
+  20% {
+    left: 117px;
+    top: -45px; }
+  24% {
+    left: 141px;
+    top: 0; }
+  28% {
+    left: 164px;
+    top: -45px; }
+  32% {
+    left: 188px;
+    top: 0; }
+  36% {
+    left: 211px;
+    top: -45px; }
+  40% {
+    left: 235px;
+    top: 0; }
+  44% {
+    left: 258px;
+    top: -45px; }
+  48% {
+    left: 282px;
+    top: 0; }
+  52% {
+    left: 305px;
+    top: -45px; }
+  56% {
+    left: 329px;
+    top: 0; }
+  60% {
+    left: 352px;
+    top: -45px; }
+  64% {
+    left: 376px;
+    top: 0; }
+  68% {
+    left: 399px;
+    top: -45px; }
+  72% {
+    left: 423px;
+    top: 0; }
+  76% {
+    left: 442px;
+    top: -50px; }
+  80% {
+    left: 442px;
+    top: -50px; }
+  84% {
+    left: 442px;
+    top: -50px; }
+  88% {
+    left: 430px;
+    top: -50px; }
+  92% {
+    left: 430px;
+    top: -50px; }
+  96% {
+    left: 442px;
+    top: -50px; }
+  100% {
+    left: 442px;
+    top: -50px; } }
+@keyframes six-move {
+  0% {
+    left: 0;
+    top: 0; }
+  4% {
+    left: 20px;
+    top: -35px; }
+  8% {
+    left: 47px;
+    top: 0; }
+  12% {
+    left: 67px;
+    top: -35px; }
+  16% {
+    left: 94px;
+    top: 0; }
+  20% {
+    left: 114px;
+    top: -35px; }
+  24% {
+    left: 141px;
+    top: 0; }
+  28% {
+    left: 161px;
+    top: -35px; }
+  32% {
+    left: 188px;
+    top: 0; }
+  36% {
+    left: 208px;
+    top: -35px; }
+  40% {
+    left: 235px;
+    top: 0; }
+  44% {
+    left: 255px;
+    top: -35px; }
+  48% {
+    left: 282px;
+    top: 0; }
+  52% {
+    left: 302px;
+    top: -35px; }
+  56% {
+    left: 329px;
+    top: 0; }
+  60% {
+    left: 349px;
+    top: -35px; }
+  64% {
+    left: 376px;
+    top: 0; }
+  68% {
+    left: 396px;
+    top: -35px; }
+  72% {
+    left: 423px;
+    top: 0; }
+  76% {
+    left: 436px;
+    top: -63px; }
+  80% {
+    left: 436px;
+    top: -63px; }
+  84% {
+    left: 436px;
+    top: -63px; }
+  88% {
+    left: 410px;
+    top: -67px; }
+  92% {
+    left: 410px;
+    top: -67px; }
+  96% {
+    left: 436px;
+    top: -63px; }
+  100% {
+    left: 436px;
+    top: -63px; } }
+@keyframes seven-move {
+  0% {
+    left: 0;
+    top: 0; }
+  4% {
+    left: 7px;
+    top: -17px; }
+  8% {
+    left: 47px;
+    top: 0; }
+  12% {
+    left: 54px;
+    top: -17px; }
+  16% {
+    left: 94px;
+    top: 0; }
+  20% {
+    left: 101px;
+    top: -17px; }
+  24% {
+    left: 141px;
+    top: 0; }
+  28% {
+    left: 148px;
+    top: -17px; }
+  32% {
+    left: 188px;
+    top: 0; }
+  36% {
+    left: 195px;
+    top: -17px; }
+  40% {
+    left: 235px;
+    top: 0; }
+  44% {
+    left: 242px;
+    top: -17px; }
+  48% {
+    left: 282px;
+    top: 0; }
+  52% {
+    left: 289px;
+    top: -17px; }
+  56% {
+    left: 329px;
+    top: 0; }
+  60% {
+    left: 336px;
+    top: -17px; }
+  64% {
+    left: 376px;
+    top: 0; }
+  68% {
+    left: 383px;
+    top: -17px; }
+  72% {
+    left: 423px;
+    top: 0; }
+  76% {
+    left: 435px;
+    top: -67px; }
+  80% {
+    left: 435px;
+    top: -67px; }
+  84% {
+    left: 435px;
+    top: -67px; }
+  88% {
+    left: 390px;
+    top: -83px; }
+  92% {
+    left: 390px;
+    top: -83px; }
+  96% {
+    left: 435px;
+    top: -67px; }
+  100% {
+    left: 435px;
+    top: -67px; } }
+@keyframes eight-move {
+  0% {
+    left: 0;
+    top: 0; }
+  4% {
+    left: 0;
+    top: -3px; }
+  8% {
+    left: 47px;
+    top: 0; }
+  12% {
+    left: 47px;
+    top: -3px; }
+  16% {
+    left: 94px;
+    top: 0; }
+  20% {
+    left: 94px;
+    top: -3px; }
+  24% {
+    left: 141px;
+    top: 0; }
+  28% {
+    left: 141px;
+    top: -3px; }
+  32% {
+    left: 188px;
+    top: 0; }
+  36% {
+    left: 188px;
+    top: -3px; }
+  40% {
+    left: 235px;
+    top: 0; }
+  44% {
+    left: 235px;
+    top: -3px; }
+  48% {
+    left: 282px;
+    top: 0; }
+  52% {
+    left: 282px;
+    top: -3px; }
+  56% {
+    left: 329px;
+    top: 0; }
+  60% {
+    left: 329px;
+    top: -3px; }
+  64% {
+    left: 376px;
+    top: 0; }
+  68% {
+    left: 376px;
+    top: -3px; }
+  72% {
+    left: 423px;
+    top: 0; }
+  76% {
+    left: 434px;
+    top: -65px; }
+  80% {
+    left: 434px;
+    top: -65px; }
+  84% {
+    left: 434px;
+    top: -65px; }
+  88% {
+    left: 370px;
+    top: -99px; }
+  92% {
+    left: 370px;
+    top: -99px; }
+  96% {
+    left: 434px;
+    top: -65px; }
+  100% {
+    left: 434px;
+    top: -65px; } }
+@keyframes head-move {
+  0% {
+    left: 0;
+    top: 0; }
+  4% {
+    left: 0; }
+  8% {
+    left: 47px;
+    top: 0; }
+  12% {
+    left: 47px;
+    top: 0; }
+  16% {
+    left: 94px;
+    top: 0; }
+  20% {
+    left: 94px;
+    top: 0; }
+  24% {
+    left: 141px;
+    top: 0; }
+  28% {
+    left: 141px;
+    top: 0; }
+  32% {
+    left: 188px;
+    top: 0; }
+  36% {
+    left: 188px;
+    top: 0; }
+  40% {
+    left: 235px;
+    top: 0; }
+  44% {
+    left: 235px;
+    top: 0; }
+  48% {
+    left: 282px;
+    top: 0; }
+  52% {
+    left: 282px;
+    top: 0; }
+  56% {
+    left: 329px;
+    top: 0; }
+  60% {
+    left: 329px;
+    top: 0; }
+  64% {
+    left: 376px;
+    top: 0; }
+  68% {
+    left: 376px;
+    top: 0; }
+  72% {
+    left: 423px;
+    top: 0; }
+  76% {
+    left: 432px;
+    top: -56px; }
+  80% {
+    left: 432px;
+    top: -56px; }
+  84% {
+    left: 432px;
+    top: -56px; }
+  88% {
+    left: 350px;
+    top: -115px; }
+  92% {
+    left: 350px;
+    top: -115px; }
+  96% {
+    left: 432px;
+    top: -56px; }
+  100% {
+    left: 432px;
+    top: -56px; } }
+.target {
+  width: 100px;
+  height: 61px;
+  float: right;
+  margin-top: -90px;
+  padding-top: 50px;
+  color: white;
+  font: 14px sans-serif;
+  background: url("apple.png") no-repeat;
+  text-align: center; }
+  .target:hover {
+    background-position: 50%;
+    transition: background-position 0s 6.5s; }
+
+.caterpillar {
+  width: 680px;
+  margin: 150px auto 0; }
+  .caterpillar__segment {
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    background: greenyellow;
+    margin: -3px;
+    display: inline-block;
+    position: relative; }
+  .caterpillar:hover .two {
+    animation: two-move 8s; }
+  .caterpillar:hover .six {
+    animation: six-move 8s; }
+  .caterpillar:hover .head {
+    animation: head-move 8s; }
+  .caterpillar:hover .tail {
+    animation: tail-move 8s; }
+  .caterpillar:hover .four {
+    animation: four-move 8s; }
+  .caterpillar:hover .five {
+    animation: five-move 8s; }
+  .caterpillar:hover .three {
+    animation: three-move 8s; }
+  .caterpillar:hover .seven {
+    animation: seven-move 8s; }
+  .caterpillar:hover .eight {
+    animation: eight-move 8s; }
+
+/*# sourceMappingURL=style.css.map */

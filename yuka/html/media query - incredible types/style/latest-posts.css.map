@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,aAAc;EAAE,SAAS,EAAE,IAAI",
+"sources": ["latest-posts.scss"],
+"names": [],
+"file": "latest-posts.css"
+}

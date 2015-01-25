@@ -35,32 +35,33 @@ function GameOfLife() {
             //Initial rendering
             domCell = document.createElement('div');
             domCell.className = "cell";
-            if (cell.isAlive) newClass = "alive";
-            else newClass = "dead";
+
+            if (cell.isAlive) {
+                newClass = "alive";
+            } else {
+                newClass = "dead";
+            }
 
             domCell.classList.add(newClass);
-            cellId = makeCellId(i, j);
+
             cell = cells[cellId];
             domCell.id = cell.id;
-            domCell.style.left = cellSide * i + 'px';
-            domCell.style.top = cellSide * j + 'px';
-            domCell.style.height = cellSide + 'px';
-            domCell.style.width = cellSide + 'px';
+            domCell.style =  {
+              left : cellSide * i + 'px',
+              top : cellSide * j + 'px',
+              height : cellSide + 'px',
+              width : cellSide + 'px'
+            };
             canvas.appendChild(domCell);
             //domCell.innerHTML = cellId;
         }
     }
 
-//    addPattern("block", 1, 1);
-//    addPattern("blinker", 5, 1);
-//    addPattern("glider", 1, 5);
     addPattern("gun", 30, 30);
     renderCanvas();
 
     //Begin life
     setInterval(function(){update();}, year);
-
-
     function addPattern(patternName, offsetX, offsetY){
         var pattern;
 
@@ -118,8 +119,7 @@ function GameOfLife() {
         }
     }
 
-    function renderCanvas()
-    {
+    function renderCanvas() {
         for (i = 0; i < canvasSide; i++) {
             for (j = 0; j < canvasSide; j++) {
                 cellId = makeCellId(i, j);
@@ -151,20 +151,17 @@ function GameOfLife() {
     }
 
 
-    function killCell(i, j)
-    {
+    function killCell(i, j) {
         var cid = makeCellId(i, j);
         cells[cid].newState = 0;
     }
 
-    function reanimateCell(i, j)
-    {
+    function reanimateCell(i, j) {
         var cid = makeCellId(i, j);
         cells[cid].newState = 1;
     }
 
-    function retainCellState(i, j)
-    {
+    function retainCellState(i, j) {
         var cid = makeCellId(i, j);
         cells[cid].newState = cells[cid].isAlive;
     }
@@ -191,13 +188,11 @@ function GameOfLife() {
             && cells[neighborId].isAlive;
     }
 
-    function makeCellId(i, j)
-    {
+    function makeCellId(i, j) {
         return String.fromCharCode(i + 97) + j;
     }
 
-    function calculateNewStates()
-    {
+    function calculateNewStates() {
         for (i = 0; i < canvasSide; i++) {
             for (j = 0; j < canvasSide; j++) {
                 cellId = makeCellId(i, j);

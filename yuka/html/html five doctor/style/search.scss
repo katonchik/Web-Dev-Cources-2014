@@ -1,0 +1,6 @@
+.search     {
+              background-color: #eee; border: 1px solid rgba(0, 0, 0, 0.3); border-radius: 3px; float: right;
+              margin: -6px 20px 0 0; padding: 2px;
+  &__input  { background: transparent; border: none; width: 210px; }
+  &__button { font: 13px "MS Shell Dlg"; margin: 0; padding: 4px; }
+}

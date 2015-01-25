@@ -1,0 +1,10 @@
+@import "search";
+.menu{
+  height: 80px;
+  font-family: 'Quicksand', 'Helvetica Neue', Arial, sans-serif;
+  background: #f4f4f4;
+  display: inline-block;
+  &__main{
+    text-decoration: none;
+  }
+}

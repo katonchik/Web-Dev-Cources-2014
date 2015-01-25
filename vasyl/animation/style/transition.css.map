@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,UAAW;EACT,MAAM,EAAE,KAAK;EACb,KAAK,EAAE,KAAK;EACZ,UAAU,EAAE,IAAI;EAChB,QAAQ,EAAE,QAAQ;EAClB,UAAU,EAAE,iCAAiC;EAC7C,gBAAO;IACP,KAAK,EAAE,IAAI;IACT,SAAS,EAAE,aAAa;IACxB,SAAS,EAAE,UAAU;IACrB,UAAU,EAAE,OAAO",
+"sources": ["transition.scss"],
+"names": [],
+"file": "transition.css"
+}

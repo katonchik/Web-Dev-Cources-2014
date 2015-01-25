@@ -1,0 +1,13 @@
+.showcase       {
+                  font-size: 12.5px;
+&__title        { font-size: 14px; }
+}
+
+@media          ( min-width: 769px ) {
+  .showcase     { margin: 0 20px 64px; overflow: hidden;
+    &__title    { display: inline-block; }
+    &__content  { width: 66.6667%; float: right; font-size: 14px;
+      &--margin { margin: 0 20px; }
+    }
+  }
+}

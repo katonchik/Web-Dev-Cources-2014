@@ -1,0 +1,106 @@
+.logo {
+  display: inline-block;
+  height: 33px;
+  width: 92px;
+  vertical-align: middle;
+  background: url("https://ssl.gstatic.com/gb/images/v1_376447c3.png") no-repeat 0 -1943px; }
+
+.search {
+  width: 50%;
+  min-width: 260px;
+  position: relative; }
+  .search.__input {
+    width: 90%;
+    min-width: 230px;
+    height: 27px;
+    border: 1px solid #4284f3; }
+
+.button {
+  position: absolute;
+  min-width: 30px;
+  height: 31px;
+  border: 1px solid #4284f3;
+  background: #4284f3;
+  border-radius: 0 3px 3px 0;
+  padding: 0; }
+  .button--img {
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    background: url("https://ssl.gstatic.com/gb/images/v1_376447c3.png") no-repeat -69px -1623px; }
+
+.menu a {
+  text-decoration: none;
+  margin-left: 15px;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  position: relative; }
+.menu.__main {
+  min-width: 165px; }
+  .menu.__main--user_name {
+    position: absolute;
+    font: 13px/27px Arial,sans-serif;
+    color: #000000;
+    min-width: 60px; }
+  .menu.__main--apps {
+    background: url("https://ssl.gstatic.com/gb/images/v1_376447c3.png") no-repeat 0 -735px; }
+  .menu.__main--unread_not {
+    margin-left: -1px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: url("https://ssl.gstatic.com/gb/images/v1_376447c3.png") no-repeat -69px -69px; }
+  .menu.__main--google_share {
+    background: url("https://ssl.gstatic.com/gb/images/v1_376447c3.png") no-repeat -69px -666px; }
+  .menu.__main--account {
+    background: url(https://lh5.googleusercontent.com/-kcKiVZUdyts/AAAAAAAAAAI/AAAAAAAAAAA/8QCT2bV9_B0/s32-c/photo.jpg) no-repeat;
+    background-size: 32px 32px;
+    border-radius: 50%;
+    margin: -1px 0 -1px 15px;
+    height: 32px;
+    width: 32px; }
+  .menu.__main--unread_container {
+    background: #6c6c6c;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin: 5px 0 5px 15px; }
+
+.f_left {
+  float: left; }
+
+.f_right {
+  float: right; }
+
+body {
+  font-family: 'PT Sans', sans-serif;
+  margin: 0;
+  padding: 0; }
+
+.header, .section, .aside {
+  color: #ecf0f1;
+  padding: 10px; }
+
+.header {
+  background: #f0f0f0;
+  height: 100px; }
+
+.section {
+  overflow: auto;
+  background: #e74c3c;
+  position: absolute;
+  left: 220px;
+  right: 0;
+  top: 120px;
+  bottom: 0; }
+
+.aside {
+  position: absolute;
+  background: #9b59b6;
+  overflow: auto;
+  width: 200px;
+  top: 120px;
+  bottom: 0; }
+
+/*# sourceMappingURL=main.css.map */

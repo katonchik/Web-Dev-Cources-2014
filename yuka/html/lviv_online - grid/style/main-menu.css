@@ -1,0 +1,22 @@
+.main-menu {
+  height: 51px; }
+
+.main-menu a {
+  border-top: 5px solid #333333;
+  border-right: 1px solid #525252;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 13px 15px 18px;
+  text-transform: uppercase;
+  transition: border-top-color 0.3s ease 0s;
+  margin: 0; }
+  .main-menu a:hover {
+    background: #222; }
+  .main-menu a:first-child {
+    padding-left: 0; }
+  .main-menu a:first-child:hover {
+    background: none; }
+  .main-menu a:last-child:hover {
+    background: none; }
+
+/*# sourceMappingURL=main-menu.css.map */

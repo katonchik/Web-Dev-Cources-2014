@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";AAAA,UAMC;EALC,WAAW,EAAE,oBAAoB;EACjC,GAAG,EAAE,4CAA4C;EACjD,GAAG,EAAE,uMAAY;EACjB,WAAW,EAAE,MAAM;EACnB,UAAU,EAAE,MAAM",
+"sources": ["font__light--italic.scss"],
+"names": [],
+"file": "font__light--italic.css"
+}

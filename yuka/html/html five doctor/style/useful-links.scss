@@ -1,0 +1,26 @@
+@import "variables";
+
+.useful-links {
+  float: right; list-style: none; margin: 5px 0;
+
+  .useful-links__link                        { display: block; font: 14px Georgia, ​serif; color: #fff; background: $main-color;
+    padding: 0 5px; }
+
+  li {
+    float: left; margin-right: 5px; padding: 5px 0; position: relative;
+
+    &:hover a              { background: $main-color; }
+    &:hover ul             { left: -45px; }
+    &:hover ul a           { text-decoration: none; }
+    &:hover ul li a:hover  { background: $main-color; text-decoration: underline; }
+  }
+
+  ul                       { background: #fff; background: rgba(255, 255, 255, 0); list-style: none;
+    position: absolute; left: -9999px; }
+  ul a                     { white-space: nowrap; }
+  ul li                    { padding-top: 1px; float: none; }
+
+  & > li > a               { border-right: 1px solid #fff; }
+  .useful-links__dropdown                { border-right: none; padding: 0 14px 0 0;
+    background: url(img/expanded-header.jpg) no-repeat scroll right 50%; }
+}

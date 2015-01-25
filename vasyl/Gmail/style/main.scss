@@ -1,0 +1,14 @@
+@import "logo";
+@import "search";
+@import "menu";
+@import "helpful";
+
+body {  font-family: 'PT Sans', sans-serif;  margin: 0;  padding: 0;}
+
+.header,.section,.aside {  color: #ecf0f1;  padding: 10px;}
+
+.header {  background: #f0f0f0;  height: 100px;}
+
+.section {  overflow: auto;  background: #e74c3c;  position: absolute;  left: 220px;  right: 0;  top: 120px;  bottom: 0;}
+
+.aside {  position: absolute;  background: #9b59b6;  overflow: auto;  width: 200px;  top: 120px;  bottom: 0;}

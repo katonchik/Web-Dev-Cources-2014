@@ -1,0 +1,229 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    background: #ececec;
+    font-size: 16px;
+    font-family: Georgia, serif;
+    color: #444;
+}
+body a{
+    text-decoration: none;
+}
+body small{
+    color: #888;
+    font-style: italic;
+    font-size: 14px;
+}
+h1{
+    font-size: 2em;
+    line-height: 1;
+    letter-spacing: -2px;
+    word-spacing: 2px;
+
+}
+h1, h2, h3,h4 {
+    font-family: 'Quicksand','Helvetica Neue',Arial, sans-serif;
+    font-weight: bold;
+}
+header{
+    padding-top: 10px;
+    width: 100%;
+    background: #0063a5;
+    color: white;
+}
+header div{
+    width: 1020px;
+    margin: auto;
+    position: relative;
+}
+header h1{
+    width: 500px;
+    background: url("http://html5doctor.com/wp-content/themes/html5doctor2/images/logo.png") no-repeat;
+    display: block;
+    height: 96px;
+    text-indent: -9999em;;
+}
+header h2{
+    color: #FFF;
+    font-family: 'Quicksand','Helvetica Neue',Arial,sans-serif;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 400;
+    margin: 0;
+    left: 195px;
+    line-height: 1;
+    position: relative;
+    text-transform: none;
+    top: -25px;
+}
+
+header a{
+    color: white;
+}
+header a:hover{
+    text-decoration: underline;
+}
+#top-menu {
+    z-index: 2;
+    position: absolute;
+    right: 0px;
+
+}
+#top-menu a{
+    color: #FFF;
+    padding: 0 4px;
+    border-left:1px solid white ;
+    margin: auto;
+}
+#top-menu a:first-child{
+    border: none;
+}
+
+#main-menu{
+    background: #008fd1;
+    padding: 10px;
+    width: 1000px;
+    margin: auto;
+}
+#main-menu a{
+    padding-left: 20px;
+}
+
+.content{
+    background: #f8f8f8;
+    width: 1020px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    margin: auto;
+    margin-bottom: 200px;
+}
+.content h3{
+    color: #888;
+    margin: 0 0 5px;
+    padding: 10px 0;
+    text-transform: uppercase;
+    font-size: 1.25em;
+    line-height: 1.2;
+}
+.content h4{
+    width: 100%;
+    margin: 0;
+}
+.content section:nth-child(odd){
+    background: white;
+}
+.content section{
+    overflow: hidden;
+}
+.content a{
+    color:#0090D2;
+    /*font-size: 100%;*/
+}
+.content p{
+    font-size: 1em;
+    margin: 4px 0 1.5em;
+}
+.content a:hover{
+    color: #0063A6;
+}
+.content h1{
+
+    margin: 0;
+}
+.content  h1 a{
+    background: none;
+    border: none;
+}
+
+ .left-content{
+    width: 700px;
+    float: left;
+     margin: 10px;
+    border-right: 4px solid #F0F0F0;
+}
+
+ .right-content{
+     margin: 10px;
+     width: 270px;
+     float: left;
+ }
+
+
+ .Elements{
+    border-bottom: 4px solid #F0F0F0;
+    border-top: 4px solid #F0F0F0;
+ }
+
+.Elements div{
+    width: 11%;
+    margin-left: 1px;
+    float: left;
+}
+.Elements p{
+    text-align: center;
+    margin-bottom: 10px ;
+}
+.Elements a:hover{
+    background: #0090D2;
+    border-radius: 20px;
+    color: white;
+}
+.Elements h1{
+    padding: 20px;
+    clear: both;
+}
+.Elements h4{
+    font-size: 14px;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    color: #888;
+    padding-bottom: 5px;
+}
+.Elements div a{
+    font-size: 14px;
+}
+
+.left-content div{
+    overflow: hidden;
+}
+.left-content div div{
+    display: block;
+    width: 45%;
+    float: left;
+    margin: 5px;
+    border-bottom: 4px solid #F0F0F0;
+    padding-left: 20px;
+}
+.left-content div:last-child div{
+    border: none;
+}
+
+.last{
+
+}
+.last div div{
+    width: 300px;
+    margin: 20px;
+    background: yellow;
+    float: left;
+    border-top:4px solid #BFBFBF;
+}
+.headers header{
+    background: none;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #F0F0F0;
+}
+.headers h4{
+    letter-spacing: -1px;
+    word-spacing: 1px;
+    font-size: 20px;
+}
+.headers small{
+    width: 100%;
+    margin: 1px;
+}
+#left-header-aside {
+    width: 180px;
+    float: left;
+   padding-bottom: 180px;
+}

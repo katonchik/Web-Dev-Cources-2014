@@ -1,0 +1,54 @@
+/*
+Error: Invalid CSS after "80px": expected expression (e.g. 1px, bold), was ";"
+        on line 2 of b_menu
+
+1: .menu{
+2:   height: 80px;
+3:   background: #fff;
+4:   &__main{
+5:     font-family: 'Quicksand', 'Helvetica Neue', Arial, sans-serif;
+6:   }
+7: }
+
+Backtrace:
+b_menu:2
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/scss/parser.rb:1165:in `expected'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/script/lexer.rb:220:in `expected!'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/script/parser.rb:602:in `assert_done'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/script/parser.rb:63:in `parse'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/script/parser.rb:183:in `parse'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/script.rb:27:in `parse'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/engine.rb:1120:in `parse_script'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/engine.rb:710:in `parse_property'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/engine.rb:681:in `parse_property_or_rule'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/engine.rb:647:in `parse_line'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/engine.rb:525:in `build_tree'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/engine.rb:544:in `block in append_children'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/engine.rb:543:in `each'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/engine.rb:543:in `append_children'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/engine.rb:534:in `block in build_tree'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/engine.rb:527:in `each'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/engine.rb:527:in `build_tree'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/engine.rb:544:in `block in append_children'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/engine.rb:543:in `each'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/engine.rb:543:in `append_children'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/engine.rb:396:in `_to_tree'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/engine.rb:368:in `_render_with_sourcemap'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/engine.rb:285:in `render_with_sourcemap'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/plugin/compiler.rb:209:in `each'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/plugin.rb:82:in `update_stylesheets'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/exec/sass_scss.rb:350:in `watch_or_update'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/exec/sass_scss.rb:50:in `process_result'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/exec/base.rb:52:in `parse'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/exec/base.rb:19:in `parse!'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.10/bin/scss:13:in `<top (required)>'
+C:/Ruby21/bin/scss:23:in `load'
+C:/Ruby21/bin/scss:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"80px\": expected expression (e.g. 1px, bold), was \";\"\A         on line 2 of b_menu\A \A 1: .menu{\A 2:   height: 80px;\A 3:   background: #fff;\A 4:   &__main{\A 5:     font-family: 'Quicksand', 'Helvetica Neue', Arial, sans-serif;\A 6:   }\A 7: }"; }

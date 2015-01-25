@@ -1,0 +1,12 @@
+.follow          {
+                   width: 30px; height: 30px; display: inline-block; margin: 25px 0 5px 5px; background-size: 100%;
+                   background-image: url("img/social_icons.png");
+  &__vk          { background-position: 100% 43%; }
+  &__lg          { background-position: 100% 57%; }
+  &__rss         { background-position: 100% 0; }
+  &__twitter     { background-position: 100% 14.5%; }
+  &__facebook    { background-position: 100% 29%; }
+  &__pinterest   { background-position: 100% 85.5%; }
+  &__instagram   { background-position: 100% 100%; }
+  &__google-plus { background-position: 100% 72%; }
+}

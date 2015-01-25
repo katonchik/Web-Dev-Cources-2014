@@ -1,0 +1,29 @@
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,400italic&subset=latin,cyrillic-ext,cyrillic,latin-ext);
+.calendar {
+  width: 294px;
+  margin: auto;
+  overflow: hidden;
+  background: #DDDDDD;
+  padding: 20px; }
+  .calendar__monthTitle {
+    width: 80%;
+    text-align: center;
+    float: left; }
+  .calendar__scrollControl {
+    width: 10%;
+    text-align: center;
+    float: left; }
+  .calendar__cell {
+    float: left;
+    height: 40px;
+    width: 40px;
+    margin: 1px; }
+    .calendar__cell--empty {
+      background: #EEE;
+      opacity: 1; }
+    .calendar__cell--weekday {
+      background: #FFFFFF;
+      opacity: 1; }
+    .calendar__cell--weekend {
+      background: #ff9999;
+      opacity: 1; }

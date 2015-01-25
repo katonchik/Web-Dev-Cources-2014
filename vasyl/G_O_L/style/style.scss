@@ -1,0 +1,14 @@
+$size:512px;
+$number_of_elements:64;
+body{
+  margin: 0;
+  padding: 0;
+}
+.gol_container{  width: $size+$number_of_elements*2;  height: $size+$number_of_elements*2;  position: relative;
+  top:10px;  margin: 10px auto;  border: 1px solid darkseagreen;overflow: hidden}
+.cell-container{  overflow: hidden;
+}
+.cell{width: $size/$number_of_elements;height: $size/$number_of_elements;  float: left;border:1px solid grey;
+  &.-alive{background: #000;}
+  &.-empty{background: inherit;}
+}

@@ -1,0 +1,7 @@
+@import "variables";
+
+.button   {
+            background: rgb(0, 144, 210); border: 1px solid #4080ae; border-radius: 3px; color: white; cursor: pointer;
+            line-height: 1.5; padding: 4px 7px; font: 16px Georgia, serif; margin: 4px 0 1.5em;
+  &:hover { background: $main-color; }
+}

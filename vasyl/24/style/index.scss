@@ -1,0 +1,31 @@
+@import "header";
+@import "main";
+
+$font-stack: Proxima Nova, sans-serif;
+body {
+  margin: 0;
+  padding: 0;
+  a {
+    text-decoration: none;
+  }
+}
+.aside_panel{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background: yellow;
+  z-index: 2;
+}
+.container{
+  max-width: 1190px;
+  padding-left: 100px;
+  padding-right: 15px;
+}
+
+
+.main{
+  font-family: $font-stack;
+}

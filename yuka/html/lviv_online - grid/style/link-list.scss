@@ -1,0 +1,8 @@
+.link-block {
+  margin-top: 10px;
+  &__list   { margin: 10px 0 0 15px; }
+  &__header { border-bottom: 2px solid #ffffff; font-size: 14px; font-weight: normal; padding: 10px 0 5px 5px;
+              width: 305px; }
+
+  &--color { color: #ffffff; }
+}

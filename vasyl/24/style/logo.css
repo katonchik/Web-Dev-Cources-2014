@@ -1,0 +1,31 @@
+.logo {
+  height: 80px;
+  margin-left: -14px;
+  margin-right: 35px;
+  min-width: 125px;
+  position: relative; }
+  .logo a {
+    font-size: 0;
+    height: 0;
+    left: 0;
+    line-height: 0;
+    outline: 0;
+    overflow: hidden;
+    padding-top: 80px;
+    position: absolute;
+    top: 0;
+    width: 125px; }
+  .logo__main {
+    background: url(http://staticcdn.luxnet.ua/tv24/assets2/images/logos-s73cfa151f1.png) no-repeat 0 -90px;
+    z-index: 4; }
+  .logo__radio {
+    background: url(http://staticcdn.luxnet.ua/tv24/assets2/images/logos-s73cfa151f1.png) no-repeat 0 -180px;
+    z-index: 3; }
+  .logo__football {
+    background: url(http://staticcdn.luxnet.ua/tv24/assets2/images/logos-s73cfa151f1.png) no-repeat 0 0px;
+    z-index: 2; }
+  .logo__zaxid_net {
+    background: url(http://staticcdn.luxnet.ua/tv24/assets2/images/logos-s73cfa151f1.png) no-repeat 0 -270px;
+    z-index: 1; }
+
+/*# sourceMappingURL=logo.scss.css.map */
