@@ -24,7 +24,13 @@ ArraySorter = function () {
     {
         this.makeIntArray(unsortedStr);
         console.time('sort');
-        this.doSorting(unsortedStr);
+        if(this.visualize !== undefined){
+            this.visualize();
+        }
+        else
+        {
+            this.doSorting();
+        }
         console.timeEnd('sort');
         return this.sortedArray.join(",");
     }
