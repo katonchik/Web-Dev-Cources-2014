@@ -26,6 +26,7 @@ GOL = function (n_of_e){
         }
         function row_init() {
             var row = document.createElement("div");
+            row.className="cell-container";
             return row;
         }
         function cell_init() {

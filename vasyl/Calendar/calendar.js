@@ -70,7 +70,7 @@ Calendar = function () {
                 } else {
                     days.className = "day";
                 }
-                days.innerText = count++;
+                days.innerHTML = count++;
 
             } else {
                 days.className = "empty"

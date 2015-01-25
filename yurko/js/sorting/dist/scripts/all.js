@@ -1,38 +1,8 @@
-/**
- * Created by Yurko on 24.01.15.
- */
-
-/**
- * Created by Yurko on 24.01.15.
- */
-/**
- * Created by Yurko on 16.01.15.
- */
 var arraysize=20;
 
 var sortedArray=new Array();
 var randomArray=generatearray();
 
-console.log("Random array: " + randomArray);
-
-sortedArray=bubblesort(randomArray);
-console.log("BubbleSorted array: " + sortedArray);
-
-sortedArray=selectsort(randomArray);
-console.log("SelectSorted array: " + sortedArray);
-
-sortedArray=quicksort(randomArray);
-console.log("QuickSorted array: " + sortedArray);
-
-sortedArray=insertsort(randomArray);
-console.log("InsertSorted array: " + sortedArray);
-
-
-sortedArray=mergesort(randomArray);
-console.log("MergeSorted array: " + sortedArray);
-
-sortedArray=gnomesort(randomArray);
-console.log("GnomeSorted array: " + sortedArray);
 
 
 // Random array generating
@@ -181,3 +151,24 @@ function gnomesort(x) {
     }
     return newArray;
 }
+
+console.log("Random array: " + randomArray);
+
+sortedArray=bubblesort(randomArray);
+console.log("BubbleSorted array: " + sortedArray);
+
+sortedArray=selectsort(randomArray);
+console.log("SelectSorted array: " + sortedArray);
+
+sortedArray=quicksort(randomArray);
+console.log("QuickSorted array: " + sortedArray);
+
+sortedArray=insertsort(randomArray);
+console.log("InsertSorted array: " + sortedArray);
+
+
+sortedArray=mergesort(randomArray);
+console.log("MergeSorted array: " + sortedArray);
+
+sortedArray=gnomesort(randomArray);
+console.log("GnomeSorted array: " + sortedArray);

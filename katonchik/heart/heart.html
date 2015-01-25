@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Heart</title>
+    <link rel="stylesheet" href="style/heart.css"/>
+</head>
+<body>
+    <svg width="842" height="595" xmlns="http://www.w3.org/2000/svg" class="page">
+        <path id="svg_1" class="heart" d="m104.453903,155.12265c-6.622772,197.150055 120.233078,177.672729 300.452866,409.977325c176.377655,-223.753571 297.970734,-205.226288 302.393219,-411.877594c-68.616089,-219.953026 -305.157288,-71.734123 -305.157288,-29.453766c0.331665,-46.555939 -240.477295,-182.898335 -297.41803,31.354034l-0.270767,0z"/>
+    </svg>
+
+    <script>
+        var heart = document.getElementsByClassName("heart")[0];
+        heart.addEventListener("click",function(){
+            heart.classList.toggle("heart--selected");
+        });
+    </script>
+</body>
+</html>
