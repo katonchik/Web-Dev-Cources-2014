@@ -32,10 +32,5 @@ h1 {
     vertical-align: middle; }
   .dropzone.rectangle {
     width: 250px; }
-    .dropzone.rectangle.big {
-      width: 500px; }
-  .dropzone.big {
-    height: 300px;
-    width: 300px; }
 
 /*# sourceMappingURL=style.css.map */
