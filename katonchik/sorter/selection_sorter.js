@@ -8,7 +8,7 @@
  */
 function SelectionSorter () {
     this.algorithmName = "Selection sort";
-    this.doSorting = function(unsortedStr)
+    this.doSorting = function()
     {
         var firstUnsortedIndex = 0;
         for (var i = 0; i < this.sortedArray.length-1; i++) {

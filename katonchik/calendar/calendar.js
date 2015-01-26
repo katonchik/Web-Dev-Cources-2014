@@ -2,39 +2,64 @@
  * Created by Katonchik on 26.12.2014.
  */
 
-function Calendar(containerElement)
-{
+function Calendar(containerElement, locale) {
     var container           = containerElement,
         currentMonthStart   = new Date(),
-        currentMonth,
-        currentYear,
-        daysInFeb,
-        daysInMonths,
         daysThisMonth,
         monthStartDaySys,
         monthStartDayOfWeek,
         daysBeforeStart;
 
+    var self = this;
+
     /**
      * Initializes month variables; this function is called with every month change.
      */
     function initializeMonth() {
-        currentMonth        = currentMonthStart.getMonth();
-        currentYear         = currentMonthStart.getFullYear();
-        daysInFeb           = (currentYear%4 == 0 && currentYear!=1900 ? 29 : 28);
-        daysInMonths        = [31,daysInFeb,31,30,31,30,31,31,30,31,30,31];
-        daysThisMonth       = daysInMonths[currentMonth];
+        self.currentMonth   = currentMonthStart.getMonth();
+        self.currentYear    = currentMonthStart.getFullYear();
+        if(typeof(monthNames) !== 'undefined') {
+            self.monthName = monthNames[self.currentMonth];
+        }
+        else {
+            self.monthName = defaultMonthNames[self.currentMonth];
+        }
+        daysThisMonth       = new Date(self.currentYear, self.currentMonth+1, 0).getDate();
         monthStartDaySys    = currentMonthStart.getDay();
         monthStartDayOfWeek = (monthStartDaySys == 0 ? 7 : monthStartDaySys);
         daysBeforeStart     = monthStartDayOfWeek - 1;
+
+        container.addEventListener('click', function(ev) {
+            if (ev.target.classList && (ev.target.classList.contains("calendar__cell--weekend")
+                || ev.target.classList.contains("calendar__cell--unavailable"))) {
+                console.log("weekend clicked");
+                var eventDate = new Date(self.currentYear, self.currentMonth, ev.target.id);
+                if(ev.target.classList.contains("calendar__cell--weekend")) {
+                    var eventName = prompt("Please enter event name, e.g. ЗЧУ", "");
+                    ev.target.classList.remove("calendar__cell--weekend");
+                    ev.target.classList.add("calendar__cell--unavailable");
+                    ev.target.innerHTML += " - " + eventName;
+                    addCalendarEvent(eventDate.toDateString(), eventName);
+                }
+                else {
+                    var confirmMsg = confirm("Remove event?");
+                    if(confirmMsg){
+                        ev.target.classList.remove("calendar__cell--unavailable");
+                        ev.target.classList.add("calendar__cell--weekend");
+                        ev.target.innerHTML = ev.target.id;
+                        removeCalendarEvent(eventDate.toDateString());
+                    }
+                }
+            }
+        });
     }
 
     /**
      * Draws month calendar, including the title, scroll controls and the dates grid
      */
-    function draw(){
+    function render(){
         drawScrollControl('&lt;&lt;', 'goToPrev');
-        drawMonthTitle();
+        renderMonthTitle();
         drawScrollControl('&gt;&gt;', 'goToNext');
 
         var i;
@@ -42,17 +67,17 @@ function Calendar(containerElement)
         //alert("inside draw" + container);
         for(i=0; i<daysBeforeStart; i++)
         {
-            drawCell(null);
+            renderCell(null);
         }
         for(i=1; i<daysThisMonth+1; i++)
         {
             calDate.setDate(i);
-            drawCell(calDate);
+            renderCell(calDate);
         }
-        var remainingEmpty = (Math.floor((daysBeforeStart + daysThisMonth)/7) + 1) * 7 - (daysBeforeStart + daysThisMonth);
+        var remainingEmpty = (Math.floor((daysBeforeStart + daysThisMonth - 1)/7) + 1) * 7 - (daysBeforeStart + daysThisMonth);
         for(i=0; i<remainingEmpty; i++)
         {
-            drawCell(null);
+            renderCell(null);
         }
     }
 
@@ -73,12 +98,9 @@ function Calendar(containerElement)
     /**
      * Draws calendar title, including the name of the month and the year
      */
-    function drawMonthTitle() {
-        var locale     = "uk-ua",
-            monthName  = currentMonthStart.toLocaleString(locale, { month: "long" }),
-            titleDiv   = document.createElement('div');
-
-        titleDiv.innerHTML = monthName + " " + currentYear;
+    function renderMonthTitle() {
+        var titleDiv   = document.createElement('div');
+        titleDiv.innerHTML = self.monthName + " " + self.currentYear;
         titleDiv.classList.add('calendar__monthTitle');
         container.appendChild(titleDiv);
     }
@@ -87,7 +109,7 @@ function Calendar(containerElement)
      * Draws individual cells
      * @param calDate Date object
      */
-    function drawCell(calDate) {
+    function renderCell(calDate) {
         var dateCell = document.createElement('div');
         container.appendChild(dateCell);
         dateCell.classList.add("calendar__cell");
@@ -115,28 +137,112 @@ function Calendar(containerElement)
      */
     function changeMonth(){
         if(this.id == 'goToPrev'){
-            currentMonthStart.setMonth(currentMonth - 1 );
+            currentMonthStart.setMonth(self.currentMonth - 1 );
         }
         else {
-            currentMonthStart.setMonth(currentMonth + 1 );
+            currentMonthStart.setMonth(self.currentMonth + 1 );
         }
 
         initializeMonth();
-        refreshCalendar();
+        refresh();
     }
 
     /**
      * Removes old month's HTML elements and draws current month's calendar.
      */
-    function refreshCalendar(){
+    function refresh(){
         while (container.firstChild) {
             container.removeChild(container.firstChild);
         }
-        draw();
+        render();
+    }
+
+    var defaultMonthNames = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December'
+    ];
+
+    this.goTo = function(date){
+        currentMonthStart = date;
+        currentMonthStart.setDate(1);
+        initializeMonth();
+        refresh();
+    };
+
+    function addCalendarEvent(eventDate, eventName){
+
+        alert("doing addCalendarEvent: " + eventName);
+        $.ajax({
+            url: 'calendar_ajax.php',
+            data: {
+                'eventDate' : eventDate,
+                'eventName' : eventName,
+                'action'    : 'add'
+            },
+            dataType: 'json',
+            success: function(data){
+
+                if(data.successful)
+                {
+                    console.log(eventName + " added to the calendar");
+                }
+                else
+                {
+                    console.log("Failed to add " + eventName + " to the calendar: " + data.msg);
+                }
+
+            },
+            error: function(data){
+                console.log("Failed to add " + eventName + " to the calendar");
+            }
+        });
+
+        return false;
+
+    }
+
+    function removeCalendarEvent(eventDate){
+        //alert($(this).text());
+        $.ajax({
+            url: 'calendar_ajax.php',
+            data: {
+                'eventDate' : eventDate,
+                'action'    : 'remove'
+            },
+            dataType: 'json',
+            success: function(data){
+
+                if(data.successful)
+                {
+                    console.log(eventName + " removed from the calendar");
+                }
+                else
+                {
+                    console.log("Failed to remove " + eventName + " from the calendar: " + data.msg);
+                }
+
+            },
+            error: function(data){
+                console.log("Failed to remove " + eventName + " from the calendar");
+            }
+        });
+
+        return false;
+
     }
 
     currentMonthStart.setDate(1);
     initializeMonth();
-    draw();
+    render();
 
 }
