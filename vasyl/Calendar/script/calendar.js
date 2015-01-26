@@ -10,7 +10,7 @@ var Calendar = function () {
     var day;
     var calendarContainer;
 
-    this.setDate = function (Year, Month) {
+    this.setDate = function (Year, Month,Day) {
         this_.year = Year || this_.year || new Date().getFullYear();
         this_.month = Month || this_.month || new Date().getMonth() + 1;
     };
@@ -46,19 +46,13 @@ var Calendar = function () {
         }
 
         function renderDaysTable() {
-
-
             for (var i = 1; i <= 42; i++) {
                 var days = document.createElement("div");
                 days.classList.add("day")
                 calendarContainer.appendChild(days);
             }
-
-
             document.body.appendChild(calendarContainer);
         };
-
-
         drawWeekDays();
         renderDaysTable();
     };
@@ -73,8 +67,7 @@ var Calendar = function () {
 
     this.update = function () {
         clear();
-
-       var days = document.body.getElementsByClassName("day");
+        var days = document.body.getElementsByClassName("day");
         var firstDay = getDate();
         var count = 1;
         var daysInMonth = this_.daysInMonth();
@@ -109,4 +102,20 @@ function next() {
 function previous() {
     c.changeMonth(false)
     c.update();
+}
+var element = document.body.getElementsByClassName("input")[0];
+window.addEventListener("load",function(){element.value= c.month+" "+ c.year})
+element.addEventListener("keyup", function (event) {
+    set(event)
+});
+function set(el) {
+    if (el.keyCode === 13) {
+       // c.setDate(el.text);
+        console.log(element.value.toString());
+        var a= element.value.split(" ");
+        var b=a.map(function(el){return parseInt(el)});
+        c.setDate(b[1],b[0]-1);
+        c.update();
+       // var value=
+    }
 }
