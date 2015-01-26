@@ -1,23 +1,16 @@
-//TODO: make sort functions immutable. (Use array clone)
+var arraysize=20;
 
-define(["sort/selectsort", "generateRandomArray"] ,
-    function (selectsort, generaterandomarray){
-        var randomArray=generateRandomArray();
-        console.log("Random array: " + randomArray);
-    })
+var sortedArray=new Array();
+var randomArray=generatearray();
 
 
-/*var arraySize=20;
-
-var sortedArray=[];
-var randomArray=generateRandomArray();
 
 // Random array generating
-function generateRandomArray(){
-    var rArray=[];
+function generatearray(){
+    var rArray=new Array();
 
-    for(var i=0;i<arraySize;i++){
-        rArray[i]=Math.floor(Math.random()*arraySize);
+    for(var i=0;i<arraysize;i++){
+        rArray[i]=Math.floor(Math.random()*arraysize);
     }
     return rArray;
 }
@@ -25,7 +18,7 @@ function generateRandomArray(){
 // Bubblesorting
 function bubblesort(x){
     var newArray=x;
-    for(var i=0; i<newArray.length-1;i++){
+    for(var i=0; i<newArray.length-1;i++)
         for (var j=0; j<newArray.length-i-1;j++){
             if (newArray[j]>newArray[j+1]){
                 var tmp=newArray[j];
@@ -33,13 +26,12 @@ function bubblesort(x){
                 newArray[j+1]=tmp;
             }
         }
-    }
     return newArray;
 }
 
 // Selection sort
 function selectsort(x){
-    var newArray = x;
+    var newArray=x;
 
     for(var i=0; i<newArray.length-1;i++) {
         var min = i;
@@ -48,7 +40,7 @@ function selectsort(x){
                 min = j;
             }
         }
-
+// Можна перевірку не робити, а просто міняти?
         if (min != i) {
             var tmp = newArray[i];
             newArray[i] = newArray[min];
@@ -60,40 +52,32 @@ function selectsort(x){
 // Quick sort function
 function quicksort(x) {
     var newArray=x;
-    var left = [];
-    var right = [];
+    var left = new Array();
+    var right = new Array();
     var pivot = newArray[0];
-
-    if (newArray.length === 0) {
-        return [];
-    }
-
-    for (var i = 1; i < newArray.length; i++) {
-        if (newArray[i] < pivot) {
-            left[left.length] = newArray[i];
-        } else {
-            right[right.length] = newArray[i];
-        }
+    if (newArray.length == 0) return [];
+    for (var i = 1; i < newArray.length; i++){
+        if (newArray[i] < pivot) left[left.length] = newArray[i];
+        else right[right.length] = newArray[i];
     }
     return quicksort(left).concat(pivot,quicksort(right));
 }
 
 
 // Insert sort function
-function insertsort(unsortedArray) {
-    var orderedArray = unsortedArray;
-    var buffer, i , j;
+function insertsort(x) {
+    var newArray=x;
 
-    for ( i=0; i < orderedArray.length-1; i++) {
-        buffer = orderedArray[i];
+    for(var i=0; i<newArray.length-1;i++) {
+        var tmp=newArray[i];
 
-        for (j = i-1; j >= 0 && orderedArray[j] > buffer; j--){
-            orderedArray[j+1] = orderedArray[j];
+        for (var j=i-1; j>=0&&newArray[j]>tmp;j--){
+            newArray[j+1]=newArray[j];
         }
 
-        orderedArray[j+1] = buffer;
+        newArray[j+1]=tmp;
     }
-    return orderedArray;
+    return newArray;
 }
 
 // Merge sort function
@@ -101,9 +85,9 @@ function mergesort(x) {
 
     var newArray = x;
     var middleArray = parseInt(newArray.length/2);
-    var right = [];
-    var left = [];
-    var mergedArray = [];
+    var right = new Array();
+    var left = new Array();
+    var mergedArray = new Array();
 
     if (newArray.length<2){
         return newArray;
@@ -122,7 +106,6 @@ function mergesort(x) {
 
     return mergedArray;
 }
-*/
 
 // function merge for mergesort algorythm;
 /* input - two arrays:left and right
@@ -130,8 +113,6 @@ function mergesort(x) {
 
  заплутано виходить, бо насправді сортування в мерджі і навпаки.
  */
-
-/*
 function merge(left,right){
 
     var result= new Array();
@@ -170,8 +151,7 @@ function gnomesort(x) {
     }
     return newArray;
 }
-*/
-/*
+
 console.log("Random array: " + randomArray);
 
 sortedArray=bubblesort(randomArray);
@@ -186,9 +166,9 @@ console.log("QuickSorted array: " + sortedArray);
 sortedArray=insertsort(randomArray);
 console.log("InsertSorted array: " + sortedArray);
 
+
 sortedArray=mergesort(randomArray);
 console.log("MergeSorted array: " + sortedArray);
 
 sortedArray=gnomesort(randomArray);
 console.log("GnomeSorted array: " + sortedArray);
-*/
