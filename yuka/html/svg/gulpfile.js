@@ -23,6 +23,6 @@ gulp.task('style', function () {
 });
 
 gulp.task('default', function () {
-    return watch('./src/style/*.scss')
-        .pipe(gulp.dest('./build/css'));
+    gulp.run('style');
+    gulp.watch('./src/style/*.scss', run('style'));
 });

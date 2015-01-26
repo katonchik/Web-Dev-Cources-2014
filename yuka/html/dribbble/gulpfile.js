@@ -15,7 +15,6 @@ gulp.task('style', function () {
         }))
         .pipe(concat('main.css'))
         .pipe(minifyCSS())
-
         .pipe(gulp.dest('./build/style'));
 
     gulp.src("./src/*.html")
@@ -26,6 +25,6 @@ gulp.task('style', function () {
 });
 
 gulp.task('default', function () {
-    return watch('./src/style/*.scss')
-        .pipe(gulp.dest('./build/css'));
+    gulp.run('style');
+    gulp.watch('./src/style/*.scss', run('style'));
 });
