@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,cAAe;EAAE,KAAK,EAAE,KAAK;EAAE,YAAY,EAAE,IAAI",
-"sources": ["autorization.scss"],
-"names": [],
-"file": "autorization.css"
-}

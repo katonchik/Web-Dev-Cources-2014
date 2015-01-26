@@ -21,7 +21,7 @@ body {
 header {
   background: $main-color; height: 200px;
 
-  #logo                      { background: url(img/logo.png) no-repeat; clear: both; cursor: pointer; height: 96px;
+  #logo                      { background: url(../img/logo.png) no-repeat; clear: both; cursor: pointer; height: 96px;
                                padding: 0; text-align: right; width: 460px; }
   #logo h2                   { color: white; font-size: 16px; font-style: italic; font-weight: normal;
                                position: relative; bottom: -70px; }
@@ -103,7 +103,7 @@ header {
 
     p                        { font-size: 0.85em; line-height: 1.5; margin: 4px 0 1.5em; padding: 0 0 10px 184px; }
     #w3cLogo                 { float: right; cursor: default; }
-    #copyright               { background: url("img/footerlogo.jpg") no-repeat scroll 20px 0 #f0f0f0; }
+    #copyright               { background: url("../img/footerlogo.jpg") no-repeat scroll 20px 0 #f0f0f0; }
   }
 
 
