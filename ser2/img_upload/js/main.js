@@ -1,4 +1,3 @@
-define('Main', ['Dropzone'], function (dropzone) {
-    var dropbox = new dropzone(document.getElementById('dropbox1'));
+define('main', ['Dropzone'], function(dz) {
+    var dropbox = new dz(document.getElementById('dropbox1'));
 });
-
