@@ -19,9 +19,23 @@ define([], function () {
         return randomlyGeneratedArray;
     }
 
+
+    function copyArray(arrayToClone){
+        var copiedArray=arrayToClone.slice(0);
+        return copiedArray;
+    }
+
+
+    Array.prototype.clone = function() {
+        return this.slice(0);
+    };
+
+
     return {
             swap: swap,
-            generateRandomArray: generateRandomArray
+            generateRandomArray: generateRandomArray,
+            clone: Array.prototype.clone,
+            copyArray: copyArray
     }
 
 })

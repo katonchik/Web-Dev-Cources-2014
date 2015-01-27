@@ -1,10 +1,13 @@
 define(["sort/helpers"], function (helper) {
         // Selection sort function
         function selectSort(unsortedArray){
-            var orderedArray = unsortedArray;
+            var orderedArray;
             var i,
                 j,
                 minArrayElement;
+//      Another way to clone array
+//            orderedArray = helper.copyArray(unsortedArray);
+            orderedArray = unsortedArray.clone();
 
             for (i = 0; i < orderedArray.length - 1; i++) {
                 minArrayElement = i;

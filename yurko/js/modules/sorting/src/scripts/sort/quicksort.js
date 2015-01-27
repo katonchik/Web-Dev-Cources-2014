@@ -1,4 +1,4 @@
-define([], function () {
+define(["sort/helpers"], function (helper) {
 
     // Quick sort function
     function quicksort(unsortedArray) {
@@ -6,6 +6,10 @@ define([], function () {
         var leftArrayPart = [];
         var rightArrayPart = [];
         var pivot = orderedArray[0];
+
+//      Another way to clone array
+        orderedArray = helper.copyArray(unsortedArray);
+//      orderedArray = unsortedArray.clone();
 
         if (orderedArray.length === 0) {
             return [];

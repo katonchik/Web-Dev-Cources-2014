@@ -9,9 +9,9 @@ define(["sort/helpers", "sort/select_sort", "sort/bubblesort", "sort/quicksort",
         var randomArray=helper.generateRandomArray(ARRAY_SIZE);
         console.log("Unsorted array: " + randomArray);
 
-        console.log("Selectsorted array: " + selectSort(randomArray));
-
         console.log("BubbleSorted array: " + bubblesort(randomArray));
+
+        console.log("Selectsorted array: " + selectSort(randomArray));
 
         console.log("QuickSorted array: " + quicksort(randomArray));
 

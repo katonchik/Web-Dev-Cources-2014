@@ -1,15 +1,22 @@
-define(["sort/merge"],
-function (merge) {
+define(["sort/merge", "sort/helpers"],
+function (merge, helper) {
 
     // Merge sort function
     function mergesort(unsortedArray) {
 
-        var orderedArray = unsortedArray;
-        var middleOfArray = parseInt(orderedArray.length / 2);
+        var orderedArray;
+
+        var middleOfArray;
         var right = [];
         var left = [];
         var mergedArray = [];
 
+
+//      Another way to clone array
+        orderedArray = helper.copyArray(unsortedArray);
+//        orderedArray = unsortedArray.clone();
+
+        middleOfArray = parseInt(orderedArray.length / 2);
         if (orderedArray.length < 2) {
             return orderedArray;
         }

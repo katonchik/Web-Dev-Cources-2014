@@ -12,7 +12,7 @@ var sortedArray=[];
 var randomArray=generateRandomArray();
 
 // Random array generating
-function generateRandomArray(){
+function generateRandomArray(arraySize){
     var rArray=[];
 
     for(var i=0;i<arraySize;i++){
