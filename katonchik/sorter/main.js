@@ -29,10 +29,13 @@ function doSort() {
         case "Selection":
             aSorter = new SelectionSorter();
             break;
+        case "Merge":
+            aSorter = new MergeSorter();
+            break;
     }
     algorithmName = aSorter.algorithmName;
-    var sortedArrayStr = aSorter.sort(unsortedStr, algorithm);
     console.log('sorting with ' + algorithmName + ' method');
-    document.getElementById('output').innerHTML="Sorted by the '" + algorithmName + "' method: " + sortedArrayStr;
+    document.getElementById('output').innerHTML =
+        "Sorted by the '" + algorithmName + "' method: " + aSorter.sort(unsortedStr, algorithm);
 
 }

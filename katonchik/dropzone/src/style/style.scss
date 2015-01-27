@@ -1,0 +1,56 @@
+@import 'img-upload.css';
+
+
+$basic-color: #3c3c3c;
+$secondary-color: #1ABC9C;
+$tertiary-color: #16A085;
+
+$db-size: 200px;
+
+body {
+    padding: 0;
+    margin: 0;
+    font:18px 'Oswald', sans-serif;
+    line-height: 1.2;
+
+    * {
+        box-sizing: border-box;
+    }
+}
+
+h1 {
+    padding: 30px;
+    margin: 0 0 14px;
+}
+
+.dropzone {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    padding:10px;
+    margin: 20px;
+    border: 3px dashed darken($tertiary-color, 20%);
+    border-radius:5%;
+    background-color: lighten($secondary-color, 40%);
+    text-align: center;
+    color: darken($tertiary-color, 15%);
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        background-color: lighten($secondary-color, 70%);
+        border-color: darken($tertiary-color, 70%);
+        box-shadow: 0px 0px 20px 0px darken($secondary-color, 20%) inset;
+    }
+
+    &.inline {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    &.rectangle {
+        width: 250px;
+
+    }
+
+}
+

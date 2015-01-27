@@ -8,14 +8,14 @@
  */
 function BubbleSorter () {
     this.algorithmName = "Bubble sort";
-    this.doSorting = function(unsortedStr)
+    this.doSorting = function()
     {
         do {
             var swapped = false;
             for (var i = 0; i < this.sortedArray.length; i++) {
                 if (this.sortedArray[i] > this.sortedArray[i + 1]) {
                     this.swap(i, i + 1);
-                    var swapped = true;
+                    swapped = true;
                 }
             }
         }

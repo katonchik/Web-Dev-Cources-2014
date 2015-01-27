@@ -1,0 +1,24 @@
+.additional-info          {
+                            border-top: 2px solid #ddd;
+  .additional-info__block {
+                            color: #999; font-size: 0.9em; display: inline-block; width: 31.2715%; vertical-align: top;
+                            margin: 20px 26px 20px 0;
+    &:last-child          { margin-right: 0; }
+    a                     { color: #999; }
+    a:hover               { color: #4083a9; }
+    a:hover .meta         { @extend a:hover; }
+
+    &__img                { float: left; margin: 0 5px 0 0; width: 100px; }
+    &__title              { color: #999; font-size: 14px; font-weight: normal; }
+
+    &--link               { color: #4083a9; font-weight: bold;}
+    &--link:hover         { color: #205f82; }
+
+    .meta                 { color: #444; }
+    .company              { @extend .meta; }
+    .position             { color: #777; }
+  }
+  .job                    { padding: 7px 0; display: inline-block; }
+  .job:hover .company     { @extend a:hover; }
+  .job:hover .position    { @extend a:hover; }
+}

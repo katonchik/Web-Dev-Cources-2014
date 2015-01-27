@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": ";AAAA,UAMC;EALC,WAAW,EAAE,oBAAoB;EACjC,GAAG,EAAE,2CAA2C;EAChD,GAAG,EAAE,oMAAY;EACjB,WAAW,EAAE,MAAM;EACnB,UAAU,EAAE,MAAM",
-"sources": ["font__bold--italic.scss"],
-"names": [],
-"file": "font__bold--italic.css"
-}
