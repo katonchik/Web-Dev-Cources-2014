@@ -10,8 +10,7 @@ BinaryTree = function () {
      */
     this.search = function (searchValue) {
         var searchResult = [];
-
-        function find_value(value, subtree) {
+        function findValue(value, subtree) {
             searchResult[0] = subtree;
             if (subtree.value == value) {
 
@@ -19,17 +18,16 @@ BinaryTree = function () {
                 if (subtree.value > value) {
                     searchResult[1] = subtree;
                     searchResult[2] = "left";
-                    find_value(value, subtree.left);
+                    findValue(value, subtree.left);
                 } else {
                     searchResult[1] = subtree;
                     searchResult[2] = "right";
-                    find_value(value, subtree.right);
+                    findValue(value, subtree.right);
                 }
             }
         }
 
-        find_value(searchValue, this.tree);
-        console.log(this.tree);
+        findValue(searchValue, this.tree);
         return searchResult;
     };
 
@@ -39,18 +37,18 @@ BinaryTree = function () {
  * @param value
  */
 BinaryTree.prototype.add = function (value) {
-    var firstElementXasis=50;//in percent
-    var heightBetweenElements=50;// in px
-    var c=0;
+    var firstElementXasis = 50;//in percent
+    var heightBetweenElements = 50;// in px
+    var c = 0;
+
     function treeWalk(value, subtree) {
         c = firstElementXasis / (Math.pow(2, subtree.y / heightBetweenElements));
         if (subtree.value > value) {
             if (subtree.left == null) {
                 subtree.child++;
                 subtree.left = newNode;
-                subtree.left.x=subtree.x-c;
-                subtree.left.y=subtree.y+heightBetweenElements;
-
+                subtree.left.x = subtree.x - c;
+                subtree.left.y = subtree.y + heightBetweenElements;
             } else {
                 treeWalk(value, subtree.left)
             }
@@ -59,9 +57,8 @@ BinaryTree.prototype.add = function (value) {
             if (subtree.right == null) {
                 subtree.child++;
                 subtree.right = newNode;
-                subtree.right.x=subtree.x+c;
-                subtree.right.y=subtree.y+heightBetweenElements;
-
+                subtree.right.x = subtree.x + c;
+                subtree.right.y = subtree.y + heightBetweenElements;
             }
             else {
                 treeWalk(value, subtree.right)
@@ -74,15 +71,15 @@ BinaryTree.prototype.add = function (value) {
         right: null,
         child: 0,
         value: value,
-        x:firstElementXasis,
-        y:heightBetweenElements
+        x: firstElementXasis,
+        y: heightBetweenElements
     };
     if (this.tree.value) {
         treeWalk(value, this.tree);
     } else {
         this.tree = newNode;
     }
-
+    this.render();
 };
 /**
  * create binary tree
@@ -92,7 +89,7 @@ BinaryTree.prototype.create = function (numberOfElements) {
     var array = generatorRandomSet(numberOfElements);
     console.log(array);
     array.forEach(function (el) {
-        binaryTree.add(el)
+        this_.add(el)
     });
 };
 /**par -subtree instance in which we going to search min max values
@@ -104,17 +101,15 @@ BinaryTree.prototype.create = function (numberOfElements) {
 BinaryTree.prototype.searchMinMaxValueOfSubtree = function (subtree, switcher) {
     var result;
     var parameter;
-    var subtree = this.subtree;
+    var subtree = subtree;
     if (switcher) {
         parameter = "left";
     }
     else {
         parameter = "right";
     }
-    console.log(parameter);
-    console.log(subtree[parameter]);
+
     function search(subtree) {
-        console.log(result);
         result = subtree;
         if (subtree[parameter] == null) {
 
@@ -123,6 +118,7 @@ BinaryTree.prototype.searchMinMaxValueOfSubtree = function (subtree, switcher) {
             search(subtree[parameter]);
         }
     }
+
     search(subtree);
     return result;
 };
@@ -131,10 +127,10 @@ BinaryTree.prototype.searchMinMaxValueOfSubtree = function (subtree, switcher) {
  * @param value
  */
 BinaryTree.prototype.remove = function (value) {
-    var search = this.search(value);
-    var subtree = search[0];
-    var parentSubtree = search[1];
-    var pointer = search[2];
+    var searchResult = this.search(value);
+    var subtree = searchResult[0];
+    var parentSubtree = searchResult[1];
+    var pointer = searchResult[2];
     var successor;
 //binary tree removing algorithms
 //if subtree without children then it will be removed
@@ -142,34 +138,70 @@ BinaryTree.prototype.remove = function (value) {
 //if subtree with children then it will be replaced onto the last right child(child with the biggest value)
     if (subtree.child == 0) {
         parentSubtree[pointer] = null;
-        console.log("0", subtree);
     } else if (subtree.child == 1) {
         parentSubtree[pointer] = subtree.left || subtree.right;
     } else {
-        successor = this.searchMinMaxValueOfSubtree(subtree, false);
-        console.log(successor);
+        successor = this.searchMinMaxValueOfSubtree(subtree.right, true);
+        //console.log(successor);
         this.remove(successor.value);
-        parentSubtree[pointer].value = successor.value;
+        parentSubtree[pointer].value = successor.value
     }
+    this.render(true);
 };
 
-
-BinaryTree.prototype.render = function () {
+/**function draw binary tree * *
+ * if switcher true it's calculate coordinates of  tree elements *
+ * @param switcher
+ */
+BinaryTree.prototype.render = function (switcher) {
+    document.body.innerHTML = "";
     var svgNS = "http://www.w3.org/2000/svg";
     function renderNode(node) {
+        //if(switcher){calculateXY(node)}
         if (node.left) {
-            rootEl.appendChild(addSvgLine(node.x,node.y,node.left.x,node.left.y));
+            if (switcher) {
+                calculateXY(node.left)
+            }
+            rootEl.appendChild(addSvgLine(node.x, node.y, node.left.x, node.left.y));
             renderNode(node.left);
         }
         if (node.right) {
-            rootEl.appendChild(addSvgLine(node.x,node.y,node.right.x,node.right.y));
-
+            if (switcher) {
+                calculateXY(node.right)
+            }
+            rootEl.appendChild(addSvgLine(node.x, node.y, node.right.x, node.right.y));
             renderNode(node.right);
         }
         rootEl.appendChild(createCircle(node.x, node.y))
         rootEl.appendChild(addSvgText(node.x, node.y, node.value))
 
     }
+
+
+    function calculateXY(node) {
+        var subtree = this_.tree;
+        var firstElementXasis = 50;//in percent
+        var heightBetweenElements = 50;// in px
+        var c = 0;
+        var x = firstElementXasis;
+        var y = heightBetweenElements;
+        while (subtree.value != node.value) {
+            c = 50 / (Math.pow(2, y / heightBetweenElements))
+            if (subtree.value > node.value) {
+                x -= c;
+                subtree = subtree.left;
+            } else {
+                x += c;
+                subtree = subtree.right;
+            }
+            y = y + heightBetweenElements;
+        }
+        node.x = x;
+        node.y = y;
+        return node;
+    }
+
+
     function createCircle(x, y) {
         var circle = document.createElementNS(svgNS, 'circle');
         circle.classList.add('svg');
@@ -181,29 +213,29 @@ BinaryTree.prototype.render = function () {
 
     function addSvgText(x, y, value) {
         var newText = document.createElementNS(svgNS, 'text');
-        newText.setAttribute( 'x', x - 0.4 + '%');
-        newText.setAttribute( 'y', y + 3);
-        newText.setAttribute( 'font-size', '10');
+        newText.setAttribute('x', x - 0.4 + '%');
+        newText.setAttribute('y', y + 3);
+        newText.setAttribute('font-size', '10');
         var textNode = document.createTextNode(value);
         newText.appendChild(textNode);
         return newText;
     }
-    function addSvgLine(x1,y1,x2,y2){
-        var line= document.createElementNS(svgNS,'line');
+
+    function addSvgLine(x1, y1, x2, y2) {
+        var line = document.createElementNS(svgNS, 'line');
         line.classList.add('svg');
-        line.setAttribute('x1',x1+'%');
-        line.setAttribute('y1',y1);
-        line.setAttribute('x2',x2+'%');
-        line.setAttribute('y2',y2);
+        line.setAttribute('x1', x1 + '%');
+        line.setAttribute('y1', y1);
+        line.setAttribute('x2', x2 + '%');
+        line.setAttribute('y2', y2);
         return line;
     }
 
     var rootEl = document.createElementNS(svgNS, 'svg');
     rootEl.setAttribute('width', '100%');
     rootEl.setAttribute('height', '1000');
-    rootEl.setAttributeNS("http://www.w3.org/2000/xmlns/", "xmlns:xlink", "http://www.w3.org/1999/xlink");
-    renderNode(this.tree);
-    return rootEl;
+    renderNode(this.tree );
+    document.body.appendChild(rootEl);
 };
 
 
@@ -211,9 +243,7 @@ var binaryTree = new BinaryTree();
 binaryTree.create(10);
 console.log(binaryTree.tree);
 var binaryView = binaryTree.render();
-document.body.appendChild(binaryView);
+//document.body.appendChild(binaryView);
 
-function x() {
 
-}
 
