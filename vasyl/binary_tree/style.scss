@@ -1,0 +1,29 @@
+.svg{
+  stroke:blue;
+  stroke-width:3px;
+  fill:yellow;
+}
+
+.dom-node {
+  font-family: 'PT Sans', sans-serif;
+  border: 1px solid saddlebrown;
+
+}
+.node-value {
+  text-align: center;
+  height: 30px;
+  width: 30px;
+  margin: auto;
+  background: gold;
+  border-radius: 100%;
+}
+.left-node {
+  border-top: 4px solid #d35400;
+  width: 50%;
+  float: left;
+}
+.right-node {
+  border-top: 4px solid #0a7c1d;
+  width: 50%;
+  float: left;
+}

@@ -3,4 +3,4 @@ var require = {
     paths: {
         sort: "sort_algorithms"
     }
-}
+};
