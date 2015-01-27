@@ -1,7 +1,4 @@
-window.onload = function() {
+define('Main', ['Dropzone'], function (dropzone) {
+    var dropbox = new dropzone(document.getElementById('dropbox1'));
+});
 
-    var dropbox = new Dropzone(document.getElementById("dropbox1"));
-    var dropbox1 = new Dropzone(document.getElementById("dropbox2"));
-    var dropbox2 = new Dropzone(document.getElementById("dropbox3"));
-
-}

@@ -1,5 +1,6 @@
+var arraysize=20;
 // Random array generating
-function generatearray(){
+function generateRandomArray(){
     var randomlyGeneratedArray= [];
 
     for(var i=0;i<arraysize;i++){
