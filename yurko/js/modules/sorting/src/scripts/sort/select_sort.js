@@ -1,5 +1,5 @@
 define(["sort/helpers"], function (helper) {
-
+        // Selection sort function
         function selectSort(unsortedArray){
             var orderedArray = unsortedArray;
             var i,
@@ -15,13 +15,10 @@ define(["sort/helpers"], function (helper) {
                 }
 
                 if (minArrayElement != i) {
-                    //TODO: Replace with swap function
-                    //            var tmp = orderedArray[i];
-                    //            orderedArray[i] = orderedArray[minArrayElement];
-                    //            orderedArray[minArrayElement] = tmp;
-                    helper.swap(orderedArray, i , minArrayElement);
+                    orderedArray = helper.swap(orderedArray, i , minArrayElement);
                 }
             }
             return orderedArray;
         }
+    return selectSort;
     })

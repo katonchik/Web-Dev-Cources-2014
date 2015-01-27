@@ -1,4 +1,3 @@
-//TODO: make sort functions immutable. (Use array clone)
 
 define(["sort/selectsort", "generateRandomArray"] ,
     function (selectsort, generaterandomarray){
@@ -7,7 +6,7 @@ define(["sort/selectsort", "generateRandomArray"] ,
     })
 
 
-/*var arraySize=20;
+var arraySize=20;
 
 var sortedArray=[];
 var randomArray=generateRandomArray();
@@ -122,7 +121,7 @@ function mergesort(x) {
 
     return mergedArray;
 }
-*/
+
 
 // function merge for mergesort algorythm;
 /* input - two arrays:left and right
@@ -131,7 +130,7 @@ function mergesort(x) {
  заплутано виходить, бо насправді сортування в мерджі і навпаки.
  */
 
-/*
+
 function merge(left,right){
 
     var result= new Array();
@@ -170,8 +169,8 @@ function gnomesort(x) {
     }
     return newArray;
 }
-*/
-/*
+
+
 console.log("Random array: " + randomArray);
 
 sortedArray=bubblesort(randomArray);
@@ -191,4 +190,4 @@ console.log("MergeSorted array: " + sortedArray);
 
 sortedArray=gnomesort(randomArray);
 console.log("GnomeSorted array: " + sortedArray);
-*/
+

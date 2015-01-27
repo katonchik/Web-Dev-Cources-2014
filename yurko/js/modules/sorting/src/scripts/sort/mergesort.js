@@ -1,26 +1,30 @@
-// Merge sort function
-function mergesort(unsortedArray) {
+define(["sort/merge"],
+function (merge) {
 
-    var orderedArray = unsortedArray;
-    var middleOfArray = parseInt(orderedArray.length/2);
-    var right = [];
-    var left = [];
-    var mergedArray = [];
+    // Merge sort function
+    function mergesort(unsortedArray) {
 
-    if (orderedArray.length<2){
-        return orderedArray;
+        var orderedArray = unsortedArray;
+        var middleOfArray = parseInt(orderedArray.length / 2);
+        var right = [];
+        var left = [];
+        var mergedArray = [];
+
+        if (orderedArray.length < 2) {
+            return orderedArray;
+        }
+        else {
+            left = orderedArray.slice(0, middleOfArray);
+            right = orderedArray.slice(middleOfArray);
+
+            left = mergesort(left);
+            right = mergesort(right);
+
+            mergedArray = merge(left, right);
+        }
+
+
+        return mergedArray;
     }
-    else{
-        left=orderedArray.slice(0,middleOfArray);
-        right=orderedArray.slice(middleOfArray);
-
-        left = mergesort(left);
-        right = mergesort(right);
-
-        mergedArray = merge(left,right);
-//        console.log(mergedArray);
-    }
-
-
-    return mergedArray;
-}
+    return mergesort;
+})
