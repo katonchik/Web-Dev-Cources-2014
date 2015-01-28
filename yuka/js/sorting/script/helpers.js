@@ -3,10 +3,8 @@ define([], function (){
      * Defining an array to sort: ask the user for the array or generate one
      * @return {Array}
      */
-
     function generateRandomArray(arrayLength, numberRange) {
         var array = [];
-
         arrayLength = arrayLength || 25;
         numberRange = numberRange || 100;
         var i;
@@ -15,7 +13,6 @@ define([], function (){
         }
         return array;
     }
-
     /**
      * Swapping two meanings
      * @param inputArray
@@ -27,10 +24,8 @@ define([], function (){
         var temp = inputArray[firstElementIndex];
         inputArray[firstElementIndex] = inputArray[secondElementIndex];
         inputArray[secondElementIndex] = temp;
-
         return inputArray;
     }
-
     return {
         generateRandomArray: generateRandomArray,
         swap: swap

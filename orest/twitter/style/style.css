@@ -1,0 +1,70 @@
+body {
+	background: #C0DEED url('https://abs.twimg.com/images/themes/theme1/bg.png') no-repeat center 40px;
+	margin: 0;
+	padding: 0;
+}
+
+a:-webkit-any-link {
+	text-decoration: none;
+	color: none;
+}
+
+
+
+.header{
+	border-bottom: 1px solid rgba(0,0,0,0.15);
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	height: 46px;
+	z-index: 1000;
+	background-color: #fff;
+}
+.top-header{
+	width: 100%;
+	max-width: 1190px;
+	margin: 0 auto;
+}
+
+.top-header__nav,
+.top-header__action {
+	display: inline-block;
+}
+
+.top-header__nav {
+	text-align: center;
+	color: #66757f;
+}
+
+	.nav__item {
+		height: 46px;
+		display: inline-block;
+	}
+
+	.nam__item:hover, .nav__item--active {
+		color: #0084b4;
+	}
+	
+	.nav__item__text {
+		display: inline-block;
+		padding: 12px 0 0;
+	}
+
+	.nav__item__text:before {
+		font-size: 21px;
+		margin: 0 5px 0 0;
+		vertical-align: middle;
+	}
+
+.top-header__action{
+	float: right;
+	display: none;
+	text-align: left;
+}
+
+
+/* Dropdown menu for profile */
+.action-tools {
+	display: none;
+}

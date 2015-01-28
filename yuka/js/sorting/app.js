@@ -4,4 +4,4 @@ function (sortBubble, data){
 
     console.log("Bubble sorted array: " + sortBubble(data));
 
-})
+});

@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,MAAO;EAAE,KAAK,EAAE,IAAI;EAAE,SAAS,EAAE,IAAI;EAAE,WAAW,EAAE,GAAG",
-"sources": ["moto.scss"],
-"names": [],
-"file": "moto.css"
-}

@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,WAAY;EACV,UAAU,EAAE,IAAI;EAChB,iBAAQ;IAAE,MAAM,EAAE,aAAa;EAC/B,kBAAS;IAAE,KAAK,EAAE,OAAO",
-"sources": ["link-list.scss"],
-"names": [],
-"file": "link-list.css"
-}

@@ -1,15 +1,22 @@
-//TODO: make sort functions immutable. (Use array clone)
-var arraysize=20;
+
+define(["sort/selectsort", "generateRandomArray"] ,
+    function (selectsort, generaterandomarray){
+        var randomArray=generateRandomArray();
+        console.log("Random array: " + randomArray);
+    })
+
+
+var arraySize=20;
 
 var sortedArray=[];
-var randomArray=generatearray();
+var randomArray=generateRandomArray();
 
 // Random array generating
-function generatearray(){
+function generateRandomArray(arraySize){
     var rArray=[];
 
-    for(var i=0;i<arraysize;i++){
-        rArray[i]=Math.floor(Math.random()*arraysize);
+    for(var i=0;i<arraySize;i++){
+        rArray[i]=Math.floor(Math.random()*arraySize);
     }
     return rArray;
 }
@@ -115,12 +122,15 @@ function mergesort(x) {
     return mergedArray;
 }
 
+
 // function merge for mergesort algorythm;
 /* input - two arrays:left and right
  return - array: sorted & joined left and right arrays
 
  заплутано виходить, бо насправді сортування в мерджі і навпаки.
  */
+
+
 function merge(left,right){
 
     var result= new Array();
@@ -160,6 +170,7 @@ function gnomesort(x) {
     return newArray;
 }
 
+
 console.log("Random array: " + randomArray);
 
 sortedArray=bubblesort(randomArray);
@@ -174,9 +185,9 @@ console.log("QuickSorted array: " + sortedArray);
 sortedArray=insertsort(randomArray);
 console.log("InsertSorted array: " + sortedArray);
 
-
 sortedArray=mergesort(randomArray);
 console.log("MergeSorted array: " + sortedArray);
 
 sortedArray=gnomesort(randomArray);
 console.log("GnomeSorted array: " + sortedArray);
+

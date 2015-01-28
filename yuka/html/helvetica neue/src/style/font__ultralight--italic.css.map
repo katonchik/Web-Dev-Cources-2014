@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": ";AAAA,UAMC;EALC,WAAW,EAAE,oBAAoB;EACjC,GAAG,EAAE,iDAAiD;EACtD,GAAG,EAAE,sNAAY;EACjB,WAAW,EAAE,MAAM;EACnB,UAAU,EAAE,MAAM",
-"sources": ["font__ultralight--italic.scss"],
-"names": [],
-"file": "font__ultralight--italic.css"
-}
