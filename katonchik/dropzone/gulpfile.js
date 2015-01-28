@@ -27,7 +27,7 @@ gulp.task('js', function(){
     gulp.src('./src/js/*.js')
         .pipe(order([
             "src/js/dropzone.js",
-            "src/js/main.js"
+            "src/js/game_of_life.js"
         ]))
         .pipe(concat('app.js'))
         .pipe(uglify())
