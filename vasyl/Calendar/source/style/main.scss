@@ -1,0 +1,26 @@
+@import "buttons";
+@import "input";
+@import "day";
+
+body {
+  position: relative;
+}
+
+.header {
+  overflow: hidden;
+}
+
+.calendar_container {
+  position: absolute;
+  overflow: hidden;
+  top: 100px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 240px;
+  text-align: center;
+  vertical-align: text-bottom;
+
+}
+
+
