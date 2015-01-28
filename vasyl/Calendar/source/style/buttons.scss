@@ -1,0 +1,16 @@
+.button{
+  padding: 0;
+  height: 32px;
+  width: 9%;
+  background: #ff8b15;
+  border: none;
+  &--next{
+      float: right  ;
+    margin-right: 2%;
+  }
+  &--previous{
+    float: left;
+    margin-left: 1%;
+  }
+
+}

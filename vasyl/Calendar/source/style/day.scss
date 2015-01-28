@@ -1,0 +1,32 @@
+.days_container {
+  overflow: hidden;
+  background: white;
+}
+.weak {
+  float: left;
+  margin: 2px;
+  width: 30px;
+  height: 30px;
+  background: #a745ff;
+}
+.day {
+  float: left;
+  margin: 2px;
+  width: 30px;
+  height: 30px;
+  background: rgba(47, 151, 82, 0.31);
+  &--empty {
+    background: rgba(62, 69, 67, 1);
+    color: white;
+  }
+  &--current{
+    border: 1px solid #ff0000;
+    width: 28px;
+    height: 28px;
+  }
+  &--selected{
+    border: 1px dashed #ff0000;
+    width: 28px;
+    height: 28px;
+  }
+}

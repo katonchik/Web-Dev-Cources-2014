@@ -1,0 +1,11 @@
+.button {
+  height: 40px;
+  width: 20px;
+  background: #ff8b15;
+  border: none; }
+  .button--next {
+    float: right; }
+  .button--previous {
+    float: left; }
+
+/*# sourceMappingURL=buttons.css.map */

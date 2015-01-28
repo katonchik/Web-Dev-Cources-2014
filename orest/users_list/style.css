@@ -1,0 +1,41 @@
+body {
+    padding: 0;
+    margin: 0;
+    color: grey;
+    background-color: #f5f5f5;
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+table, th, td  {
+    border: 3px solid #2aee12;
+    padding: 5px;
+}
+
+.header__page-title {
+    margin: 1em 0 0.4em;
+    font-size: 3em;
+}
+
+.main-content {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.main-content__table {
+    width: 100%;
+    background-color: #8f8fff;
+    color: #fff;
+    font-size: 1.5em;
+    border-collapse: collapse;
+}
+
+.table__body {
+    text-align: left;
+}
+
+.user-avatar {
+    width: 20%;
+}
+
