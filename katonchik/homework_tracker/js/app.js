@@ -16,10 +16,21 @@ requirejs.config({
 });
 
 // Start the main app logic.
-requirejs(['app/sub'], function(sub) {
-    alert("inside requirejs function");
+requirejs(['app/httpCallWrapper'], function(httpCallWrapper) {
+    httpCall("GET", "http://www.corsproxy.com/webdevcourses.frisbee.lviv.ua/students_assignments",
+        [], function(response){
+            if(response)
+            {
+                console.log(response);
+                console.log(r);
+            }
+        });
+    console.log("inside requirejs function");
 });
 
-require(['app/sub'], function(sub) {
-    alert("inside require function");
+/*
+//What's the difference?
+require(['app/httpCall'], function(httpCall) {
+    console.log("inside require function");
 });
+*/
