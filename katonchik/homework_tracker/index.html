@@ -4,22 +4,47 @@
     <meta charset="UTF-8">
     <title>Howmework Tracker</title>
     <link rel="stylesheet" href="style/homework.css" />
+    <script src="js/lib/handlebars.js"></script>
+    <script src="js/lib/httpCallWrapper.js"></script>
 </head>
 <body>
     <header>
         <h1>Howmework Tracker</h1>
     </header>
-    <nav class="menu">
+    <nav class="menu" id="menu">
         <a href="#" id="students" class="menu__item">Students</a>
         <a href="#" id="cssAssignments" class="menu__item">CSS Assignments</a>
         <a href="#" id="jsAssignments" class="menu__item">JS Assignments</a>
+        <a href="#" id="cssSummary" class="menu__item">CSS Summary</a>
+        <a href="#" id="jsSummary" class="menu__item">JS Summary</a>
     </nav>
-    <main>
-        <div id="summary" class="summary"></div>
+    <main id="main">
     </main>
     <footer>
 
     </footer>
     <script data-main="js/app.js" src="js/require.js"></script>
 </body>
+<script id="studentsTemplate" type="text/x-handlebars-template">
+    {{#each students}}
+    <div>{{student_id}}: {{student_name}} - {{completed_count}}, {{outstanding_count}}</div>
+    {{/each}}
+</script>
+
+<script id="assignmentsTemplate" type="text/x-handlebars-template">
+    {{#each assignments}}
+    <div>{{id}}: {{name}}</div>
+    {{/each}}
+</script>
+
+<script id="studentsAssignmentsTemplate" type="text/x-handlebars-template">
+    {{#students}}
+        <div><br /><strong>{{student_id}}: {{student_name}}</strong></div>
+            {{#assignments}}
+                <div>{{assignment_id}}: {{assignment_name}} - {{completed}}</div>
+            {{/assignments}}
+    {{/students}}
+</script>
+
+
 </html>

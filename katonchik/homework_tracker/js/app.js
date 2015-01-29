@@ -10,26 +10,82 @@ requirejs.config({
     //config is relative to the baseUrl, and
     //never includes a ".js" extension since
     //the paths config could be for a directory.
+
     paths: {
+        'handlebars': 'handlebars',
         app: '../app'
+    },
+
+    shim: {
+        'handlebars': {
+            exports: 'Handlebars'
+        }
     }
+
+
 });
+
+
+
+
+
 
 // Start the main app logic.
 //document.domain = "webdevcourses.frisbee.lviv.ua";
-requirejs(['lib/handlebars', 'app/httpCallWrapper'],
-    function(   handlebars,       httpCallWrapper) {
-    httpCall("GET", "http://webdevcourses.frisbee.lviv.ua/students",
-        {'category':'1'},
-        function(response){
-            if(response)
-            {
-                //handlebars goes here
-                console.log(response);
+
+require( ['handlebars', 'httpCallWrapper', 'app/students', 'app/assignments', 'app/students_assignments'],
+    function(handlebars,   httpCallWrapper,   students) {
+        document.getElementById("menu").addEventListener('click', function (e) {
+            var category,
+                assignments;
+            if (e.target && e.target.classList.contains("menu__item")) {
+                var mainContainer = document.getElementById("main");
+                var pageId = mainContainer.innerHTML = e.target.id;
+                switch (pageId) {
+                    case 'students':
+                        var students = new Students(mainContainer);
+                        break;
+                    case 'cssAssignments':
+                        category = 1;
+                        assignments = new Assignments(mainContainer, category);
+                        break;
+                    case 'jsAssignments':
+                        category = 2;
+                        assignments = new Assignments(mainContainer, category);
+                        break;
+                    case 'cssSummary':
+                        category = 1;
+                        assignments = new StudentsAssignments(mainContainer, category);
+                        break;
+                    case 'jsSummary':
+                        category = 2;
+                        assignments = new StudentsAssignments(mainContainer, category);
+                        break;
+                }
             }
-        });
-    //console.log("inside requirejs function");
+            e.preventDefault();
+            return false;
+        })
 });
+
+
+
+
+/*
+
+        var summaryElements = document.getElementsByClassName('summary');
+
+        var i;
+        for(i=0; i < summaryElements.length; i++) {
+            var summaryElement = summaryElements[i];
+            console.log("inside foreach. typeof: " + typeof(summaryElement));
+            var category = summaryElement.getAttribute('data-category');
+            console.log("inside requirejs. category: " + category);
+        }
+
+*/
+    //console.log("inside requirejs function");
+//});
 
 /*
 //What's the difference?
