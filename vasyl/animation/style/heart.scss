@@ -1,0 +1,13 @@
+.heart {
+  fill: #ffffff;
+  stroke: #69655f;
+  stroke-width: 1px;
+  &:hover {
+    stroke-width: 2px;
+    stroke: #ff1a4c;
+  }
+  &--marked{
+    fill: #ff1a4c;
+    stroke: #ff1a4c;
+  }
+}

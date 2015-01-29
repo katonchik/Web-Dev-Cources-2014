@@ -13,6 +13,6 @@ gulp.task('default', function() {
         }))
         .pipe(concatCss("./main.css"))
         .pipe(minifyCSS())
-        .pipe(gulp.dest('./style'))
+        .pipe(gulp.dest('build/style'))
 
 });
