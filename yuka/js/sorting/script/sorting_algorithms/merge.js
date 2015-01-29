@@ -3,6 +3,8 @@
  * @return result {Array}
  */
 function sortMerge(data) {
+    "use strict";
+
     if (data.length < 2) {
         return data;
     }
@@ -24,4 +26,5 @@ function sortMerge(data) {
     var right = data.slice(middle);
     return merge(sortMerge(left), sortMerge(right));
 }
-console.log("Merge sorted array: " + sortMerge(array));
+
+document.write("Merge sorted array: " + sortMerge(array) + "<br/>");

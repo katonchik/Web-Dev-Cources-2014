@@ -3,6 +3,8 @@
  * @return {Array} new sorted array
  */
 function sortQuickRandom(data) {
+    "use strict";
+
     if (data.length < 2) {
         return data;
     }
@@ -22,4 +24,5 @@ function sortQuickRandom(data) {
     }
     return sortQuickRandom(left).concat(pivot, sortQuickRandom(right));
 }
-console.log("Random quick sorted array: " + sortQuickRandom(array));
+
+document.write("Random quick sorted array: " + sortQuickRandom(array) + "<br/>");

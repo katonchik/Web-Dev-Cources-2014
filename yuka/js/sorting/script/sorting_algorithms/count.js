@@ -3,6 +3,8 @@
  * @return result {Array} new sorted array
  */
 function sortCounting (data) {
+    "use strict";
+
     var min = data[0];
     var max = data[0];
     var count = [];
@@ -29,4 +31,5 @@ function sortCounting (data) {
     }
     return result;
 }
-console.log("Counting sorted array: " + sortCounting(array));
+
+document.write("Counting sorted array: " + sortCounting(array) + "<br/>");
