@@ -40,7 +40,7 @@ require( ['handlebars', 'httpCallWrapper', 'app/students', 'app/assignments', 'a
                 assignments;
             if (e.target && e.target.classList.contains("menu__item")) {
                 var mainContainer = document.getElementById("main");
-                var pageId = mainContainer.innerHTML = e.target.id;
+                var pageId = e.target.id;
                 switch (pageId) {
                     case 'students':
                         var students = new Students(mainContainer);

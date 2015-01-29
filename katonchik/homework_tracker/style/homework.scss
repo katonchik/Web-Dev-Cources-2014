@@ -7,7 +7,7 @@ body {
   font-family: sans-serif;
 }
 
-header {
+.site-header {
   background-color: #008fd1;
   border: 1px solid black;
   padding: 10px 30px;
@@ -22,11 +22,18 @@ header {
   }
 }
 
-.summary {
-  border: 1px solid gray;
-  width: 400px;
-  min-height: 50px;
-  float: left;
-  padding: 20px;
-  margin: 50px;
+.listing {
+  overflow: auto;
+  width: 600px;
+
+  &__header     {float:left; width: 600px; font-weight: bold; margin-top: 30px; background-color: #ccc;}
+  &--students__name        {float:left; width: 200px;}
+  &--students__completed   {float:left; width: 200px;}
+  &--students__outstanding {float:left; width: 200px;}
+
+  &--assignments__name     {float:left; width: 600px;}
+
+  &--studentsAssignments__name        {float:left; width: 400px;}
+  &--studentsAssignments__completed   {float:left; width: 200px;}
 }
+

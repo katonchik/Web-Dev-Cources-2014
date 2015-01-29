@@ -8,7 +8,7 @@
     <script src="js/lib/httpCallWrapper.js"></script>
 </head>
 <body>
-    <header>
+    <header class="site-header">
         <h1>Howmework Tracker</h1>
     </header>
     <nav class="menu" id="menu">
@@ -25,25 +25,47 @@
     </footer>
     <script data-main="js/app.js" src="js/require.js"></script>
 </body>
+
 <script id="studentsTemplate" type="text/x-handlebars-template">
-    {{#each students}}
-    <div>{{student_id}}: {{student_name}} - {{completed_count}}, {{outstanding_count}}</div>
-    {{/each}}
+    <section class="listing">
+        <header class="listing__header">
+            <div class="listing--students__name">Name</div>
+            <div class="listing--students__completed">Completed</div>
+            <div class="listing--students__outstanding">Outstanding</div>
+        </header>
+        {{#each students}}
+        <article class="listing--students__item">
+            <div class="listing--students__name">{{student_name}}</div>
+            <div class="listing--students__completed">{{completed_count}}</div>
+            <div class="listing--students__outstanding">{{outstanding_count}}</div>
+        </article>
+        {{/each}}
+    </section>
 </script>
 
 <script id="assignmentsTemplate" type="text/x-handlebars-template">
-    {{#each assignments}}
-    <div>{{id}}: {{name}}</div>
-    {{/each}}
+    <section class="listing">
+        <header class="listing__header">
+            <div class="listing--assignments__name">Name</div>
+        </header>
+        {{#each assignments}}
+            <article class="listing--assignments__item">{{name}}</article>
+        {{/each}}
+    </section>
 </script>
 
 <script id="studentsAssignmentsTemplate" type="text/x-handlebars-template">
-    {{#students}}
-        <div><br /><strong>{{student_id}}: {{student_name}}</strong></div>
+    <section class="listing">
+        {{#students}}
+            <header class="listing__header">{{student_name}}</header>
             {{#assignments}}
-                <div>{{assignment_id}}: {{assignment_name}} - {{completed}}</div>
+                <article class="listing--studentsAssignments--assignments__item">
+                    <div class="listing--studentsAssignments__name">{{assignment_name}}</div>
+                    <div class="listing--studentsAssignments__completed">{{completed}}</div>
+                </article>
             {{/assignments}}
-    {{/students}}
+        {{/students}}
+    </section>
 </script>
 
 

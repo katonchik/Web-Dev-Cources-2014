@@ -4,13 +4,11 @@
 
 function Students(containerElement, category) {
 
-    if(category){
-        params = {'category':category};
-    }
-    else{
-        params = {};
-    }
     this.getStudents = function(category){
+        var params={};
+        if(category){
+            params = {'category':category};
+        }
         httpCall("GET", "http://webdevcourses.frisbee.lviv.ua/students",
             params,
             function(response){
@@ -22,6 +20,8 @@ function Students(containerElement, category) {
                 }
             });
 
-    }();
+    };
+
+    this.getStudents(category);
 
 }

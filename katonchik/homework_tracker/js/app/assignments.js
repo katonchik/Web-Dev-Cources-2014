@@ -4,13 +4,11 @@
 
 function Assignments(containerElement, category) {
 
-    if(category){
-        params = {'category':category};
-    }
-    else{
-        params = {};
-    }
     this.getAssignments = function(category){
+        var params={};
+        if(category){
+            params = {'category':category};
+        }
         httpCall("GET", "http://webdevcourses.frisbee.lviv.ua/assignments",
             params,
             function(response){
@@ -22,6 +20,8 @@ function Assignments(containerElement, category) {
                 }
             });
 
-    }();
+    };
+
+    this.getAssignments(category);
 
 }
