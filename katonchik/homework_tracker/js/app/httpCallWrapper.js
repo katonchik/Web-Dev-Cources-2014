@@ -2,7 +2,7 @@
  * Created by User on 05.01.2015.
  */
 
-console.log("included httpCall file");
+//console.log("included httpCall file");
 
 function httpCall(method, url, data, onReady){
     var httpRequest = new XMLHttpRequest(),
@@ -28,16 +28,19 @@ function httpCall(method, url, data, onReady){
     httpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     httpRequest.send(params);
     httpRequest.onreadystatechange = function(){
-        if(httpRequest.readyState == 4 && httpRequest.response)
+        if(httpRequest.readyState == 4)
         {
-            var response = JSON.parse(httpRequest.response);
-            //console.log(response);
-            if(response.successful) {
-                //console.log("Backend action successful: " + response.msg);
-                onReady(response);
+            if(httpRequest.response){
+                var response = JSON.parse(httpRequest.response);
+                if(response.successful) {
+                    onReady(response);
+                }
+                else {
+                    console.log("Backend action failed: " + response.msg);
+                }
             }
             else {
-                console.log("Backend action failed: " + response.msg);
+                console.log("Response empty.");
             }
         }
     };

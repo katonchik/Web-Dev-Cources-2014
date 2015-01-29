@@ -16,16 +16,19 @@ requirejs.config({
 });
 
 // Start the main app logic.
-requirejs(['app/httpCallWrapper'], function(httpCallWrapper) {
-    httpCall("GET", "http://www.corsproxy.com/webdevcourses.frisbee.lviv.ua/students_assignments",
-        [], function(response){
+//document.domain = "webdevcourses.frisbee.lviv.ua";
+requirejs(['lib/handlebars', 'app/httpCallWrapper'],
+    function(   handlebars,       httpCallWrapper) {
+    httpCall("GET", "http://webdevcourses.frisbee.lviv.ua/students",
+        {'category':'1'},
+        function(response){
             if(response)
             {
+                //handlebars goes here
                 console.log(response);
-                console.log(r);
             }
         });
-    console.log("inside requirejs function");
+    //console.log("inside requirejs function");
 });
 
 /*
