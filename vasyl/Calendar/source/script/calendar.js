@@ -119,7 +119,7 @@ var Calendar = function () {
                 var b = a.map(function (el) {
                     return parseInt(el)
                 });
-                this_.setDate(b[2], b[1] - 1,b[0]);
+                this_.setDate(b[2], b[1],b[0]);
                 this_.update();
             }
         }
