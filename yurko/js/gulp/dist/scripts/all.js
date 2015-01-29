@@ -1,174 +1,267 @@
-var arraysize=20;
+var require = {
+    baseUrl: "scripts",
+    paths: {
+        sort: "sort"
+    }
+}
 
-var sortedArray=new Array();
-var randomArray=generatearray();
+//TODO: make sort functions immutable. (Use array clone)
+var ARRAY_SIZE=20;
+
+
+define(["sort/helpers", "sort/select_sort", "sort/bubblesort", "sort/quicksort",
+        "sort/insertsort", "sort/mergesort", "sort/gnomesort"],
+    function (helper,selectSort, bubblesort, quicksort, insertsort, mergesort,
+              gnomesort) {
+        var randomArray=helper.generateRandomArray(ARRAY_SIZE);
+        console.log("Unsorted array: " + randomArray);
+
+        console.log("BubbleSorted array: " + bubblesort(randomArray));
+
+        console.log("Selectsorted array: " + selectSort(randomArray));
+
+        console.log("QuickSorted array: " + quicksort(randomArray));
+
+        console.log("InsertSorted array: " + insertsort(randomArray));
+
+        console.log("MergeSorted array: " + mergesort(randomArray));
+
+        console.log("GnomeSorted array: " + gnomesort(randomArray));
+    }
+)
+
+define(["sort/helpers"], function (helper) {
+// Bubblesorting
+    function bubblesort(unsortedArray) {
+        var orderedArray;
+        var i, j;
+
+        orderedArray = unsortedArray.clone();
+//      Another way to clone array
+//      orderedArray = helper.copyArray(unsortedArray);
+
+        for (i = 0; i < orderedArray.length - 1; i++) {
+
+            for (j = 0; j < orderedArray.length - i - 1; j++) {
+
+                if (orderedArray[j] > orderedArray[j + 1]) {
+                    orderedArray = helper.swap(orderedArray, j, j+1);
+                }
+            }
+        }
+        return orderedArray;
+    }
+    return bubblesort;
+})
+
+define(["sort/helpers"], function (helper) {
+    // Gnome sort function
+    function gnomesort(unsortedArray) {
+        var orderedArray;
+        var i = 0;
+
+//        Another way to clone array
+//        orderedArray = unsortedArray.clone();
+
+        orderedArray = helper.copyArray(unsortedArray);
+
+        //    console.log(orderedArray);
+        while (i < orderedArray.length) {
+            if ((orderedArray[i - 1] <= orderedArray[i]) || (i < 1)) {
+                i++;
+            }
+            else {
+                //TODO: write swap function
+                orderedArray=helper.swap(orderedArray, i, i-1);
+                i--;
+            }
+        }
+        return orderedArray;
+    }
+    return gnomesort;
+})
+define([], function () {
+    // exchange array elements
+    function swap(modifyingArray, firstIndex, secondIndex) {
+        var tmp = modifyingArray[firstIndex];
+        modifyingArray[firstIndex] = modifyingArray[secondIndex];
+        modifyingArray[secondIndex] = tmp;
+        return modifyingArray;
+    }
 
 
 
 // Random array generating
-function generatearray(){
-    var rArray=new Array();
+    function generateRandomArray(arraysize){
+        var randomlyGeneratedArray= [];
 
-    for(var i=0;i<arraysize;i++){
-        rArray[i]=Math.floor(Math.random()*arraysize);
+        for(var i=0;i<arraysize;i++){
+            randomlyGeneratedArray[i] = Math.floor(Math.random()*arraysize);
+        }
+        return randomlyGeneratedArray;
     }
-    return rArray;
-}
 
-// Bubblesorting
-function bubblesort(x){
-    var newArray=x;
-    for(var i=0; i<newArray.length-1;i++)
-        for (var j=0; j<newArray.length-i-1;j++){
-            if (newArray[j]>newArray[j+1]){
-                var tmp=newArray[j];
-                newArray[j]=newArray[j+1];
-                newArray[j+1]=tmp;
+
+    function copyArray(arrayToClone){
+        var copiedArray=arrayToClone.slice(0);
+        return copiedArray;
+    }
+
+
+    Array.prototype.clone = function() {
+        return this.slice(0);
+    };
+
+
+    return {
+            swap: swap,
+            generateRandomArray: generateRandomArray,
+            clone: Array.prototype.clone,
+            copyArray: copyArray
+    }
+
+})
+define([], function () {
+
+    // Insert sort function
+    function insertsort(unsortedArray) {
+        var orderedArray;
+        var buffer, i, j;
+
+        orderedArray = unsortedArray.clone();
+//      Another way to clone array
+//      orderedArray = helper.copyArray(unsortedArray);
+
+        for (i = 0; i < orderedArray.length; i++) {
+            buffer = orderedArray[i];
+
+            for (j = i - 1; j >= 0 && orderedArray[j] > buffer; j--) {
+                orderedArray[j + 1] = orderedArray[j];
+            }
+
+            orderedArray[j + 1] = buffer;
+        }
+        return orderedArray;
+    }
+    return insertsort;
+})
+define([], function () {
+
+    /* function merge for mergesort algorythm;
+     input - two arrays:left and right
+     return - array: sorted & joined left and right arrays
+     */
+    function merge(left, right) {
+
+        var resultArray = [];
+        var i = 0;
+        var j = 0;
+        while (i < left.length && j < right.length) {
+            if (left[i] < right[j]) {
+                resultArray.push(left[i]);
+                i++;
+            }
+            else {
+                resultArray.push(right[j]);
+                j++;
             }
         }
-    return newArray;
-}
-
-// Selection sort
-function selectsort(x){
-    var newArray=x;
-
-    for(var i=0; i<newArray.length-1;i++) {
-        var min = i;
-        for (var j = i + 1; j < newArray.length; j++) {
-            if (newArray[min] > newArray[j]) {
-                min = j;
-            }
-        }
-// Можна перевірку не робити, а просто міняти?
-        if (min != i) {
-            var tmp = newArray[i];
-            newArray[i] = newArray[min];
-            newArray[min] = tmp;
-        }
+        //    console.log(resultArray.concat(left,right));
+        return resultArray.concat(left.slice(i), right.slice(j));
     }
-    return newArray;
-}
-// Quick sort function
-function quicksort(x) {
-    var newArray=x;
-    var left = new Array();
-    var right = new Array();
-    var pivot = newArray[0];
-    if (newArray.length == 0) return [];
-    for (var i = 1; i < newArray.length; i++){
-        if (newArray[i] < pivot) left[left.length] = newArray[i];
-        else right[right.length] = newArray[i];
-    }
-    return quicksort(left).concat(pivot,quicksort(right));
-}
+    return merge;
+})
+define(["sort/merge", "sort/helpers"],
+function (merge, helper) {
+
+    // Merge sort function
+    function mergesort(unsortedArray) {
+
+        var orderedArray;
+
+        var middleOfArray;
+        var right = [];
+        var left = [];
+        var mergedArray = [];
 
 
-// Insert sort function
-function insertsort(x) {
-    var newArray=x;
+//      Another way to clone array
+        orderedArray = helper.copyArray(unsortedArray);
+//        orderedArray = unsortedArray.clone();
 
-    for(var i=0; i<newArray.length-1;i++) {
-        var tmp=newArray[i];
-
-        for (var j=i-1; j>=0&&newArray[j]>tmp;j--){
-            newArray[j+1]=newArray[j];
-        }
-
-        newArray[j+1]=tmp;
-    }
-    return newArray;
-}
-
-// Merge sort function
-function mergesort(x) {
-
-    var newArray = x;
-    var middleArray = parseInt(newArray.length/2);
-    var right = new Array();
-    var left = new Array();
-    var mergedArray = new Array();
-
-    if (newArray.length<2){
-        return newArray;
-    }
-    else{
-        left=newArray.slice(0,middleArray);
-        right=newArray.slice(middleArray);
-
-        left=mergesort(left);
-        right=mergesort(right);
-
-        mergedArray=merge(left,right);
-//        console.log(mergedArray);
-    }
-
-
-    return mergedArray;
-}
-
-// function merge for mergesort algorythm;
-/* input - two arrays:left and right
- return - array: sorted & joined left and right arrays
-
- заплутано виходить, бо насправді сортування в мерджі і навпаки.
- */
-function merge(left,right){
-
-    var result= new Array();
-    var i=0;
-    var j=0;
-    while (i < left.length && j< right.length) {
-        if (left[i] < right[j]) {
-            result.push(left[i]);
-            i++;
-        }
-        else{
-            result.push(right[j]);
-            j++;
-        }
-    }
-//    console.log(result.concat(left,right));
-    return result.concat(left.slice(i),right.slice(j));
-}
-
-// Gnome sort function
-function gnomesort(x) {
-    var newArray=x;
-    var i=0;
-//    console.log(newArray);
-    while(i<newArray.length) {
-        if ((newArray[i - 1] <= newArray[i]) || (i < 1)) {
-            i++;
+        middleOfArray = parseInt(orderedArray.length / 2);
+        if (orderedArray.length < 2) {
+            return orderedArray;
         }
         else {
-            var tmp = newArray[i];
-            newArray[i] = newArray[i - 1];
-            newArray[i - 1] = tmp;
-            i--;
+            left = orderedArray.slice(0, middleOfArray);
+            right = orderedArray.slice(middleOfArray);
+
+            left = mergesort(left);
+            right = mergesort(right);
+
+            mergedArray = merge(left, right);
         }
-//        console.log(newArray);
+
+
+        return mergedArray;
     }
-    return newArray;
-}
+    return mergesort;
+})
+define(["sort/helpers"], function (helper) {
 
-console.log("Random array: " + randomArray);
+    // Quick sort function
+    function quicksort(unsortedArray) {
+        var orderedArray = unsortedArray;
+        var leftArrayPart = [];
+        var rightArrayPart = [];
+        var pivot = orderedArray[0];
 
-sortedArray=bubblesort(randomArray);
-console.log("BubbleSorted array: " + sortedArray);
+//      Another way to clone array
+        orderedArray = helper.copyArray(unsortedArray);
+//      orderedArray = unsortedArray.clone();
 
-sortedArray=selectsort(randomArray);
-console.log("SelectSorted array: " + sortedArray);
+        if (orderedArray.length === 0) {
+            return [];
+        }
 
-sortedArray=quicksort(randomArray);
-console.log("QuickSorted array: " + sortedArray);
+        for (var i = 1; i < orderedArray.length; i++) {
+            if (orderedArray[i] < pivot) {
+                leftArrayPart[leftArrayPart.length] = orderedArray[i];
+            } else {
+                rightArrayPart[rightArrayPart.length] = orderedArray[i];
+            }
+        }
+        return quicksort(leftArrayPart).concat(pivot, quicksort(rightArrayPart));
+    }
+    return quicksort;
+})
 
-sortedArray=insertsort(randomArray);
-console.log("InsertSorted array: " + sortedArray);
 
+define(["sort/helpers"], function (helper) {
+        // Selection sort function
+        function selectSort(unsortedArray){
+            var orderedArray;
+            var i,
+                j,
+                minArrayElement;
+//      Another way to clone array
+//            orderedArray = helper.copyArray(unsortedArray);
+            orderedArray = unsortedArray.clone();
 
-sortedArray=mergesort(randomArray);
-console.log("MergeSorted array: " + sortedArray);
+            for (i = 0; i < orderedArray.length - 1; i++) {
+                minArrayElement = i;
+                for (j = i + 1; j < orderedArray.length; j++) {
+                    if (orderedArray[minArrayElement] > orderedArray[j]) {
+                        minArrayElement = j;
+                    }
+                }
 
-sortedArray=gnomesort(randomArray);
-console.log("GnomeSorted array: " + sortedArray);
+                if (minArrayElement != i) {
+                    orderedArray = helper.swap(orderedArray, i , minArrayElement);
+                }
+            }
+            return orderedArray;
+        }
+    return selectSort;
+    })
