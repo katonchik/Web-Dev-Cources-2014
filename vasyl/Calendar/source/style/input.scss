@@ -1,8 +1,11 @@
+$width:77%;
+$height:12px;
+$margin:0.7px;
 .input{
-  margin-left:0.5px ;
+  margin-left:$margin ;
   padding: 0;
   float: left;
-  width: 77%;
-  height: 12px;
+  width: $width;
+  height: $height;
   text-align: center;
 }

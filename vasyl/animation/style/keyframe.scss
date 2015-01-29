@@ -8,7 +8,7 @@
   width: 100px;
   background: blue;
   position: relative;
-  //@include animation(myAnimation 5s ease-out 3s infinite alternate);
+  @include animation(myAnimation 5s ease-out 3s infinite alternate);
 }
 
 @-webkit-keyframes myAnimation {

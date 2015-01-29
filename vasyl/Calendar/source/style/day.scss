@@ -1,19 +1,15 @@
-.days_container {
-  overflow: hidden;
-  background: white;
-}
+$width:30px;
+$height:$width;
+$border_width:1px;
 .weak {
   float: left;
   margin: 2px;
-  width: 30px;
-  height: 30px;
+  width: $width;
+  height:$height;
   background: #a745ff;
 }
 .day {
-  float: left;
-  margin: 2px;
-  width: 30px;
-  height: 30px;
+ @extend .weak;
   background: rgba(47, 151, 82, 0.31);
   &--empty {
     background: rgba(62, 69, 67, 1);
@@ -21,12 +17,15 @@
   }
   &--current{
     border: 1px solid #ff0000;
-    width: 28px;
-    height: 28px;
+    width: $width - $border_width*2;
+    height:$height - $border_width*2;
   }
   &--selected{
     border: 1px dashed #ff0000;
-    width: 28px;
-    height: 28px;
+    width: $width - $border_width*2;
+    height:$height - $border_width*2;
+  }
+  &--event{
+    background: #ffa68b;
   }
 }

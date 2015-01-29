@@ -1,0 +1,12 @@
+$width:239px;
+$space_from_top:100px;
+.calendar_container {
+  position: relative;
+  overflow: hidden;
+  top: $space_from_top;
+  margin: auto;
+  width: $width;
+  text-align: center;
+}
+
+

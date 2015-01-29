@@ -1,0 +1,12 @@
+.heart {
+  fill: #ffffff;
+  stroke: #69655f;
+  stroke-width: 1px; }
+  .heart:hover {
+    stroke-width: 2px;
+    stroke: #ff1a4c; }
+  .heart--marked {
+    fill: #ff1a4c;
+    stroke: #ff1a4c; }
+
+/*# sourceMappingURL=heart.css.map */

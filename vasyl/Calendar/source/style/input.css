@@ -1,8 +1,9 @@
 .input {
-  margin: 0;
+  margin-left: 0.7px;
   padding: 0;
-  width: 190px;
+  float: left;
+  width: 77%;
   height: 12px;
-  float: left; }
+  text-align: center; }
 
 /*# sourceMappingURL=input.css.map */
