@@ -26,7 +26,7 @@ body {
   overflow: auto;
   width: 600px;
 
-  &__header                {overflow: auto; width: 600px; font-weight: bold; margin-top: 30px; background-color: #ccc;}
+  &__header                {overflow: auto; width: 600px; font-weight: bold; margin-top: 30px; background-color: #ccc; cursor: pointer;}
   article                  {overflow: auto; width: 600px; height: 110px}
   &--students__name        {float:left; width: 200px; padding: 40px 0 0 20px;}
   &--students__completed   {float:left; width: 150px; padding-top: 40px;}
@@ -40,6 +40,7 @@ body {
   &--students__avatar {
     float:left;
     width: 100px;
+    height: 100px;
 
     img {
       width: 100px;
