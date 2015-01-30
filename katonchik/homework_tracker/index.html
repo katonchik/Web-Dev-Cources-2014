@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>Howmework Tracker</title>
     <link rel="stylesheet" href="style/homework.css" />
-    <script src="js/lib/handlebars.js"></script>
-    <script src="js/lib/httpCallWrapper.js"></script>
+    <link rel="stylesheet" href="style/dropzone.css" />
+    <script data-main="js/app.js" src="js/require.js"></script>
 </head>
 <body>
     <header class="site-header">
@@ -23,7 +23,6 @@
     <footer>
 
     </footer>
-    <script data-main="js/app.js" src="js/require.js"></script>
 </body>
 
 <script id="studentsTemplate" type="text/x-handlebars-template">
@@ -38,9 +37,17 @@
         {{/each}}
     </section>
     <form class="newStudent">
-        <label for="nameInput">Add student: </label>
-        <input type="text" class="newStudent__nameInput" id="nameInput" />
-        <input type="submit" class="newStudent__addButton" id="addButton" value="Add" />
+        <div>
+            <label for="nameInput">Student's name: </label>
+            <input type="text" class="newStudent__nameInput" id="nameInput" />
+        </div>
+        <div>
+            <label for="nameInput">Student's photo: </label>
+            <div class="dropbox" id="dropzone" style="width:300px; height:300px;"></div>
+        </div>
+        <div>
+            <input type="submit" class="newStudent__addButton" id="addButton" value="Add" />
+        </div>
     </form>
 </script>
 
@@ -64,9 +71,9 @@
     </section>
     <form class="newAssignment">
         <label for="nameInput">Assignment: </label>
-        <input type="text" class="newAssignment__nameInput" id="nameInput" />
+        <input type="text" class="newAssignment__nameInput" id="nameInputA" />
         <input type="hidden" id="category" value="{{category}}" />
-        <input type="submit" class="newAssignment__addButton" id="addButton" value="Add" />
+        <input type="submit" class="newAssignment__addButton" id="addButtonA" value="Add" />
     </form>
 </script>
 

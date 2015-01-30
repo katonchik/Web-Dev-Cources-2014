@@ -12,7 +12,6 @@ requirejs.config({
     //the paths config could be for a directory.
 
     paths: {
-        'handlebars': 'handlebars',
         app: '../app'
     },
 
@@ -28,13 +27,11 @@ requirejs.config({
 
 
 
-
-
 // Start the main app logic.
 //document.domain = "webdevcourses.frisbee.lviv.ua";
 
-require( ['handlebars', 'httpCallWrapper', 'app/students', 'app/assignments', 'app/students_assignments'],
-    function(handlebars,   httpCallWrapper,   students) {
+require( ['httpCallWrapper', 'app/students', 'app/assignments', 'app/students_assignments', 'handlebars'],
+  function(httpCallWrapper,       Students,       Assignments,       StudentsAssignments,   Handlebars) {
         document.getElementById("menu").addEventListener('click', function (e) {
             var category,
                 assignments;
