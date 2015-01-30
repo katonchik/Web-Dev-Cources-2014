@@ -26,15 +26,26 @@ body {
   overflow: auto;
   width: 600px;
 
-  &__header     {float:left; width: 600px; font-weight: bold; margin-top: 30px; background-color: #ccc;}
-  &--students__name        {float:left; width: 200px;}
-  &--students__completed   {float:left; width: 200px;}
-  &--students__outstanding {float:left; width: 200px;}
+  &__header                {overflow: auto; width: 600px; font-weight: bold; margin-top: 30px; background-color: #ccc;}
+  article                  {overflow: auto; width: 600px; height: 110px}
+  &--students__name        {float:left; width: 200px; padding: 40px 0 0 20px;}
+  &--students__completed   {float:left; width: 150px; padding-top: 40px;}
+  &--students__outstanding {float:left; width: 150px; padding-top: 40px;}
 
   &--assignments__name     {float:left; width: 600px;}
 
   &--studentsAssignments__name        {float:left; width: 400px;}
   &--studentsAssignments__completed   {float:left; width: 200px;}
+
+  &--students__avatar {
+    float:left;
+    width: 100px;
+
+    img {
+      width: 100px;
+      border-radius: 100%;
+    }
+  }
 
 }
 

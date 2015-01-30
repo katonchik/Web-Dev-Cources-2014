@@ -28,6 +28,7 @@
 <script id="studentsTemplate" type="text/x-handlebars-template">
     <section class="listing" id="studentListing">
         <header class="listing__header">
+            <div class="listing--students__avatar"></div>
             <div class="listing--students__name">Name</div>
             <div class="listing--students__completed">Completed</div>
             <div class="listing--students__outstanding">Outstanding</div>
@@ -53,6 +54,7 @@
 
 <script id="studentRow" type="text/x-handlebars-template">
     <article class="listing--students__item">
+        <div class="listing--students__avatar"><img src="{{decode avatar}}" /></div>
         <div class="listing--students__name">{{student_name}}</div>
         <div class="listing--students__completed">{{completed_count}}</div>
         <div class="listing--students__outstanding">{{outstanding_count}}</div>
