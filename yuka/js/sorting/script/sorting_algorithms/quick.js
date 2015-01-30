@@ -4,6 +4,8 @@
  */
 //Quick sort
 function sortQuick(data) {
+    "use strict";
+
     if (data.length < 2) {
         return data;
     }
@@ -19,4 +21,5 @@ function sortQuick(data) {
     }
     return sortQuick(left).concat(pivot, sortQuick(right));
 }
-console.log("Quick sorted array: " + sortQuick(array));
+
+document.write("Quick sorted array: " + sortQuick(array) + "<br/>");

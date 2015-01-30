@@ -4,6 +4,8 @@
  * @return {Array} new sorted array
  */
 function sortRadix (data, radix) {
+    "use strict";
+
     if (radix === undefined) {
         radix = 100;
     }
@@ -26,4 +28,5 @@ function sortRadix (data, radix) {
     }
     return sortRadix(left, radix - 1).concat(sortRadix(right, radix-1));
 }
-console.log("Radix sorted array: " + sortRadix(array));
+
+document.write("Radix sorted array: " + sortRadix(array) + "<br/>");

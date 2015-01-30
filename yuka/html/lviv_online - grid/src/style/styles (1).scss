@@ -1,0 +1,19 @@
+@import "block";
+@import "logos";
+@import "follow";
+@import "copyright";
+@import "main-menu";
+@import "link-list";
+
+*          { margin: 0; padding: 0; }
+body       {
+             background: #f7f4ef; font: 12px arial; color: #6b6966;
+   a       { text-decoration: none; color: #575757; }
+   h1      { font-weight: normal; }
+}
+
+.wrap   { margin: 0 auto; width: 980px; clear: both; }
+.main   { margin-top: 65px; }
+.header { position: fixed; width: 100%; background: #333333; z-index: 5; top: 0; }
+.footer { background: #333333; width: 100%; overflow: hidden; }
+

@@ -3,6 +3,8 @@
  * @return newArray {Array}
  */
 function sortInsertion(data) {
+    "use strict";
+
     var newArray = data.slice(); //cloning array
     for (var i = 0; i < newArray.length; i++) {
         var smallest = newArray[i];
@@ -15,4 +17,5 @@ function sortInsertion(data) {
     }
     return newArray;
 }
-console.log("Insertion sorted array: " + sortInsertion(array));
+
+document.write("Insertion sorted array: " + sortInsertion(array) + "<br/>");

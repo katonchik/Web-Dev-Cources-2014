@@ -1,4 +1,6 @@
 function Calendar(lang){
+    "use strict";
+
     function monthNames (month){
         var months = new Array(12);
         if (lang === "ua"){
