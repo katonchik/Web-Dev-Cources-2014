@@ -35,5 +35,19 @@ body {
 
   &--studentsAssignments__name        {float:left; width: 400px;}
   &--studentsAssignments__completed   {float:left; width: 200px;}
+
 }
 
+.newStudent {
+  margin-top: 50px;
+
+  &__nameInput {width: 200px;}
+}
+
+.newAssignment {
+  margin-top: 50px;
+
+  label { width: 100px; }
+  &__nameInput {width: 200px;}
+  &__categorySelect {width: 100px;}
+}

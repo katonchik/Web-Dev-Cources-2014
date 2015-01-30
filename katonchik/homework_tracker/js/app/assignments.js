@@ -15,6 +15,10 @@ function Assignments(containerElement, category) {
                 if (response) {
                     var templateElement = document.getElementById('assignmentsTemplate');
                     var source = templateElement.innerHTML;
+                    console.log("category: " + category);
+                    Handlebars.registerHelper('category', function(){
+                        return category;
+                    });
                     var template = Handlebars.compile(source);
                     containerElement.innerHTML = template(response);
                 }

@@ -27,21 +27,31 @@
 </body>
 
 <script id="studentsTemplate" type="text/x-handlebars-template">
-    <section class="listing">
+    <section class="listing" id="studentListing">
         <header class="listing__header">
             <div class="listing--students__name">Name</div>
             <div class="listing--students__completed">Completed</div>
             <div class="listing--students__outstanding">Outstanding</div>
         </header>
         {{#each students}}
-        <article class="listing--students__item">
-            <div class="listing--students__name">{{student_name}}</div>
-            <div class="listing--students__completed">{{completed_count}}</div>
-            <div class="listing--students__outstanding">{{outstanding_count}}</div>
-        </article>
+            {{> studentRow}}
         {{/each}}
     </section>
+    <form class="newStudent">
+        <label for="nameInput">Add student: </label>
+        <input type="text" class="newStudent__nameInput" id="nameInput" />
+        <input type="submit" class="newStudent__addButton" id="addButton" value="Add" />
+    </form>
 </script>
+
+<script id="studentRow" type="text/x-handlebars-template">
+    <article class="listing--students__item">
+        <div class="listing--students__name">{{student_name}}</div>
+        <div class="listing--students__completed">{{completed_count}}</div>
+        <div class="listing--students__outstanding">{{outstanding_count}}</div>
+    </article>
+</script>
+
 
 <script id="assignmentsTemplate" type="text/x-handlebars-template">
     <section class="listing">
@@ -52,6 +62,12 @@
             <article class="listing--assignments__item">{{name}}</article>
         {{/each}}
     </section>
+    <form class="newAssignment">
+        <label for="nameInput">Assignment: </label>
+        <input type="text" class="newAssignment__nameInput" id="nameInput" />
+        <input type="hidden" id="category" value="{{category}}" />
+        <input type="submit" class="newAssignment__addButton" id="addButton" value="Add" />
+    </form>
 </script>
 
 <script id="studentsAssignmentsTemplate" type="text/x-handlebars-template">
