@@ -37,7 +37,9 @@ function Students(containerElement, category) {
                         var template = Handlebars.compile(source);
                         var div = document.createElement('div');
                         div.innerHTML = template(response.student);
-                        var studentRowArticle = div.firstChild;
+
+                        var studentRowArticle = div.firstElementChild;
+                        console.log(studentRowArticle.innerHTML);
                         document.getElementById('studentListing').appendChild(studentRowArticle);
 
 
