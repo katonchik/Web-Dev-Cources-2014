@@ -4,7 +4,12 @@ function Runner (runnerElement) {
     var runner, mouse, distance, isRunned=false;
 
     function run (dx, dy, time) {
+        runnerElement.style.margin = 0;
+        runnerElement.style.left = runner.x + "px";
+        runnerElement.style.top = runner.y + "px";
+
         isRunned = true;
+
         var start = null;
         function step (timestamp){
             start = start || timestamp;
@@ -13,9 +18,8 @@ function Runner (runnerElement) {
             var progresPart = progress/time;
 
             if (progress < time) {
-                runnerElement.setAttribute("cx", runner.x + dx * progresPart);
-                runnerElement.setAttribute("cy", runner.y + dy * progresPart);
-
+                runnerElement.style.top = runner.y + dy * progresPart + "px";
+                runnerElement.style.left = runner.x + dx * progresPart + "px";
                 window.requestAnimationFrame(step);
             } else {
                 isRunned = false;
@@ -23,21 +27,25 @@ function Runner (runnerElement) {
         }
 
         window.requestAnimationFrame(step);
-
     }
 
     function mouseHandler (ev) {
-        runner = { x : runnerElement.cx.baseVal.value, y: runnerElement.cy.baseVal.value};
-        mouse =  { x : ev.clientX, y : ev.clientY };
-        distance = {
-            x : runner.x - mouse.x,
-            y : runner.y - mouse.y
-        };
-        distance.length  = Math.sqrt( Math.abs(distance.x)+ Math.abs(distance.y));
+        if (!isRunned) {
+            runner = { x : runnerElement.offsetLeft , y: runnerElement.offsetTop };
+            mouse =  { x : ev.clientX, y : ev.clientY };
+            distance = {
+                x : runner.x - mouse.x,
+                y : runner.y - mouse.y
+            };
+            distance.length  = Math.sqrt( Math.abs(distance.x)+ Math.abs(distance.y));
 
-        if ((distance.length < RUN_DISTANCE) && !isRunned) {
-            run(distance.x, distance.y, 1000);
+            
+            if ((distance.length < RUN_DISTANCE)) {
+                console.log(distance.x, distance.y);
+                run(distance.x, distance.y, 1000);
+            }
         }
+
     }
 
     function init () {
