@@ -1,0 +1,8 @@
+$width:200px;
+$height:$width;
+$border_width:2px;
+.preview{
+  height: $height;
+  width: $width;
+  border: $border_width solid #e7ffbf;
+}
