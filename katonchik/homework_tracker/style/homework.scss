@@ -1,0 +1,65 @@
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.site-header {
+  background-color: #008fd1;
+  border: 1px solid black;
+  padding: 10px 30px;
+}
+
+.menu {
+  text-align: center;
+  padding: 10px;
+
+  &__item {
+    padding: 0 30px;
+  }
+}
+
+.listing {
+  overflow: auto;
+  width: 600px;
+
+  &__header                {overflow: auto; width: 600px; font-weight: bold; margin-top: 30px; background-color: #ccc; cursor: pointer;}
+  article                  {overflow: auto; width: 600px; height: 110px}
+  &--students__name        {float:left; width: 200px; padding: 40px 0 0 20px;}
+  &--students__completed   {float:left; width: 150px; padding-top: 40px;}
+  &--students__outstanding {float:left; width: 150px; padding-top: 40px;}
+
+  &--assignments__name     {float:left; width: 600px;}
+
+  &--studentsAssignments__name        {float:left; width: 400px;}
+  &--studentsAssignments__completed   {float:left; width: 200px;}
+
+  &--students__avatar {
+    float:left;
+    width: 100px;
+    height: 100px;
+
+    img {
+      width: 100px;
+      border-radius: 100%;
+    }
+  }
+
+}
+
+.newStudent {
+  margin-top: 50px;
+
+  &__nameInput {width: 200px;}
+}
+
+.newAssignment {
+  margin-top: 50px;
+
+  label { width: 100px; }
+  &__nameInput {width: 200px;}
+  &__categorySelect {width: 100px;}
+}
