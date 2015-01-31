@@ -10,16 +10,51 @@ requirejs.config({
     //config is relative to the baseUrl, and
     //never includes a ".js" extension since
     //the paths config could be for a directory.
+
     paths: {
         app: '../app'
     }
+
+
 });
+
+
+
 
 // Start the main app logic.
-requirejs(['app/sub'], function(sub) {
-    alert("inside requirejs function");
-});
+//document.domain = "webdevcourses.frisbee.lviv.ua";
 
-require(['app/sub'], function(sub) {
-    alert("inside require function");
+require( ['app/students', 'app/assignments', 'app/students_assignments'],
+  function(    Students,       Assignments,       StudentsAssignments) {
+        document.getElementById("menu").addEventListener('click', function (e) {
+            var category,
+                assignments;
+            if (e.target && e.target.classList.contains("menu__item")) {
+                var mainContainer = document.getElementById("main");
+                var pageId = e.target.id;
+                switch (pageId) {
+                    case 'students':
+                        var students = new Students(mainContainer);
+                        break;
+                    case 'cssAssignments':
+                        category = 1;
+                        assignments = new Assignments(mainContainer, category);
+                        break;
+                    case 'jsAssignments':
+                        category = 2;
+                        assignments = new Assignments(mainContainer, category);
+                        break;
+                    case 'cssSummary':
+                        category = 1;
+                        assignments = new StudentsAssignments(mainContainer, category);
+                        break;
+                    case 'jsSummary':
+                        category = 2;
+                        assignments = new StudentsAssignments(mainContainer, category);
+                        break;
+                }
+            }
+            e.preventDefault();
+            return false;
+        })
 });

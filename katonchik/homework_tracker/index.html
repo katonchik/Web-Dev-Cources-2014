@@ -2,10 +2,96 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Howmework Tracker</title>
+    <title>Homework Tracker</title>
+    <link rel="stylesheet" href="style/homework.css" />
+    <link rel="stylesheet" href="style/dropzone.css" />
+    <script data-main="js/app.js" src="js/require.js"></script>
 </head>
 <body>
-    <h1>Howmework Tracker</h1>
-    <script data-main="js/app.js" src="js/require.js"></script>
+    <header class="site-header">
+        <h1>Homework Tracker</h1>
+    </header>
+    <nav class="menu" id="menu">
+        <a href="#" id="students" class="menu__item">Students</a>
+        <a href="#" id="cssAssignments" class="menu__item">CSS Assignments</a>
+        <a href="#" id="jsAssignments" class="menu__item">JS Assignments</a>
+        <a href="#" id="cssSummary" class="menu__item">CSS Summary</a>
+        <a href="#" id="jsSummary" class="menu__item">JS Summary</a>
+    </nav>
+    <main id="main">
+    </main>
+    <footer>
+
+    </footer>
 </body>
+
+<script id="studentsTemplate" type="text/x-handlebars-template">
+    <section class="listing" id="studentListing">
+        <header class="listing__header">
+            <div class="listing--students__avatar"></div>
+            <div class="listing--students__name">Name</div>
+            <div class="listing--students__completed">Completed</div>
+            <div class="listing--students__outstanding">Outstanding</div>
+        </header>
+        {{#each students}}
+            {{> studentRow}}
+        {{/each}}
+    </section>
+    <form class="newStudent">
+        <div>
+            <label for="nameInput">Student's name: </label>
+            <input type="text" class="newStudent__nameInput" id="nameInput" />
+        </div>
+        <div>
+            <label for="nameInput">Student's photo: </label>
+            <div class="dropbox" id="dropzone" style="width:300px; height:300px;"></div>
+        </div>
+        <div>
+            <input type="submit" class="newStudent__addButton" id="addButton" value="Add" />
+        </div>
+    </form>
+</script>
+
+<script id="studentRow" type="text/x-handlebars-template">
+    <article class="listing--students__item">
+        <div class="listing--students__avatar"><img src="{{decode avatar}}" /></div>
+        <div class="listing--students__name">{{student_name}}</div>
+        <div class="listing--students__completed">{{completed_count}}</div>
+        <div class="listing--students__outstanding">{{outstanding_count}}</div>
+    </article>
+</script>
+
+
+<script id="assignmentsTemplate" type="text/x-handlebars-template">
+    <section class="listing">
+        <header class="listing__header">
+            <div class="listing--assignments__name">Name</div>
+        </header>
+        {{#each assignments}}
+            <article class="listing--assignments__item">{{name}}</article>
+        {{/each}}
+    </section>
+    <form class="newAssignment">
+        <label for="nameInput">Assignment: </label>
+        <input type="text" class="newAssignment__nameInput" id="nameInputA" />
+        <input type="hidden" id="category" value="{{category}}" />
+        <input type="submit" class="newAssignment__addButton" id="addButtonA" value="Add" />
+    </form>
+</script>
+
+<script id="studentsAssignmentsTemplate" type="text/x-handlebars-template">
+    <section class="listing">
+        {{#students}}
+            <header class="listing__header">{{student_name}}</header>
+            {{#assignments}}
+                <article class="listing--studentsAssignments--assignments__item">
+                    <div class="listing--studentsAssignments__name">{{assignment_name}}</div>
+                    <div class="listing--studentsAssignments__completed">{{completed}}</div>
+                </article>
+            {{/assignments}}
+        {{/students}}
+    </section>
+</script>
+
+
 </html>
