@@ -13,12 +13,6 @@ requirejs.config({
 
     paths: {
         app: '../app'
-    },
-
-    shim: {
-        'handlebars': {
-            exports: 'Handlebars'
-        }
     }
 
 
@@ -30,8 +24,8 @@ requirejs.config({
 // Start the main app logic.
 //document.domain = "webdevcourses.frisbee.lviv.ua";
 
-require( ['httpCallWrapper', 'app/students', 'app/assignments', 'app/students_assignments', 'handlebars'],
-  function(httpCallWrapper,       Students,       Assignments,       StudentsAssignments,   Handlebars) {
+require( ['app/students', 'app/assignments', 'app/students_assignments'],
+  function(    Students,       Assignments,       StudentsAssignments) {
         document.getElementById("menu").addEventListener('click', function (e) {
             var category,
                 assignments;
@@ -64,29 +58,3 @@ require( ['httpCallWrapper', 'app/students', 'app/assignments', 'app/students_as
             return false;
         })
 });
-
-
-
-
-/*
-
-        var summaryElements = document.getElementsByClassName('summary');
-
-        var i;
-        for(i=0; i < summaryElements.length; i++) {
-            var summaryElement = summaryElements[i];
-            console.log("inside foreach. typeof: " + typeof(summaryElement));
-            var category = summaryElement.getAttribute('data-category');
-            console.log("inside requirejs. category: " + category);
-        }
-
-*/
-    //console.log("inside requirejs function");
-//});
-
-/*
-//What's the difference?
-require(['app/httpCall'], function(httpCall) {
-    console.log("inside require function");
-});
-*/

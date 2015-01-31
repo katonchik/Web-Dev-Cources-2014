@@ -2,16 +2,18 @@
  * Created by vkatolyk on 29.01.2015.
  */
 
-define(['handlebars'], function(Handlebars){
+define(['handlebars', 'Util'], function(Handlebars, Util){
 
     var Assignments = function(containerElement, category) {
+
+        var util = new Util();
 
         this.getAssignments = function(category){
             var params={};
             if(category){
                 params = {'category':category};
             }
-            httpCall("GET", "http://webdevcourses.frisbee.lviv.ua/assignments",
+            util.httpCall("GET", "http://webdevcourses.frisbee.lviv.ua/assignments",
                 params,
                 function(response){
                     if (response) {
@@ -31,5 +33,6 @@ define(['handlebars'], function(Handlebars){
         this.getAssignments(category);
 
     };
+
     return Assignments;
 });

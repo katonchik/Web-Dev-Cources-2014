@@ -2,37 +2,40 @@
  * Created by vkatolyk on 29.01.2015.
  */
 
-define(['Dropzone', 'handlebars', 'util'], function(dropzone, Handlebars, Util){
+define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
 
     var Students = function(containerElement, category) {
         var self = this;
 
         var sortKey,
-            isSortAsc = false;
+            isSortAsc = true; //reverse is -1
 
         this.studentArray = [];
 
+        var util = new Util();
+
         function initializeHeader()
         {
+            console.log("initializing header");
             var headerElement = document.getElementsByClassName('listing__header')[0];
             headerElement.addEventListener('click', function(e){
                 var prevSortKey = sortKey;
                 sortKey = null;
                 if(e.target.classList && e.target.classList.contains("listing--students__name")) {
-                    sortKey = 'name';
+                    sortKey = 'student_name';
                 }
                 else if(e.target.classList && e.target.classList.contains("listing--students__completed")) {
-                    sortKey = 'completed';
+                    sortKey = 'completed_count';
                 }
                 else if(e.target.classList && e.target.classList.contains("listing--students__outstanding")) {
-                    sortKey = 'outstanding';
+                    sortKey = 'outstanding_count';
                 }
                 if(sortKey !== null) {
                     if(prevSortKey == null || prevSortKey != sortKey) {
                         isSortAsc = true;
                     }
                     else {
-                        isSortAsc = Util.toggleSortOrder(isSortAsc);
+                        isSortAsc = util.toggleSortOrder(isSortAsc);
                     }
                     sortStudents(sortKey, isSortAsc);
                 }
@@ -47,7 +50,7 @@ define(['Dropzone', 'handlebars', 'util'], function(dropzone, Handlebars, Util){
                 var newStudentAvatar = document.getElementsByClassName('img-upload-thumb')[0].src;
                 var encodedImg = window.btoa(newStudentAvatar); //btoa = encode (data:image -> ZGFOYT)
                 var params = {'name': newStudentName, 'avatar':encodedImg};
-                httpCall("POST", "http://webdevcourses.frisbee.lviv.ua/students",
+                util.httpCall("POST", "http://webdevcourses.frisbee.lviv.ua/students",
                     params,
                     function(response){
                         if (response.successful) {
@@ -73,9 +76,17 @@ define(['Dropzone', 'handlebars', 'util'], function(dropzone, Handlebars, Util){
 
 
         function sortStudents(sortKey, isSortAsc) {
-            self.studentArray = Util.sortArrOfObjectsByParam(self.studentArray, sortKey, isSortAsc);
-            Util.emptyContainer('studentListing');
+            console.log(self.studentArray);
+            console.log("sorting students");
+            util.sortArrOfObjectsByParam(self.studentArray, sortKey, isSortAsc);
+            //self.studentArray.sort(Util.dynamicSort(sortKey, isSortAsc));
+            console.log("emptying container");
+            util.emptyContainer('studentListing');
+            console.log("rendering");
             renderListing({'students' : self.studentArray})
+            console.log(self.studentArray);
+
+
         }
 
 
@@ -83,6 +94,7 @@ define(['Dropzone', 'handlebars', 'util'], function(dropzone, Handlebars, Util){
 
 
         function renderListing(data) {
+            console.log("rendering...");
             var source = document.getElementById('studentsTemplate').innerHTML;
             var template = Handlebars.compile(source);
             Handlebars.registerHelper('decode', function(encoded){
@@ -90,15 +102,17 @@ define(['Dropzone', 'handlebars', 'util'], function(dropzone, Handlebars, Util){
             });
             Handlebars.registerPartial("studentRow", document.getElementById("studentRow").innerHTML);
             containerElement.innerHTML = template(data);
+            initializeHeader();
         }
 
 
         this.getStudents = function(category){
+            console.log("getting students");
             var params={};
             if(category){
                 params = {'category':category};
             }
-            httpCall("GET", "http://webdevcourses.frisbee.lviv.ua/students",
+            util.httpCall("GET", "http://webdevcourses.frisbee.lviv.ua/students",
                 params,
                 function(response){
                     if (response) {
@@ -108,8 +122,6 @@ define(['Dropzone', 'handlebars', 'util'], function(dropzone, Handlebars, Util){
 
                         //Initialize dropzone box
                         var dropbox = new dropzone(document.getElementById('dropzone'));
-
-                        initializeHeader();
 
                         //Add event listener to the New Student form
                         initializeAddForm();
