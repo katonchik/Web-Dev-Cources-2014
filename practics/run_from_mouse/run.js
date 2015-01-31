@@ -1,29 +1,51 @@
-function run (distance, angle) {
-    console.log("RUN!!", distance, angle);
+function Runner (runnerElement) {
+    "use strict";
+    const RUN_DISTANCE = 10;
+    var runner, mouse, distance, isRunned=false;
 
-}
+    function run (dx, dy, time) {
+        isRunned = true;
+        var start = null;
+        function step (timestamp){
+            start = start || timestamp;
 
-document.addEventListener("mousemove", function (ev){
-    var RUN_DISTANCE = 10;
+            var progress = timestamp - start;
+            var progresPart = progress/time;
 
-    var directionElement = document.getElementById("direction"),
-        widthElement = document.getElementById("width"),
-        runnerElement = document.getElementById("runner"),
+            if (progress < time) {
+                runnerElement.setAttribute("cx", runner.x + dx * progresPart);
+                runnerElement.setAttribute("cy", runner.y + dy * progresPart);
 
-        runner = { x : runnerElement.cx.baseVal.value, y: runnerElement.cy.baseVal.value},
-        mouse =  { x  :ev.clientX, y : ev.clientY },
-        distance  = Math.sqrt(Math.abs(runner.x - mouse.x) + Math.abs(runner.y - mouse.y)),
+                window.requestAnimationFrame(step);
+            } else {
+                isRunned = false;
+            }
+        }
 
-        runDistance;
+        window.requestAnimationFrame(step);
 
-    directionElement.setAttribute("x1", mouse.x);
-    directionElement.setAttribute("y1", mouse.y);
-
-    widthElement.innerHTML = distance;
-
-    if (distance < RUN_DISTANCE) {
-        runDistance = RUN_DISTANCE - distance;
-        run(runDistance, 0);
     }
 
-});
+    function mouseHandler (ev) {
+        runner = { x : runnerElement.cx.baseVal.value, y: runnerElement.cy.baseVal.value};
+        mouse =  { x : ev.clientX, y : ev.clientY };
+        distance = {
+            x : runner.x - mouse.x,
+            y : runner.y - mouse.y
+        };
+        distance.length  = Math.sqrt( Math.abs(distance.x)+ Math.abs(distance.y));
+
+        if ((distance.length < RUN_DISTANCE) && !isRunned) {
+            run(distance.x, distance.y, 1000);
+        }
+    }
+
+    function init () {
+        document.addEventListener("mousemove", mouseHandler);
+    }
+
+    init();
+}
+
+new Runner(document.getElementById("runner"));
+
