@@ -1,14 +1,15 @@
-/**
+define("sortCounting", ["helpers"], function(helpers) {
+    "use strict";
+
+    /**
  * @param data {Array}
  * @return result {Array} new sorted array
  */
 function sortCounting (data) {
-    "use strict";
-
     var min = data[0];
     var max = data[0];
     var count = [];
-    var result = [];
+    var newArray = [];
     var i;
     for(i=0; i < data.length; i++) {
         if (data[i] < min) {
@@ -26,10 +27,10 @@ function sortCounting (data) {
     }
     for (i = 0; i < count.length+1; i++) {
         for (var j = 0; j < count[i]; j++) {
-            result.push(i);
+            newArray.push(i);
         }
     }
-    return result;
+    return newArray;
 }
-
-document.write("Counting sorted array: " + sortCounting(array) + "<br/>");
+    return sortCounting;
+});

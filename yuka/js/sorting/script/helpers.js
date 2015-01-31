@@ -1,33 +1,21 @@
-/**
- * Defining an array to sort: ask the user for the array or generate one
- * @return {Array}
- */
-var array = [];
-(function generateRandomArray(n, q) {
+define("helpers", [], function(){
     "use strict";
+    return {
+        generateRandomArray: function (array_length, diapason){
+            var array = [];
+            array_length = array_length || 25;
+            diapason = diapason || 100;
+            for (var i = 0; i < array_length; i++) {
+                array.push(Math.floor(Math.random() * diapason));
+            }
+            return array;
+        },
 
-    n = n || 25;
-    q = q || 100;
-    for (var i = 0; i < n; i++) {
-        array.push(Math.floor(Math.random() * q));
-    }
-    return array;
-})();
-
-document.write("Input array: " + array + "<br/>");
-
-/**
- * Swapping two meanings
- * @param inputArray
- * @param firstElementIndex
- * @param secondElementIndex
- * @return inputArray
- */
-function swap(inputArray, firstElementIndex, secondElementIndex) {
-    "use strict";
-
-    var temp = inputArray[firstElementIndex];
-    inputArray[firstElementIndex] = inputArray[secondElementIndex];
-    inputArray[secondElementIndex] = temp;
-    return inputArray;
-}
+        swap: function (inputArray, firstElementIndex, secondElementIndex) {
+            var temp = inputArray[firstElementIndex];
+            inputArray[firstElementIndex] = inputArray[secondElementIndex];
+            inputArray[secondElementIndex] = temp;
+            return inputArray;
+        }
+    };
+});
