@@ -1,7 +1,7 @@
 /**
  * Created by ad on 11.11.14.
  */
-var numbers = generaterator_random_number(30);
+var numbers = generatorRandomNumber(30);
 
 console.log("Randomized quick sort inn", numbers);
 

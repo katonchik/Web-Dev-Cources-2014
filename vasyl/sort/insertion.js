@@ -4,7 +4,7 @@
 
 
 
-var numbers = generaterator_random_number(10);
+var numbers = generatorRandomNumber(10);
 //Insertion sorting
 console.log("insertion sort out", numbers);
 function inseretion_sort(numbers) {

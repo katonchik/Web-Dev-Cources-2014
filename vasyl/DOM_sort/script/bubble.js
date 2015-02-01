@@ -65,7 +65,7 @@ Bubble = function (numbers) {
     }
 }
 
-var array = generaterator_random_number(10);
+var array = generatorRandomNumber(10);
 console.log("Buble sorting inn", array);
 var d = new Bubble(array);
 var n = d.sort();
