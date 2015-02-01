@@ -1,6 +1,10 @@
-define("sortBubble", ["helpers"], function(helpers) {
+define(["helpers"], function(helpers) {
     "use strict";
 
+    /**
+     * @param data {Array}
+     * @return result {Array} new sorted array
+     */
     function sortBubble(data) {
         var newArray = data.slice(); //cloning array
 
