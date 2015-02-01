@@ -1,0 +1,18 @@
+body{
+    margin-top:100px;
+    margin: auto;
+}
+.test{
+    float: left;
+    height: 10px;
+    width: 30px;
+    background: red;
+    margin: 2px;
+}
+.current{
+    float: left;
+    height: 10px;
+    width: 30px;
+    background: yellow;
+    margin: 2px;
+}

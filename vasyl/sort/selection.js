@@ -1,7 +1,7 @@
 
 
 
-var array = generaterator_random_number(10);
+var array = generatorRandomNumber(10);
 
 //Selection sorting
 console.log("selection sort in", array);
