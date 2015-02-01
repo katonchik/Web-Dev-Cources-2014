@@ -1,4 +1,4 @@
-define("sortInsertion", ["helpers"], function(helpers) {
+define(["helpers"], function(helpers) {
     "use strict";
 
     /**
@@ -7,16 +7,21 @@ define("sortInsertion", ["helpers"], function(helpers) {
      */
     function sortInsertion(data) {
         var newArray = data.slice(); //cloning array
+
         for (var i = 0; i < newArray.length; i++) {
-            var smallest = newArray[i];
-            var j = i - 1;
+            var smallest = newArray[i],
+                j = i - 1;
+
             while (j >= 0 && newArray[j] > smallest) {
                 newArray[j + 1] = newArray[j];
                 j--;
             }
+
             newArray[j + 1] = smallest;
         }
+
         return newArray;
     }
+
     return sortInsertion;
 });
