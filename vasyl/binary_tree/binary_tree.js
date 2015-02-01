@@ -135,7 +135,8 @@ BinaryTree.prototype.remove = function (value) {
 //binary tree removing algorithms
 //if subtree without children then it will be removed
 //if subtree with one child then it will be replaced onto child
-//if subtree with children then it will be replaced onto the last right child(child with the biggest value)
+//if subtree with children then it will be replaced onto the last left child from
+// first right child of subtree (child with a smaller value from first right  element of subtree)
     if (subtree.child == 0) {
         parentSubtree[pointer] = null;
     } else if (subtree.child == 1) {

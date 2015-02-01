@@ -1,7 +1,7 @@
 /**
  * Created by ad on 11.11.14.
  */
-var numbers = generaterator_random_number(10);
+var numbers = generatorRandomNumber(10);
 
 
 //Quick sorting

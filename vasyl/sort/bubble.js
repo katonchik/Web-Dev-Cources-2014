@@ -13,7 +13,7 @@ function bubble_sort(numbers) {
     } while (swaped);
     return numbers;
 }
-var array=generaterator_random_number(10);
+var array=generatorRandomNumber(10);
 
 console.log("Buble sorting inn", array);
 

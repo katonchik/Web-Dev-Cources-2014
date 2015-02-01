@@ -1,37 +1,64 @@
-function renderUsers(container, data) {
-  var html =  data.users.map(function (el) {
+function getTemplate (){
+  var promise = new Promise(function (resolve, reject){
 
-    var template = `
-      <li>
-        <img class="avatar" src="${el.avatar}"/>
-        ${el.name}
-        <i class="fa fa-times"></i>
-      </li>
-    `;
-    return template;
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", '/public/template.hbs');
+
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 404) {
+          reject(xhr.responseText);
+        } else if (xhr.status === 200) {
+          resolve(xhr.responseText);
+        }
+      }
+    };
+
+    ontimeout = function (err){ reject(err); };
+    xhr.send();
+
   });
 
-  container.innerHTML = `<ul>${html.join("")}</ul>`;
+  return promise
+      .then(function (templateString){
+        return Handlebars.compile(templateString);
+      })
+      .catch(function (err){
+        console.error("Error!!!", err);
+      });
 }
 
-function loadUsers (from, to, callback) {
-  var xhr = new XMLHttpRequest();
-  xhr.open("GET", `/users.json?from=${from}&to=${to}`);
+function renderUsers(container, data, template) {
+    var html =  data.users.map(function (el) {
+      return template(el);
+    });
 
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4) {
-      var data = JSON.parse(xhr.responseText);
-      callback (data);
+    container.innerHTML = `<ul>${html.join("")}</ul>`;
+};
+
+function loadUsers (from, to) {
+  var promise = new Promise(function (resolve, reject){
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", `/users.json?from=${from}&to=${to}`);
+
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4) {
+        var data = JSON.parse(xhr.responseText);
+        resolve(data);
+      };
     };
-  };
+    xhr.send();
+  });
 
-  xhr.send();
+  return promise;
 }
 
-loadUsers(0, 10, function (data) {
-  var usersContainer = document.getElementById("userList");
-  renderUsers(usersContainer, data);
-})
+Promise.all([loadUsers(0, 10), getTemplate()])
+  .then(function (data){
+      var usersContainer = document.getElementById("userList");
+      renderUsers(usersContainer, data[0], data[1]);
+  });
 
 document.getElementById("pager")
   .addEventListener("click", function (e) {
@@ -39,11 +66,11 @@ document.getElementById("pager")
       var page = parseInt(e.target.innerHTML, 10) - 1;
       var from = page * 10;
 
-      loadUsers(from, from + 10, function (data) {
-        var usersContainer = document.getElementById("userList");
-        renderUsers(usersContainer, data);
-      })
-
+      loadUsers(from, from + 10)
+        .then(function (data) {
+          var usersContainer = document.getElementById("userList");
+          renderUsers(usersContainer, data);
+        })
     }
   })
 
