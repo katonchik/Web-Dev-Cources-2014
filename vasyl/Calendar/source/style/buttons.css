@@ -1,0 +1,14 @@
+.button {
+  padding: 0;
+  height: 32px;
+  width: 9%;
+  background: #ff8b15;
+  border: none; }
+  .button--next {
+    float: right;
+    margin-right: 1.5%; }
+  .button--previous {
+    float: left;
+    margin-left: 1.5%; }
+
+/*# sourceMappingURL=buttons.css.map */

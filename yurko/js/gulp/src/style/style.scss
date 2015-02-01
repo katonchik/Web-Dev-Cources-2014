@@ -1,8 +1,0 @@
-.svg {
-                height: 160px;
-  &__heart {
-                fill: white; stroke-width: 10; stroke: lightgrey;
-    &:hover   { stroke: crimson; transition: stroke 1s; }
-    &--marked { fill: crimson; stroke: crimson; transition: fill 2s; }
-  }
-}

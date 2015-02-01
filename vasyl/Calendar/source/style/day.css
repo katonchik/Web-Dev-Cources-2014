@@ -1,0 +1,24 @@
+.weak, .day {
+  float: left;
+  margin: 2px;
+  width: 30px;
+  height: 30px;
+  background: #a745ff; }
+
+.day {
+  background: rgba(47, 151, 82, 0.31); }
+  .day--empty {
+    background: #3e4543;
+    color: white; }
+  .day--current {
+    border: 1px solid #ff0000;
+    width: 28px;
+    height: 28px; }
+  .day--selected {
+    border: 1px dashed #ff0000;
+    width: 28px;
+    height: 28px; }
+  .day--event {
+    background: #ffa68b; }
+
+/*# sourceMappingURL=day.css.map */

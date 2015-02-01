@@ -87,7 +87,7 @@ define('Dropzone', function(){
         function openFileDialog() {
             var event = new MouseEvent('click', {
                 'view': window,
-                'bubbles': true,
+                'bubbles': false,
                 'cancelable': true
             });
             inputFile.dispatchEvent(event);

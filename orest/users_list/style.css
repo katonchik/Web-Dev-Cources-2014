@@ -9,7 +9,7 @@ body {
 }
 
 table, th, td  {
-    border: 3px solid #2aee12;
+    border: 3px solid #fff;
     padding: 5px;
 }
 
@@ -20,7 +20,7 @@ table, th, td  {
 
 .main-content {
     width: 50%;
-    margin: 0 auto;
+    margin: 10px auto;
 }
 
 .main-content__table {
@@ -35,7 +35,11 @@ table, th, td  {
     text-align: left;
 }
 
-.user-avatar {
+.user {
+
+}
+
+.table__header__avatar {
     width: 20%;
 }
 

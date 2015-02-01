@@ -9,7 +9,7 @@ function generaterator_random_number(n) {
     return array;
 }
 
-//arr = generaterator_random_number(20);
+//arr = generatorRandomNumber(20);
 //Swap function
 function swap(ar, a, b) {
     var el = ar[a];

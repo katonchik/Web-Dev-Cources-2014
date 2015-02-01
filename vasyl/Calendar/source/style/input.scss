@@ -1,0 +1,11 @@
+$width:77%;
+$height:12px;
+$margin:0.7px;
+.input{
+  margin-left:$margin ;
+  padding: 0;
+  float: left;
+  width: $width;
+  height: $height;
+  text-align: center;
+}
