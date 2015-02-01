@@ -15,7 +15,6 @@ gulp.task('compressjs', function() {
         .pipe(gulp.dest('./dist/scripts'))
 });
 
-
 gulp.task('sass', function () {
     gulp.src('./js/sorting/src/style/**/*.scss')
         .pipe(sass())
@@ -25,12 +24,9 @@ gulp.task('sass', function () {
 
 gulp.task('requirejsBuild', function() {
     rjs({
-        baseUrl: './src/scripts/**/*.js',
-        out: 'all-min.js',
-        shim: {            // standard require.js shim options
-            //
-        }
-        // ... more require.js options
+        baseUrl: './src/scripts/script.js',
+        out: 'all-min.js'
     })
+
         .pipe(gulp.dest('./dist/scripts')); // pipe it to the output DIR
 });
