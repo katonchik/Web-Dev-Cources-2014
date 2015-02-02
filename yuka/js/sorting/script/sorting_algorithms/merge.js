@@ -1,9 +1,16 @@
-define("sortMerge", ["helpers"], function(helpers) {
+define(["helpers"], function(helpers) {
     "use strict";
+
+    /**
+     * @param data {Array}
+     * @return result {Array} new sorted array
+     */
     function sortMerge(data) {
+
         if (data.length < 2) {
             return data;
         }
+
         function merge (left, right) {
             var result = [];
             var il = 0;
@@ -17,11 +24,13 @@ define("sortMerge", ["helpers"], function(helpers) {
             }
             return result.concat(left.slice(il)).concat(right.slice(ir));
         }
-        var middle = Math.floor(data.length / 2);
-        var left = data.slice(0, middle);
-        var right = data.slice(middle);
+
+        var middle = Math.floor(data.length / 2),
+            left = data.slice(0, middle),
+            right = data.slice(middle);
         return merge(sortMerge(left), sortMerge(right));
     }
-        return sortMerge;
+
+    return sortMerge;
 });
 
