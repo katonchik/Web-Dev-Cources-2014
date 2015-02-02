@@ -1,4 +1,4 @@
-define('Dropzone', function(){
+define(function(){
     'use strict';
     var Dropzone = function(htmlEl, userConfig) {
         var self = this;
