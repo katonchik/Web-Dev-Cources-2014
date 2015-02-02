@@ -4,7 +4,8 @@ div {
     margin-right: 5px;
 }
 
-div:hover { background: darkgreen; }
+div:hover.b { background: blue; }
+div:hover.r { background: yellow; }
 .b { background: black; }
 .r { background: #ff0000; }
 
