@@ -1,0 +1,62 @@
+#checkList {
+  overflow: hidden;
+}
+
+#taskList {
+  width: 600px;
+  margin: 10px;
+  overflow: hidden;
+  min-height: 40px;
+}
+#addText {
+  width: 400px;
+  height: 15px;
+  margin-left: 10px;
+}
+
+#activeList {
+  @extend #taskList;
+  background-color: #AAAAAA;
+}
+
+#completedList {
+  @extend #taskList;
+  background-color: #CCCCCC;
+}
+
+.task {
+  padding: 2px;
+  width: 590px;
+  background-color: #999999;
+  margin: 2px;
+  float: left;
+}
+
+.task-name {
+  float: left;
+  width: 400px;
+  background-color: #DD9999;
+}
+
+.responsible {
+  float: left;
+  width: 100px;
+  margin-left: 10px;
+  background-color: #99DD99;
+}
+
+.check-completed {
+  float: left;
+  width: 20px;
+  margin-top: 3px;
+  margin-left: 20px;
+  background-color: #9999DD;
+}
+
+.delete-control {
+    float: left;
+    width: 15px;
+    margin-top: 1px;
+    margin-left: 10px;
+    background-color: #9999DD
+}
