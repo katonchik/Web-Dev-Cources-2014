@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Checklist</title>
+    <link rel="stylesheet" href="css/checklist.css"/>
+</head>
+<body>
+<div id="checkList">
+    <form id="addTaskForm">
+        <label for="addText">Що зробити?</label>
+        <input type="text" id="addText" value="" />
+        <input type="submit" value="Add Task" id="addButton" />
+    </form>
+
+    <div id="activeList"></div>
+    <div id="completedList"></div>
+</div>
+
+<script src="js/httpCallWrapper.js"></script>
+<script src="js/checklist.js"></script>
+<script>
+    var myChecklist = new CheckList();
+</script>
+
+</body>
+</html>
