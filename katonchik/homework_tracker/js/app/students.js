@@ -5,14 +5,12 @@
 define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
 
     var Students = function(containerElement, category) {
-        var self = this;
-
-        var sortKey,
-            isSortAsc = true; //reverse is -1
+        var self = this,
+            sortKey,
+            isSortAsc = true, //reverse is -1
+            util = new Util();
 
         this.studentArray = [];
-
-        var util = new Util();
 
         function initializeHeader()
         {
@@ -47,7 +45,7 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
             var addButton = document.getElementById('addButton');
             addButton.addEventListener('click', function(e){
                 var newStudentName = document.getElementById('nameInput').value;
-                var newStudentAvatar = document.getElementsByClassName('img-upload-thumb')[0].src;
+                var newStudentAvatar = document.querySelector('.img-upload-thumb').src;
                 var encodedImg = window.btoa(newStudentAvatar); //btoa = encode (data:image -> ZGFOYT)
                 var params = {'name': newStudentName, 'avatar':encodedImg};
                 util.httpCall("POST", "http://webdevcourses.frisbee.lviv.ua/students",

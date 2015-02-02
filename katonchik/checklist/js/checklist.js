@@ -37,7 +37,7 @@ function CheckList() {
 
         var deleteControl = document.createElement("img");
         deleteControl.classList.add("delete-control");
-        deleteControl.src="../images/delete.png";
+        deleteControl.src="images/delete.png";
         taskItem.appendChild(deleteControl);
 
 
