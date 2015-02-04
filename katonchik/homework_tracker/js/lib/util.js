@@ -1,7 +1,7 @@
 define('Util', function(){
-    var Util = function() {
+    var Util = {
 
-        this.httpCall = function(method, url, data, onReady){
+        httpCall : function(method, url, data, resolve, reject){
             var httpRequest = new XMLHttpRequest(),
                 params = '',
                 paramCounter = 0,
@@ -27,17 +27,16 @@ define('Util', function(){
             httpRequest.onreadystatechange = function(){
                 if(httpRequest.readyState == 4)
                 {
-                    if(httpRequest.response){
-                        var response = JSON.parse(httpRequest.response);
-                        if(response.successful) {
-                            onReady(response);
-                        }
-                        else {
+                    var response = JSON.parse(httpRequest.response);
+                    switch(httpRequest.status)
+                    {
+                        case 200:
+                            resolve(response);
+                            break;
+                        case 404:
+                        default:
                             console.log("Backend action failed: " + response.msg);
-                        }
-                    }
-                    else {
-                        console.log("Response empty.");
+                            reject(response);
                     }
                 }
             };
@@ -45,11 +44,11 @@ define('Util', function(){
                 console.log("Connect to " + url + " timed out.");
                 return false;
             };
-        };
+        },
 
 
 
-        this.sortArrOfObjectsByParam = function(arrToSort /* array */, strObjParamToSortBy /* string */, sortAscending /* bool(optional, defaults to true) */) {
+        sortArrOfObjectsByParam : function(arrToSort /* array */, strObjParamToSortBy /* string */, sortAscending /* bool(optional, defaults to true) */) {
             if (sortAscending == undefined) sortAscending = true;  // default to true
 
             if (sortAscending) {
@@ -62,14 +61,14 @@ define('Util', function(){
                     return a[strObjParamToSortBy] < b[strObjParamToSortBy];
                 });
             }
-        };
+        },
 
 
-        this.toggleSortOrder = function (isSortAsc) {
+        toggleSortOrder : function(isSortAsc) {
             return !isSortAsc;
-        };
+        },
 
-        this.emptyContainer = function (containerElementId) {
+        emptyContainer : function(containerElementId) {
             var containerElement = document.getElementById(containerElementId);
             while (containerElement.firstChild) {
                 containerElement.removeChild(containerElement.firstChild);

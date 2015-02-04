@@ -7,8 +7,7 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
     var Students = function(containerElement, category) {
         var self = this,
             sortKey,
-            isSortAsc = true, //reverse is -1
-            util = new Util();
+            isSortAsc = true; //reverse is -1
 
         this.studentArray = [];
 
@@ -33,7 +32,7 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
                         isSortAsc = true;
                     }
                     else {
-                        isSortAsc = util.toggleSortOrder(isSortAsc);
+                        isSortAsc = Util.toggleSortOrder(isSortAsc);
                     }
                     sortStudents(sortKey, isSortAsc);
                 }
@@ -48,7 +47,7 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
                 var newStudentAvatar = document.querySelector('.img-upload-thumb').src;
                 var encodedImg = window.btoa(newStudentAvatar); //btoa = encode (data:image -> ZGFOYT)
                 var params = {'name': newStudentName, 'avatar':encodedImg};
-                util.httpCall("POST", "http://webdevcourses.frisbee.lviv.ua/students",
+                Util.httpCall("POST", "http://webdevcourses.frisbee.lviv.ua/students",
                     params,
                     function(response){
                         if (response.successful) {
@@ -76,10 +75,10 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
         function sortStudents(sortKey, isSortAsc) {
             console.log(self.studentArray);
             console.log("sorting students");
-            util.sortArrOfObjectsByParam(self.studentArray, sortKey, isSortAsc);
+            Util.sortArrOfObjectsByParam(self.studentArray, sortKey, isSortAsc);
             //self.studentArray.sort(Util.dynamicSort(sortKey, isSortAsc));
             console.log("emptying container");
-            util.emptyContainer('studentListing');
+            Util.emptyContainer('studentListing');
             console.log("rendering");
             renderListing({'students' : self.studentArray})
             console.log(self.studentArray);
@@ -110,7 +109,7 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
             if(category){
                 params = {'category':category};
             }
-            util.httpCall("GET", "http://webdevcourses.frisbee.lviv.ua/students",
+            Util.httpCall("GET", "http://webdevcourses.frisbee.lviv.ua/students",
                 params,
                 function(response){
                     if (response) {

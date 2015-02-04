@@ -6,14 +6,12 @@ define(['handlebars', 'Util'], function(Handlebars, Util){
 
     var StudentsAssignments = function(containerElement, category) {
 
-        var util = new Util();
-
         this.getAssignments = function(category){
             var params={};
             if(category){
                 params = {'category':category};
             }
-            util.httpCall("GET", "http://webdevcourses.frisbee.lviv.ua/students_assignments",
+            Util.httpCall("GET", "http://webdevcourses.frisbee.lviv.ua/students_assignments",
                 params,
                 function(response){
                     if (response) {
