@@ -1,6 +1,6 @@
-define('Util', function(){
+define('Util', ['handlebars'], function(Handlebars){
     var Util = {
-
+        self : this,
         httpCall : function(method, url, data, resolve, reject){
             var httpRequest = new XMLHttpRequest(),
                 params = '',
@@ -73,7 +73,40 @@ define('Util', function(){
             while (containerElement.firstChild) {
                 containerElement.removeChild(containerElement.firstChild);
             }
+        },
+
+        getTemplate : function(template){
+            return new Promise(function (resolve, reject) {
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", 'js/templates/' + template + '.hbs');
+
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4) {
+                        if (xhr.status === 404) {
+                            reject(xhr.responseText);
+                        } else if (xhr.status === 200) {
+                            resolve(xhr.responseText);
+                        }
+                    }
+                };
+                ontimeout = function (err) {
+                    reject(err);
+                };
+                xhr.send();
+            });
+        },
+
+        loadTemplate : function(template){
+            var compiledTemplate;
+            Util.getTemplate(template)
+                .then(function (templateString){
+                    return templateString;
+                })
+                .catch(function (err){
+                    console.error("Error!!!", err);
+                });
         }
+
     };
     return Util;
 });

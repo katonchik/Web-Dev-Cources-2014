@@ -1,0 +1,24 @@
+<section class="listing" id="studentListing">
+    <header class="listing__header">
+        <div class="listing--students__avatar"></div>
+        <div class="listing--students__name">Name</div>
+        <div class="listing--students__completed">Completed</div>
+        <div class="listing--students__outstanding">Outstanding</div>
+    </header>
+  {{#each students}}
+    {{> studentRow}}
+  {{/each}}
+</section>
+<form class="newStudent">
+    <div>
+        <label for="nameInput">Student's name: </label>
+        <input type="text" class="newStudent__nameInput" id="nameInput" />
+    </div>
+    <div>
+        <label for="nameInput">Student's photo: </label>
+        <div class="dropbox" id="dropzone" style="width:300px; height:300px;"></div>
+    </div>
+    <div>
+        <input type="submit" class="newStudent__addButton" id="addButton" value="Add" />
+    </div>
+</form>
