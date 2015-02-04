@@ -52,9 +52,6 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
                     function(response){
                         if (response.successful) {
                             var source = document.getElementById('studentRow').innerHTML;
-                            Handlebars.registerHelper('decode', function(encoded){
-                                return window.atob(encoded); //atob = decode
-                            });
                             var template = Handlebars.compile(source);
                             var div = document.createElement('div');
                             div.innerHTML = template(response.student);
@@ -73,15 +70,9 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
 
 
         function sortStudents(sortKey, isSortAsc) {
-            console.log(self.studentArray);
-            console.log("sorting students");
             Util.sortArrOfObjectsByParam(self.studentArray, sortKey, isSortAsc);
-            //self.studentArray.sort(Util.dynamicSort(sortKey, isSortAsc));
-            console.log("emptying container");
             Util.emptyContainer('studentListing');
-            console.log("rendering");
             renderListing({'students' : self.studentArray})
-            console.log(self.studentArray);
 
 
         }
@@ -91,12 +82,8 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
 
 
         function renderListing(data) {
-            console.log("rendering...");
             var source = document.getElementById('studentsTemplate').innerHTML;
             var template = Handlebars.compile(source);
-            Handlebars.registerHelper('decode', function(encoded){
-                return window.atob(encoded); //atob = decode
-            });
             Handlebars.registerPartial("studentRow", document.getElementById("studentRow").innerHTML);
             containerElement.innerHTML = template(data);
             initializeHeader();
@@ -104,7 +91,6 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
 
 
         this.getStudents = function(category){
-            console.log("getting students");
             var params={};
             if(category){
                 params = {'category':category};
