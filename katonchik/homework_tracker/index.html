@@ -25,18 +25,6 @@
     </footer>
 </body>
 
-<script id="studentsTemplate" type="text/x-handlebars-template">
-</script>
-
-<script id="studentRow" type="text/x-handlebars-template">
-    <article class="listing--students__item">
-        <div class="listing--students__avatar"><img src="{{avatar}}" /></div>
-        <div class="listing--students__name">{{student_name}}</div>
-        <div class="listing--students__completed">{{completed_count}}</div>
-        <div class="listing--students__outstanding">{{outstanding_count}}</div>
-    </article>
-</script>
-
 
 <script id="assignmentsTemplate" type="text/x-handlebars-template">
     <section class="listing">
@@ -48,7 +36,7 @@
         {{/each}}
     </section>
     <form class="newAssignment">
-        <label for="nameInput">Assignment: </label>
+        <label for="nameInputA">Assignment: </label>
         <input type="text" class="newAssignment__nameInput" id="nameInputA" />
         <input type="hidden" id="category" value="{{category}}" />
         <input type="submit" class="newAssignment__addButton" id="addButtonA" value="Add" />

@@ -7,7 +7,9 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
     var Students = function(containerElement, category) {
         var self = this,
             sortKey,
-            isSortAsc = true; //reverse is -1
+            isSortAsc = true, //reverse is -1
+            studentsTemplateSource,
+            studentTemplateSource;
 
         this.studentArray = [];
 
@@ -76,12 +78,13 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
         }
 
 
-        function renderListing(studentsData, templateSource) {
-            var template = Handlebars.compile(templateSource);
+        function renderListing(studentsData) {
+            console.log(studentsTemplateSource);
+            console.log(studentTemplateSource);
+            Handlebars.registerPartial("studentRow", studentTemplateSource);
+            var template = Handlebars.compile(studentsTemplateSource);
             console.log(template);
-            Handlebars.registerPartial("studentRow", document.getElementById("studentRow").innerHTML);
             containerElement.innerHTML = template(studentsData);
-            console.log(containerElement.innerHTML);
             initializeHeader();
 
         }
@@ -105,11 +108,13 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
         }
 
 
-        Promise.all([getStudents(category), Util.getTemplate('students')])
+        Promise.all([getStudents(category), Util.getTemplate('students'), Util.getTemplate('student')])
             .then(function (data) {
 
 //              var usersContainer = document.getElementById("userList");
-                renderListing(data[0], data[1]);
+                studentsTemplateSource = data[1];
+                studentTemplateSource  = data[2];
+                renderListing(data[0]);
 
                 //Initialize dropzone box
                 var dropbox = new dropzone(document.getElementById('dropzone'));
