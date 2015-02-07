@@ -81,8 +81,8 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
         function renderListing(studentsData) {
             console.log(studentsTemplateSource);
             console.log(studentTemplateSource);
-            Handlebars.registerPartial("studentRow", studentTemplateSource);
             var template = Handlebars.compile(studentsTemplateSource);
+            Handlebars.registerPartial("studentRow", studentTemplateSource);
             console.log(template);
             containerElement.innerHTML = template(studentsData);
             initializeHeader();
