@@ -8,15 +8,16 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
         var self = this,
             sortKey,
             isSortAsc = true, //reverse is -1
-            studentsTemplateSource,
-            studentTemplateSource;
+            studentsTemplate,
+            studentTemplate;
 
         this.studentArray = [];
 
         function initializeHeader() {
             console.log("initializing header");
-            var headerElement = document.getElementsByClassName('listing__header')[0];
+            var headerElement = document.querySelector('.listing__header');
             headerElement.addEventListener('click', function (e) {
+                console.log(self.studentArray);
                 var prevSortKey = sortKey;
                 sortKey = null;
                 if (e.target.classList && e.target.classList.contains("listing--students__name")) {
@@ -51,8 +52,7 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
                     params,
                     function (response) {
                         if (response.successful) {
-                            var source = document.getElementById('studentRow').innerHTML;
-                            var template = Handlebars.compile(source);
+                            var template = Handlebars.compile(studentTemplateSource);
                             var div = document.createElement('div');
                             div.innerHTML = template(response.student);
 
@@ -73,25 +73,19 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
             Util.sortArrOfObjectsByParam(self.studentArray, sortKey, isSortAsc);
             Util.emptyContainer('studentListing');
             renderListing({'students': self.studentArray})
-
-
         }
 
 
         function renderListing(studentsData) {
-            console.log(studentsTemplateSource);
-            console.log(studentTemplateSource);
-            var template = Handlebars.compile(studentsTemplateSource);
-            Handlebars.registerPartial("studentRow", studentTemplateSource);
-            console.log(template);
-            containerElement.innerHTML = template(studentsData);
+            Handlebars.registerPartial("studentRow", studentTemplate);
+            containerElement.innerHTML = studentsTemplate(studentsData);
             initializeHeader();
-
         }
 
 
+
         function getStudents(category) {
-            return new Promise(function(resolve, reject){
+            return new Promise(function(resolve, reject) {
                 var params = {};
                 if (category) {
                     params = {'category': category};
@@ -99,29 +93,34 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
                 Util.httpCall("GET", "http://webdevcourses.frisbee.lviv.ua/students",
                     params,
                     function (response) {
-                        resolve(response.itemsData);
+                        resolve(response.students);
                     },
                     function (response) {
-                        reject(response.itemsData);
-                    })
+                        reject(response.students);
+                    }
+                )
             })
         }
 
 
-        Promise.all([getStudents(category), Util.getTemplate('students'), Util.getTemplate('student')])
-            .then(function (data) {
+        this.loadStudents = function(category) {
+            Promise.all([getStudents(category), Util.getTemplate('students'), Util.getTemplate('student')])
+                .then(function(data) {
+                    studentsTemplate = Handlebars.compile(data[1]);
+                    studentTemplate = Handlebars.compile(data[2]);
+                    self.studentArray = data[0];
+                    renderListing({'students':data[0]});
 
-//              var usersContainer = document.getElementById("userList");
-                studentsTemplateSource = data[1];
-                studentTemplateSource  = data[2];
-                renderListing(data[0]);
+                    //Initialize dropzone box
+                    var dropbox = new dropzone(document.getElementById('dropzone'));
 
-                //Initialize dropzone box
-                var dropbox = new dropzone(document.getElementById('dropzone'));
-
-                //Add event listener to the New Student form
-                initializeAddForm();
+                    //Add event listener to the New Student form
+                    initializeAddForm();
             })
+        };
+
+        this.loadStudents(category);
+
 
 
     };

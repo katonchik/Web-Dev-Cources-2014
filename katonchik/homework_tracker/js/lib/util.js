@@ -1,4 +1,4 @@
-define('Util', ['handlebars'], function(Handlebars){
+define('Util', [], function(){
     var Util = {
         self : this,
         httpCall : function(method, url, data, resolve, reject){
@@ -47,11 +47,16 @@ define('Util', ['handlebars'], function(Handlebars){
         },
 
 
+        /**
+         * Sorts array of homogenous objects by an object property
+         * @param arrToSort Array of objects to sort
+         * @param strObjParamToSortBy String, the name of the object field
+         * @param isSortAscending boolean, optional, defaults to true
+         */
+        sortArrOfObjectsByParam : function(arrToSort, strObjParamToSortBy, isSortAscending) {
+            if (isSortAscending == undefined) isSortAscending = true;
 
-        sortArrOfObjectsByParam : function(arrToSort /* array */, strObjParamToSortBy /* string */, sortAscending /* bool(optional, defaults to true) */) {
-            if (sortAscending == undefined) sortAscending = true;  // default to true
-
-            if (sortAscending) {
+            if (isSortAscending) {
                 arrToSort.sort(function (a, b) {
                     return a[strObjParamToSortBy] > b[strObjParamToSortBy];
                 });
@@ -94,18 +99,8 @@ define('Util', ['handlebars'], function(Handlebars){
                 };
                 xhr.send();
             });
-        },
-
-        loadTemplate : function(template){
-            var compiledTemplate;
-            Util.getTemplate(template)
-                .then(function (templateString){
-                    return templateString;
-                })
-                .catch(function (err){
-                    console.error("Error!!!", err);
-                });
         }
+
 
     };
     return Util;
