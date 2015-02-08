@@ -21,15 +21,15 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
                 sortKey = null;
                 if (e.target.classList && e.target.classList.contains("listing--students__headerName")) {
                     sortKey = 'student_name';
-                    querySelector = 'listing--students__headerName';
+                    querySelector = '.listing--students__headerName';
                 }
                 else if (e.target.classList && e.target.classList.contains("listing--students__headerCompleted")) {
                     sortKey = 'completed_count';
-                    querySelector = 'listing--students__headerCompleted';
+                    querySelector = '.listing--students__headerCompleted';
                 }
                 else if (e.target.classList && e.target.classList.contains("listing--students__headerOutstanding")) {
                     sortKey = 'outstanding_count';
-                    querySelector = 'listing--students__headerOutstanding';
+                    querySelector = '.listing--students__headerOutstanding';
                 }
                 if (sortKey !== null) {
                     if (prevSortKey == null || prevSortKey != sortKey) {
@@ -74,7 +74,17 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
             Util.sortArrOfObjectsByParam(self.studentArray, sortKey, isSortAsc);
             Util.emptyContainer('studentListing');
             renderListing({'students': self.studentArray});
-//            document.querySelector(querySelector).innerHTML = document.querySelector(querySelector).innerHTML + '<img src="../images/sort-asc.png"/>';
+            console.log(querySelector);
+            var sortByHeaderElement = document.querySelector(querySelector);
+            console.log(sortByHeaderElement);
+            var sortDirectionImg = document.createElement('img');
+            if(isSortAsc) {
+                sortDirectionImg.src = "images/sort-asc.png";
+            }
+            else {
+                sortDirectionImg.src = "images/sort-desc.png";
+            }
+            sortByHeaderElement.appendChild(sortDirectionImg);
         }
 
 
