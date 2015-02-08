@@ -9,25 +9,27 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
             sortKey,
             isSortAsc = true, //reverse is -1
             studentsTemplate,
-            studentTemplate;
+            studentTemplate,
+            querySelector;
 
         this.studentArray = [];
 
         function initializeHeader() {
-            console.log("initializing header");
             var headerElement = document.querySelector('.listing__header');
             headerElement.addEventListener('click', function (e) {
-                console.log(self.studentArray);
                 var prevSortKey = sortKey;
                 sortKey = null;
-                if (e.target.classList && e.target.classList.contains("listing--students__name")) {
+                if (e.target.classList && e.target.classList.contains("listing--students__headerName")) {
                     sortKey = 'student_name';
+                    querySelector = 'listing--students__headerName';
                 }
-                else if (e.target.classList && e.target.classList.contains("listing--students__completed")) {
+                else if (e.target.classList && e.target.classList.contains("listing--students__headerCompleted")) {
                     sortKey = 'completed_count';
+                    querySelector = 'listing--students__headerCompleted';
                 }
-                else if (e.target.classList && e.target.classList.contains("listing--students__outstanding")) {
+                else if (e.target.classList && e.target.classList.contains("listing--students__headerOutstanding")) {
                     sortKey = 'outstanding_count';
+                    querySelector = 'listing--students__headerOutstanding';
                 }
                 if (sortKey !== null) {
                     if (prevSortKey == null || prevSortKey != sortKey) {
@@ -58,7 +60,6 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
 
 
                             var studentRowArticle = div.firstElementChild;
-                            console.log(studentRowArticle.innerHTML);
                             document.getElementById('studentListing').appendChild(studentRowArticle);
                         }
                     });
@@ -72,7 +73,8 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
         function sortStudents(sortKey, isSortAsc) {
             Util.sortArrOfObjectsByParam(self.studentArray, sortKey, isSortAsc);
             Util.emptyContainer('studentListing');
-            renderListing({'students': self.studentArray})
+            renderListing({'students': self.studentArray});
+//            document.querySelector(querySelector).innerHTML = document.querySelector(querySelector).innerHTML + '<img src="../images/sort-asc.png"/>';
         }
 
 

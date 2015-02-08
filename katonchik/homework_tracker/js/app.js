@@ -24,8 +24,8 @@ requirejs.config({
 // Start the main app logic.
 //document.domain = "webdevcourses.frisbee.lviv.ua";
 
-require( ['app/students', 'app/assignments', 'app/students_assignments'],
-  function(    Students,       Assignments,       StudentsAssignments) {
+requirejs( ['app/students', 'app/assignments', 'app/students_assignments'],
+    function(    Students,       Assignments,       StudentsAssignments) {
         document.getElementById("menu").addEventListener('click', function (e) {
             var category,
                 assignments;

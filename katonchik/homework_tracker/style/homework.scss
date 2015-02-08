@@ -27,10 +27,17 @@ body {
   width: 600px;
 
   &__header                {overflow: auto; width: 600px; font-weight: bold; margin-top: 30px; background-color: #ccc; cursor: pointer;}
-  article                  {overflow: auto; width: 600px; height: 110px}
+
+  article                  {overflow: auto; width: 600px; height: 110px;}
   &--students__name        {float:left; width: 200px; padding: 40px 0 0 20px;}
   &--students__completed   {float:left; width: 150px; padding-top: 40px;}
   &--students__outstanding {float:left; width: 150px; padding-top: 40px;}
+
+
+  &--students__headerAvatar     {@extend .listing--students__avatar; }
+  &--students__headerName       {@extend .listing--students__name; }
+  &--students__headerCompleted  {@extend .listing--students__completed; }
+  &--students__headerOutstanding{@extend .listing--students__outstanding; }
 
   &--assignments__name     {float:left; width: 600px;}
 
