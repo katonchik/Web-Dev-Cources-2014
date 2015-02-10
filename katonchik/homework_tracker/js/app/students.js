@@ -10,7 +10,9 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
             isSortAsc = true, //reverse is -1
             studentsTemplate,
             studentTemplate,
-            querySelector;
+            querySelector,
+            from = 0,
+            to = 9;
 
         this.studentArray = [];
 
@@ -69,7 +71,7 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
             })
         }
 
-
+/*
         function sortStudents(sortKey, isSortAsc) {
             Util.sortArrOfObjectsByParam(self.studentArray, sortKey, isSortAsc);
             Util.emptyContainer('studentListing');
@@ -86,7 +88,7 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
             }
             sortByHeaderElement.appendChild(sortDirectionImg);
         }
-
+*/
 
         function renderListing(studentsData) {
             Handlebars.registerPartial("studentRow", studentTemplate);
@@ -96,9 +98,9 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
 
 
 
-        function getStudents(category) {
+        function getStudents(category, sortKey, isSortAsc, from, to) {
             return new Promise(function(resolve, reject) {
-                var params = {};
+                var params = {'sortKey': sortKey, 'isSortAsc': isSortAsc, 'from': from, 'to': to};
                 if (category) {
                     params = {'category': category};
                 }
@@ -115,13 +117,31 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
         }
 
 
+        function getTotalStudentCount() {
+            return new Promise(function(resolve, reject) {
+                Util.httpCall("GET", "http://webdevcourses.frisbee.lviv.ua/studentCount",
+                    {},
+                    function (response) {
+                        resolve(response.count);
+                    },
+                    function (response) {
+                        reject(response.count);
+                    }
+                )
+            })
+        }
+
+
+
         this.loadStudents = function(category) {
-            Promise.all([getStudents(category), Util.getTemplate('students'), Util.getTemplate('student')])
+            Promise.all([getStudents(category, sortKey, isSortAsc, from, to),
+                Util.getTemplate('students'), Util.getTemplate('student'), getTotalStudentCount()])
                 .then(function(data) {
                     studentsTemplate = Handlebars.compile(data[1]);
                     studentTemplate = Handlebars.compile(data[2]);
                     self.studentArray = data[0];
                     renderListing({'students':data[0]});
+                    renderPageScroll(data[3]);
 
                     //Initialize dropzone box
                     var dropbox = new dropzone(document.getElementById('dropzone'));
