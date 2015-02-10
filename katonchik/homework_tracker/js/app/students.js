@@ -12,7 +12,8 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
             studentTemplate,
             querySelector,
             from = 0,
-            to = 9;
+            to = 9,
+            totalCount;
 
         this.studentArray = [];
 
@@ -90,12 +91,38 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
         }
 */
 
+        function sortStudents(sortKey, isSortAsc) {
+
+        }
+
         function renderListing(studentsData) {
             Handlebars.registerPartial("studentRow", studentTemplate);
             containerElement.innerHTML = studentsTemplate(studentsData);
             initializeHeader();
         }
 
+        function renderPageScroll(from, to, totalCount) {
+            var perPage = from - to,
+                pageCount = totalCount / perPage,
+                pageScrollContainer = document.getElementById('pageScroll'),
+                i;
+
+            for(i=0; i<pageCount; i++){
+                var aFrom = i*perPage;
+                var aTo = aFrom + perPage;
+                var pageNumber = i+1;
+                var pageLink;
+                if(aFrom === from){
+                    pageLink = document.createElement('span');
+                } else {
+                    pageLink = document.createElement('a');
+                    pageLink.href = "?category=" + category + "&from=" + aFrom + "&to=" + aTo;
+                }
+                pageLink.innerHTML = pageNumber;
+                pageScrollContainer.appendChild(pageLink);
+            }
+
+        }
 
 
         function getStudents(category, sortKey, isSortAsc, from, to) {
@@ -132,26 +159,29 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
         }
 
 
+        function loadStudents(category) {
+            self.studentArray = getStudents(category, sortKey, isSortAsc, from, to);
+            renderListing({'students': self.studentArray});
+            renderPageScroll(from, to, totalCount);
+        }
 
-        this.loadStudents = function(category) {
-            Promise.all([getStudents(category, sortKey, isSortAsc, from, to),
-                Util.getTemplate('students'), Util.getTemplate('student'), getTotalStudentCount()])
-                .then(function(data) {
-                    studentsTemplate = Handlebars.compile(data[1]);
-                    studentTemplate = Handlebars.compile(data[2]);
-                    self.studentArray = data[0];
-                    renderListing({'students':data[0]});
-                    renderPageScroll(data[3]);
 
-                    //Initialize dropzone box
-                    var dropbox = new dropzone(document.getElementById('dropzone'));
-
-                    //Add event listener to the New Student form
-                    initializeAddForm();
+        Promise.all([Util.getTemplate('students'), Util.getTemplate('student'), getTotalStudentCount()])
+            .then(function(data) {
+                studentsTemplate = Handlebars.compile(data[0]);
+                studentTemplate = Handlebars.compile(data[1]);
+                totalCount = data[2];
+                loadStudents(category);
             })
-        };
+            .then(function(data) {
+                //Initialize dropzone box
+                var dropbox = new dropzone(document.getElementById('dropzone'));
 
-        this.loadStudents(category);
+                //Add event listener to the New Student form
+                initializeAddForm();
+
+            })
+
 
 
 
