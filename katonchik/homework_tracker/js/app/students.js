@@ -10,7 +10,7 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
             isSortAsc = true, //reverse is -1
             studentsTemplate,
             studentTemplate,
-            querySelector,
+            querySelector = '.listing--students__headerName',
             from = 0,
             to = 9,
             totalCount,
@@ -73,12 +73,12 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
             })
         }
 
-/*
-        function sortStudents(sortKey, isSortAsc) {
-            Util.sortArrOfObjectsByParam(self.studentArray, sortKey, isSortAsc);
-            Util.emptyContainer('studentListing');
-            renderListing({'students': self.studentArray});
-            console.log(querySelector);
+
+        function updateSortIndicators() {
+            //Util.sortArrOfObjectsByParam(self.studentArray, sortKey, isSortAsc);
+            //Util.emptyContainer('studentListing');
+            //renderListing({'students': self.studentArray});
+            //console.log(querySelector);
             var sortByHeaderElement = document.querySelector(querySelector);
             console.log(sortByHeaderElement);
             var sortDirectionImg = document.createElement('img');
@@ -90,7 +90,7 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
             }
             sortByHeaderElement.appendChild(sortDirectionImg);
         }
-*/
+
 
         function renderListing(studentsData) {
             Handlebars.registerPartial("studentRow", studentTemplate);
@@ -163,6 +163,7 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
                     console.log(studentArray);
                     self.studentArray = studentArray;
                     renderListing({'students': self.studentArray});
+                    updateSortIndicators();
                     renderPageScroll(from, to, totalCount);
                 })
         }
