@@ -34,6 +34,7 @@ define('Util', [], function(){
                             resolve(response);
                             break;
                         case 404:
+                            console.log("resource not found: " + response.msg);
                         default:
                             console.log("Backend action failed: " + response.msg);
                             reject(response);

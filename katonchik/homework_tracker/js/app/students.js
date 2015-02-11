@@ -6,14 +6,15 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
 
     var Students = function(containerElement, category) {
         var self = this,
-            sortKey,
+            sortKey = 'student_name',
             isSortAsc = true, //reverse is -1
             studentsTemplate,
             studentTemplate,
             querySelector,
             from = 0,
             to = 9,
-            totalCount;
+            totalCount,
+            category = category;
 
         this.studentArray = [];
 
@@ -41,7 +42,7 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
                     else {
                         isSortAsc = Util.toggleSortOrder(isSortAsc);
                     }
-                    sortStudents(sortKey, isSortAsc);
+                    loadStudents();
                 }
             })
         }
@@ -91,15 +92,12 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
         }
 */
 
-        function sortStudents(sortKey, isSortAsc) {
-
-        }
-
         function renderListing(studentsData) {
             Handlebars.registerPartial("studentRow", studentTemplate);
             containerElement.innerHTML = studentsTemplate(studentsData);
             initializeHeader();
         }
+
 
         function renderPageScroll(from, to, totalCount) {
             var perPage = from - to,
@@ -146,7 +144,7 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
 
         function getTotalStudentCount() {
             return new Promise(function(resolve, reject) {
-                Util.httpCall("GET", "http://webdevcourses.frisbee.lviv.ua/studentCount",
+                Util.httpCall("GET", "http://webdevcourses.frisbee.lviv.ua/student_count",
                     {},
                     function (response) {
                         resolve(response.count);
@@ -159,10 +157,14 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
         }
 
 
-        function loadStudents(category) {
-            self.studentArray = getStudents(category, sortKey, isSortAsc, from, to);
-            renderListing({'students': self.studentArray});
-            renderPageScroll(from, to, totalCount);
+        function loadStudents() {
+            return getStudents(category, sortKey, isSortAsc, from, to)
+                .then(function(studentArray){
+                    console.log(studentArray);
+                    self.studentArray = studentArray;
+                    renderListing({'students': self.studentArray});
+                    renderPageScroll(from, to, totalCount);
+                })
         }
 
 
@@ -171,7 +173,7 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
                 studentsTemplate = Handlebars.compile(data[0]);
                 studentTemplate = Handlebars.compile(data[1]);
                 totalCount = data[2];
-                loadStudents(category);
+                return loadStudents(category);
             })
             .then(function(data) {
                 //Initialize dropzone box
