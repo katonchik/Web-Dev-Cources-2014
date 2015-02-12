@@ -4,7 +4,7 @@
 
 define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
 
-    var Students = function(containerElement, category) {
+    var Students = function(containerElement) {
         var self = this,
             sortKey = 'student_name',
             isSortAsc = true, //reverse is -1
@@ -13,8 +13,7 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
             querySelector = '.listing--students__headerName',
             from = 0,
             to = 9,
-            totalCount,
-            category = category;
+            totalCount;
 
         this.studentArray = [];
 
@@ -80,7 +79,6 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
             //renderListing({'students': self.studentArray});
             //console.log(querySelector);
             var sortByHeaderElement = document.querySelector(querySelector);
-            console.log(sortByHeaderElement);
             var sortDirectionImg = document.createElement('img');
             if(isSortAsc) {
                 sortDirectionImg.src = "images/sort-asc.png";
@@ -100,11 +98,12 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
 
 
         function renderPageScroll(from, to, totalCount) {
-            var perPage = from - to,
-                pageCount = totalCount / perPage,
+            var perPage = to - from,
+                pageCount = Math.ceil(totalCount / perPage),
                 pageScrollContainer = document.getElementById('pageScroll'),
                 i;
 
+            console.log("pageCount: " + pageCount);
             for(i=0; i<pageCount; i++){
                 var aFrom = i*perPage;
                 var aTo = aFrom + perPage;
@@ -114,7 +113,7 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
                     pageLink = document.createElement('span');
                 } else {
                     pageLink = document.createElement('a');
-                    pageLink.href = "?category=" + category + "&from=" + aFrom + "&to=" + aTo;
+                    pageLink.href = "?from=" + aFrom + "&to=" + aTo;
                 }
                 pageLink.innerHTML = pageNumber;
                 pageScrollContainer.appendChild(pageLink);
@@ -123,12 +122,9 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
         }
 
 
-        function getStudents(category, sortKey, isSortAsc, from, to) {
+        function getStudents(sortKey, isSortAsc, from, to) {
             return new Promise(function(resolve, reject) {
                 var params = {'sortKey': sortKey, 'isSortAsc': isSortAsc, 'from': from, 'to': to};
-                if (category) {
-                    params = {'category': category};
-                }
                 Util.httpCall("GET", "http://webdevcourses.frisbee.lviv.ua/students",
                     params,
                     function (response) {
@@ -158,9 +154,8 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
 
 
         function loadStudents() {
-            return getStudents(category, sortKey, isSortAsc, from, to)
+            return getStudents(sortKey, isSortAsc, from, to)
                 .then(function(studentArray){
-                    console.log(studentArray);
                     self.studentArray = studentArray;
                     renderListing({'students': self.studentArray});
                     updateSortIndicators();
@@ -174,7 +169,7 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
                 studentsTemplate = Handlebars.compile(data[0]);
                 studentTemplate = Handlebars.compile(data[1]);
                 totalCount = data[2];
-                return loadStudents(category);
+                return loadStudents();
             })
             .then(function(data) {
                 //Initialize dropzone box
