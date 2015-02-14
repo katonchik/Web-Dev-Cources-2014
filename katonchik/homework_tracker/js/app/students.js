@@ -13,6 +13,7 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
             querySelector = '.listing--students__headerName',
             from = 0,
             to = 9,
+            perPage,
             totalCount;
 
         this.studentArray = [];
@@ -41,6 +42,9 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
                     else {
                         isSortAsc = Util.toggleSortOrder(isSortAsc);
                     }
+                    perPage = to - from;
+                    from = 0;
+                    to = perPage - 1;
                     loadStudents();
                 }
             })
@@ -114,9 +118,21 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
                 } else {
                     pageLink = document.createElement('a');
                     pageLink.href = "?from=" + aFrom + "&to=" + aTo;
+                    pageLink.classList.add('scroll');
                 }
                 pageLink.innerHTML = pageNumber;
                 pageScrollContainer.appendChild(pageLink);
+
+                pageScrollContainer.addEventListener('click', function(e){
+                    if(e.target && e.target.classList.contains('scroll')) {
+                        e.preventDefault();
+                        console.log("clicked");
+                        perPage = to - from;
+                        from = from + perPage;
+                        to = to + perPage;
+                        loadStudents();
+                    }
+                })
             }
 
         }
