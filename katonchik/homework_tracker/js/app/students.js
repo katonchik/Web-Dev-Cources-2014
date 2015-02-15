@@ -12,8 +12,8 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
             studentTemplate,
             querySelector = '.listing--students__headerName',
             from = 0,
-            to = 9,
-            perPage,
+            perPage = 10,
+            to = from + perPage - 1,
             totalCount;
 
         this.studentArray = [];
@@ -42,10 +42,9 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
                     else {
                         isSortAsc = Util.toggleSortOrder(isSortAsc);
                     }
-                    perPage = to - from;
                     from = 0;
-                    to = perPage - 1;
-                    loadStudents();
+                    to = from + perPage - 1;
+                    loadStudents(from, to);
                 }
             })
         }
@@ -102,8 +101,7 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
 
 
         function renderPageScroll(from, to, totalCount) {
-            var perPage = to - from,
-                pageCount = Math.ceil(totalCount / perPage),
+            var pageCount = Math.ceil(totalCount / perPage),
                 pageScrollContainer = document.getElementById('pageScroll'),
                 i;
 
@@ -113,27 +111,30 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
                 var aTo = aFrom + perPage;
                 var pageNumber = i+1;
                 var pageLink;
-                if(aFrom === from){
+                console.log("aFrom = " + aFrom + "; from = " + from);
+                if(aFrom == from){
                     pageLink = document.createElement('span');
                 } else {
                     pageLink = document.createElement('a');
-                    pageLink.href = "?from=" + aFrom + "&to=" + aTo;
-                    pageLink.classList.add('scroll');
+                    pageLink.classList.add('scrollItem');
+                    pageLink.dataset.from = aFrom;
+                    pageLink.dataset.to   = aTo;
+                    pageLink.href = "#";
                 }
                 pageLink.innerHTML = pageNumber;
                 pageScrollContainer.appendChild(pageLink);
-
-                pageScrollContainer.addEventListener('click', function(e){
-                    if(e.target && e.target.classList.contains('scroll')) {
-                        e.preventDefault();
-                        console.log("clicked");
-                        perPage = to - from;
-                        from = from + perPage;
-                        to = to + perPage;
-                        loadStudents();
-                    }
-                })
             }
+
+            pageScrollContainer.addEventListener('click', function(e){
+                console.log("clicked");
+                if(e.target && e.target.classList.contains('scrollItem')) {
+                    e.preventDefault();
+                    from = e.target.dataset.from;
+                    to = e.target.dataset.to;
+                    console.log("from:" + from + ", to: " + to);
+                    loadStudents(from, to);
+                }
+            })
 
         }
 
@@ -169,13 +170,14 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
         }
 
 
-        function loadStudents() {
-            return getStudents(sortKey, isSortAsc, from, to)
+        function loadStudents(first, last) {
+            console.log("Loading " + perPage + " students from " + first + " to " + last);
+            return getStudents(sortKey, isSortAsc, first, last)
                 .then(function(studentArray){
                     self.studentArray = studentArray;
                     renderListing({'students': self.studentArray});
                     updateSortIndicators();
-                    renderPageScroll(from, to, totalCount);
+                    renderPageScroll(first, last, totalCount);
                 })
         }
 
@@ -185,7 +187,8 @@ define(['Util', 'Dropzone', 'handlebars'], function(Util, dropzone, Handlebars){
                 studentsTemplate = Handlebars.compile(data[0]);
                 studentTemplate = Handlebars.compile(data[1]);
                 totalCount = data[2];
-                return loadStudents();
+                to = from + perPage;
+                return loadStudents(from, to);
             })
             .then(function(data) {
                 //Initialize dropzone box
